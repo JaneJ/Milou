@@ -1,0 +1,27 @@
+﻿Registreerimine
+ - kasutajal kindlasti  e-mail
+Sisse logimine: 
+	- Oma kasutaja
+	- Facebook
+	- Google
+	-pop-up
+
+Esileht:
+ - ülemine paan:
+Teemad:
+-üleval ja all
+-otsing üleval
+
+*Kaks uudiste veergu 
+
+*Kolmas veerg - loetuimad, kommenteeritumaid 
+
+* Artikli leht:
+	○ Kommentaarida alla
+	○ Päis jääb samaks
+		
+* Uudiste voog:
+	-e-mailile
+	-pealkirjad 
+
+
