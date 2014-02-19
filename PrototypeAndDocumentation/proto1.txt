@@ -26,4 +26,13 @@ Teemad:
 	-pealkirjad 
 	-lühikokuvõte pealkirja all võiks olla.
 
+* Toimetaja:
+
+	-Kui toimetaja sisse loginud, siis 
+	ilmuvad redigeeri nupp, kus saab muuta 
+	lehekülje sisu ja lisada uudiseid. 
+	-uue uudise kirjutamisel, peab uudisele panema tagi, mis teema alla see läheb
+
+* Uudise peale vajutades, läheb see uuele leheküljele, kus on see artikkel terviklikult.
+
 
