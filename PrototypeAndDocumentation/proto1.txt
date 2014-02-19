@@ -1,7 +1,7 @@
 ﻿Registreerimine
- - kasutajal kindlasti  e-mail
+ - kasutajal üeab kindlasti olema oma e-mail
 Sisse logimine: 
-	- Oma kasutaja
+	- peab olema võimalik soovi korral luua oma kasutaja
 	- Facebook
 	- Google
 	*ilmub pop-up sisselogimiseks, kui seda nuppu vajutada
@@ -14,11 +14,11 @@ Teemad:
 
 *Kaks uudiste veergu 
 
-*Kolmas veerg - loetuimad, kommenteeritumaid 
+*Kolmas veerg - loetuimad, kommenteeritumaid, värskeimad uudised
 		
 
 * Artikli leht:
-	○ Kommentaarida alla
+	○ Kommentaarid alla (kommenteerimisaken ilmub/on aktiivne vaid juhul, kui on sisse logitud)
 	○ Päis jääb samaks
 		
 * Uudiste voog:
@@ -31,8 +31,9 @@ Teemad:
 	-Kui toimetaja sisse loginud, siis 
 	ilmuvad redigeeri nupp, kus saab muuta 
 	lehekülje sisu ja lisada uudiseid. 
-	-uue uudise kirjutamisel, peab uudisele panema tagi, mis teema alla see läheb
+	-uue uudise kirjutamisel, peab uudisele panema tagi (või mitu), mis teema(de) alla see läheb
 
 * Uudise peale vajutades, läheb see uuele leheküljele, kus on see artikkel terviklikult.
+* Kommentaarid ilmuvad lugemiseks artikli alla, artikkel eest ära ei kao.
 
 
