@@ -1,3 +1,31 @@
+﻿Meie projekt tuleb enam-vähem samasugune  nagu praktikumis välja pakutud uudisteportaali projekt:
+﻿
+﻿Projekt Uudisteportaal
+
+Et mitte teha tavalist uudisteportaali, siis võib siia külge pookida kaardirakenduse, nii et lugejad saavad näha uudiste asukohti kaardil, kus (mis riigis/linnas/vallas/koordinaatidel) sündmus aset leidis. Rakendus peab võimaldama järgmist:
+//kaardirakendust me nähtavasti teha ei jõu, seda prototüüpi ei lisanud.
+    Toetama järgmiste rollidega kasutajaid: toimetaja/lugeja
+    Lugeja saab:
+        Näha uudiste nimekirja // paremal äärmises veerus olemas
+        Sorteerida/grupeerida uudiseid (näha enim loetumaid/kommenteeritud uudiseid) //paremal äärmises veerus
+        Lugeda konkreetset uudist //uudise pealkirja peale klikkimisel 
+        Lugeda uudise kommentaare // täismahus uudise juurest ligi pääsetav
+        Kommenteerida (captcha) 
+        /* täismahus uudise juurest ligipääsetav. 
+        Kommenteerida saab ainult sisse loginud kasutaja. Saab ka anonüümselt kommenteerida (kui meil selle tegemiseks aega jääb)*/
+        Tellida e-mailile uudiskirju 
+    Toimetaja saab:
+        Näha uudiste nimekirja
+        Sorteerida/grupeerida uudiseid (näha enim loetumaid/kommenteeritud uudiseid)
+        Lugeda konkreetset uudist
+        Lisada/redigeerida/kustutada uudiseid (WYSIWYG-redigeerija) ja laadida pilte nende juurde
+        Lugeda uudise kommentaare
+        Näha/redigeerida/kustutada uudiskirjade tellijate e-maile 
+        /*toimetaja saab kõike vajalikku teha redigeeri/muuda nupu alt ja otsin võimaldab tal ka rohkemat leida, kui tavakasutajal. Lisaks aitab leheküljel olevat infot hallata andmebaas.*/
+
+Samuti annaks siia veel funktsionaalsust juurde panna kui väheks jääb. Registreeritud kasutajad ning reklaamisüsteem. 
+﻿//juurde lisada me nähtavasti ei jõua.
+﻿
 ﻿Registreerimine
  - kasutajal peab kindlasti olema oma e-mail
 Sisse logimine: 
