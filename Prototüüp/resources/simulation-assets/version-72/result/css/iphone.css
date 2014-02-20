@@ -1,0 +1,19 @@
+html, body {
+	background-color: white;
+}
+
+body.sketched-none * {font-family: 'HelveticaNeue', Helvetica, sans-serif; font-size:11px;}
+body.sketched-arial * {font-family: Arial, sans-serif; font-size:11px;}
+
+
+body.sketched-none .helvetica-font,
+body.sketched-arial .helvetica-font{
+	font-family: 'HelveticaNeue', Arial, sans-serif;
+	font-weight: bold;
+}
+
+body.sketched-none .helvetica-font *,
+body.sketched-arial .helvetica-font *{
+	font-family: 'HelveticaNeue', Arial, sans-serif;
+	font-weight: bold;
+}
