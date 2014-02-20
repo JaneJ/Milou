@@ -17,7 +17,7 @@ public class HelloServlet extends HttpServlet {
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
         
-        out.write("Deployed first change!".getBytes());
+        out.write("Alustamine!".getBytes());
         out.flush();
         out.close();
     }
