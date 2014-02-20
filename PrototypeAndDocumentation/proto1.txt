@@ -1,9 +1,10 @@
 ﻿Registreerimine
- - kasutajal üeab kindlasti olema oma e-mail
+ - kasutajal peab kindlasti olema oma e-mail
 Sisse logimine: 
 	- peab olema võimalik soovi korral luua oma kasutaja
 	- Facebook
 	- Google
+	//kui jääb aega, teeme mõlemad, kui mitte, valime ühe neist
 	*ilmub pop-up sisselogimiseks, kui seda nuppu vajutada
 
 Esileht:
@@ -35,5 +36,6 @@ Teemad:
 
 * Uudise peale vajutades, läheb see uuele leheküljele, kus on see artikkel terviklikult.
 * Kommentaarid ilmuvad lugemiseks artikli alla, artikkel eest ära ei kao.
+//kui jääb aega, lisame lehele ka kellaaja, kuupäeva, ilmateate, võimaluse panna Facebooki like ja jagada uudist.
 
 
