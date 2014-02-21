@@ -1,0 +1,3 @@
+Prototüübi digitaalne versioon (sh. paberil tehtud jooniste pildid) tuleb lisada teie koodihaldusesse või Github Wikisse.
+Soovitav on prototüüpide ja dokumentatsiooni tarvis luua koodihoidlasse eraldi kaustad. 
+Selge saab kunagi tehtud lähima päeva juures. 
