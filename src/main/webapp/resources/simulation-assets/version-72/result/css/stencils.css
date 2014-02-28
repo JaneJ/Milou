@@ -1,0 +1,46 @@
+
+.iphoneSwitch.switch-selected .switch-off,
+.iphoneSwitch .switch-on {
+	visibility: hidden;
+}
+.iphoneSwitch.switch-selected .switch-on,
+.iphoneSwitch .switch-off {
+	visibility: inherit;
+}
+
+/* Toggle Section
+   ----------------------------------------------------*/
+
+.togglesection {
+	position: absolute;
+	font-size: 13px;
+	line-height: 1.2em;
+}
+.togglesection-header {
+	height: 25px;
+	line-height: 25px;
+	cursor: pointer;
+}
+.togglesection-content {
+	font-size: 12px;
+	line-height: 18px;
+	background: #fff;
+	position: absolute;
+	overflow: hidden;
+	display: none;
+}
+
+/* override css properties set by iframe.xsl so that the iframe in the toggle is positioned correctly */
+.togglesection-content > iframe,
+.togglesection-content > div  {
+	position: relative !important;
+	top: 0 !important;
+	border: 0 none !important;
+	height: auto !important;
+}
+.togglesection-content > div.renderEmptyPage { padding: 5px 0 5px 8px; }
+
+.pidoco-cursor-pointer,
+.pidoco-cursor-pointer * /* This ensures to override browser styles (like button for chrome) */ {
+	cursor: pointer;
+}

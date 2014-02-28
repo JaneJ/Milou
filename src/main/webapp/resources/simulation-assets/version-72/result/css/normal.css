@@ -1,0 +1,208 @@
+html, body {
+	font-family: arial, sans-serif;
+	font-size:12px;
+	font-size-adjust:none;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:normal;
+	margin: 0px;
+}
+
+.bigTab {
+	display: none;
+}
+
+.selected .bigTab {
+	display: block;
+}
+
+.selected .smallTab {
+	display: none;
+}
+
+.iosTab.selected .bigTab {
+	display: none;
+}
+
+.iosTab .smallTab {
+	display: block;
+	fill: white;
+}
+
+.iosTab.selected .smallTab {
+	display: block;
+	fill: #CCC !important;;
+}
+
+.text_line {line-height:1.2em;}
+
+.svg_unselected_element {
+    stroke:black;
+}
+
+/*rect.whitegray { fill: white; }
+g.selected rect.whitegray { fill: lightgray; }
+*/
+#dContainer .yui-panel .hd { white-space: nowrap;}
+#dContainer .yui-panel .bd { overflow: auto; padding: 0px; background-color: white; }
+#dContainer .yui-panel .ft { padding: 0px; background-color: white; font-family: arial, sans-serif; }
+#dContainer .yui-panel .ft textarea { height: 55px; border: 2px inset darkGray; background: white;}
+#dContainer .yui-panel .ft button { background: transparent url(../../../../result/icons/post_button.png); font-family:arial, sans-serif;font-weight:bold;cursor:pointer;border:1px solid gray;-moz-border-radius:3px;margin-left:1px; }
+#dContainer .yui-panel .ft button:hover { background: transparent url(../../../../result/icons/post_button_hover.png);}
+#dContainer .dEntry { padding: 3px; padding-left:5px;}
+#dContainer .dEntry.unread { background-color: rgb( 242, 242, 242);}
+#dContainer .dEntry.even { background: #fafafa; }
+#dContainer .dEntry.odd { background: #eeeeee; }
+#dContainer .dEntryHeader { font-size: 0.9em; margin-top: 5px; color:#808080; }
+#dContainer .dEntryBody { font-size: 1.2em; }
+#dContainer .dAuthor { font-weight: bold; } 
+.yui-skin-sam .yui-panel-container.shadow .underlay {
+	right: 0px!important;
+}
+
+.tableCells {
+	border-right:solid 1px gray;
+	border-bottom:solid 1px gray;
+	padding-left:10px;
+	padding-right:20px;
+	padding-top:7px;
+	/*height:30px;*/
+	vertical-align:top;
+}
+
+.tableStyle {
+	table-layout:fixed;
+	border-left:solid 1px gray;
+	border-top:solid 1px gray;
+	background:white;
+	font-size:1em;
+}
+
+/* Icon
+   ----------------------------------------------------*/
+
+.icon a,
+.icon a:visited,
+.icon a:active {
+	color: black;
+}
+
+
+/* Menu
+   ----------------------------------------------------*/
+
+.yui-skin-sam .yuimenubar{
+	font-size: 93%;
+	line-height: 2; 
+	line-height: 1.9;
+	border: solid 2px #808080;
+	background: white;
+}
+.yui-skin-sam .yuimenubaritem-selected {
+	background: #EEEEEE;
+}
+.yui-skin-sam .yuimenuitem-selected {
+	background: #EEEEEE;
+}
+.yui-skin-sam.verticalmenu {
+	border: solid 1px #808080;
+	background: white;
+}
+.yui-skin-sam > .yuimenu > .bd {
+	border: 0px none;
+}
+
+.yui-menu-shadow-visible {
+	top: 2px;
+	right: -3px;
+	left: -3px;
+	bottom: -3px;
+	visibility: hidden;
+}
+
+/* Slider */
+.yui-slider-thumb {
+	fill:white;
+}
+.yui-slider-thumb:hover {
+	fill:#EEEEEE;
+}
+
+.tinymce_span{
+	font-size:1.0em;
+}
+
+/* Textlist
+   ----------------------------------------------------*/
+
+ul.textlist{
+ 	list-style-type: disc; 
+	padding: 0px 0px 0px 18px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-down: 0px;
+	margin-left: 10px;
+ }
+ol.textlist {
+	padding: 0px 0px 0px 18px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-down: 0px;
+	margin-left: 10px;
+ }
+ 
+/* Tree View
+   ----------------------------------------------------*/
+
+.tree-nodelabel {
+	padding-left: 0px;
+	white-space:nowrap;
+	font-size: 12px;
+}
+.tree-nodebutton {
+	padding: 0px;
+	cursor: pointer;
+	white-space:nowrap;
+}
+
+/* Accordion
+   ----------------------------------------------------*/
+
+.accordion-header {
+	font-size: 1.6em;
+	background: #DDD;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 3px;
+	cursor: pointer;
+}
+
+.accordion-content {
+	line-height: 15px;
+	position: relative;
+	overflow: hidden;
+	background: white;
+}
+
+.accordion-header.accordion-active {
+	background: #B6B6B6;
+}
+
+/* Toggle Section
+   ----------------------------------------------------*/
+
+.togglesection {
+	background: #fff;
+	border: 1px solid #959595;
+}
+.togglesection-header {
+	background: #f3f3f3;
+	background-image: url(../../../../result/icons/toggle_arrows.png);
+	background-repeat: no-repeat;
+	background-position: right 0;
+	padding-left: 8px;
+}
+.togglesection.open .togglesection-header { background-position: right -25px; }
+.togglesection-content { border: 1px solid #959595; }
+.togglesection-content > .iframe { left: 0px !important; }
