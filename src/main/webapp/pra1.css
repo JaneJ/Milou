@@ -185,7 +185,6 @@ table  a{
 	color: black
 }
 
-
 #sisukoht  .pildike .aligncenter {
 width: 305px;
 height: 135px;
@@ -343,35 +342,4 @@ position: relative;
 #footer-right a{
 	text-decoration: none;
 	color: black;
-}
-#sisukoht p{
-	padding: 0px;
-	margin: 20px;
-	font-family: 'Love Ya Like A Sister', cursive;
-	font-size: 40px;
-	text-align: center;
-
-}
-#sisukoht img{
-	height: 200px;
-	width: 640px;
-	padding: 0px;
-	margin: 0px;
-	
-}
-table td{
-	vertical-align: top;
-}
-table td h2{
-	margin: 0px;
-	padding: 0px;
-	text-align: left;
-}
-table td div{
-	padding: 2px;
-	margin: 2px;
-}
-#pildike img a{
-	height: 200px
-	width:640px;
 }
