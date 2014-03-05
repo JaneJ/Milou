@@ -194,6 +194,10 @@ padding-left: 0px;
 	padding: 0px;
 	margin: 0px;
 }
+table  a{
+	text-decoration: none;
+	color: black
+}
 
 #sisukoht  .pildike .aligncenter {
 width: 305px;
