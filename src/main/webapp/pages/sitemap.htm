@@ -5,52 +5,75 @@
 <title>Milou</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link href="resources/css/first_css.css" rel="stylesheet" type="text/css">
+		<noscript>Sorry, your browser does not support JavaScript!</noscript> <!-- Kui brauser ei toeta JavaScripti-i-->
 </head>
 	<body>
 	
-
-	<a href="login.htm">Logi sisse</a>
-	<br>
-	<a href="signup.htm">Registreeru</a>
-	<br>
-	<a href="index.htm">Milou</a>
+	<div id="login" style="height:100px;width:100px;float:right;">
+		<a href="login.htm">Logi sisse</a>
+		<br>
+		<a href="signup.htm">Registreeru</a>
+		<br>
+		</div>
+		<div id="header" style="text-align:center;">
+		<a href="index.htm">Milou</a>
+	</div>
+	<hr>
+	<div id="menu" style="text-align:center;">
+		<p class="menu">
+		<a href="category_it.htm">IT</a> | 
+		<a href="category_culture.htm">Kultuur</a>| 
+		<a href="category_sport.htm">Sport</a>| 
+		<a href="category_economy.htm">Majandus</a>| 
+		<a href="category_comics.htm">Koomiks</a>| 
+		<a href="category_crime.htm">Krimi</a>| 	
+		<form name="search" action="html_search_action.asp" method="get">
+			<input type="text" name="search" value=""> <!-- TODO väärtuste edasi saatmine -->
+		</form>		
+		<a href="search.htm">
+		<img src="resources/icons/otsi.png" alt="Otsi" width="30" height="18"></a>
+	</div>
+	<hr>
+	<div id="most" style="height:100px;width:100px;float:right;">
+		<p>Viimased uudised</p>
+		<p>Enim loetud</p>
+		<p>Enim kommenteeritud</p>
+	</div>
+	
+	<div id="content" >
+	
+		<h4>Sisukaart:</h4>
+		<ul>
+		  <li><a href="index.htm">Milou</a></li>
+		  <li><a href="category_it.htm">IT</a>
+		  <li><a href="category_culture.htm">Kultuur</a></li>
+		  <li><a href="category_sport.htm">Sport</a></li>
+		  <li><a href="category_economy.htm">Majandus</a></li>
+		  <li><a href="category_comics.htm">Koomiks</a></li>
+		  <li><a href="category_crime.htm">Krimi</a></li>
+		</ul>
+	</div>
 	
 	<hr>
-	<p class="menu">
-	<a href="category_it.htm">IT</a> | 
-	<a href="category_culture.htm">Kultuur</a>| 
-	<a href="category_sport.htm">Sport</a>| 
-	<a href="category_economy.htm">Majandus</a>| 
-	<a href="category_comics.htm">Koomiks</a>| 
-	<a href="category_crime.htm">Krimi</a>| 
-
-	<input></input>
-	<a href="search.htm">
-	<img src="resources/icons/otsi.png" alt="Otsi" width="30" height="18"></a>
-
-
-
-
-
-
-	<p>Viimased uudised</p>
-	<p>Enim loetud</p>
-	<p>Enim kommenteeritud</p>
-
+	<div id="menu" style="text-align:center;">
+		<p class="menu">
+		<a href="category_it.htm">IT</a> | 
+		<a href="category_culture.htm">Kultuur</a>| 
+		<a href="category_sport.htm">Sport</a>| 
+		<a href="category_economy.htm">Majandus</a>| 
+		<a href="category_comics.htm">Koomiks</a>| 
+		<a href="category_crime.htm">Krimi</a>| 
+	</div>
 	<hr>
-	<p class="menu">
-	<a href="category_it.htm">IT</a> | 
-	<a href="category_culture.htm">Kultuur</a>| 
-	<a href="category_sport.htm">Sport</a>| 
-	<a href="category_economy.htm">Majandus</a>| 
-	<a href="category_comics.htm">Koomiks</a>| 
-	<a href="category_crime.htm">Krimi</a>| 
-	<hr>
-	<a href="faq.htm">KKK</a>
-	<a href="help.htm">Abi</a>
-	<a href="contact.htm">Kontakt</a>
-	<a href="sitemap.htm">Sisukaart</a>
-	<p>2014 Milou</p>
+	<div id="footer" style="text-align:center;">
+	
+		<a href="faq.htm">KKK</a>
+		<a href="help.htm">Abi</a>
+		<a href="contact.htm">Kontakt</a>
+		<a href="sitemap.htm">Sisukaart</a>	
+		<p>&#169; 2014 Milou</p>
+	</div>
+
 
 	</body>
 
