@@ -40,18 +40,11 @@ margin: 0px;
 float: right;
 height: 82px;
 width: 430px;
-<<<<<<< HEAD
-text-align: right;
-display: block;
-}
-
-=======
 /* margin-top: 59px; */
 text-align: right;
 display: block;
 /* background: black; */
 }
->>>>>>> bd8b258947fcf6772ae7f3a767e38fbde849ce11
 #siteinfo{
 	text-decoration: none;
 	color: black;
@@ -70,11 +63,7 @@ display: block;
 
 #login{
 	text-decoration: none;
-<<<<<<< HEAD
-    list-style-type:none; 
-=======
 list-style-type:none; 
->>>>>>> bd8b258947fcf6772ae7f3a767e38fbde849ce11
 	vertical-align: top;
 	margin-top: 14px;
 	
@@ -185,9 +174,6 @@ clear: both;
 height: auto;
 width: 100%;
 }
-<<<<<<< HEAD
-
-=======
 #sisukoht .artikli-sisu {
 float: left;
 width: 300px;
@@ -202,21 +188,12 @@ padding-right: 0px;
 padding-bottom: 10px;
 padding-left: 0px;
 }
->>>>>>> bd8b258947fcf6772ae7f3a767e38fbde849ce11
 
 #sisukoht  .pildike{
 
 	padding: 0px;
 	margin: 0px;
 }
-<<<<<<< HEAD
-table  a{
-	text-decoration: none;
-	color: black
-}
-
-=======
->>>>>>> bd8b258947fcf6772ae7f3a767e38fbde849ce11
 
 #sisukoht  .pildike .aligncenter {
 width: 305px;
@@ -375,7 +352,16 @@ position: relative;
 #footer-right a{
 	text-decoration: none;
 	color: black;
-<<<<<<< HEAD
+}
+
+table  a{
+	text-decoration: none;
+	color: black
+}
+
+#footer-right a{
+	text-decoration: none;
+	color: black;
 }
 #sisukoht p{
 	padding: 0px;
@@ -402,12 +388,4 @@ table td h2{
 }
 table td div{
 	padding: 2px;
-	margin: 2px;
-}
-#pildike img a{
-	height: 200px
-	width:640px;
-}
-=======
-}
->>>>>>> bd8b258947fcf6772ae7f3a767e38fbde849ce11
+	margin: 2px;}
