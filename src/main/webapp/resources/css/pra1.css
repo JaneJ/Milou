@@ -340,6 +340,7 @@ width: 49%;
 text-align: left;
 position: relative;
 }
+
 #footer-right{
 margin: 0px;
 padding: 0px;
@@ -352,6 +353,11 @@ position: relative;
 #footer-right a{
 	text-decoration: none;
 	color: black;
+}
+#page-up a{
+	text-decoration: none;
+	color: black;
+	font-family: 'Flamenco', cursive;
 }
 
 table  a{
