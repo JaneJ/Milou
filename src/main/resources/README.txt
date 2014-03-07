@@ -1,0 +1,1 @@
+resources kaust java conf failide jaoks?
