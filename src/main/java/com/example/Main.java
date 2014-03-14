@@ -16,7 +16,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) throws Exception{
-        String webappDirLocation = "src/main/webapp/index.html";
+        String webappDirLocation = "src/main/webapp/";
         
         //The port that we should run on can be set into an environment variable
         //Look for that variable and default to 8080 if it isn't there.
@@ -28,7 +28,7 @@ public class Main {
         Server server = new Server(Integer.valueOf(webPort));
         WebAppContext root = new WebAppContext();
 
-        root.setContextPath("/");
+        root.setContextPath("/index.html");
         root.setDescriptor(webappDirLocation+"/WEB-INF/web.xml");
         root.setResourceBase(webappDirLocation);
         
