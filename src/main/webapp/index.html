@@ -7,8 +7,8 @@
 		<link href="resources/css/pra1.css" rel="stylesheet" type="text/css">
 		<link href="resources/scripts/logins.js">
 		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
-		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=signinCallback"></script>
+		
 	</head>
 	<body>
 		<div id="fb-root"></div>
@@ -33,7 +33,7 @@
 		<li style="vertical-align:top;margin-top:14px;">
 			<span id="gConnect">
 		<span  class="g-signin"
-		 data-callback="signinCallback"
+		 data-callback="resources/scripts/logins.js"
     	data-clientid="819749437884.apps.googleusercontent.com"
     	data-cookiepolicy="single_host_origin"
     	data-requestvisibleactions="http://schemas.google.com/AddActivity"
