@@ -53,10 +53,12 @@ header aside {
 }
 
 
-
+nav {
+	display: inline;
+}
 
 nav a{
-	display:inline-block;
+	display:inline;
 	padding: 10px;
 	font: bold 25px Fanwood;
 	
