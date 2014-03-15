@@ -35,7 +35,7 @@ window.fbAsyncInit = function() {
 
 
 
-SigninCallback: function(authResult){
+function signinCallback(authResult){
   if (authResult['access_token']) {
     $('#gConnect').hide();
 
@@ -44,7 +44,7 @@ SigninCallback: function(authResult){
     });
   }else if (authResult['error']) {}
 }
-connect: function(){
+function connect(){
   gapi.client.plus.people.get({userID:'me'}).execute{
     function(result){
       helper.user=result;
@@ -63,7 +63,7 @@ getProfileHTML: function(user){
   user.displayName +'" height="35"/>' + '</a>'+user.displayName;
   return html;
 }
-function signinCallback(authResult) {
+/*function signinCallback(authResult) {
   if (authResult['status']['signed_in']) {
     // Update the app to reflect a signed in user
     // Hide the sign-in button now that the user is authorized, for example:
@@ -76,4 +76,4 @@ function signinCallback(authResult) {
     //   "immediate_failed" - Could not automatically log in the user
     console.log('Sign-in state: ' + authResult['error']);
   }
-}
+}*/
