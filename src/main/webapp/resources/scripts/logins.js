@@ -3,7 +3,7 @@ $(document).ready(function(){
   $('#login_fb').click(function(){
     FB.login(function(response) {
    if (response.authResponse) {
-	//window.location.href = "index.html";
+	window.location.href = "index.html";
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
@@ -35,7 +35,7 @@ window.fbAsyncInit = function() {
 
 
 
-/*SigninCallback: function(authResult){
+SigninCallback: function(authResult){
   if (authResult['access_token']) {
     $('#gConnect').hide();
 
@@ -53,8 +53,7 @@ connect: function(){
       var html=helper.getProfileHTML(result);
         
       $('#profileArea').html('Signed in as' + helper.user.displayName + '!')
-      $('disconnect').show();
-      $('authButtons').show();
+      
     }
   };
 }
@@ -63,7 +62,7 @@ getProfileHTML: function(user){
   user.image.url +'" alt="'+user.displayName + '" title="' + 
   user.displayName +'" height="35"/>' + '</a>'+user.displayName;
   return html;
-}*/
+}
 function signinCallback(authResult) {
   if (authResult['status']['signed_in']) {
     // Update the app to reflect a signed in user
