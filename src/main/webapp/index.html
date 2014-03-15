@@ -5,10 +5,28 @@
 		<title>Milou</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link href="resources/css/pra1.css" rel="stylesheet" type="text/css">
-		<link href="resources/scripts/face.js">
-		<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+		<link href="resources/scripts/logins.js">
+		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 	</head>
 	<body>
+		<script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+	<span id="gConnect">
+		<span class="g-signin"
+		 data-callback="signinCallback"
+    	data-clientid="819749437884.apps.googleusercontent.com"
+    	data-cookiepolicy="single_host_origin"
+    	data-requestvisibleactions="http://schemas.google.com/AddActivity"
+    	data-scope="profile"
+    	data-theme="dark">
+		</span>
+	</span>
 	
 	
 	<div id="pageup">
@@ -27,7 +45,8 @@
 <div id="topbanner">
 	<ul >
 		<li style="vertical-align:top;margin-top:14px;">
-		<a href="pages/login.html">Logi sisse</a>
+			<img id="signinButton" onclick="signinCallback"src="resources/images/googlesignin_on.png" alt="glogin">
+		<!--<a href="pages/login.html">Logi sisse</a>-->
 			 
 		</li>
 		<li>
