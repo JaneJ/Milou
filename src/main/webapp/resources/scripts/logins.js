@@ -1,4 +1,4 @@
-/*$(document).ready(function(){
+$(document).ready(function(){
 
   $('#login_button').click(function(){
     FB.login(function(response) {
@@ -23,13 +23,13 @@ window.fbAsyncInit = function() {
         });
       };
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/all.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));*/
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/et_EE/all.js#xfbml=1&appId=1385045075103554";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
 /*SigninCallback: function(authResult){
   if (authResult['access_token']) {
@@ -74,11 +74,3 @@ function signinCallback(authResult) {
     console.log('Sign-in state: ' + authResult['error']);
   }
 }
-FB.Event.subscribe('auth.authResponseChange', function(response) {
-    if (response.status === 'connected') {
-      console.log('Logged in');
-    } else {
-      FB.login();
-    }
-  });
-};
