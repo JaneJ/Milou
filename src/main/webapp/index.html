@@ -17,16 +17,7 @@
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
      })();
     </script>
-	<span id="gConnect">
-		<span class="g-signin"
-		 data-callback="signinCallback"
-    	data-clientid="819749437884.apps.googleusercontent.com"
-    	data-cookiepolicy="single_host_origin"
-    	data-requestvisibleactions="http://schemas.google.com/AddActivity"
-    	data-scope="profile"
-    	data-theme="dark">
-		</span>
-	</span>
+	
 	
 	
 	<div id="pageup">
@@ -45,9 +36,16 @@
 <div id="topbanner">
 	<ul >
 		<li style="vertical-align:top;margin-top:14px;">
-			<img id="signinButton" onclick="signinCallback"src="resources/images/googlesignin_on.png" alt="glogin">
-		<!--<a href="pages/login.html">Logi sisse</a>-->
-			 
+			<span id="gConnect">
+		<span class="g-signin"
+		 data-callback="signinCallback"
+    	data-clientid="819749437884.apps.googleusercontent.com"
+    	data-cookiepolicy="single_host_origin"
+    	data-requestvisibleactions="http://schemas.google.com/AddActivity"
+    	data-scope="'https://www.googleapis.com/auth/plus.me'"
+    	data-theme="dark">
+		</span>
+	</span>
 		</li>
 		<li>
 			<a href="pages/signup.html">Registreeru</a>
