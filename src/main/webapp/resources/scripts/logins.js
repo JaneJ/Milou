@@ -31,7 +31,7 @@ window.fbAsyncInit = function() {
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));*/
 
-onSigninCallback: function(authResult){
+/*SigninCallback: function(authResult){
   if (authResult['access_token']) {
     $('#gConnect').hide();
 
@@ -40,3 +40,45 @@ onSigninCallback: function(authResult){
     });
   }else if (authResult['error']) {}
 }
+connect: function(){
+  gapi.client.plus.people.get({userID:'me'}).execute{
+    function(result){
+      helper.user=result;
+      $('#profileArea').hide();
+
+      var html=helper.getProfileHTML(result);
+        
+      $('#profileArea').html('Signed in as' + helper.user.displayName + '!')
+      $('disconnect').show();
+      $('authButtons').show();
+    }
+  };
+}
+getProfileHTML: function(user){
+  var html='<a target=_"blank" href="'+user.url + '">'+'<img src="'+
+  user.image.url +'" alt="'+user.displayName + '" title="' + 
+  user.displayName +'" height="35"/>' + '</a>'+user.displayName;
+  return html;
+}*/
+function signinCallback(authResult) {
+  if (authResult['status']['signed_in']) {
+    // Update the app to reflect a signed in user
+    // Hide the sign-in button now that the user is authorized, for example:
+    document.getElementById('signinButton').setAttribute('style', 'display: none');
+  } else {
+    // Update the app to reflect a signed out user
+    // Possible error values:
+    //   "user_signed_out" - User is signed-out
+    //   "access_denied" - User denied access to your app
+    //   "immediate_failed" - Could not automatically log in the user
+    console.log('Sign-in state: ' + authResult['error']);
+  }
+}
+FB.Event.subscribe('auth.authResponseChange', function(response) {
+    if (response.status === 'connected') {
+      console.log('Logged in');
+    } else {
+      FB.login();
+    }
+  });
+};

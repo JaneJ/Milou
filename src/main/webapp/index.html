@@ -10,6 +10,16 @@
 		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 	</head>
 	<body>
+		<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1385045075103554',
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
+
 		
 	
 	
@@ -36,7 +46,8 @@
     	data-clientid="819749437884.apps.googleusercontent.com"
     	data-cookiepolicy="single_host_origin"
     	data-requestvisibleactions="http://schemas.google.com/AddActivity"
-    	data-scope="https://www.googleapis.com/auth/plus.me">
+    	data-scope="'https://www.googleapis.com/auth/plus.me'"
+    	data-theme="dark">
 		</span>
 	</span>
 		</li>
