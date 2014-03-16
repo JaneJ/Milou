@@ -77,8 +77,8 @@ window.fbAsyncInit = function() {
   function getUserInfo() {
       FB.api('/me', function(response) {
 
-    var str="<b>Name</b> : "+response.name+"<br>";
-        str +="<input type='button' value='Logout' onclick='Logout();'/>";
+    var str="Tere : "+response.name+"!";
+        //str +="<input type='button' value='Logout' onclick='Logout();'/>";
         document.getElementById("status").innerHTML=str;
               
     });
