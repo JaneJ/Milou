@@ -1,30 +1,3 @@
-/*window.fbAsyncInit = function() {
-$(document).ready(function() {
-      FB.init({
-        appId   : '1385045075103554',
-        cookie  : true, // enable cookies to allow the server to access the session
-        xfbml   : true, // parse XFBML
-        //channelUrl : '/channel.html', // channel.html file
-        oauth   : true, // enable OAuth 2.0
-        status : false
-      });
-
-      // whenever the user logs in, we refresh the page
-      FB.Event.subscribe('auth.login', function(response) {
-        if (response.authResponse) {
-          window.location.href="#";
-        }
-      });
-    };
-
-    (function() {
-      var e = document.createElement('script'); e.async = true;
-      e.src = document.location.protocol +
-        '//connect.facebook.net/en_US/all.js';
-      document.getElementById('fb-root').appendChild(e);
-    }());
-
-  });*/
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -34,60 +7,22 @@ window.fbAsyncInit = function() {
       xfbml      : true  // parse XFBML
     });
     
-    
-  FB.Event.subscribe('auth.authResponseChange', function(response) 
-  {
-   if (response.status === 'connected') 
+   
+  
+FB.login(function(response) {
+  if (response.authResponse) 
     {
-      document.getElementById("message").innerHTML +=  "<br>Connected to Facebook";
-      //SUCCESS
-      
-    }  
-  else if (response.status === 'not_authorized') 
-    {
-      document.getElementById("message").innerHTML +=  "<br>Failed to Connect";
-
-    //FAILED
-    } else 
-    {
-      document.getElementById("message").innerHTML +=  "<br>Logged Out";
-
-      //UNKNOWN ERROR
-    }
-  }); 
-  
-    };
-    
-    function Login()
-  {
-  
-    FB.login(function(response) {
-       if (response.authResponse) 
-       {
-          getUserInfo();
-        } else 
-        {
-           console.log('User cancelled login or did not fully authorize.');
-        }
-     },{scope: 'email,user_photos,user_videos'});
-  
-  
-  }
-
-  function getUserInfo() {
       FB.api('/me', function(response) {
-
-    var str="Tere : "+response.name+"!";
-        //str +="<input type='button' value='Logout' onclick='Logout();'/>";
-        document.getElementById("status").innerHTML=str;
               
     });
+  } else 
+    {
+      console.log('User cancelled login or did not fully authorize.');
     }
+     },{scope: 'email,user_photos,user_videos'});
+  
+
  
-  function Logout()
-  {
-    FB.logout(function(){document.location.reload();});
-  }
 
   // Load the SDK asynchronously
   (function(d){
@@ -99,46 +34,7 @@ window.fbAsyncInit = function() {
    }(document));
 
 
-
-
 /*
-
-
-$(document).ready(function(){
-
-  $('#loginfb').click(function(){
-    FB.login(function(response) {
-   if (response.authResponse) {
-     console.log('Welcome!  Fetching your information.... ');
-     FB.api('/me', function(response) {
-       console.log('Good to see you, ' + response.name + '.');
-     });
-   } else {
-     console.log('User cancelled login or did not fully authorize.');
-   }
- });
-  });
-});
-
-window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1385045075103554',
-          status     : true,
-          xfbml      : true
-        });
-      };
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/et_EE/all.js#xfbml=1&appId=1385045075103554";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-
-
-
 
 function signinCallback(authResult){
   if (authResult['access_token']) {
