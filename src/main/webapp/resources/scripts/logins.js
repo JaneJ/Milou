@@ -42,7 +42,7 @@
         // Person is now logged out
     });*/
 $(document).ready(function(){
-  Login(){
+  $("#loginfb").click(function(){
   
     FB.login(function(response) {
        if (response.authResponse) 
@@ -57,22 +57,22 @@ $(document).ready(function(){
      },);
   
   
-  }}
+  });}
 
   function getUserInfo() {
       FB.api('/me', function(response) {
 
     var str="Tere : "+response.name+"!";
-        str +="<input type='image' src="'resources/images/logoutfb.png'" alt="'logoutfb'" onclick='Logout();'/>";
+        str +="<input type='image' id="'logoutfb'" src="'resources/images/logoutfb.png'" alt="'logoutfb'" onclick='Logout();'/>";
         document.getElementById("status").innerHTML=str;
               
     });
     
 $(document).ready(function(){
-function Logout()
+  $("#logoutfb").click(function()
   {
     FB.logout(function(){window.location.href="#";});
-  }}
+  });}
 /*
 $(document).ready(function(){
 
