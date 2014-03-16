@@ -1,4 +1,4 @@
-window.fbAsyncInit = function() {
+/*window.fbAsyncInit = function() {
 $(document).ready(function() {
       FB.init({
         appId   : '1385045075103554',
@@ -24,10 +24,10 @@ $(document).ready(function() {
       document.getElementById('fb-root').appendChild(e);
     }());
 
-  });
+  });*/
 
 
-/*
+
 
 
 
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 
-  $('#login_fb').click(function(){
+  $('#loginfb').click(function(){
     FB.login(function(response) {
    if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
@@ -66,7 +66,7 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-*/
+
 
 
 
