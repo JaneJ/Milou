@@ -28,12 +28,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
 $(document).ready(function(){
 
   $('#loginfb').click(function(){
