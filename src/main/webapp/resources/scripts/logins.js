@@ -1,69 +1,36 @@
+$(document).ready(function(){
+    FB.login(function(response) {
+   if (response.authResponse) {
+	window.location.href = "*";
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+   } else {
+     console.log('User cancelled login or did not fully authorize.');
+   }
+ });
+  });
+);
 
 window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1385045075103554', // App ID
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
-    
-   
-  
-FB.login(function(response) {
-  if (response.authResponse) 
-    {
-      FB.api('/me', function(response) {
-              
-    });
-  } else 
-    {
-      console.log('User cancelled login or did not fully authorize.');
-    }
-     },{scope: 'email,user_photos,user_videos'});
-  
+        FB.init({
+          appId      : '1385045075103554',
+          status     : true,
+          xfbml      : true
+        });
+      };
 
- 
-
-  // Load the SDK asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/et_EE/all.js#xfbml=1&appId=1385045075103554";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
 
-/*
 
-function signinCallback(authResult){
-  if (authResult['access_token']) {
-    $('#gConnect').hide();
-
-    gapi.client.load('plus', 'v1',function(){
-      helper.connect();
-    });
-  }else if (authResult['error']) {}
-}
-function connect(){
-  gapi.client.plus.people.get({userID:'me'}).execute{
-    function(result){
-      helper.user=result;
-      $('#profileArea').hide();
-
-      var html=helper.getProfileHTML(result);
-        
-      $('#profileArea').html('Signed in as' + helper.user.displayName + '!')
-      
-    }
-  };
-}
-getProfileHTML: function(user){
-  var html='<a target=_"blank" href="'+user.url + '">'+'<img src="'+
-  user.image.url +'" alt="'+user.displayName + '" title="' + 
-  user.displayName +'" height="35"/>' + '</a>'+user.displayName;
-  return html;
-}
 /*function signinCallback(authResult) {
   if (authResult['status']['signed_in']) {
     // Update the app to reflect a signed in user
