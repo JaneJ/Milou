@@ -1,9 +1,44 @@
+window.fbAsyncInit = function() {
+$(document).ready(function() {
+      FB.init({
+        appId   : '1385045075103554',
+        cookie  : true, // enable cookies to allow the server to access the session
+        xfbml   : true, // parse XFBML
+        //channelUrl : '/channel.html', // channel.html file
+        oauth   : true, // enable OAuth 2.0
+        status : false
+      });
+
+      // whenever the user logs in, we refresh the page
+      FB.Event.subscribe('auth.login', function(response) {
+        if (response.authResponse) {
+          window.location.href="#";
+        }
+      });
+    };
+
+    (function() {
+      var e = document.createElement('script'); e.async = true;
+      e.src = document.location.protocol +
+        '//connect.facebook.net/en_US/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
+
+  });
+
+
+/*
+
+
+
+
+
+
 $(document).ready(function(){
 
   $('#login_fb').click(function(){
     FB.login(function(response) {
    if (response.authResponse) {
-	window.location.href = "index.html";
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
@@ -31,7 +66,7 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-
+*/
 
 
 
