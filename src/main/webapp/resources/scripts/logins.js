@@ -41,8 +41,7 @@
    FB.logout(function(response) {
         // Person is now logged out
     });*/
-function Login()
-  {
+function Login(){
   
     FB.login(function(response) {
        if (response.authResponse) 
