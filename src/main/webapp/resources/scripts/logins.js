@@ -41,7 +41,8 @@
    FB.logout(function(response) {
         // Person is now logged out
     });*/
-function Login(){
+$(document).ready(function(){
+  Login(){
   
     FB.login(function(response) {
        if (response.authResponse) 
@@ -56,7 +57,7 @@ function Login(){
      },);
   
   
-  }
+  }}
 
   function getUserInfo() {
       FB.api('/me', function(response) {
@@ -66,11 +67,12 @@ function Login(){
         document.getElementById("status").innerHTML=str;
               
     });
-    }
+    
+$(document).ready(function(){
 function Logout()
   {
     FB.logout(function(){window.location.href="#";});
-  }
+  }}
 /*
 $(document).ready(function(){
 
