@@ -1,7 +1,52 @@
-$(document).ready(function(){
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1385045075103554',
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
+
+  FB.Event.subscribe('auth.authResponseChange', function(response) {
+    // Here we specify what we do with the response anytime this event occurs. 
+    if (response.status === 'connected') {
+      
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      
+      FB.login();
+    } else {
+      
+      FB.login();
+    }
+  });
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+   js.src = "//connect.facebook.net/en_US/all.js";
+   ref.parentNode.insertBefore(js, ref);
+  }(document));
+
+  // Here we run a very simple test of the Graph API after login is successful. 
+  // This testAPI() function is only called in those cases. 
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Good to see you, ' + response.name + '.');
+    });
+  }
+
+
+
+/*$(document).ready(function(){
+
+  $('#login_fb').click(function(){
     FB.login(function(response) {
    if (response.authResponse) {
-	window.location.href = "*";
+	window.location.href = "index.html";
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
@@ -11,7 +56,7 @@ $(document).ready(function(){
    }
  });
   });
-);
+});
 
 window.fbAsyncInit = function() {
         FB.init({
@@ -31,6 +76,36 @@ window.fbAsyncInit = function() {
 
 
 
+
+
+function signinCallback(authResult){
+  if (authResult['access_token']) {
+    $('#gConnect').hide();
+
+    gapi.client.load('plus', 'v1',function(){
+      helper.connect();
+    });
+  }else if (authResult['error']) {}
+}
+function connect(){
+  gapi.client.plus.people.get({userID:'me'}).execute{
+    function(result){
+      helper.user=result;
+      $('#profileArea').hide();
+
+      var html=helper.getProfileHTML(result);
+        
+      $('#profileArea').html('Signed in as' + helper.user.displayName + '!')
+      
+    }
+  };
+}
+getProfileHTML: function(user){
+  var html='<a target=_"blank" href="'+user.url + '">'+'<img src="'+
+  user.image.url +'" alt="'+user.displayName + '" title="' + 
+  user.displayName +'" height="35"/>' + '</a>'+user.displayName;
+  return html;
+}
 /*function signinCallback(authResult) {
   if (authResult['status']['signed_in']) {
     // Update the app to reflect a signed in user
