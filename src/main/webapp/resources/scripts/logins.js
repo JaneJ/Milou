@@ -1,4 +1,4 @@
-/*window.fbAsyncInit = function() {
+window.fbAsyncInit = function() {
   FB.init({
     appId      : '1385045075103554',
     status     : true, // check login status
@@ -41,45 +41,15 @@
    FB.logout(function(response) {
         // Person is now logged out
     });*/
-$(document).ready(function(){
-  $("#loginfb").click(function(){
-  
-    FB.login(function(response) {
-       if (response.authResponse) 
-       {
-        window.location.href="#";
-        console.log('Welcome!  Fetching your information.... ');
-        getUserInfo();
-        } else 
-        {
-           console.log('User cancelled login or did not fully authorize.');
-        }
-     },);
-  
-  
-  });}
 
-  function getUserInfo() {
-      FB.api('/me', function(response) {
 
-    var str="Tere : "+response.name+"!";
-        str +="<input type='image' id="'logoutfb'" src="'resources/images/logoutfb.png'" alt="'logoutfb'" onclick='Logout();'/>";
-        document.getElementById("status").innerHTML=str;
-              
-    });
-    
-$(document).ready(function(){
-  $("#logoutfb").click(function()
-  {
-    FB.logout(function(){window.location.href="#";});
-  });}
-/*
-$(document).ready(function(){
 
-  
+/*$(document).ready(function(){
+
+  $('#login_fb').click(function(){
     FB.login(function(response) {
    if (response.authResponse) {
-	window.location.href = "#";
+	window.location.href = "index.html";
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
@@ -88,7 +58,8 @@ $(document).ready(function(){
      console.log('User cancelled login or did not fully authorize.');
    }
  });
-  });*/
+  });
+});
 
 window.fbAsyncInit = function() {
         FB.init({
@@ -108,7 +79,7 @@ window.fbAsyncInit = function() {
 
 
 
-/*
+
 
 function signinCallback(authResult){
   if (authResult['access_token']) {
