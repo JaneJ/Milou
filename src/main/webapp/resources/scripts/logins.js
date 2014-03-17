@@ -38,13 +38,9 @@ window.fbAsyncInit = function() {
       console.log('Good to see you, ' + response.name + '.');
     });
   }
-<<<<<<< HEAD
    FB.logout(function(response) {
         // Person is now logged out
     });
-=======
->>>>>>> 8ac990c353a918c209dac3095493efaa9e066687
-
 
 
 /*$(document).ready(function(){
