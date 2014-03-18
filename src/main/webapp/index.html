@@ -32,9 +32,21 @@
 <div id="topbanner">
 	<ul >
 		<li style="vertical-align:top;margin-top:14%;">
-			<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>
-			
+			<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+			<!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>
+			-->
 					
+		</li>
+		<li class="profileArea">
+			<span id="signinButton">
+ 				 <span class="g-signin"
+    			data-callback="signinCallback"
+    			data-clientid="819749437884.apps.googleusercontent.com"
+   				data-cookiepolicy="single_host_origin"
+    			data-requestvisibleactions="http://schemas.google.com/AddActivity"
+   				data-scope="https://www.googleapis.com/auth/plus.login">
+  				</span>
+			</span>
 		</li>
 		<li>
 			<a href="pages/signup.html">Registreeru</a>
