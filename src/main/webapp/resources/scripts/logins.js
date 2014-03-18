@@ -37,6 +37,9 @@
       console.log('Good to see you, ' + response.name + '.');
     });
   }
+   FB.logout(function(response) {
+        // Person is now logged out
+    });*/
 
 //Google +
 
