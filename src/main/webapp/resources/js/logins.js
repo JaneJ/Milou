@@ -34,14 +34,10 @@ function Login(){
   };
 
 function Logout()
-FB.getLoginStatus(function(response) {
   {
-    FB.api("/me/permissions", "delete", function(response){ 
 
-
-    });
-    //FB.logout(function(){document.location.reload();});
-  }}
+    FB.logout(function(){document.location.reload();});
+  }
 
     
 
