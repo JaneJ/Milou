@@ -1,8 +1,8 @@
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1385045075103554', // App ID
-      status     : true, // check login status
-      //cookie     : true, // enable cookies to allow the server to access the session
+      status     : false, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true  // parse XFBML
     });
 
@@ -24,7 +24,7 @@ function Login(){
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
         var str="Tere : "+response.name+"!";
-        str +="<input type='button' id='logoutfb' value='Logout' />";
+        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
      });
    } else {
@@ -35,6 +35,7 @@ function Login(){
 
 function Logout()
   {
+
     FB.logout(function(){document.location.reload();});
   }
 
