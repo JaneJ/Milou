@@ -33,6 +33,11 @@ function Login(){
  });
   };
 
+function Logout()
+  {
+    FB.logout(function(){document.location.reload();});
+  }
+
     
 
 
