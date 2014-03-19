@@ -22,10 +22,12 @@ function Login(){
     FB.login(function(response) {
    if (response.authResponse) {
       console.log('Welcome!  Fetching your information.... ');
+      var access_token =   FB.getAuthResponse()['accessToken'];
+      console.log('Access Token = '+ access_token);
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
-       FB.getAuthResponse()['accessToken'];
-       alert(response.authResponse.accessToken);
+
+  
        /*if(me.id== | me.id== | me.id==){
         var str="Tere : "+response.name+"!";
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";<br>
