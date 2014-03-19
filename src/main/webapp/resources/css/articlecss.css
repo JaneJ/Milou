@@ -68,15 +68,8 @@ list-style-type:none;
 	margin-top: 14px;
 	
 }
-#pildike h2 a{
-	text-decoration: none;
-	color: black;
-}
 
-ul a{
-	color: black;
-	font-family: 'Flamenco', cursive;
-}
+
 
 ul li {
 		/* Setting a common base */
@@ -96,6 +89,7 @@ ul li {
 	margin: 0px;
 	border-top: 1px solid #999;
 	border-bottom: 2px solid;}
+
 #dropmenu li {
 	list-style-type: none;
 	text-align: center;
@@ -166,134 +160,7 @@ margin-bottom: 0px;
 margin-left: 8px;
 }
 
-#sisukoht {
-display: block;
-margin: 0px;
-padding: 0px;
-clear: both;
-height: auto;
-width: 100%;
-}
-#sisukoht .artikli-sisu {
-float: left;
-width: 300px;
-height: 300px;
-margin-top: 0px;
-margin-right: 20px;
-margin-bottom: 10px;
-margin-left: 0px;
-text-shadow: 0px 1px 1px #fff;
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 10px;
-padding-left: 0px;
-}
 
-#sisukoht  .pildike{
-
-	padding: 0px;
-	margin: 0px;
-}
-
-#sisukoht  .pildike .aligncenter {
-width: 305px;
-height: 135px;
-padding: 5px;
-margin-top: 0px;
-margin-right: auto;
-margin-bottom: 5px;
-margin-left: auto;
-border: 1px solid #ECE9D8;
-background-color: #FFFFFF;
-font-weight: bold;
-}
-#sisukoht .artikli-sisu .kirjeldus {
-display: block;
-margin: 0px;
-padding: 0px;
-clear: both;
-height: auto;
-width: 100%;
-font-size: 14px;
-color: black;
-line-height: 16px;
-}
-
-#sisukoht .artikli-sisu a {
-color: #000000;
-text-decoration: none;
-}
-
-
-#sisukoht .artikli-sisu .pildike .aligncenter {
-padding: 5px;
-margin-top: 0px;
-margin-right: auto;
-margin-bottom: 5px;
-margin-left: auto;
-border: 1px solid #ECE9D8;
-background-color: #FFFFFF;
-}
-.paranda{
-	clear: both;
-}
-#sidebar {
-margin: 0px;
-float: right;
-height: auto;
-width: 336px;
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 3em;
-padding-left: 0px;
-}
-ul.sidebarlist li {
-display: block;
-clear: both;
-height: auto;
-width: auto;
-list-style-image: none;
-list-style-type: none;
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 10px;
-margin-left: 0px;
-position: relative;
-border-top-width: 0px;
-border-right-width: 0px;
-border-bottom-width: 0px;
-border-left-width: 0px;
-border-top-style: none;
-border-right-style: none;
-border-bottom-style: none;
-border-left-style: none;
-padding: 0px;
-}
-
-ul.sidebarlist .categories .sissekanne {
-margin: 0px;
-padding: 0px;
-clear: both;
-height: auto;
-width: 100%;
-font-size: 12px;
-
-}
-
-.sissekanne-meta h2 {
-display: block;
-clear: both;
-height: auto;
-width: auto;
-margin: 0px;
-border-top-width: 1px;
-border-top-style: dotted;
-border-bottom-width:1px; 
-border-bottom-style:dotted; 
-padding: 10px;
-padding-left: 0px;
-font-size: 16px;
-}
 
 #search {
 padding: 0px;
@@ -360,41 +227,13 @@ position: relative;
 	font-family: 'Flamenco', cursive;
 }
 
-table  a{
-	text-decoration: none;
-	color: black
-}
+
 
 #footer-right a{
 	text-decoration: none;
 	color: black;
 }
-#sisukoht p{
-	padding: 0px;
-	margin: 20px;
-	font-family: 'Love Ya Like A Sister', cursive;
-	font-size: 40px;
-	text-align: center;
 
-}
-#sisukoht img{
-	height: 200px;
-	width: 640px;
-	padding: 0px;
-	margin: 0px;
-	
-}
-table td{
-	vertical-align: top;
-}
-table td h2{
-	margin: 0px;
-	padding: 0px;
-	text-align: left;
-}
-table td div{
-	padding: 2px;
-	margin: 2px;}
 
 
 #loginfb{
@@ -426,6 +265,34 @@ table td div{
 	font-family: "Times New Roman", Times, serif;
 
 }
+.teemad {
+	margin: 0%;
+	padding: 2% 0 2% 0;
+	font-size: 140%;
+	font-weight: bold;
 
 
+}
+.pealkiri{
+	margin: 0%;
+	font-size: 240%:;
+	padding: 2% 0 2% 0;
+	font-weight:bold;
 
+
+}
+
+.lyhikirjeldus{
+	margin: 0%;
+	font-size: 240%:;
+	padding: 2% 0 2% 0;
+	font-weight:bold;
+
+}
+
+.artiklisisu{
+	margin: 0%;
+	font-size: 240%:;
+	padding: 2% 0 2% 0;
+	font-weight:bold;
+}

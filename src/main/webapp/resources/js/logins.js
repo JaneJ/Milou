@@ -23,6 +23,16 @@ function Login(){
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
+       console.log(me.id);
+       console.log(response.authResponse.accessToken);
+       /*if(me.id== | me.id== | me.id==){
+        var str="Tere : "+response.name+"!";
+        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";<br>
+        str +="<a href="pages/addarticle.html">Lisa uudis</a></li>"
+        document.getElementById("profileArea").innerHTML=str;
+
+
+       }*/
         var str="Tere : "+response.name+"!";
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
@@ -30,7 +40,7 @@ function Login(){
    } else {
      console.log('User cancelled login or did not fully authorize.');
    }
- });
+ },{perms:'read_stream,publish_stream,offline_access'});
   };
 
 function Logout()

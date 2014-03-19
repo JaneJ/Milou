@@ -1,0 +1,126 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Milou</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=signinCallback"></script>
+		<link rel="stylesheet" type="text/css" href="resources\articlecss.css" ></script>
+		<script type="text/javascript" src="resources\lisa.js" ></script>
+		<link href="resources/css/pra1.css" rel="stylesheet" type="text/css">
+		
+		
+	</head>
+	<body >
+		<!--<div id="fb-root"></div>-->
+
+	
+	
+	<div id="pageup">
+	<a id ="page_up"></a> <!-- voimaldab tagasi lehekulje algusesse minna-->
+	</div>
+
+<div id="container">
+<div id="header">
+<div class="innerwrap">
+
+<div id="siteinfo" >
+	<a href="/index.html"  title="Milou"><img src="resources/images/milou.png" alt="logo"></a>
+	
+</div><!--Siteinfo end-->
+
+<div id="topbanner">
+	<ul >
+		<li id="profileArea" >
+
+			<button id="loginfb" onclick="Login()">FB Login</button>
+					
+		</li>
+		
+		<li>
+			<a href="pages/signup.html">Registreeru</a>
+		</li>
+	</ul>
+<div id="b-1" class="block_outer b-1"><div id="a-55" class="block_inner a-1 block_both ">
+	<a target="_blank"></a></div></div>
+</div><!-- TOPBANNER END -->
+
+
+<div id ="teemad">
+	<ul id="dropmenu" class="menu">
+		<li id="IT"><a href="pages/category_it.html" title ="IT">IT</a> </li>
+		<li id="Kultuur"><a href="pages/category_culture.html">Kultuur</a></li>
+		<li><a href="pages/category_sport.html">Sport</a></li>
+		<li><a href="pages/category_economy.html">Majandus</a></li>
+		<li><a href="pages/category_comics.html">Koomiks</a></li>
+		<li><a href="pages/category_crime.html">Krimi</a> </li>
+	</ul>
+<div id="search">
+	<input id ="search-designe" type="text" value="Otsi Miloust">
+	
+</div>	
+</div><!--teemade l&#245;pp-->
+</div><!--innerwrap l&#245;pp-->
+</div><!--headeri l&#245;pp-->
+
+
+<div id="main">
+	<div class="innerwrap">
+		<div id="sisu">
+<div id="sisucontainer">
+	<form method="post"enctype="multipart/form-data" action="#" onsubmit="return (this)";>
+	<div class="teemad" >Teema</div>
+	<input type="radio" name="teema" value="it">IT
+	<input type="radio" name="teema" value="kultuur">Kultuur
+	<input type="radio" name="teema" value="sport">Sport
+	<input type="radio" name="teema" value="majandus">Majandus
+	<input type="radio" name="teema" value="koomiks">Koomiks
+	<input type="radio" name="teema" value="Krimi">Krimi
+	<div class="pealkiri">Pealkiri</div>
+	<textarea id ="artiklipealkiri" rows="3" cols="50" maxlength="80"></textarea>
+	<div id="märke"></div>
+	<div class="lyhikirjeldus">Lühikirjeldus</div>
+	<textarea id ="lyhikirjeldus" rows="5" cols="50" maxlength="300"></textarea>
+	<div id="märkelühi"></div>
+	<div class="artiklisisu">Artikli sisu</div>
+	<textarea id ="artiklisisu" rows="15" cols="100"></textarea>
+	<div class="autor">Autor <input id ="autor" type="text" name="autor"></div>
+	
+	
+	<label for="file">Lae pilt üles:</label>
+	<input type="file" name="file" id="file"><br>
+	
+	<input type="submit" name="submit" value="Submit">
+	</form>
+
+
+</div><!--sisucontainer l&#245;pp-->
+</div><!--sisu l&#245;pp-->
+
+
+
+<div id ="footer">
+	<div id="footer-left">
+		&#169; 2014 Milou</div><!--footer-left l&#245;pp-->
+	<div id="footer-right">
+		<a href="pages/faq.html">KKK</a>
+		<a href="pages/help.html">Abi</a>
+		<a href="pages/contact.html">Kontakt</a>
+		<a href="pages/sitemap.html">Sisukaart</a>
+
+
+</div><!--footer-right lõpp-->
+</div><!--footri lõpp-->
+	
+ </div><!-- INNERWRAP lõpp -->
+</div> <!-- MAIN lõpp -->
+
+</div> <!-- CONTAINER lõpp -->
+
+
+
+
+</body>
+
+</html>
