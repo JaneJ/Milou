@@ -11,7 +11,7 @@ window.fbAsyncInit = function() {
 function Login(){
     FB.login(function(response) {
    if (response.authResponse) {
-  window.location.href = "avaleht.html";
+  window.location.href = "#";
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
