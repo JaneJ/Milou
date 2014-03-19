@@ -24,7 +24,7 @@ function Login(){
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
         var str="Tere : "+response.name+"!";
-        str +="<input type='button' id='logoutfb' value='Logout' />";
+        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
      });
    } else {
@@ -37,6 +37,25 @@ function Logout()
   {
     FB.logout(function(){document.location.reload();});
   }
+
+function islogedin(){
+  FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    
+    var str="Tere : "+response.name+"!";
+        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
+        document.getElementById("profileArea").innerHTML=str;
+    
+  } else if (response.status === 'not_authorized') {
+    var str ="<button id='loginfb' onclick='Login()'>FB Login</button>";
+        document.getElementById("profileArea").innerHTML=str;
+   
+  } else {
+    var str ="<button id='loginfb' onclick='Login()'>FB Login</button>";
+        document.getElementById("profileArea").innerHTML=str;
+  
+ });
+}
 
     
 
