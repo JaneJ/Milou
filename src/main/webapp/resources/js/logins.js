@@ -1,8 +1,8 @@
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1385045075103554', // App ID
-      status     : true, // check login status
-      //cookie     : true, // enable cookies to allow the server to access the session
+      status     : false, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true  // parse XFBML
     });
 
@@ -34,9 +34,14 @@ function Login(){
   };
 
 function Logout()
+FB.getLoginStatus(function(response) {
   {
-    FB.logout(function(){document.location.reload();});
-  }
+    FB.api("/me/permissions", "delete", function(response){ 
+
+
+    });
+    //FB.logout(function(){document.location.reload();});
+  }}
 
     
 
