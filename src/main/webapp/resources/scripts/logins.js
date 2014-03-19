@@ -1,77 +1,42 @@
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1385045075103554', // App ID
-      channelUrl : 'http://hayageek.com/examples/oauth/facebook/oauth-javascript/channel.html', // Channel File
       status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
+      //cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true  // parse XFBML
     });
     
-    
-  FB.Event.subscribe('auth.authResponseChange', function(response) 
-  {
-   if (response.status === 'connected') 
-    {
-      document.getElementById("message").innerHTML +=  "<br>Connected to Facebook";
-      //SUCCESS
-      
-    }  
-  else if (response.status === 'not_authorized') 
-    {
-      document.getElementById("message").innerHTML +=  "<br>Failed to Connect";
 
-    //FAILED
-    } else 
-    {
-      document.getElementById("message").innerHTML +=  "<br>Logged Out";
 
-      //UNKNOWN ERROR
-    }
-  }); 
-  
-    };
-    
-    function Login()
-  {
-  
-    FB.login(function(response) {
-       if (response.authResponse) 
-       {
-          getUserInfo();
-        } else 
-        {
-           console.log('User cancelled login or did not fully authorize.');
-        }
-     });
-  
-  
-  }
-
-  function getUserInfo() {
-      FB.api('/me', function(response) {
-
-    var str="Tere : "+response.name+"!";
-        str +="<input type='button' id='logoutfb' value='Logout' onclick='Logout();'/>";
+$document.ready(function(){
+  $('#loginfb').click(function){
+    FB.login(function(response))
+    if (response.authResult) {
+      window.location.href="#";
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me',function){
+        console.log('Good to see you, ' + response.name + '.');
+        var str="Tere : "+response.name+"!";
+        str +="<input type='button' id='logoutfb' value='Logout' />";
         document.getElementById("profileArea").innerHTML=str;
-              
-    });
-    }
-
-  
-  }
-  function Logout()
-  {
+      }else{console.log('User cancelled login or did not fully authorize.');
+       }
+ });
+    
+(function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    
+   
+ $document.ready(function(){
+  $('#logutfb').click(function){
     FB.logout(function(){document.location.reload();});
-  }
+  }});
 
-  // Load the SDK asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
 
 
 /*
