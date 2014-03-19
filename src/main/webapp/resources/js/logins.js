@@ -22,7 +22,7 @@ function Login(){
    if (response.authResponse) {
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function(response) {
-       console.log('Good to see you, ' + response.name + '.');
+       console.log('Good to see you, ' + response.name + '.');      
         var str="Tere : "+response.name+"!";
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
@@ -37,7 +37,7 @@ function Logout()
   {
     FB.logout(function(){document.location.reload();});
   }
-
+/*
 function islogedin(){
   FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
