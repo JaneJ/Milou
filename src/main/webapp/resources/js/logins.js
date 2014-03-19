@@ -39,7 +39,7 @@ function Login(){
         var str="Tere : "+response.name+"!";
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
-        console.log(response.authResponse.accessToken);
+        
      });
    } else {
      console.log('User cancelled login or did not fully authorize.');
