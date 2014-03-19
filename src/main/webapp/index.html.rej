@@ -1,20 +1,16 @@
 diff a/src/main/webapp/index.html b/src/main/webapp/index.html	(rejected hunks)
-@@ -29,17 +29,13 @@
- 	
- </div><!--Siteinfo end-->
- 
- <div id="topbanner">
- 	<ul >
- 		<li style="vertical-align:top;margin-top:14%;">
--			<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>
--			
--			<p id="status">
--			<img src="resources/images/loginfb.png" onclick="Login()" alt="fblog"></p>
--					
-+			<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>	
- 		</li>
- 		<li>
- 			<a href="pages/signup.html">Registreeru</a>
- 		</li>
- 	</ul>
- <div id="b-1" class="block_outer b-1"><div id="a-55" class="block_inner a-1 block_both ">
+@@ -2,13 +2,13 @@
+ <!DOCTYPE HTML>
+ <html>
+ 	<head>
+ 		<title>Milou</title>
+ 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 		<link href="resources/css/pra1.css" rel="stylesheet" type="text/css">
+-		<link href="resources\scripts\logins.js" type="text/javascript" rel="script">
++		<script src="resources/scripts/logins.js"></script>
+ 		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+ 		<script src="http://connect.facebook.net/en_US/all.js"></script>
+ 		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=signinCallback"></script>
+ 		
+ 	</head>
+ 	<body>

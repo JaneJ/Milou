@@ -36,14 +36,14 @@ body{
 
 #topbanner {
 	list-style-type:none; 
-margin: 0px;
-float: right;
-height: 82px;
-width: 430px;
+	margin: 0%;
+	float: right;
+	height: 8%;
+	width: 15%;
 /* margin-top: 59px; */
-text-align: right;
-display: block;
-/* background: black; */
+	text-align: right;
+	display: block;
+	/*background: black;*/ 
 }
 #siteinfo{
 	text-decoration: none;
@@ -396,12 +396,37 @@ table td div{
 	padding: 2px;
 	margin: 2px;}
 
-#profileArea {
-float: right;
+/*#profileArea {
+float: left;
 width: 300px;
 margin-top: 5px;
 margin-left: 10px;
 text-align: right;
 vertical-align: top;
+}*/
+
+#loginfb{
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 10px;
+	background: rgba(0,0,0,0.8);
+	box-shadow: inset 0px 2px 10px rgba(225, 225, 225, 0.5);
+	color: white;
+	font:bold;
+	font-family: Sans-serif;
+	text-align:center;
+
 }
+#logoutfb{
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 10px;
+	background: rgba(0,0,0,0.8);
+	box-shadow: inset 0px 2px 10px rgba(225, 225, 225, 0.5);
+	color: white;
+	font:bold;
+	font-family: Sans-serif;
+	text-align:center;
+
+}
+
+
 
