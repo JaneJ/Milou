@@ -1,0 +1,16 @@
+diff a/src/main/webapp/resources/js/logins.js b/src/main/webapp/resources/js/logins.js	(rejected hunks)
+@@ -8,13 +8,13 @@
+ 
+ }; 
+ 
+ function Login(){
+     FB.login(function(response) {
+    if (response.authResponse) {
+-  window.location.href = "avaleht.html";
++  window.location.href = "#";
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function(response) {
+        console.log('Good to see you, ' + response.name + '.');
+         var str="Tere : "+response.name+"!";
+         str +="<input type='button' id='logoutfb' value='Logout' />";
+         document.getElementById("profileArea").innerHTML=str;
