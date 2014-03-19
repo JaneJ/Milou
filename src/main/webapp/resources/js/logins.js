@@ -54,8 +54,8 @@ function islogedin(){
     var str ="<button id='loginfb' onclick='Login()'>FB Login</button>";
         document.getElementById("profileArea").innerHTML=str;
   
- });
-}
+ }
+});}
 
     
 
