@@ -8,8 +8,7 @@ window.fbAsyncInit = function() {
     
 
 
-$document.ready(function(){
-  $('#loginfb').click(function){
+function Login(){
     FB.login(function(response))
     if (response.authResult) {
       window.location.href="#";
@@ -20,8 +19,8 @@ $document.ready(function(){
         str +="<input type='button' id='logoutfb' value='Logout' />";
         document.getElementById("profileArea").innerHTML=str;
       }else{console.log('User cancelled login or did not fully authorize.');
-       }
- });
+       }}}
+
     
 (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
@@ -36,6 +35,10 @@ $document.ready(function(){
   $('#logutfb').click(function){
     FB.logout(function(){document.location.reload();});
   }});
+
+ function out(){
+  console.log("Saab kätte!");
+ }
 
 
 
