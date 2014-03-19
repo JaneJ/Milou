@@ -5,15 +5,15 @@ import java.util.Date;
 
 public class Artiklid {
 
-    public Integer Id;
-    public String Autor;
-    public String Pealkiri;
-    public Image Pilt;
-    public String Lühikirjeldus;
-    public String Artikkel;
-    public String Teema;
-    public long Vaatamisi;
-    public Date Lisatud;
+    public Integer id;
+    public String autor;
+    public String pealkiri;
+    public Image pilt;
+    public String kirjeldus;
+    public String artikkel;
+    public String teema;
+    public long vaatamisi;
+    public Date lisatud;
  
     
 	
@@ -22,17 +22,17 @@ public class Artiklid {
     public Artiklid () {
     }
 
-    public Artiklid (Integer Id, String Autor, String Pealkiri,Image Pilt, String Lühikirjeldus, String Artikkel,
-    		String Teema, long Vaatamisi, Date Lisatud) {
-        this.Id = Id;
-        this.Autor = Autor;
-        this.Pealkiri = Pealkiri;
-        this.Pilt = Pilt;
-        this.Lühikirjeldus = Lühikirjeldus;
-        this.Artikkel = Artikkel;
-        this.Teema = Teema;
-        this.Vaatamisi = Vaatamisi;
-        this.Lisatud = Lisatud;
+    public Artiklid (Integer id, String autor, String pealkiri,Image pilt, String kirjeldus, String artikkel,
+    		String teema, long vaatamisi, Date lisatud) {
+        this.id = id;
+        this.autor = autor;
+        this.pealkiri = pealkiri;
+        this.pilt = pilt;
+        this.kirjeldus = kirjeldus;
+        this.artikkel = artikkel;
+        this.teema = teema;
+        this.vaatamisi = vaatamisi;
+        this.lisatud = lisatud;
     }
 
 }

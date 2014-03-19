@@ -4,22 +4,22 @@ import java.util.Date;
 
 public class Kommentaarid {
 	
-	public Integer Id;
-	public Integer Artikkel;
-    public String Autor;
-    public String Kommentaar;
-    public Date Aeg;
+	public Integer id;
+	public Integer artikkel;
+    public String autor;
+    public String kommentaar;
+    public Date aeg;
     
     
     public Kommentaarid () {
     }
 
-    public Kommentaarid (Integer Id, Integer Artikkel, String Autor, String Kommentaar, Date Aeg) {
-    	this.Id = Id;
-    	this.Artikkel = Artikkel;
-    	this.Autor = Autor;
-    	this.Kommentaar = Kommentaar;
-    	this.Aeg = Aeg;
+    public Kommentaarid (Integer id, Integer artikkel, String autor, String kommentaar, Date aeg) {
+    	this.id = id;
+    	this.artikkel = artikkel;
+    	this.autor = autor;
+    	this.kommentaar = kommentaar;
+    	this.aeg = aeg;
     }
 
 	
