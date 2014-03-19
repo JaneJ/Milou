@@ -3,7 +3,8 @@ window.fbAsyncInit = function() {
       appId      : '1385045075103554', // App ID
       status     : false, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
+      xfbml      : true,  // parse XFBML
+      oauth      : true 
     });
 
 };
