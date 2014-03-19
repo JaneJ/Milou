@@ -24,6 +24,8 @@ function Login(){
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
+       FB.getAuthResponse()['accessToken'];
+       alert(response.authResponse.accessToken);
        /*if(me.id== | me.id== | me.id==){
         var str="Tere : "+response.name+"!";
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";<br>
@@ -40,7 +42,7 @@ function Login(){
    } else {
      console.log('User cancelled login or did not fully authorize.');
    }
- },{perms:'read_stream,publish_stream,offline_access'});
+ },{scope:'email'});
   };
 
 function Logout()
