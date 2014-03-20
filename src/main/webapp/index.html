@@ -1,205 +1,130 @@
-
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Milou</title>
+<head>
+	<title>Milou</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
 		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=signinCallback"></script>
 		<script type="text/javascript" src="resources/js/logins.js" ></script>
-		<link href="resources/css/pra1.css" rel="stylesheet" type="text/css">
-		
-		
-	</head>
-	<body >
-		<!--<div id="fb-root"></div>-->
+		<link href="resources/css/minu.css" rel="stylesheet" type="text/css">
+</head>
 
-	
-	
-	<div id="pageup">
-	<a id ="page_up"></a> <!-- voimaldab tagasi lehekulje algusesse minna-->
-	</div>
+<body>
+	<div id="kogu">
 
-<div id="container">
-<div id="header">
-<div class="innerwrap">
+	<header id ="pais">
+		<a href="/index.html"  title="Milou"><img src="resources/images/milou.png" id="milou" alt="logo"></a>
+		<button id="loginfb" onclick="Login()">FB Login</button>
 
-<div id="siteinfo" >
-	<a href="/index.html"  title="Milou"><img src="resources/images/milou.png" alt="logo"></a>
-	
-</div><!--Siteinfo end-->
-
-<div id="topbanner">
-	<ul >
-		<li id="profileArea" >
-
-			<button id="loginfb" onclick="Login()">FB Login</button>
-					
-		</li>
-		
-	</ul>
-<div id="b-1" class="block_outer b-1"><div id="a-55" class="block_inner a-1 block_both ">
-	<a target="_blank"></a></div></div>
-</div><!-- TOPBANNER END -->
+	</header>
 
 
-<div id ="teemad">
-	<ul id="dropmenu" class="menu">
-		<li id="IT"><a href="pages/category_it.html" title ="IT">IT</a> </li>
-		<li id="Kultuur"><a href="pages/category_culture.html">Kultuur</a></li>
-		<li><a href="pages/category_sport.html">Sport</a></li>
-		<li><a href="pages/category_economy.html">Majandus</a></li>
-		<li><a href="pages/category_comics.html">Koomiks</a></li>
-		<li><a href="pages/category_crime.html">Krimi</a> </li>
-	</ul>
-<div id="search">
-	<input id ="search-designe" type="text" value="Otsi Miloust">
-	
-</div>	
-</div><!--teemade l&#245;pp-->
-</div><!--innerwrap l&#245;pp-->
-</div><!--headeri l&#245;pp-->
-
-
-<div id="main">
-	<div class="innerwrap">
-		<div id="sisu">
-<div id="sisucontainer">
-	<div id="sisukoht">
-	<table>
-	<tr>
-	<td>
-		<div class="pildike">
-				<a  href="pages/news001.html"><img width="305" height="135" src="http://stuffpoint.com/cats/image/thumb/306160-cats-angry-cat.jpg" class="aligncenter wp-post-image" alt="pilt">
-				</a>
-		</div>
-			<h2><a href="pages/news001.html">Kuri kass segab korterielanikke</a></h2>
-		<div class="kirjeldus">Juba n&#228;dal aega vaevab korterielanikke kuri kass, kes nende trepikojas elab. 
-		</div>
-				<!--l&#252;hikirjeldus-->
+		<nav><!--id="menu"-->
+			<a href="pages/category_it.html">IT</a>  
+			<a href="pages/category_culture.html">Kultuur</a> 
+			<a href="pages/category_sport.html">Sport</a> 
+			<a href="pages/category_economy.html">Majandus</a> 
+			<a href="pages/category_comics.html">Koomiks</a> 
+			<a href="pages/category_crime.html">Krimi</a>
+			<input id ="search-designe" type="text" value="Otsing">
 			
-	</td>
-
-	<td>
-
-
-		<div class="pildike">
-			<a href="pages/news003.html"> <img width="305" height="135" src="http://g4.nh.ee/images/pix/355x215/1da5bfce/8406a5316f4c6d8f92-68160677.jpg" alt="pilt" class="aligncenter wp-post-image"></a>
-		</div>
-			<h2> <a href="pages/news003.html">Putini man&#246;&#246;vrid Ukrainas l&#228;ksid s&#245;pradele kalliks maksma.</a></h2>
-		<div class="kirjeldus">Putini v&#228;gede tegutsemine Krimmis vallandas Venemaa b&#246;rsil viie viimase aasta suurima m&#252;&#252;gilaine ja t&#245;mbas rubla v&#228;&#228;rtuse rekordmadalale.
-		</div>
-		
-	<!--l&#252;hikirjeldus-->
-	<!--artikkel-3 l&#245;pp-->	
-	</td>
-
-	</tr>
-	<tr>
-	<td>
-		<div class="pildike">
-			<a href="pages/news002.html"> <img width="305" height="135" src="http://f1.pmo.ee/f/2014/03/05/2874282t114h07bd.jpg" alt="pilt" class="aligncenter wp-post-image"></a>
-		</div>
-			<h2> <a href="pages/news002.html">Savisaar ei taganenud oma &#252;tlustest Ukraina kohta.</a></h2>
-			<div class="kirjeldus">Keskerakonna esimees ja Tallinna linnapea Edgar Savisaar andis linnavalitsuse pressikonverentsil Ukraina-teemalistele k&#252;simustele vastates j&#228;rjekordse demagoogia meistriklassi.</div>
-		
-		<!--l&#252;hikirjeldus-->
-	<!--artikkel-2 l&#245;pp-->	
-	</td>
-	<td>
-		<div class="pildike">
-			<a href="pages/news004.html"> <img width="305" height="135" src="http://www.telegram.ee/wp-content/uploads/2014/03/palau_aerialasas-300x210.jpg" alt="pilt" class="aligncenter wp-post-image"></a>
-		</div>
-			<h2> <a href="pages/news004.html">Belau – saareriik, mis on t&#228;ies ulatuses mereelustiku kaitseala.</a></h2>
-		<div class="kirjeldus">Belau (ingl Palau) vabariik on Vaikse ookeani l&#228;&#228;neosas asuv riik, mis kuulub Mikroneesia saarestikku. Belau moodustub 250 saarest, millele jaguneb riigi rahvastik – 21 000 inimest. Riigil on merepiir Indoneesia</div>
-		
-	<!--l&#252;hikirjeldus-->
-	<!--artikkel-4 l&#245;pp-->
-
-
-	</td>
-		
-	</tr>
-
-
-</table>
-	<div id="page-up">
-		<a href= "#page_up">Tagasi &#252;les</a><!-- voimaldab tagasi lehekulje algusesse minna-->
-	</div>
-</div><!--sisukoht l&#245;pp-->
-</div><!--sisucontainer l&#245;pp-->
-</div><!--sisu l&#245;pp-->
-
-
-<div id="sidebar">
-	<div id="sidebarinner">
-		<ul class="sidedebarlist">
-		<li class="cathegories">
-			<h3>Viimased uudised</h3>
-			<div class="sissekanne">
-				<div class = "sissekanne-meta">
-					<a href="pages/news001.html"></a>
-					<h2><a href="pages/news001.html"> Kuri kass segab korterielanikke</a></h2>
-					</div><!--sissekanne-meta l&#245;pp-->
-
-			</div><!--sissekanne l&#245;pp-->
-
-		</li><!--cathegories l&#245;pp-->
-
-		<li class="cathegories">
-			<h3>Enim loetud</h3>
-			<div class="sissekanne">
-				<div class = "sissekanne-meta">
-					<a href="pages/news002.html"></a>
-					<h2><a href="pages/news001.html"> Savisaar ei taganenud &#252;tlusest Ukraina kohta.</a></h2>
-					
-				</div><!--sissekanne-meta l&#245;pp-->
-
-			</div><!--sissekanne l&#245;pp-->
-
-		</li><!--cathegories l&#245;pp-->
-
-		<li class="cathegories">
-			<h3>Enim kommenteeritud</h3>
-			<div class="sissekanne">
-				<div class = "sissekanne-meta">
-					<a href="pages/news002.html"></a>
-					<h2><a href="pages/news001.html"> Putini man&#246;&#246;vrid Ukrainas l&#228;ksid s&#245;pradele kalliks maksma.</a></h2>
-					
-
-					
-				</div><!--sissekanne-meta l&#245;pp-->
-
-			</div><!--sissekanne l&#245;pp-->
-
-		</li><!--cathegories l&#245;pp-->
-
-	</ul><!--sidebarlist l&#245;pp-->
-
-	</div><!--sidebarinner l&#245;pp-->
-</div><!--sidebar l&#245;pp-->
-
-<div id ="footer">
-	<div id="footer-left">
-		&#169; 2014 Milou</div><!--footer-left l&#245;pp-->
-	<div id="footer-right">
-		<a href="pages/faq.html">KKK</a>
-		<a href="pages/help.html">Abi</a>
-		<a href="pages/contact.html">Kontakt</a>
-		<a href="pages/sitemap.html">Sisukaart</a>
-
-
-</div><!--footer-right lõpp-->
-</div><!--footri lõpp-->
+		</nav>
 	
- </div><!-- INNERWRAP lõpp -->
-</div> <!-- MAIN lõpp -->
 
-</div> <!-- CONTAINER lõpp -->
+	<div id= "sisu">
+	<section id = "vasak">
+		<article> 
+			<header>
+				<a href="pages/news001.html"> <h1>Esimene</h1>  </a>		
+			</header>
+			<a href="pages/news001.html">
+			<img src="http://www.novaturas.lt/uploads/3-shutterstock_24325495_BLue%20lagoon%20in%20Balos,%20Crete.jpg" alt="pilt"  ></a>
+			
+			<a href="pages/news001.html">
+			<p>
+				Kreeka mütoloogias läheb kangelane Theseus Kreeta saarele, et tappa seal Minotaurus ehk lõpetada seeläbi aastaid kestnud regulaarne noorte ateenalaste ohverdamine Kreetal Knossose labürindis, kust arvati välja pääsemine võimatu olevat, keskpaigas peidus olevale hirmuäratavale koletisele – Minotaurusele.</p></a>
+
+			<footer>
+				- Autor: Kristiina Pokk
+			</footer>
+
+		</article>
+		
+
+		
+		<article>
+			<header>
+				<a href="pages/news003.html"><h1>Kolmas</h1> </a>
+			</header>
+			<p>
+				Knossoses peetud härjavõitlustele viitavad ka mitmed leitud freskod, mis võitlust kujutavad. On arvatud, et seda sportlikku sündmust tuleks käsitleda rituaalses kontekstis.</p>
+
+			<footer>
+				- Autor: Kristiina Pokk
+			</footer>
+
+		</article>
+
+	</section>
 
 
 
+	<section id = "parem">
 
-</body>
+		
+		<article>
+			<header>
+				<a href="pages/news002.html"><h1>Teine</h1> </a>
+			</header>
 
+			
+
+			<a href="pages/news002.html">
+			<p> 
+				Theseuse ning Ariadne müüdis omab Knossose kuningas Minos Ateena ning selle valitseja üle selgelt mõjuvõimu ning võib sealt endale nõuda tribuudi andmist ja tahtmisele on enne Theseuse sekkumist asjade käiku ning Minotauruse surma eelselt selgelt allutud.  </p> </a>
+
+			<footer>
+				- Autor: Kristiina Pokk
+			</footer>
+
+		</article>
+
+
+	</section>
+
+
+	<aside id="side">
+		<h4>Viimased uudised</h4>
+		<h2><a href="pages/news001.html"> Kuri kass segab korterielanikke</a></h2>
+		<h4>Enim loetud</h4>
+		<h2><a href="pages/news001.html"> Savisaar ei taganenud &#252;tlusest Ukraina kohta.</a></h2>
+		<h4>Enim kommenteeritud</h4>
+		<h2><a href="pages/news001.html"> Putini man&#246;&#246;vrid Ukrainas l&#228;ksid s&#245;pradele kalliks maksma.</a></h2>
+
+
+	</aside>
+
+
+
+	
+	</div>
+	
+
+	<footer id="the_footer">
+		<div id="footer-left">
+			&#169; 2014 Milou</div><!--footer-left l&#245;pp-->
+		<div id="page_up">
+			<a href= "#milou">Tagasi &#252;les</a> </div>
+		<div id="footer-right">
+			<a href="pages/faq.html">KKK</a>
+			<a href="pages/help.html">Abi</a>
+			<a href="pages/contact.html">Kontakt</a>
+			<a href="pages/sitemap.html">Sisukaart</a>
+
+		</div><!--footer-right lõpp-->
+	</footer>
+
+	</div>
+	
+	</body>
 </html>

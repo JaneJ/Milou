@@ -36,9 +36,17 @@ function Login(){
 
 
        }*/
+       if (response.name==="Jane Jürgenson") {
+        var str="Tere : "+response.name+"!";
+        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
+        str +="<a href='pages/addarticle.html'>Lisa uudis</a>"
+        document.getElementById("profileArea").innerHTML=str;
+      }else{
         var str="Tere : "+response.name+"!";
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
+
+      }
         
      });
    } else {
