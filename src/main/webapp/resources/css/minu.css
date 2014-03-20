@@ -41,7 +41,7 @@ body{
 	margin-left: 11%;
 	margin-right: 11%;
 	margin-top: 1%;
-	margin-bottom: 1%
+	margin-bottom: 1%;
 	text-align: left;
 }
 
@@ -54,7 +54,6 @@ header #pais {
 
 #milou{
 	margin-left: 10%;
-	float: center;
 	width: 25%;
 	padding: 0%;	
 }
@@ -207,8 +206,8 @@ font-family: Fanwood;
 
 
 #page_up {
-	margin: 0px;
-	padding: 05;
+	margin: 0%;
+	padding: 0%;
 	float: left;
 	height: auto;
 	text-align: center;
@@ -219,8 +218,8 @@ font-family: Fanwood;
 
 
 #footer-right{
-margin: 0px;
-padding: 0px;
+margin: 0%;
+padding: 0%;
 float: right;
 height: auto;
 width: 45%;
