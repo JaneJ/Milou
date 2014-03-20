@@ -1,0 +1,60 @@
+/*
+#sisukoht {
+display: none;
+}
+*/
+
+.uudis {
+display: //none;
+}
+ /*#uudisKommentaarid {
+display: none;
+}*/
+
+
+ #uudisTekst{
+display: none;
+}
+
+#uudisKommentaarid
+{
+padding:50px;
+display:none;
+}
+
+#uudisKommentaarid{
+//display: none;
+padding:5px;
+text-align:center;
+background-color:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+nav a{
+	color: black;
+	font-family: 'Flamenco', cursive;
+}
+
+#uus {
+		/* Setting a common base */
+		//list-style-type: none;
+		//margin: 0;
+		padding: 5px;
+		color: green;
+	}
+	
+#uudisKommenteeri{
+padding:50px;
+display:none;
+}
+
+#uudisKommenteeri{
+//display: none;
+padding:5px;
+text-align:center;
+background-color:#e6eecc;
+border:solid 1px #c3c3c3;
+}
+
+.hidden{
+display: none;
+}
