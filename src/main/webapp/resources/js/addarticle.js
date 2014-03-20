@@ -1,22 +1,22 @@
 $(document).ready(function(){
 	var text_max=80;
-	$('#märke').html(text_max + ' märke alles.' );
+	$('#m2rke').html(text_max + ' märke alles.' );
 
 	$('#artiklipealkiri').keyup(function(){
 		var pealkiri_len=$('#artiklipealkiri').val().length;
 		var pealkiri_alles=text_max-pealkiri_len;
-		$('#märke').html(pealkiri_alles+ ' märke alles.');
+		$('#m2rke').html(pealkiri_alles+ ' märke alles.');
 	});
 });
 
 $(document).ready(function(){
 	var text_max=300;
-	$('#märkelühi').html(text_max + ' märke alles.' );
+	$('#m2rkelyhi').html(text_max + ' märke alles.' );
 
 	$('#lyhikirjeldus').keyup(function(){
 		var pealkiri_len=$('#lyhikirjeldus').val().length;
 		var pealkiri_alles=text_max-pealkiri_len;
-		$('#märkelühi').html(pealkiri_alles+ ' märke alles.');
+		$('#mrkelyhi').html(pealkiri_alles+ ' märke alles.');
 	});
 });
 
