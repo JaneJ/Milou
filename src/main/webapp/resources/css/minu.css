@@ -108,6 +108,8 @@ float: right;
 font-family: "Times New Roman", Times, serif;
 height: 125%;
 width: 13%;
+margin: -12%;
+padding-right: 11%;
 }
 
 nav #nav_kast {
