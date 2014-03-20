@@ -36,10 +36,10 @@ function Login(){
 
 
        }*/
-       if (response.name==="Jane Jürgenson") {
-        var str="Tere : "+response.name+"!";
+       if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careekika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
+        var str="Tere : "+response.name+"!<br>";
+        str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
-        str +="<a href='pages/addarticle.html'>Lisa uudis</a>"
         document.getElementById("profileArea").innerHTML=str;
       }else{
         var str="Tere : "+response.name+"!";
