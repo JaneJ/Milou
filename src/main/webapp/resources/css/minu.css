@@ -76,6 +76,7 @@ header button {
 }
 
 
+
 #loginfb{
 	border: 1px solid rgba(0,0,0,0.2);
 	border-radius: 10px;
@@ -98,6 +99,15 @@ header button {
 	font:bold;
 	font-family: Sans-serif;
 	text-align:center;
+}
+
+
+#profileArea{
+	height: 100px;
+	/*width: 200px;*/
+	float: center;
+	font-family: "Times New Roman", Times, serif;
+
 }
 
 
@@ -137,7 +147,7 @@ nav #search-designe {
 
 
 article {
-	border: 1px solid black;
+	border: 1px solid grey;
 	width: 95%;
 	padding: 5%;
 	margin-bottom: 15px;
@@ -146,10 +156,12 @@ article {
 }
 
 
+
 article img {
-	width:35%;
-	max-height: 20%;
-	padding: 2%;
+	overflow: hidden;
+	width:25%;
+	max-height: none;
+	padding-right: 2%;
 	float: left;
 }
 
