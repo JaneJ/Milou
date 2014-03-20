@@ -36,10 +36,10 @@ function Login(){
 
 
        }*/
-       if (response.name==="Jane Jürgenson") {
+       if (access_token==="CAATrsOZBzD0IBAOLZB6JItiRZA7esu6ZCVJ4qXH6x8j9dMkJfZC4FDLrIdHz5FPBmMaOYRSVADQB3BqYZBfZBvXUgq6hL5Hy7uad6kuauHA4vzZBv9Q3sNxd2qFPFspcL2uwF9v7Q3VLsKCfg5wrJ6te4b1l5emlOe2jKnQJcaezlRj3oEaXeeBJEJefRgiX7lZCNrpEYoX1JTQZDZD") {
         var str="Tere : "+response.name+"!";
+        str +="<a href='pages/addarticle.html'>Lisa uudis</a><br>"
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
-        str +="<a href='pages/addarticle.html'>Lisa uudis</a>"
         document.getElementById("profileArea").innerHTML=str;
       }else{
         var str="Tere : "+response.name+"!";
