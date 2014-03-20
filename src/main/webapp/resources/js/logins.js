@@ -26,7 +26,13 @@ function Login(){
       console.log('Access Token = '+ access_token);
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
-
+      if (response.name==="Jane Jürgenson") //ajutine kontroll praegu, katsetus
+      {
+        var str="Tere : "+response.name+"!";
+        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";<br>
+        str +="<a href='pages/addarticle.html'>Lisa uudis</a></li>"
+        document.getElementById("profileArea").innerHTML=str;
+      }else if (response.status=="connected") {
   
        /*if(me.id== | me.id== | me.id==){
         var str="Tere : "+response.name+"!";
@@ -40,12 +46,9 @@ function Login(){
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
         
-     });
-   } else {
+     } else {
      console.log('User cancelled login or did not fully authorize.');
-   }
- },{scope:'email'});
-  };
+   }},{scope:'email'});  }});}
 
 function Logout()
   {
