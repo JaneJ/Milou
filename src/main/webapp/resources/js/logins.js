@@ -36,7 +36,7 @@ function Login(){
 
 
        }*/
-       if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careekika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
+       if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
         var str="Tere : "+response.name+"!<br>";
         str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
         str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
