@@ -11,12 +11,19 @@
 
 
 h1{ 
-	font: bold 20px Parisienne;
+	font: bold italic 20px Fanwood;
 }
 
 h2{ 
-	font: bold 14px Parisienne;
+	font: bold italic 14px Fanwood;
 }
+
+a {	
+	text-decoration:none;
+	color:black;
+}
+
+
 
 header, section, footer, aside, nav, article, hgroup {
 	display: block;
@@ -28,36 +35,51 @@ body{
 }
 
 
-header aside {
-	float: right;
-	font: bold italic 16px Fanwood;
-	margin-right: 150px;
+#kogu{
+	/*border: 1px solid black;*/
+	width:78%;
+	margin-left: 11%;
+	margin-right: 11%;
+	margin-top: 1%;
+	margin-bottom: 1%
+	text-align: left;
 }
 
-#kogu{
-	margin: 20px 0px;
-	/*border: 1px solid black;*/
-	width: 1000px;
-	margin: 20px auto;
-	text-align: left;
 
+
+header #pais {
+	width: 100%
 }
 
 #milou{
-	margin-left: 300px;
-	font-size: 70px;
-	font-family: Parisienne;
-	text-align: left;
-	padding: 20px;	
-
+	margin-left: 10%;
+	float: center;
+	width: 25%;
+	padding: 0%;	
 }
 
+
+header button {
+	float: right;
+	margin-top: 1%;
+	margin-right: 10%;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 10px;
+	background: rgba(0,0,0,0.8);
+	box-shadow: inset 0px 2px 10px rgba(225, 225, 225, 0.5);
+	color: white;
+	font:bold;
+	font-family: Sans-serif;
+	text-align:center;
+	height: 5%;
+	width: 7%;	
+}
 
 
 
 nav a{
-	display:inline;
-	padding: 10px;
+	display: inline;
+	padding-right: 3%;
 	font: bold 25px Fanwood;
 	
 }
@@ -65,14 +87,13 @@ nav a{
 
 nav #search-designe {
 	display: inline;
-	margin-bottom: 0px;
-	margin-top: 5px;
-	padding: 0px;
+	margin-bottom: 0%;
+	margin-top: 0,%;
+	padding: 0%;
 	float: right;
 	height: auto;
 	text-align: left;
-	display: block;
-	margin-right: 100px;
+	margin-right: 5%;
 	background-color: #FFFFFF;
 	border-bottom: 1px solid black;
 	border-top:none;
@@ -82,79 +103,74 @@ nav #search-designe {
 }
 
 
-/*
-#new {
-	display: -webkit-box;
-	-webkit-box-orient:horizontal;
 
-}
-*/
-/*
-#main_section { 
-	 /*
+article {
 	border: 1px solid black;
-	-webkit-box-flex: 1;
-	margin: 30px;
-	padding: 10px;
-	*/
-/*
+	height: 250px;
+	padding: 20px;
+	margin-bottom: 15px;
+	display: block;
+}
+
+
+article img {
+	width:100px;
+	padding: 5px;
 	float: left;
-	width: 660px;
-	margin: 30px;
-	
+}
+
+
+article footer {
+	text-align: right;
+	font-size: 10px;
 	
 }
-*/
+
+
 
 #vasak {
 	float: left;
-	width: 330px;
-	margin: 50px 0px;
-	padding: 5px;
+	width: 31%;
+	margin-left: 4%;
+	margin-right: 1%;
+	margin-top: 4%;
+	padding: 1%;
 }
+
 
 #parem {
 	position: relative;
 	float: left;
-	width: 330px;
-	margin: 50px 0px;
-	padding: 5px;
+	width: 31%;
+	margin: 4% 0%;
+	padding: 1%;
 }
 
 
 
 #side {
-	/*
-	border: 1px solid black;
-	width: 125px;
-	margin: 30px 10px;
-	padding: 30px;
-	*/
 	float: left;
-	width: 220px;
-	margin: 15px 0px;
-	padding: 20px;
-	
+	width: 25%;
+	margin: 4% 0%;
+	padding: 2%;	
 }
+
 
 #side h4 {
 	text-align: left;
 	font-family:Fanwood;
 	font-size: 18px; 
-	padding: 5px;
+	padding: 1%;
 	border-bottom: 1px dotted black;
-	margin-top: 15px;
 }
 
-#side h2 {
-	
+
+#side h2 {	
 	text-align: left;
 	font-family:Fanwood;
-	padding: 5px;
+	padding: 2%;
 	font-size: 14px; 
 }
-
-
 
 
 
@@ -162,15 +178,15 @@ nav #search-designe {
 clear: both;
 height: auto;
 width: auto;
-margin: 0px;
-padding: 15px 0 15px 0;
+margin-bottom: 2%;
+padding: 1% 0 2% 0;
 display: block;
 line-height: 16px;
-border-top: 3px solid;
+border-top: 2px solid;
 }
 
+
 #footer-left {
-margin: 0px;
 padding: 0px;
 float: left;
 height: auto;
@@ -180,14 +196,16 @@ position: relative;
 font-family: Fanwood;
 }
 
-#page_up {margin: 0px;
-padding: 0px;
-float: left;
-height: auto;
-text-align: center;
-position: relative;
-font-family: Fanwood;
 
+#page_up {
+	margin: 0px;
+	padding: 05;
+	float: left;
+	height: auto;
+	text-align: center;
+	position: relative;
+	font-family: Fanwood;
+	font-weight: bold;
 }
 
 
@@ -200,36 +218,4 @@ width: 45%;
 text-align: right;
 position: relative;
 font-family: Fanwood;
-}
-
-
-
-
-article {
-	border: 1px solid black;
-	height: 250px;
-	padding: 20px;
-	margin-bottom: 15px;
-	display: block;
-	
-
-}
-
-article img {
-	width:100px;
-	padding: 5px;
-	float: left;
-}
-
-
-
-
-article footer {
-	text-align: right;
-	font-size: 10px;
-	
-}
-
-a {	text-decoration:none;
-	color:black;
 }
