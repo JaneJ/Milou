@@ -48,7 +48,8 @@ body{
 
 
 header #pais {
-	width: 100%
+	width: 100%;
+	border-bottom: 5px solid black;
 }
 
 #milou{
@@ -77,18 +78,24 @@ header button {
 
 
 
+nav #nav_kast {
+	padding: 1%;
+	border-top: 1px solid grey;
+	border-bottom: 2px solid black;
+}
+
+
 nav a{
 	display: inline;
 	padding-right: 3%;
-	font: bold 25px Fanwood;
+	font: bold 23px Fanwood;
 	
 }
 
 
 nav #search-designe {
 	display: inline;
-	margin-bottom: 0%;
-	margin-top: 0,%;
+	margin-top: 0%;
 	padding: 0%;
 	float: right;
 	height: auto;
@@ -106,16 +113,18 @@ nav #search-designe {
 
 article {
 	border: 1px solid black;
-	height: 250px;
-	padding: 20px;
+	width: 95%;
+	padding: 5%;
 	margin-bottom: 15px;
 	display: block;
+	text-align: left;
 }
 
 
 article img {
-	width:100px;
-	padding: 5px;
+	width:35%;
+	max-height: 20%;
+	padding: 2%;
 	float: left;
 }
 
