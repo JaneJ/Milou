@@ -85,6 +85,8 @@ header button {
 	font:bold;
 	font-family: Sans-serif;
 	text-align:center;
+	height: 15%;
+	width: 55%;
 
 }
 #logout {
