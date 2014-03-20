@@ -54,9 +54,21 @@ body{
 	height: 158px;
 	width: 262px;
 	padding-right: 0px;
-	padding-left: 300px;
+	padding-left: 25%;
 	text-align: center;
 	display: block;
+}
+
+#time{
+	text-decoration: none;
+	color: black;
+	font-size: 100%;
+	margin: 0px;
+	float: left;
+	padding-right: 0px;
+	text-align: inherit;
+	display: block;
+	vertical-align: bottom;
 }
 
 
@@ -421,7 +433,7 @@ table td div{
 }
 #profileArea{
 	height: 100px;
-	width: 200px;
+	/*width: 200px;*/
 	float: center;
 	font-family: "Times New Roman", Times, serif;
 
