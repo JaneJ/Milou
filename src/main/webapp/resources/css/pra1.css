@@ -39,7 +39,7 @@ body{
 	margin: 0%;
 	float: right;
 	height: 8%;
-	width: 15%;
+	/*width: initial;*/
 /* margin-top: 59px; */
 	text-align: right;
 	display: block;
