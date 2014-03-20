@@ -102,14 +102,11 @@ width: 55%;
 }
 
 #profileArea {
-height: 100px;
-/* width: 200px; */
 float: right;
 font-family: "Times New Roman", Times, serif;
-/* height: 25%; */
-
+height: 125%;
+width: 13%;
 }
-
 
 nav #nav_kast {
 	padding: 1%;
