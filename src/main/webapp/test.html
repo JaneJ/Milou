@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Milou</title>
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=signinCallback"></script>
+		<script type="text/javascript" src="resources/js/logins.js" ></script>
+		<link href="resources/css/minu.css" rel="stylesheet" type="text/css">
+		
+				<!-- lisatud -->
+
+		<link href="resources/css/forElements.css" rel="stylesheet" type="text/css">	 
+		<script src="resources/js/application.js"></script>  
+		<script src="resources/js/comment.js"></script> 
+		<script src="resources/js/article.js"></script>
+</head>
+
+<body>
+	<div class="kogu">
+
+	<header id ="pais">
+		<a href=""  title="Milou"><img src="resources/images/milou.png" id="milou" alt="logo" onclick="return (this)"></a>
+		<div id="profileArea">
+		<button id="loginfb" onclick="Login()">FB Login</button>
+		</div>
+
+	</header>
+</div><!--id kogus lopp-->
+
+<div class="kogu">
+
+
+		<nav><!--id="menu"-->
+			<div id = "nav_kast">
+			<a href="#" id="IT">IT</a> 
+			<a href="#" id="Kultuur">Kultuur</a>
+			<a href="#" id="Sport">Sport</a>
+			<a href="#" id="Majandus">Majandus</a>
+			<a href="#" id="Koomiks">Koomiks</a>
+			<a href="#" id="Krimi">Krimi</a>
+	<!--muutsin-->		
+	<a href="#" id="lisaArtikkel"> <!--class= "hidden"-->Lisa artikkel</a>
+			<input id ="search-designe" type="text" value="Otsing">
+			</div>
+		</nav></div><!--kogu nav lopp-->
+
+
+<div class="kogu">
+	
+	<div id= "sisu">
+	
+		<!--muutsin-->	<section class = "vasak">
+		<article> 
+			<div class= "uudis">
+			<header >
+			<a href="#"><h1 class="uudisPealkiri">Esimene</h1>  </a>		
+			</header>
+			<a href="#">
+			<img src="resources/images/pilt1.png" alt="pilt"></a>
+			
+
+			<div class = "uudisKirjeldus"><a>Kreeka mütoloogias läheb kangelane Theseus Kreeta saarele, et...</a> 
+			</div>	
+			<p class="uudisTekst hidden">
+				Kreeka mütoloogias läheb kangelane Theseus Kreeta saarele, et tappa seal Minotaurus ehk lõpetada seeläbi aastaid kestnud regulaarne noorte ateenalaste ohverdamine Kreetal Knossose labürindis, kust arvati välja pääsemine võimatu olevat, keskpaigas peidus olevale hirmuäratavale koletisele – Minotaurusele.</p>
+
+			<footer class=" uudisJalus">		
+				<a class = "uudisAutor">- Autor: Kristiina Pokk</a>
+				<a class = "uudisAeg">-uudisAeg-</a>	
+				<a  href="#" class = "naitaKommentaare">N&#228;ita kommentaare</a>
+			<a href="#" class = "kommenteeriLink">Kommenteeri</a>
+						<div class "uudisTagasi hidden" onclick="return (this)">
+			<a href= "">Tagasi pealehele</a> </div>
+			</footer>
+			</div><!-- uudis lopp-->
+			
+			<div class = "uudisKommentaarid hidden">
+				<div class ="kommentaar">
+					<header class="kommentaar">
+						<a class = "kommentaarAutor">Careelika Liisi Kuik</a>
+						<a class = "kommentaarAeg">21.03.2014 4:45</a>
+						<a class = "kommentaarPealkiri">Tere! -</a>
+					</header>
+					<a class = "kommentaarSisu">See kommenteerimisvorm ei n&#228;e veel &#245;ige v&#228;lja! :( </a>
+				</div>
+			</div>
+	
+			<div class = "uudisKommenteeri hidden">
+				<div class ="kommenteeri">
+													
+			<form method="post"enctype="multipart/form-data" action="#" onsubmit="return (this)" id="formUudisKommenteeri";>
+				
+						<div class="kommenteeriAutor">Autor: <input id ="autor" type="text" name="autor"></div>
+						
+						<div ><a>Pealkiri:</a> <input id ="autor" type="text" class = "kommenteeriPealkiri"></div>
+
+
+			<div >Sisu:</div>
+			<textarea class ="kommenteeriSisu" rows="15" cols="100"></textarea>
+			<div class="kommenteeriMargid"></div>
+			<a>Captcha?</a>
+			<a>Vajutades "submit" nuppu, kinnitate, et olete tutvunud </a><a href="#">kommenteerimistingimustega.</a>
+			<input type="submit" name="submit" value="Submit">
+			</form>			
+				</div>
+			</div>
+
+
+		</article>
+		
+
+		
+		<article>
+					<div class= "uudis">
+			<header >
+			<a href="#"><h1 class="uudisPealkiri">Teine</h1>  </a>		
+			</header>
+			<a href="#">
+			<img src="resources/images/pilt1.png" alt="pilt"></a>
+			
+			
+			<div class = "uudisKirjeldus"><a>Knossoses peetud härjavõitlustele viitavad ka mitmed leitud ...</a> 
+			</div>	
+			<p class="uudisTekst hidden">
+				Knossoses peetud härjavõitlustele viitavad ka mitmed leitud freskod, mis võitlust kujutavad. On arvatud, et seda sportlikku sündmust tuleks käsitleda rituaalses kontekstis.</p>
+
+			<footer class=" uudisJalus">		
+				<a class = "uudisAutor">- Autor: Kristiina Pokk</a>
+				<a class = "uudisAeg">-uudisAeg-</a>	
+				<a  href="#" class = "naitaKommentaare">N&#228;ita kommentaare</a>
+			<a href="#" class = "kommenteeriLink">Kommenteeri</a>
+						<div class "uudisTagasi hidden" onclick="return (this)">
+			<a href= "">Tagasi pealehele</a> </div>
+			</footer>
+			</div><!-- uudis lopp-->
+			
+			<div class = "uudisKommentaarid hidden">
+				<div class ="kommentaar">
+					<header class="kommentaar">
+						<a class = "kommentaarAutor">Careelika Liisi Kuik</a>
+						<a class = "kommentaarAeg">21.03.2014 4:45</a>
+						<a class = "kommentaarPealkiri">Tere! -</a>
+					</header>
+					<a class = "kommentaarSisu">See kommenteerimisvorm ei n&#228;e veel &#245;ige v&#228;lja! :( </a>
+				</div>
+			</div>
+	
+			<div class = "uudisKommenteeri hidden">
+				<div class ="kommenteeri">
+													
+			<form method="post"enctype="multipart/form-data" action="#" onsubmit="return (this)" id="formUudisKommenteeri";>
+				
+						<div class="kommenteeriAutor">Autor: <input id ="autor" type="text" name="autor"></div>
+						
+						<div ><a>Pealkiri:</a> <input id ="autor" type="text" class = "kommenteeriPealkiri"></div>
+
+
+			<div >Sisu:</div>
+			<textarea class ="kommenteeriSisu" rows="15" cols="100"></textarea>
+			<div class="kommenteeriMargid"></div>
+			<a>Captcha?</a>
+			<a>Vajutades "submit" nuppu, kinnitate, et olete tutvunud </a><a href="#">kommenteerimistingimustega.</a>
+			<input type="submit" name="submit" value="Submit">
+			</form>			
+				</div>
+			</div>
+
+		</article>
+
+	</section>
+
+
+
+	<section class = "parem">
+
+		
+		<article>
+			<div class= "uudis">
+			<header >
+			<a href="#"><h1 class="uudisPealkiri">Kolmas</h1>  </a>		
+			</header>
+			<a href="#">
+			<img src="resources/images/pilt1.png" alt="pilt"></a>
+			
+			
+			<div class = "uudisKirjeldus"><a>Theseuse ning Ariadne müüdis omab Knossose kuningas Minos ...</a> 
+			</div>	
+			<p class="uudisTekst hidden">
+				Theseuse ning Ariadne müüdis omab Knossose kuningas Minos Ateena ning selle valitseja üle selgelt mõjuvõimu ning võib sealt endale nõuda tribuudi andmist ja tahtmisele on enne Theseuse sekkumist asjade käiku ning Minotauruse surma eelselt selgelt allutud.  </p> 
+
+			<footer class=" uudisJalus">		
+				<a class = "uudisAutor">- Autor: Kristiina Pokk</a>
+				<a class = "uudisAeg">-uudisAeg-</a>	
+				<a  href="#" class = "naitaKommentaare">N&#228;ita kommentaare</a>
+			<a href="#" class = "kommenteeriLink">Kommenteeri</a>
+						<div class "uudisTagasi hidden" onclick="return (this)">
+			<a href= "">Tagasi pealehele</a> </div>
+			</footer>
+			</div><!-- uudis lopp-->
+			
+			<div class = "uudisKommentaarid hidden">
+				<div class ="kommentaar">
+					<header class="kommentaar">
+						<a class = "kommentaarAutor">Careelika Liisi Kuik</a>
+						<a class = "kommentaarAeg">21.03.2014 4:45</a>
+						<a class = "kommentaarPealkiri">Tere! -</a>
+					</header>
+					<a class = "kommentaarSisu">See kommenteerimisvorm ei n&#228;e veel &#245;ige v&#228;lja! :( </a>
+				</div>
+			</div>
+	
+			<div class = "uudisKommenteeri hidden">
+				<div class ="kommenteeri">
+													
+			<form method="post"enctype="multipart/form-data" action="#" onsubmit="return (this)" id="formUudisKommenteeri";>
+				
+						<div class="kommenteeriAutor">Autor: <input id ="autor" type="text" name="autor"></div>
+						
+						<div ><a>Pealkiri:</a> <input id ="autor" type="text" class = "kommenteeriPealkiri"></div>
+
+
+			<div >Sisu:</div>
+			<textarea class ="kommenteeriSisu" rows="15" cols="100"></textarea>
+			<div class="kommenteeriMargid"></div>
+			<a>Captcha?</a>
+			<a>Vajutades "submit" nuppu, kinnitate, et olete tutvunud </a><a href="#">kommenteerimistingimustega.</a>
+			<input type="submit" name="submit" value="Submit">
+			</form>			
+				</div>
+			</div>
+
+		</article>
+
+			<article>
+			<div class= "uudis">
+			<header >
+			<a href="#"><h1 class="uudisPealkiri">Neljas</h1>  </a>		
+			</header>
+			<a href="#">
+			<img src="resources/images/pilt1.png" alt="pilt"></a>
+			
+			
+			<div class = "uudisKirjeldus"><a>Theseuse ning Ariadne müüdis omab Knossose kuningas Minos ...</a> 
+			</div>	
+			<p class="uudisTekst hidden">
+				Theseuse ning Ariadne müüdis omab Knossose kuningas Minos Ateena ning selle valitseja üle selgelt mõjuvõimu ning võib sealt endale nõuda tribuudi andmist ja tahtmisele on enne Theseuse sekkumist asjade käiku ning Minotauruse surma eelselt selgelt allutud.  </p>
+
+				<footer class=" uudisJalus">		
+				<a class = "uudisAutor">- Autor: Kristiina Pokk</a>
+				<a class = "uudisAeg">-uudisAeg-</a>	
+				<a  href="#" class = "naitaKommentaare">N&#228;ita kommentaare</a>
+			<a href="#" class = "kommenteeriLink">Kommenteeri</a>
+						<div class "uudisTagasi hidden" onclick="return (this)">
+			<a href= "">Tagasi pealehele</a> </div>
+			</footer>
+			</div><!-- uudis lopp-->
+			
+			<div class = "uudisKommentaarid hidden">
+				<div class ="kommentaar">
+					<header class="kommentaar">
+						<a class = "kommentaarAutor">Careelika Liisi Kuik</a>
+						<a class = "kommentaarAeg">21.03.2014 4:45</a>
+						<a class = "kommentaarPealkiri">Tere! -</a>
+					</header>
+					<a class = "kommentaarSisu">See kommenteerimisvorm ei n&#228;e veel &#245;ige v&#228;lja! :( </a>
+				</div>
+			</div>
+	
+			<div class = "uudisKommenteeri hidden">
+				<div class ="kommenteeri">
+													
+			<form method="post"enctype="multipart/form-data" action="#" onsubmit="return (this)" id="formUudisKommenteeri";>
+				
+						<div class="kommenteeriAutor">Autor: <input id ="autor" type="text" name="autor"></div>
+						
+						<div ><a>Pealkiri:</a> <input id ="autor" type="text" class = "kommenteeriPealkiri"></div>
+
+
+			<div >Sisu:</div>
+			<textarea class ="kommenteeriSisu" rows="15" cols="100"></textarea>
+			<div class="kommenteeriMargid"></div>
+			<a>Captcha?</a>
+			<a>Vajutades "submit" nuppu, kinnitate, et olete tutvunud </a><a href="#">kommenteerimistingimustega.</a>
+			<input type="submit" name="submit" value="Submit">
+			</form>			
+				</div>
+			</div>
+
+		</article>
+
+
+
+
+			<article>
+			<div class= "uudis">
+			<header >
+			<a href="#"><h1 class="uudisPealkiri">Viies</h1>  </a>		
+			</header>
+			<a href="#">
+			<img src="resources/images/pilt1.png" alt="pilt"></a>
+			
+			
+			<div class = "uudisKirjeldus"><a>Theseuse ning Ariadne müüdis omab Knossose kuningas Minos ...</a> 
+			</div>	
+			<p class="uudisTekst hidden">
+				Theseuse ning Ariadne müüdis omab Knossose kuningas Minos Ateena ning selle valitseja üle selgelt mõjuvõimu ning võib sealt endale nõuda tribuudi andmist ja tahtmisele on enne Theseuse sekkumist asjade käiku ning Minotauruse surma eelselt selgelt allutud.  </p>
+
+			<footer class=" uudisJalus">		
+				<a class = "uudisAutor">- Autor: Kristiina Pokk</a>
+				<a class = "uudisAeg">-uudisAeg-</a>	
+				<a  href="#" class = "naitaKommentaare">N&#228;ita kommentaare</a>
+			<a href="#" class = "kommenteeriLink">Kommenteeri</a>
+						<div class "uudisTagasi hidden" onclick="return (this)">
+			<a href= "">Tagasi pealehele</a> </div>
+			</footer>
+			</div><!-- uudis lopp-->
+			
+			<div class = "uudisKommentaarid hidden">
+				<div class ="kommentaar">
+					<header class="kommentaar">
+						<a class = "kommentaarAutor">Careelika Liisi Kuik</a>
+						<a class = "kommentaarAeg">21.03.2014 4:45</a>
+						<a class = "kommentaarPealkiri">Tere! -</a>
+					</header>
+					<a class = "kommentaarSisu">See kommenteerimisvorm ei n&#228;e veel &#245;ige v&#228;lja! :( </a>
+				</div>
+			</div>
+	
+			<div class = "uudisKommenteeri hidden">
+				<div class ="kommenteeri">
+													
+			<form method="post"enctype="multipart/form-data" action="#" onsubmit="return (this)" id="formUudisKommenteeri";>
+				
+						<div class="kommenteeriAutor">Autor: <input id ="autor" type="text" name="autor"></div>
+						
+						<div ><a>Pealkiri:</a> <input id ="autor" type="text" class = "kommenteeriPealkiri"></div>
+
+
+			<div >Sisu:</div>
+			<textarea class ="kommenteeriSisu" rows="15" cols="100"></textarea>
+			<div class="kommenteeriMargid"></div>
+			<a>Captcha?</a>
+			<a>Vajutades "submit" nuppu, kinnitate, et olete tutvunud </a><a href="#">kommenteerimistingimustega.</a>
+			<input type="submit" name="submit" value="Submit">
+			</form>			
+				</div>
+			</div>
+
+		</article>
+	</section>
+
+
+	<aside id="side">
+		<h4 class = "asideViimasedUudised"><a href="#"> Viimased uudised</a></h4>
+		<h2><a href="#"> Kuri kass segab korterielanikke</a></h2>
+		
+		<h4 class= "asideEnimLoetud"><a href="#"> Enim loetud</a></h4>
+		<h2><a href="#"> Savisaar ei taganenud &#252;tlusest Ukraina kohta.</a></h2>
+		<h4 class= "asideEnimKommenteeritud"><a href="#"> Enim kommenteeritud</a></h4>
+		<h2><a href="#"> Putini man&#246;&#246;vrid Ukrainas l&#228;ksid s&#245;pradele kalliks maksma.</a></h2>
+
+	</aside>
+
+		<form method="post"enctype="multipart/form-data" action="#" onsubmit="return (this)" class="hidden" id="formLisaArtikkel";>
+		
+			<div class="formTeemad" ><a>Teema</a></div>
+			<input type="radio" name="teema" value="it">IT
+			<input type="radio" name="teema" value="kultuur">Kultuur
+			<input type="radio" name="teema" value="sport">Sport
+			<input type="radio" name="teema" value="majandus">Majandus
+			<input type="radio" name="teema" value="koomiks">Koomiks
+			<input type="radio" name="teema" value="Krimi">Krimi
+			<div class="formPealkiri">Pealkiri</div>
+			<textarea id ="formArtikliPealkiri" rows="3" cols="50" maxlength="80"></textarea>
+			<div id="formMargid"></div>
+			<div class="formKirjeldus">L&#252;hikirjeldus</div>
+			<textarea id ="formKirjeldus" rows="5" cols="50" maxlength="300"></textarea>
+			<div id="formMargidLuhi"></div>
+			<div class="formSisu">Artikli sisu</div>
+			<textarea id ="formSisu" rows="15" cols="100"></textarea>
+			<div class="formAutor">Autor <input id ="autor" type="text" name="autor"></div>
+			
+			
+			<label for="file">Lae pilt &#252;les:</label>
+			<input type="file" name="file" id="file"><br>			
+			<input type="submit" name="submit" value="Submit">
+			</form>
+
+	
+	</div>
+</div>
+
+
+	
+	 <!--sisu-->
+<div class="kogu">
+	
+
+	<footer id="the_footer">
+		<div id="footer-left">
+			&#169; 2014 Milou</div><!--footer-left l&#245;pp-->
+		<div id="page_up">
+			<a href= "#milou">Tagasi &#252;les</a> </div>
+		<div id="footer-right">
+			<a href="#">Abi</a>
+			<a href="#">Kontakt</a>
+			<a href="#">Sisukaart</a>
+
+		</div><!--footer-right l&#245;pp-->
+	</footer>
+
+	</div>
+	
+	</body>
+</html>
