@@ -143,16 +143,7 @@ clear: both;
 height: auto;
 width: 100%;
 }
-.innerwrap {
-padding: 0px;
-clear: both;
-height: auto;
-width: 1000px;
-margin-top: 0px;
-margin-right: auto;
-margin-bottom: 0px;
-margin-left: auto;
-}
+
 
 #sisu {
 float: left;
@@ -434,7 +425,6 @@ table td div{
 #profileArea{
 	height: 100px;
 	/*width: 200px;*/
-	float: center;
 	font-family: "Times New Roman", Times, serif;
 
 }
