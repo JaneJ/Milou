@@ -17,7 +17,7 @@ function createXmlHttpRequestObject(){
 
 function process(){
 	alert("process()");
-	if(createXmlHttpRequestObject()){
+	if(xmlHttp){
 		try{
 			xmlHttp.open("GET","ajaxTest.txt", true); /*ei alusta serveriuhendust, konfib uhendust, kuidas ja mida saadetakse*/
 			xmlHttp.onreadystatechange = handleServerResponse();
