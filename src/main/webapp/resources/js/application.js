@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 
-  //otsingulahtrisse millegi sisestamisel
+ /* //otsingulahtrisse millegi sisestamisel
       $('#search-designe').on( 'keydown',function(){
 	  var value = this.value;
   console.log(value);
@@ -22,37 +22,53 @@ $(document).ready(function(){
   console.log(value);
 	$('#searchItem').text(value);
   });
-  
+  */
 
-  
-  $('h2').on( 'click',function(){
-  console.log("parent"); 
-  $("article").not($(this).closest('article')).hide("slow");
+  //uudise pealkirjale klikkides
+  $('.uudisPealkiri').on( 'click',function(){
+  console.log("application.js - uudise pealkiri"); 
+  $("article").not($(this).closest('article')).hide("fast");
 
-  	$("#uudisJalus").show("slow");
+  //vaja on eemaldada plokipaigutus
+  $(this).removeClass('.parem');
+  $(this).removeClass('.vasak');
+  $(this).removeClass('.style');
+  $(this).closest('article').addClass('.uudisAktiivne');
+
+
+	$(".uudisJalus").show("slow");
+	$(".uudisTagasi").show("slow");
 	$(".uudisTekst").slideDown("slow");
    });
    
-   //kui valitakse naita kommentaare
-  $('h2').on( 'click',function(){
+  //kui valitakse naita kommentaare
+  $('.naitaKommentaare').on( 'click',function(){
   console.log("uudisJalus"); 
-	$("#uudisJalus").slideDown("slow");
+    $("article").not($(this).closest('article')).hide("fast");
+	$(this).closest('article').removeClass('.hidden');
+	var article= $(this).closest('article');
+	article.removeClass('.hidden');
+	//$(".uudisJalus").slideDown("slow");
+	$('.uudisKommentaarid').slideDown("slow");
   });
    
- /*  //kui valitakse naita kommentaare
+ /* /*
+ //kui valitakse naita kommentaare
   $('#naitaKommentaare').on( 'click',function(){
   console.log("naitaKommentaare"); 
 	$('#uudisKommentaarid').slideDown("slow");
-  });*/
-
+  });
+   */
    //kui valitakse "nav Lisa artikkel"
    $('#lisaArtikkel').on( 'click',function(){
   console.log("nav - #lisaArtikkel");
-$('table').hide();  
-$('.cathegories').hide();  
+$('.vasak').hide();  
+$('.parem').hide(); 
+$('#side').hide(); 
   $("#formLisaArtikkel").show("slow");
    });
    
+
 
   
 });

@@ -1,55 +1,32 @@
-/*
-#sisukoht {
+
+ /*#uudisTekst{
 display: none;
 }
 */
-
-.uudis {
-display: //none;
-}
- /*#uudisKommentaarid {
-display: none;
-}*/
-
-
- #uudisTekst{
-display: none;
-}
-
-#uudisKommentaarid
+.uudisKommentaarid
 {
 padding:50px;
 display:none;
 }
 
-#uudisKommentaarid{
-//display: none;
-padding:5px;
+.uudisKommentaarid{
+
+padding:40px;
 text-align:center;
 background-color:#e5eecc;
 border:solid 1px #c3c3c3;
 }
-nav a{
-	color: black;
-	font-family: 'Flamenco', cursive;
-}
 
-#uus {
-		/* Setting a common base */
-		//list-style-type: none;
-		//margin: 0;
-		padding: 5px;
-		color: green;
-	}
+
 	
-#uudisKommenteeri{
+.uudisKommenteeri{
 padding:50px;
 display:none;
 }
 
-#uudisKommenteeri{
-//display: none;
-padding:5px;
+.uudisKommenteeri{
+
+padding:40px;
 text-align:center;
 background-color:#e6eecc;
 border:solid 1px #c3c3c3;
@@ -57,4 +34,98 @@ border:solid 1px #c3c3c3;
 
 .hidden{
 display: none;
+}
+
+.formTeemad{
+	margin: 0%;
+/*	padding: 2% 0 2% 0;*/
+	font-size: 140%;
+	font-weight: bold;
+
+
+}
+.formPealkiri{
+	margin: 0%;
+	font-size: 240%;
+/*	padding: 2% 0 2% 0;*/
+	font-weight:bold;
+
+
+}
+
+.formKirjeldus{
+	margin: 0%;
+	font-size: 240%;
+/*	padding: 2% 0 2% 0;*/
+	font-weight:bold;
+
+
+}
+
+.formSisu{
+	margin: 0%;
+	font-size: 240%;
+/*	padding: 2% 0 2% 0;*/
+	font-weight:bold;
+}
+
+
+.formPealkiri{
+	margin: 0%;
+	font-size: 240%;
+/*	padding: 2% 0 2% 0;*/
+	font-weight:bold;
+
+
+}
+
+.formKirjeldus{
+	margin: 0%;
+	font-size: 240%;
+/*	padding: 2% 0 2% 0;*/
+	font-weight:bold;
+
+}
+
+.formSisu{
+	margin: 0%;
+	font-size: 240%;
+/*	padding: 2% 0 2% 0;*/
+	font-weight:bold;
+}
+
+.vasak {
+	float: left;
+	width: 31%;
+	margin-left: 4%;
+	margin-right: 1%;
+	margin-top: 4%;
+	padding: 1%;
+}
+
+.uudisAktiivne{
+	width: 50%;
+	/*margin-left: 4%;
+	margin-right: 1%;*/
+	margin-top: 4%;
+	padding: 1%;
+	
+
+	/*border: 1px solid grey;*/
+	width: 95%;
+	padding: 5%;
+	margin-bottom: 15px;
+/*	display: block;*/
+	text-align: center;
+
+}
+
+
+
+.parem {
+	position: relative;
+	float: left;
+	width: 31%;
+	margin: 4% 0%;
+	padding: 1%;
 }
