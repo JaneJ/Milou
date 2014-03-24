@@ -1,3 +1,4 @@
+var xmlHttp=createXmlHttpRequestObject();
 function createXmlHttpRequestObject(){
 	alert("createXmlHttpRequestObject");
 	var xmlHttp;
