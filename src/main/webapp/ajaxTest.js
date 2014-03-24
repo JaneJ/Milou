@@ -21,7 +21,7 @@ function process(){
 		try{
 			xmlHttp.open("GET","ajaxTest.txt", true); /*ei alusta serveriuhendust, konfib uhendust, kuidas ja mida saadetakse*/
 			xmlHttp.onreadystatechange = handleServerResponse();
-			xmlHttp.send();
+			xmlHttp.send(null);
 		
 		}catch(e){
 			alert(e.toString());
