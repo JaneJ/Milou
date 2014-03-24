@@ -1,6 +1,4 @@
-var xmlHttp = createXmlHttpRequestObject();
-
-fuction createXmlHttpRequestObject(){
+function createXmlHttpRequestObject(){
 	alert("createXmlHttpRequestObject");
 	var xmlHttp;
 	
@@ -18,11 +16,11 @@ fuction createXmlHttpRequestObject(){
 
 function process(){
 	alert("process()");
-	if(xmlHttp){
+	if(createXmlHttpRequestObject()){
 		try{
 			xmlHttp.open("GET","ajaxTest.txt", true); /*ei alusta serveriuhendust, konfib uhendust, kuidas ja mida saadetakse*/
-			xmlHttp.onreadystatechange = handleServerResponse;
-			xmlHttp.send(null);
+			xmlHttp.onreadystatechange = handleServerResponse();
+			xmlHttp.send();
 		
 		}catch(e){
 			alert(e.toString());
@@ -32,7 +30,7 @@ function process(){
 
 function handleServerResponse(){
 	alert("handleServerResponse()");
-	theD = document.getElementById('theD');
+	var theD = document.getElementById('theD');
 	if(xmlHttp.readyState==1){
 		theD.innerHTML += "Status 1: server connection established <br/>";
 	} else if(xmlHttp.readyState==2){
