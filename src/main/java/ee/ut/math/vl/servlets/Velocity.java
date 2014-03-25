@@ -1,4 +1,4 @@
-package com.example;
+package ee.ut.math.vl.servlets;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;

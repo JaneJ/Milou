@@ -1,4 +1,4 @@
-package ee.ut.math.vl;
+package ee.ut.math.vl.data;
 
 
 public class Kasutaja {
@@ -17,9 +17,4 @@ public class Kasutaja {
     	this.admin = admin;
     	
     }
-	
-	
-	
-	
-
 }

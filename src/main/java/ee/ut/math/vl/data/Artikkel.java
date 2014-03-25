@@ -1,17 +1,16 @@
-package ee.ut.math.vl;
-
+package ee.ut.math.vl.data;
 import java.awt.Image;
 import java.util.Date;
 
-public class Artiklid {
+public class Artikkel {
 
     public Integer id;
     public String autor;
     public String pealkiri;
     public Image pilt;
     public String kirjeldus;
-    public String artikkel;
-    public String teema;
+    public String uudis;
+    public Integer teema;
     public long vaatamisi;
     public Date lisatud;
  
@@ -19,17 +18,17 @@ public class Artiklid {
 	
      
 
-    public Artiklid () {
+    public Artikkel () {
     }
 
-    public Artiklid (Integer id, String autor, String pealkiri,Image pilt, String kirjeldus, String artikkel,
-    		String teema, long vaatamisi, Date lisatud) {
+    public Artikkel (Integer id, String autor, String pealkiri,Image pilt, String kirjeldus, String uudis,
+    		Integer teema, long vaatamisi, Date lisatud) {
         this.id = id;
         this.autor = autor;
         this.pealkiri = pealkiri;
         this.pilt = pilt;
         this.kirjeldus = kirjeldus;
-        this.artikkel = artikkel;
+        this.uudis = uudis;
         this.teema = teema;
         this.vaatamisi = vaatamisi;
         this.lisatud = lisatud;

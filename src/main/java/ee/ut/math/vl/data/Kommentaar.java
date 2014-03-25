@@ -1,8 +1,8 @@
-package ee.ut.math.vl;
+package ee.ut.math.vl.data;
 
 import java.util.Date;
 
-public class Kommentaarid {
+public class Kommentaar {
 	
 	public Integer id;
 	public Integer artikkel;
@@ -11,10 +11,10 @@ public class Kommentaarid {
     public Date aeg;
     
     
-    public Kommentaarid () {
+    public Kommentaar () {
     }
 
-    public Kommentaarid (Integer id, Integer artikkel, String autor, String kommentaar, Date aeg) {
+    public Kommentaar (Integer id, Integer artikkel, String autor, String kommentaar, Date aeg) {
     	this.id = id;
     	this.artikkel = artikkel;
     	this.autor = autor;
