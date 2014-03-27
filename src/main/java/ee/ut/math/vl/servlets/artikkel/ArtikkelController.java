@@ -4,7 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
 import ee.ut.math.vl.data.Artikkel;
+import ee.ut.math.vl.datastore.ArtikkelData;
 import ee.ut.math.vl.datastore.ArtikkelDataProvider;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,18 +26,18 @@ public class ArtikkelController extends HttpServlet {
 	public void init() throws ServletException {
 		super.init();
 		gson = new Gson();
-		// datastore = new MemoryAuctionData();
+		datastore = new ArtikkelData();
 	}
 
-	/*
-	 * @Override protected void doGet(HttpServletRequest req,
-	 * HttpServletResponse resp) throws ServletException, IOException {
-	 * resp.setHeader("Content-Type", "application/json");
-	 * 
-	 * String idString = req.getParameter("id"); if (idString != null) {
-	 * replyWithSingleItem(resp, idString); } else { replyWithAllItems(resp); }
-	 * }
-	 */
+	
+	 @Override protected void doGet(HttpServletRequest req,
+	 HttpServletResponse resp) throws ServletException, IOException {
+	 resp.setHeader("Content-Type", "application/json");
+	 
+	 String idString = req.getParameter("id"); if (idString != null) {}
+	 //replyWithSingleArtikkel(resp, idString); } else { replyWithAllItems(resp); }
+	 }
+	
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -56,10 +58,10 @@ public class ArtikkelController extends HttpServlet {
 			// even better: use message queues for servlet-datastore events
 	
 			
-/*			ArtikkelSocketController.find(req.getServletContext()).broadcast(
+			ArtikkelSocketController.find(req.getServletContext()).broadcast(
 					artikkelEcho);
 					
-					*/
+					
 		} catch (JsonParseException ex) {
 			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
 		}
@@ -70,14 +72,16 @@ public class ArtikkelController extends HttpServlet {
 	
 	
 	
-	/*
-	 * private void replyWithAllItems(HttpServletResponse resp) throws
-	 * IOException { List<Item> allContent = datastore.findAllItems();
-	 * resp.getWriter().write(gson.toJson(allContent)); }
-	 * 
-	 * private void replyWithSingleItem(HttpServletResponse resp, String
-	 * idString) throws IOException { int id = Integer.parseInt(idString); Item
-	 * item = datastore.findItemById(id);
-	 * resp.getWriter().write(gson.toJson(item)); }
-	 */
+	
+	 private void replyWithAllItems(HttpServletResponse resp) throws IOException { 
+		 List<Artikkel> allContent = datastore.findAllArtiklid();
+		 resp.getWriter().write(gson.toJson(allContent)); }
+
+	
+	  private void replyWithSingleItem(HttpServletResponse resp, String idString) throws IOException { 
+		  int id = Integer.parseInt(idString); 
+		  Artikkel artikkel = datastore.findArtikkelById(id);
+		  resp.getWriter().write(gson.toJson(artikkel)); 
+		  }
+	 
 }

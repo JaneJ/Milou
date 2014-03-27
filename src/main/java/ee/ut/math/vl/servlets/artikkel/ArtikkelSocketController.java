@@ -28,19 +28,18 @@ public class ArtikkelSocketController extends WebSocketServlet implements WebSoc
     private ServletContext context;
 
     
-    
-    
-  /*  
+ 
     public void broadcast(String message) {
-        for (Artikkelsocket : sockets) {
+        for (ArtikkelSocket socket : sockets) {
             try {
                 socket.send(message);
-            } catch (IOException e) {
+            } 
+            catch (IOException e) {
                 System.out.println("failed to broadcast to " + socket);
             }
         }
     }
-*/
+
     
     
     
