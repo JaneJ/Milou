@@ -196,7 +196,7 @@ article footer {
 	padding: 1%;
 }
 #vasakParem{
-	float: none;
+	float: left;
 	width: 62%;
 	margin: 4% 0%;
 	padding: 1%;
@@ -227,6 +227,11 @@ article footer {
 	font-family:Fanwood;
 	padding: 2%;
 	font-size: 14px; 
+}
+#koomiks{
+	max-height: none;
+	max-width: 62%;
+	float:left;
 }
 
 
