@@ -159,8 +159,8 @@ article {
 
 article img {
 	overflow: hidden;
-	width:25%;
-	max-height: none;
+	width:100%;
+	max-height: 80%;
 	padding-right: 2%;
 	float: left;
 }
@@ -198,7 +198,7 @@ article footer {
 }
 #vasakParem{
 	float: left;
-	width: 62%;
+	width: 60%;
 	margin: 0% 4%;
 	padding: 1%;
 
@@ -207,10 +207,10 @@ article footer {
 
 
 #side {
-	float: left;
+	float: right;
 	width: 25%;
-	margin: 4% 0%;
-	padding: 2%;	
+	/*margin: 4% 0%;
+	padding: 2%;*/	
 }
 
 
