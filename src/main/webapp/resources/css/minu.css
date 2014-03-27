@@ -163,7 +163,12 @@ article img {
 	padding-right: 2%;
 	float: left;
 }
+article table img{
+	max-height: none;
+	max-width: 62%;
 
+
+}
 
 article footer {
 	text-align: right;
@@ -189,6 +194,13 @@ article footer {
 	width: 31%;
 	margin: 4% 0%;
 	padding: 1%;
+}
+#vasakParem{
+	float: none;
+	width: 62%;
+	margin: 4% 0%;
+	padding: 1%;
+
 }
 
 
