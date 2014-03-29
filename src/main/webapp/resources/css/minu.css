@@ -151,7 +151,7 @@ nav a{
 
 #search-designe{
 	display: inline;
-	width: = 20%;
+	width: 20%;
 	margin-top: 0%;
 	padding: 1%;
 	height: auto;
@@ -233,8 +233,8 @@ article footer {
 #side {
 	float: right;
 	width: 25%;
-	/margin-top: 4%;
-	padding: 2%;*/	
+	margin-top: 4%;
+	padding: 2%;
 }
 
 
