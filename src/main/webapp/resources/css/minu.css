@@ -109,10 +109,30 @@ header #pais {
 
 }
 
+#menuu {
+	width: 100%;
+	
+}
 
+#menuud {
+	float: left;
+	width: 70%;
+	margin: 1%;
+	padding: 1%;
+}
+
+#otsingud{
+	position: relative;
+	float: right;
+	width: 20%;
+	margin-top: 2%;
+	margin-bottom: 4%;
+	padding: 1%;
+
+}
 
 nav #nav_kast {
-	width: 75%;
+	margin: 0%;
 	padding: 1%;
 	border-top: 1px solid grey;
 	border-bottom: 2px solid black;
@@ -128,20 +148,23 @@ nav a{
 	
 }
 
-#otsi{
+
+#search-designe{
 	display: inline;
 	width: = 20%;
 	margin-top: 0%;
-	padding: 0%;
+	padding: 1%;
 	height: auto;
-	text-align: left;
+	text-align: center;
 	margin-right: 5%;
 	background-color: #FFFFFF;
 	border-bottom: 1px solid black;
-	border-top:none;
+	border-top:1px solid black;
 	border-left: none;
 	border-right: none;
-	font: italic bold 20px Fanwood;
+	font: italic bold 18px Fanwood;
+
+
 }
 
 
@@ -150,7 +173,7 @@ article {
 	border: 1px solid grey;
 	width: 95%;
 	padding: 5%;
-	margin-bottom: 15px;
+	margin-bottom: 3%;
 	display: block;
 	text-align: left;
 	height: auto;
@@ -210,7 +233,7 @@ article footer {
 #side {
 	float: right;
 	width: 25%;
-	/*margin: 4% 0%;
+	/margin-top: 4%;
 	padding: 2%;*/	
 }
 

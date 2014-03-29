@@ -1,6 +1,6 @@
-var xmlHttp = createXmlHttpRequestObject();
+var xmlHttp=createXmlHttpRequestObject();
 
-fuction createXmlHttpRequestObject(){
+function createXmlHttpRequestObject(){
 	alert("createXmlHttpRequestObject");
 	var xmlHttp;
 	
