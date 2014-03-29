@@ -117,7 +117,6 @@ header #pais {
 #menuud {
 	float: left;
 	width: 70%;
-	margin: 1%;
 	padding: 1%;
 }
 
@@ -125,8 +124,8 @@ header #pais {
 	position: relative;
 	float: right;
 	width: 25%;
-	margin-top: 2%;
-	margin-bottom: 4%;
+	margin-top: 0%;
+
 	padding: 1%;
 
 }
@@ -151,7 +150,6 @@ nav a{
 
 #search-designe{
 	display: inline;
-	width: 20%;
 	margin-top: 0%;
 	padding: 1%;
 	height: auto;
