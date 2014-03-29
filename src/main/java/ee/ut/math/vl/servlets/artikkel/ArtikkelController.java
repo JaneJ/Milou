@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(value = "/artikkel")
+@WebServlet
 public class ArtikkelController extends HttpServlet {
 
 	private Gson gson;

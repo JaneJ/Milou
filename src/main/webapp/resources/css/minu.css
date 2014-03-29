@@ -112,6 +112,7 @@ header #pais {
 
 
 nav #nav_kast {
+	width: 75%;
 	padding: 1%;
 	border-top: 1px solid grey;
 	border-bottom: 2px solid black;
@@ -122,16 +123,16 @@ nav a{
 	display: inline;
 	padding-right: 1%;
 	font: bold 23px Fanwood;
-
+	text-align: center;
 	margin-left: 4%;
 	
 }
 
-nav #search-designe {
+#otsi{
 	display: inline;
+	width: = 20%;
 	margin-top: 0%;
 	padding: 0%;
-	float: right;
 	height: auto;
 	text-align: left;
 	margin-right: 5%;
@@ -152,18 +153,24 @@ article {
 	margin-bottom: 15px;
 	display: block;
 	text-align: left;
+	height: auto;
 }
 
 
 
 article img {
 	overflow: hidden;
-	width:25%;
-	max-height: none;
+	width:100%;
+	max-height: 55%;
 	padding-right: 2%;
 	float: left;
 }
+article table img{
+	max-height: none;
+	max-width: 62%;
 
+
+}
 
 article footer {
 	text-align: right;
@@ -190,14 +197,21 @@ article footer {
 	margin: 4% 0%;
 	padding: 1%;
 }
+#vasakParem{
+	float: left;
+	width: 60%;
+	margin: 0% 4%;
+	padding: 1%;
+
+}
 
 
 
 #side {
-	float: left;
+	float: right;
 	width: 25%;
-	margin: 4% 0%;
-	padding: 2%;	
+	/*margin: 4% 0%;
+	padding: 2%;*/	
 }
 
 
@@ -215,6 +229,11 @@ article footer {
 	font-family:Fanwood;
 	padding: 2%;
 	font-size: 14px; 
+}
+#koomiks{
+	max-height: none;
+	max-width: 62%;
+	float:left;
 }
 
 

@@ -5,16 +5,18 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
 
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jetty.server.Request;
-import org.eclipse.jetty.server.Server;
 
-public class Main {
+@WebListener
+public class Main implements ServletContextListener {
 
-	
 	private static Connection connection;
 
 	public static Connection getCurrentConnection() throws Exception {
@@ -35,32 +37,6 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		String url = "jdbc:postgresql://ec2-54-204-47-70.compute-1.amazonaws.com:5432/d56qim871vq0h0?user=oxqsnxoujnlrpq&password=QDMv1ULIryRIPYoEQGJBMDwI-R&ssl=true";
-		
-		
-		//SERVER????
-		//Server server = new Server();
-		// server.setHandler(new HelloWorld()); -otsi googlest
-
-		//server.start();
-		//server.join();
-
-		
-		
-					// muud klassid:
-						// Statement asi = Main.getCurrentConnection().createStatement();
-
-		
-		Connection connection = getConnection();
-		// testpäringud, et andmebaas on olemas, töötab
-		Statement stmt = connection.createStatement();
-		stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-		stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
-		stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-		ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-		while (rs.next()) {
-			System.out.println("Read from DB: " + rs.getTimestamp("tick"));
-		}
 	}
 
 	static Connection getConnection() throws SQLException, URISyntaxException {
@@ -85,6 +61,43 @@ public class Main {
 	static Connection getLocalConnection() throws SQLException {
 		return DriverManager.getConnection("jdbc:postgresql://localhost/mydb",
 				"user", "pass");
+	}
+
+	@Override
+	public void contextDestroyed(ServletContextEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void contextInitialized(ServletContextEvent arg0) {
+		String url = "jdbc:postgresql://ec2-54-204-47-70.compute-1.amazonaws.com:5432/d56qim871vq0h0?user=oxqsnxoujnlrpq&password=QDMv1ULIryRIPYoEQGJBMDwI-R&ssl=true";
+
+		// muud klassid:
+		// Statement asi = Main.getCurrentConnection().createStatement();
+
+		Connection connection;
+		try {
+			connection = getConnection();
+			
+			// testpäringud, et andmebaas on olemas, töötab
+			Statement stmt = connection.createStatement();
+			stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
+			stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
+			stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
+			ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
+			while (rs.next()) {
+				System.out.println("Read from DB: " + rs.getTimestamp("tick"));
+			}
+			
+			
+		} catch (SQLException | URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("töötab");
+
 	}
 
 }
