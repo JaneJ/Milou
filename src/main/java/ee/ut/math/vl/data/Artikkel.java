@@ -11,7 +11,7 @@ public class Artikkel {
     public String kirjeldus;
     public String uudis;
     public String teema;
-    public long vaatamisi;
+    public Integer vaatamisi;
     public Date lisatud;
  
     
@@ -22,7 +22,7 @@ public class Artikkel {
     }
 
     public Artikkel (Integer id, String autor, String pealkiri,Image pilt, String kirjeldus, String uudis,
-    		String teema, long vaatamisi, Date lisatud) {
+    		String teema, Integer vaatamisi, Date lisatud) {
         this.id = id;
         this.autor = autor;
         this.pealkiri = pealkiri;

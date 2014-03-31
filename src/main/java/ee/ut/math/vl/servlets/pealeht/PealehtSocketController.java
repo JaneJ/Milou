@@ -1,4 +1,4 @@
-package ee.ut.math.vl.servlets.artikkel;
+package ee.ut.math.vl.servlets.pealeht;
 
 import org.eclipse.jetty.websocket.servlet.*;
 import javax.servlet.ServletConfig;
@@ -21,16 +21,16 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * You may need to enable websockets at heroku:
  * https://devcenter.heroku.com/articles/heroku-labs-websockets
  */
-@WebServlet(value = "/artikkel")
-public class ArtikkelSocketController extends WebSocketServlet implements WebSocketCreator {
+@WebServlet(value = "/pealehele")
+public class PealehtSocketController extends WebSocketServlet implements WebSocketCreator {
 
-    private List<ArtikkelSocket> sockets;
+    private List<PealehtSocket> sockets;
     private ServletContext context;
 
     
  
     public void broadcast(String message) {
-        for (ArtikkelSocket socket : sockets) {
+        for (PealehtSocket socket : sockets) {
             try {
                 socket.send(message);
             } 
@@ -42,7 +42,7 @@ public class ArtikkelSocketController extends WebSocketServlet implements WebSoc
 
     
     
-    public List<ArtikkelSocket> getSockets() {
+    public List<PealehtSocket> getSockets() {
         return sockets;
     }
 
@@ -60,7 +60,7 @@ public class ArtikkelSocketController extends WebSocketServlet implements WebSoc
 
     @Override
     public Object createWebSocket(ServletUpgradeRequest req, ServletUpgradeResponse resp) {
-        return new ArtikkelSocket(this); // socket instance created per client
+        return new PealehtSocket(this); // socket instance created per client
     }
 
     @Override
@@ -68,13 +68,13 @@ public class ArtikkelSocketController extends WebSocketServlet implements WebSoc
         factory.setCreator(this);
     }
 
-    private static void publish(ArtikkelSocketController controller, ServletContext context) {
+    private static void publish(PealehtSocketController controller, ServletContext context) {
         // see @WebListener and @WebFilter for details about servlet init
-        context.setAttribute(ArtikkelSocketController.class.getName(), controller);
+        context.setAttribute(PealehtSocketController.class.getName(), controller);
     }
-
-    public static ArtikkelSocketController find(ServletContext context) {
-        return (ArtikkelSocketController) context.getAttribute(ArtikkelSocketController.class.getName());
+/*
+    public static PealehtSocketController find(ServletContext context) {
+        return PealehtSocketController) context.getAttribute(PealehtSocketController.class.getName());
     }
-
+*/
 }

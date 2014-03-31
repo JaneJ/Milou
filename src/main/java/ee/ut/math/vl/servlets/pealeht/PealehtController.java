@@ -1,4 +1,4 @@
-package ee.ut.math.vl.servlets.artikkel;
+package ee.ut.math.vl.servlets.pealeht;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(value = "/artiklid")
-public class ArtikkelController extends HttpServlet {
+@WebServlet(value = "/pealeht")
+public class PealehtController extends HttpServlet {
 
 	private Gson gson;
 	private ArtikkelDataProvider datastore;
@@ -38,8 +38,9 @@ public class ArtikkelController extends HttpServlet {
 		if (idString != null) {
 			replyWithSingleArtikkel(resp, idString);
 
+		} else {
+			resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
 		}
-		else {resp.sendError(HttpServletResponse.SC_BAD_REQUEST); }
 	}
 
 	private void replyWithSingleArtikkel(HttpServletResponse resp,
@@ -49,7 +50,7 @@ public class ArtikkelController extends HttpServlet {
 		try {
 			resp.getWriter().write(gson.toJson(artikkel));
 		} catch (IOException e) {
-			
+
 			e.printStackTrace();
 		}
 	}
@@ -59,28 +60,25 @@ public class ArtikkelController extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
-			datastore.lisaArtikkel(artikkel); 
+			datastore.lisaArtikkel(artikkel);
 
 			// echo the same object back for convenience and debugging
 			// also it now contains the generated id of the bid
-			String artikkelEcho = gson.toJson(artikkel);
+			String pealehtEcho = gson.toJson(artikkel);
 			resp.setHeader("Content-Type", "application/json");
-			resp.getWriter().write(artikkelEcho);
+			resp.getWriter().write(pealehtEcho);
 
 			// actually this is a bad place to send the broadcast.
 			// better: attach sockets as eventlisteners to the datastore
 			// even better: use message queues for servlet-datastore events
-
-			ArtikkelSocketController.find(req.getServletContext()).broadcast(
-					artikkelEcho);
-
+			
+			/*
+			 * PealehtSocketController.find(req.getServletContext()).broadcast(
+			 * pealehtEcho);
+			 */
 		} catch (JsonParseException ex) {
 			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
 		}
 	}
-
-
-
-
 
 }
