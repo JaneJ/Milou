@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
 import ee.ut.math.vl.data.Artikkel;
-import ee.ut.math.vl.datastore.ArtikkelData;
-import ee.ut.math.vl.datastore.ArtikkelDataProvider;
+import ee.ut.math.vl.datastore.Artikkel.ArtikkelData;
+import ee.ut.math.vl.datastore.Artikkel.ArtikkelDataProvider;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet
+@WebServlet(value = "/artiklid")
 public class ArtikkelController extends HttpServlet {
 
 	private Gson gson;
@@ -68,13 +68,10 @@ public class ArtikkelController extends HttpServlet {
 	}
 
 	
-	
-	
-	
-	
+		
 	
 	 private void replyWithAllItems(HttpServletResponse resp) throws IOException { 
-		 List<Artikkel> allContent = datastore.findAllArtiklid();
+		 List<Artikkel> allContent = datastore.findTenArtiklit();
 		 resp.getWriter().write(gson.toJson(allContent)); }
 
 	
