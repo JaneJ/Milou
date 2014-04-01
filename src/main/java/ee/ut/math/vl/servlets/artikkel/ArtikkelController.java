@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet(value = "/artiklid")
@@ -36,14 +37,19 @@ public class ArtikkelController extends HttpServlet {
 
 		String idString = req.getParameter("id");
 		if (idString != null) {
-			replyWithSingleArtikkel(resp, idString);
+			try {
+				replyWithSingleArtikkel(resp, idString);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		}
 		else {resp.sendError(HttpServletResponse.SC_BAD_REQUEST); }
 	}
 
 	private void replyWithSingleArtikkel(HttpServletResponse resp,
-			String idString) {
+			String idString) throws SQLException, Exception {
 		int id = Integer.parseInt(idString);
 		Artikkel artikkel = datastore.findArtikkelById(id);
 		try {
@@ -74,7 +80,7 @@ public class ArtikkelController extends HttpServlet {
 			ArtikkelSocketController.find(req.getServletContext()).broadcast(
 					artikkelEcho);
 
-		} catch (JsonParseException ex) {
+		} catch (Exception ex) {
 			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
 		}
 	}

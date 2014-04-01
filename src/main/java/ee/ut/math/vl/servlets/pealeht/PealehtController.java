@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet(value = "/pealeht")
@@ -36,49 +37,29 @@ public class PealehtController extends HttpServlet {
 
 		String idString = req.getParameter("id");
 		if (idString != null) {
-			replyWithSingleArtikkel(resp, idString);
+			try {
+				replyArtikkelitega(resp, idString);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		} else {
 			resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
 		}
 	}
 
-	private void replyWithSingleArtikkel(HttpServletResponse resp,
-			String idString) {
-		int id = Integer.parseInt(idString);
-		Artikkel artikkel = datastore.findArtikkelById(id);
+	private void replyArtikkelitega(HttpServletResponse resp,
+			String idString) throws SQLException, Exception {
+		List<Artikkel> artiklid = datastore.findTenArtiklit();
 		try {
-			resp.getWriter().write(gson.toJson(artikkel));
+			resp.getWriter().write(gson.toJson(artiklid));
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
 	}
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		try {
-			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
-			datastore.lisaArtikkel(artikkel);
 
-			// echo the same object back for convenience and debugging
-			// also it now contains the generated id of the bid
-			String pealehtEcho = gson.toJson(artikkel);
-			resp.setHeader("Content-Type", "application/json");
-			resp.getWriter().write(pealehtEcho);
-
-			// actually this is a bad place to send the broadcast.
-			// better: attach sockets as eventlisteners to the datastore
-			// even better: use message queues for servlet-datastore events
-			
-			/*
-			 * PealehtSocketController.find(req.getServletContext()).broadcast(
-			 * pealehtEcho);
-			 */
-		} catch (JsonParseException ex) {
-			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
-		}
-	}
 
 }

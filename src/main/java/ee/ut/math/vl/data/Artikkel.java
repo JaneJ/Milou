@@ -20,6 +20,29 @@ public class Artikkel {
 
     public Artikkel () {
     }
+    
+    
+    public Artikkel (String autor, String pealkiri,Image pilt,  String uudis,
+    		String teema, Date lisatud) {        
+        this.autor = autor;
+        this.pealkiri = pealkiri;
+        this.pilt = pilt;
+        this.uudis = uudis;
+        this.teema = teema;
+        this.lisatud = lisatud;
+    }
+    
+    
+    public Artikkel (String autor, String pealkiri,Image pilt, String kirjeldus, 
+    		String teema, Integer vaatamisi, Date lisatud) {
+        this.autor = autor;
+        this.pealkiri = pealkiri;
+        this.pilt = pilt;
+        this.kirjeldus = kirjeldus;
+        this.teema = teema;
+        this.vaatamisi = vaatamisi;
+        this.lisatud = lisatud;
+    }
 
     public Artikkel (Integer id, String autor, String pealkiri,Image pilt, String kirjeldus, String uudis,
     		String teema, Integer vaatamisi, Date lisatud) {
