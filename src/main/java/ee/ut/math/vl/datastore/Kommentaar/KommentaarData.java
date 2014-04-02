@@ -12,17 +12,7 @@ import ee.ut.math.vl.data.Kommentaar;
 
 public class KommentaarData implements KommentaarDataProvider {
 
-	
-	@Override
-	public Kommentaar findKommentaarById(int id) {
-		// TODO Auto-generated method stub
-		
-		
-		// kas meil on seda üldse vaja?
-		
-		
-		return null;
-	}
+
 
 	@Override
 	public List<Kommentaar> findKommentaarByArtikkel(int artikkel)

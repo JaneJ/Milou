@@ -86,7 +86,4 @@ public class ArtikkelController extends HttpServlet {
 	}
 
 
-
-
-
 }

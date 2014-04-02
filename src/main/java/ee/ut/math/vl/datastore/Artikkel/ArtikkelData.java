@@ -23,8 +23,8 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		artikkel.id = id;
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT autor, pealkiri, lisatud, pilt, uudis, teema FROM Artikkel where Artikkel.id=id;");
-
+				.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema FROM Artikkel where Artikkel.id=id;");
+		artikkel.id = rs.getInt("id");
 		artikkel.autor = rs.getString("autor");
 		artikkel.pealkiri = rs.getString("pealkiri");
 		artikkel.lisatud = rs.getDate("lisatud");
@@ -39,7 +39,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		PreparedStatement stmt = Main
 				.getCurrentConnection()
 				.prepareStatement(
-						"INSERT INTO Artikkel (autor, pealkiri, pilt, kirjeldus, uudis, teema) values (?, ?, ?, ?, ?, ?)");
+						"INSERT INTO Artikkel (autor, pealkiri, pilt, kirjeldus, uudis, teema, vaadatud) values (?, ?, ?, ?, ?, ?,0)");
 		// /Kuidas me need konkreetsed väärtused siia sisse saame??
 		//stmt.execute();
 	}
@@ -49,11 +49,11 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		List<Artikkel> artiklid = new ArrayList<>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT top 10 autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud");
+				.executeQuery("SELECT top 10 id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud");
 
 		while (rs.next()) {
 			Artikkel a = new Artikkel();
-
+			a.id = rs.getInt("id");
 			a.autor = rs.getString("autor");
 			a.pealkiri = rs.getString("pealkiri");
 			a.lisatud = rs.getDate("lisatud");
@@ -72,10 +72,11 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		List<Artikkel> artiklid = new ArrayList<>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT top 10 autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel");  //where teema on õige (või panna see eelmise meetodiga kokku??
+				.executeQuery("SELECT top 10 id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel");  //where teema on õige (või panna see eelmise meetodiga kokku??
 
 		while (rs.next()) {
 			Artikkel a = new Artikkel();
+			a.id = rs.getInt("id");
 			a.autor = rs.getString("autor");
 			a.pealkiri = rs.getString("pealkiri");
 			a.lisatud = rs.getDate("lisatud");
@@ -124,10 +125,11 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		List<Artikkel> artiklid = new ArrayList<>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT top 5 pealkiri FROM Artikkel ");  //order by vaatamisi (selleks counterit vaja)
+				.executeQuery("SELECT top 5 id, pealkiri FROM Artikkel ");  //order by vaatamisi (selleks counterit vaja)
 
 		while (rs.next()) {
 			Artikkel a = new Artikkel();
+			a.id = rs.getInt("id");
 			a.pealkiri = rs.getString("pealkiri");
 			artiklid.add(a);
 		}

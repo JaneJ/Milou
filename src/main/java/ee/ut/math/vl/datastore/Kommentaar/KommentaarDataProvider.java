@@ -9,7 +9,7 @@ import ee.ut.math.vl.data.Kommentaar;
 
 public interface KommentaarDataProvider {
 	
-	 public Kommentaar findKommentaarById(int id);
+
 	 public List<Kommentaar> findKommentaarByArtikkel(int artikkel) throws SQLException, Exception;
 	 public void lisaKommentaar(Kommentaar kommentaar) throws SQLException, Exception;
 	
