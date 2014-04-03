@@ -8,7 +8,18 @@
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-    
+    <servlet-mapping>
+
+    <http-method>POST</http-method>
+
+</servlet-mapping>
+
+
+<servlet-mapping>
+
+    <http-method>GET</http-method>
+
+</servlet-mapping>
 
 
 </web-app>

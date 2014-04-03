@@ -2,8 +2,8 @@ $(document).ready(function(){
 	var text_max=80;
 	$('#formMargid').html(text_max + ' märke alles.' );
 
-	$('#"formArtikliPealkiri"').keyup(function(){
-		var pealkiri_len=$('#"formArtikliPealkiri"').val().length;
+	$('#formArtikliPealkiri"').keyup(function(){
+		var pealkiri_len=$('#formArtikliPealkiri').val().length;
 		var pealkiri_alles=text_max-pealkiri_len;
 		$('#formMargid').html(pealkiri_alles+ ' märke alles.');
 	});
