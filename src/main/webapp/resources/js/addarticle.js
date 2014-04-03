@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 $('#submit').click(function() {
-        var artikkel = buildArtikkel();
+        var Artikkel = buildArtikkel();
         console.log(artikkel.autor);
         console.log(autor);
         /*Artikkel.autor=document.getElementById("#autor");
@@ -45,7 +45,7 @@ $('#submit').click(function() {
 			$.ajax("/artiklid",{
 				type:"POST",
 				dataType:'json',
-				data: JSON.stringify(artikkel),
+				data: JSON.stringify(Artikkel),
 				contentType: "application/json; charset=utf-8",
  
 				success: function(Artikkel){   
