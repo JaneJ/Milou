@@ -23,7 +23,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 $('#submit').click(function() {
         var Artikkel = buildArtikkel();
-        console.log(artikkel.autor);
+        console.log(Artikkel.autor);
         console.log(autor);
         /*Artikkel.autor=document.getElementById("#autor");
 
