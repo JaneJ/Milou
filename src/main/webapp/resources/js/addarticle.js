@@ -22,19 +22,21 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 $('#submit').click(function() {
-        var Artikkel = {};
-        Artikkel.autor=document.getElementById("#autor");
+        var artikkel = buildArtikkel();
+        console.log(artikkel.autor);
+        console.log(autor);
+        /*Artikkel.autor=document.getElementById("#autor");
 
-        console.log(document.getElementById("#autor"));
+       // console.log(document.getElementById("#autor"));
 
         Artikkel.pealkiri=document.getElementById("#pealkiri");
-        console.log(document.getElementById("#pealkiri"));
+        //console.log(document.getElementById("#pealkiri"));
         Artikkel.pilt=document.getElementById("#file");
         Artikkel.kirjeldus=document.getElementById("#lyhikirjeldus");
         Artikkel.uudis=document.getElementById("#sisu");
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
         console.log(Artikkel);
-        console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
+        console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);*/
        
  		if (Artikkel.teema=="Koomiks") {
  			if (!Artikkel.pealkiri & !Artikkel.pilt & !Artikkel.pilt ) {
@@ -42,9 +44,8 @@ $('#submit').click(function() {
  			}else {
 			$.ajax("/artiklid",{
 				type:"POST",
-				//url:"/artiklid",
 				dataType:'json',
-				data: JSON.stringify(Artikkel),
+				data: JSON.stringify(artikkel),
 				contentType: "application/json; charset=utf-8",
  
 				success: function(Artikkel){   
@@ -81,5 +82,15 @@ $('#submit').click(function() {
 			});
 		};});});
 
+function buildArtikkel(){
+	return{
+		autor: document.getElementById("#autor"),
+		pealkiri:document.getElementById("#pealkiri"),
+		pilt:document.getElementById("#file"),
+        kirjeldus:document.getElementById("#lyhikirjeldus"),
+        uudis:document.getElementById("#sisu"),
+        teema : $('input:radio[name=teema]:checked').val()
 
+	};
+};
 //Kuhugi siia funktsioon, mis lisab selle ka pealehele ???
