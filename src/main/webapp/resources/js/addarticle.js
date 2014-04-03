@@ -24,7 +24,11 @@ $(document).ready(function(){
 $('#submit').click(function() {
         var Artikkel = {};
         Artikkel.autor=document.getElementById("#autor");
+
+        console.log(document.getElementById("#autor"));
+
         Artikkel.pealkiri=document.getElementById("#pealkiri");
+        console.log(document.getElementById("#pealkiri"));
         Artikkel.pilt=document.getElementById("#file");
         Artikkel.kirjeldus=document.getElementById("#lyhikirjeldus");
         Artikkel.uudis=document.getElementById("#sisu");
@@ -38,7 +42,7 @@ $('#submit').click(function() {
  			}else {
 			$.ajax("/artiklid",{
 				type:"POST",
-				url:"/artiklid",
+				//url:"/artiklid",
 				dataType:'json',
 				data: JSON.stringify(Artikkel),
 				contentType: "application/json; charset=utf-8",
