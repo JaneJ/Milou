@@ -37,7 +37,6 @@ $(function() {
 
 $(this).ready(function() {
  
-     //html does not exist 
     $('#submit').click(function() {
         var Artikkel = {};
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
@@ -59,15 +58,15 @@ $(this).ready(function() {
 				contentType: "application/json; charset=utf-8",
  
 				success: function(Artikkel){   
-					console.log("gg");
+					console.log("success");
 				},
 				error:function(req, text) {
 					console.log(req);
 					console.log(text);
 				}
 
-			});
-		}else if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu & !Artikkel.pilt) {
+			});}}
+		if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu & !Artikkel.pilt) {
 			alert("Kõik vajalikud väljad pole täidetud!")
 		}else {
 			$.ajax("/artiklid",{
@@ -86,7 +85,7 @@ $(this).ready(function() {
 				}
 
 			});
-		}}});}
+		};});});
 
 
 //Kuhugi siia funktsioon, mis lisab selle ka pealehele ???

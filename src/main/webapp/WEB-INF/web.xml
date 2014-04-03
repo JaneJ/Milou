@@ -16,7 +16,7 @@
 
  <servlet-mapping>
   <servlet-name>addArticle</servlet-name>
-  <url-pattern>/addarticle.do</url-pattern>
+  <url-pattern>/addarticle.html</url-pattern>
  </servlet-mapping>
 	
     <servlet-mapping>
