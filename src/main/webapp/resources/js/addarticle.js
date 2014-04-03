@@ -23,12 +23,13 @@ $(document).ready(function(){
 $(document).ready(function(){
 $('#submit').click(function() {
         var Artikkel = {};
-        Artikkel.autor=$("#autor").val();
-        Artikkel.pealkiri=$("#pealkiri").val();
-        Artikkel.pilt=$("#file").val();
-        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
-        Artikkel.uudis=$("#sisu").val();
+        Artikkel.autor=document.getElementById("#autor");
+        Artikkel.pealkiri=document.getElementById("#pealkiri");
+        Artikkel.pilt=document.getElementById("#file");
+        Artikkel.kirjeldus=document.getElementById("#lyhikirjeldus");
+        Artikkel.uudis=document.getElementById("#sisu");
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
+        console.log(Artikkel);
         console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
        
  		if (Artikkel.teema=="Koomiks") {
