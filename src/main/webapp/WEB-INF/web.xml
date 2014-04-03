@@ -10,13 +10,13 @@
     </welcome-file-list>
 	
 	 <servlet>
-		<servlet-name>addArticle</servlet-name>
+		<servlet-name>ArtikkelController</servlet-name>
   <servlet-class>ee.ut.math.vl.servlets.artikkel.ArtikkelController</servlet-class>
  </servlet>
 
  <servlet-mapping>
-  <servlet-name>addArticle</servlet-name>
-  <url-pattern>/addarticle.html</url-pattern>
+  <servlet-name>ArtikkelController</servlet-name>
+  <url-pattern>/addarticle</url-pattern>
  </servlet-mapping>
 	
     <servlet-mapping>
