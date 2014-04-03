@@ -1,22 +1,22 @@
 $(document).ready(function(){
 	var text_max=80;
-	$('#m2rke').html(text_max + ' märke alles.' );
+	$('#formMargid').html(text_max + ' märke alles.' );
 
-	$('#artiklipealkiri').keyup(function(){
-		var pealkiri_len=$('#artiklipealkiri').val().length;
+	$('#"formArtikliPealkiri"').keyup(function(){
+		var pealkiri_len=$('#"formArtikliPealkiri"').val().length;
 		var pealkiri_alles=text_max-pealkiri_len;
-		$('#m2rke').html(pealkiri_alles+ ' märke alles.');
+		$('#formMargid').html(pealkiri_alles+ ' märke alles.');
 	});
 });
 
 $(document).ready(function(){
 	var text_max=300;
-	$('#m2rkelyhi').html(text_max + ' märke alles.' );
+	$('#formMargidLuhi').html(text_max + ' märke alles.' );
 
 	$('#lyhikirjeldus').keyup(function(){
-		var pealkiri_len=$('#lyhikirjeldus').val().length;
+		var pealkiri_len=$('#formKirjeldus').val().length;
 		var pealkiri_alles=text_max-pealkiri_len;
-		$('#mrkelyhi').html(pealkiri_alles+ ' märke alles.');
+		$('#formMargidLuhi').html(pealkiri_alles+ ' märke alles.');
 	});
 });
 
@@ -29,6 +29,6 @@ function lisaartikkel(){
 
 
 	var pealkiri=$('#pealkiri').val();
-	var lyhikirjeldus=$('#lyhikirjeldus').val();
+	var formKirjeldus=$('#formKirjeldus').val();
 	var sisu=$('#artiklisisu').val();
 };*/

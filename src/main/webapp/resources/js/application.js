@@ -26,19 +26,23 @@ $(document).ready(function(){
 
   //uudise pealkirjale klikkides
   $('.uudisPealkiri').on( 'click',function(){
-  console.log("application.js - uudise pealkiri"); 
-  $("article").not($(this).closest('article')).hide("fast");
+	  console.log("application.js - uudise pealkiri"); 
+	  $("article").not($(this).closest('article')).hide("fast");
 
-  //vaja on eemaldada plokipaigutus
-  $(this).removeClass('.parem');
-  $(this).removeClass('.vasak');
-  $(this).removeClass('.style');
-  $(this).closest('article').addClass('.uudisAktiivne');
+	  //vaja on eemaldada plokipaigutus
+	  $(this).closest('article').removeClass('.parem');
+	  $(this).closest('article').removeClass('.vasak');
+	  $(this).closest('article').detach(".parem");
+	var  x=$($(this).closest('article')).detach();
+	$("#sisu").prepend(x);
+	//  $(this).removeClass('.style');
+	  //$(this).closest('article').addClass('.uudisAktiivne');
+	  //sisu seest valja tostmiseks detach
 
 
-	$(".uudisJalus").show("slow");
-	$(".uudisTagasi").show("slow");
-	$(".uudisTekst").slideDown("slow");
+		$(".uudisJalus").show("slow");
+		$(".uudisTagasi").show("slow");
+		$(".uudisTekst").slideDown("slow");
    });
    
   //kui valitakse naita kommentaare
