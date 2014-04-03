@@ -21,7 +21,7 @@ $(document).ready(function(){
 });
 
 $('#submit').click(function() {
-        var Artikkel = {};
+        var Artikkel = new Object();
         Artikkel.autor=$("textarea#autor").val();
         Artikkel.pealkiri=$("textarea#pealkiri").val();
         Artikkel.pilt=$("#file").val();
