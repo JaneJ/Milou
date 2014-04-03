@@ -16,7 +16,7 @@
 
 	<servlet-mapping>
 		<servlet-name>ArtikkelController</servlet-name>
-		<url-pattern>/addarticle</url-pattern>
+		<url-pattern>/artiklid</url-pattern>
 	</servlet-mapping>
 	
     <servlet-mapping>
