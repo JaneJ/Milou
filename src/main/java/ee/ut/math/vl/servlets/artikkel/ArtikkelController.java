@@ -8,6 +8,7 @@ import ee.ut.math.vl.datastore.Artikkel.ArtikkelData;
 import ee.ut.math.vl.datastore.Artikkel.ArtikkelDataProvider;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(value = "/artiklid")
+@MultipartConfig(location = "/artiklid")
 public class ArtikkelController extends HttpServlet {
 
 	private Gson gson;
@@ -65,8 +66,8 @@ public class ArtikkelController extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			System.out.println(req.getParameterMap().toString());
-			Artikkel artikkel =(Artikkel) req.getParameterMap();
-			//Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
+			
+			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
 			datastore.lisaArtikkel(artikkel); 
 
 			// echo the same object back for convenience and debugging

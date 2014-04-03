@@ -9,6 +9,9 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 	
+	
+  <multipart-form enable="true"/>
+
 	<!--  <servlet>
 		<servlet-name>ArtikkelController</servlet-name>
 		<servlet-class>ee.ut.math.vl.servlets.artikkel.ArtikkelController</servlet-class>

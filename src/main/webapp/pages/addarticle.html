@@ -7,8 +7,8 @@
 	<title>Milou</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
-		<script type="text/javascript" src="/resources/js/logins.js" ></script>
-		<script type="text/javascript" src="/resources/js/addarticle.js" ></script>
+		<script type="text/javascript" src="resources/js/logins.js" ></script>
+		<script type="text/javascript" src="resources/js/addarticle.js" ></script>
 		<link href="/resources/css/minu.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -47,7 +47,7 @@
 	<section id = "vasakParem">	
 
 
-		
+		<form method="POST" action="/artiklid" enctype="multipart/form-data">
 			<div class="teemad" id='teema' >Teema</div>
 				<input type="radio" name="teema" value="it">IT
 				<input type="radio" name="teema" value="kultuur">Kultuur
@@ -70,7 +70,7 @@
 				<input type="file" name="file" id="file"><br>
 	
 			<button id="submit">Submit</button>
-		
+		</form>
 	 </section>
 
 	</div>
