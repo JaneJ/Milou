@@ -22,12 +22,13 @@ $(document).ready(function(){
 
 $('#submit').click(function() {
         var Artikkel = {};
-        Artikkel.teema = $('input:radio[name=teema]:checked').val();
         Artikkel.autor=$("#autor").val();
         Artikkel.pealkiri=$("#pealkiri").val();
-        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
         Artikkel.pilt=$("#file").val();
-        Artikkel.sisu=$("#sisu").val();
+        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
+        Artikkel.uudis=$("#sisu").val();
+        Artikkel.teema = $('input:radio[name=teema]:checked').val();
+            
        
  		if (Artikkel.teema=="Koomiks") {
  			if (!Artikkel.pealkiri & !Artikkel.pilt & !Artikkel.pilt ) {
@@ -53,7 +54,7 @@ $('#submit').click(function() {
 				}
 
 			});}}
-		if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu & !Artikkel.pilt) {
+		if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu ) {
 			alert("Kõik vajalikud väljad pole täidetud!")
 		}else {
 			$.ajax("/artiklid",{
