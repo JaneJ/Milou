@@ -43,7 +43,10 @@ public class KommentaarData implements KommentaarDataProvider {
 		PreparedStatement stmt = Main
 				.getCurrentConnection()
 				.prepareStatement(
-						"INSERT INTO kommentaar (artikkel, autor, kommentaar) values (?, ?, ?)");
+						"INSERT INTO kommentaar (artikkel, autor, kommentaar, aeg) values (?, ?, ?, ?)");
+		
+		stmt.setString(4, "now" );
+		
 		// /Kuidas me need konkreetsed väärtused siia sisse saame??
 		
 		//Hmm see artikli väärtus ka veel... kahte pead oleks vaja

@@ -39,9 +39,60 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		PreparedStatement stmt = Main
 				.getCurrentConnection()
 				.prepareStatement(
-						"INSERT INTO Artikkel (autor, pealkiri, pilt, kirjeldus, uudis, teema, vaadatud) values (?, ?, ?, ?, ?, ?,0)");
+						"INSERT INTO Artikkel (autor, pealkiri, pilt, kirjeldus, uudis, teema, vaatamisi, lisatud) values (?, ?, ?, ?, ?, ?, ?, ?)");
+		
+		
+		
+		
+		stmt.setInt(7, 0);
+		stmt.setString(8, "now" );
+		
+		
 		// /Kuidas me need konkreetsed väärtused siia sisse saame??
 		//stmt.execute();
+		
+		
+		
+		//tekstides tuleb ' asendada '' -ga
+		
+		
+		//pilt tuleb baitideks teha
+		
+		/*
+		 * public static byte [] ImageToByte(File file) throws FileNotFoundException{
+02
+        FileInputStream fis = new FileInputStream(file);
+03
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+04
+        byte[] buf = new byte[1024];
+05
+        try {
+06
+            for (int readNum; (readNum = fis.read(buf)) != -1;) {
+07
+                bos.write(buf, 0, readNum);     
+08
+                System.out.println("read " + readNum + " bytes,");
+09
+            }
+10
+        } catch (IOException ex) {
+11
+        }
+12
+        byte[] bytes = bos.toByteArray();
+13
+      
+14
+     return bytes;
+15
+    }
+
+		 */
+		
+		
+		
 	}
 
 	@Override
@@ -49,7 +100,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		List<Artikkel> artiklid = new ArrayList<>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT top 10 id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud");
+				.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud limit 10");
 
 		while (rs.next()) {
 			Artikkel a = new Artikkel();
@@ -72,7 +123,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		List<Artikkel> artiklid = new ArrayList<>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT top 10 id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel");  //where teema on õige (või panna see eelmise meetodiga kokku??
+				.executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel limit 10");  //where teema on õige (või panna see eelmise meetodiga kokku??
 
 		while (rs.next()) {
 			Artikkel a = new Artikkel();
@@ -95,7 +146,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		List<Artikkel> artiklid = new ArrayList<>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT top 5 pealkiri, lisatud FROM Artikkel ORDER BY lisatud");
+				.executeQuery("SELECT pealkiri, lisatud FROM Artikkel ORDER BY lisatud limit 5");
 
 		while (rs.next()) {
 			Artikkel a = new Artikkel();
@@ -125,7 +176,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		List<Artikkel> artiklid = new ArrayList<>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT top 5 id, pealkiri FROM Artikkel ");  //order by vaatamisi (selleks counterit vaja)
+				.executeQuery("SELECT id, pealkiri FROM Artikkel limit 5");  //order by vaatamisi (selleks counterit vaja)
 
 		while (rs.next()) {
 			Artikkel a = new Artikkel();
