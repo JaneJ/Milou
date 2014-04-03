@@ -2,7 +2,7 @@ $(document).ready(function(){
 	var text_max=80;
 	$('#formMargid').html(text_max + ' märke alles.' );
 
-	$('#formArtikliPealkiri"').keyup(function(){
+	$('#formArtikliPealkiri').keyup(function(){
 		var pealkiri_len=$('#formArtikliPealkiri').val().length;
 		var pealkiri_alles=text_max-pealkiri_len;
 		$('#formMargid').html(pealkiri_alles+ ' märke alles.');
@@ -18,20 +18,6 @@ $(document).ready(function(){
 		var pealkiri_alles=text_max-pealkiri_len;
 		$('#formMargidLuhi').html(pealkiri_alles+ ' märke alles.');
 	});
-});
-
-
-$(function() {
-	var Artikkel={};
-	Artikkel.Teema=$("[id=teema]").val();
-
-
-    $('#submit').click(function() {
-        makeBid(viewingList, bidBuilder);
-    });
-
-    vldemo2.loadAuctionItems(itemList);
-
 });
 
 
@@ -59,6 +45,11 @@ $(this).ready(function() {
  
 				success: function(Artikkel){   
 					console.log("success");
+					/*
+
+
+
+					*/
 				},
 				error:function(req, text) {
 					console.log(req);
