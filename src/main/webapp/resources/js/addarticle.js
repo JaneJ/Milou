@@ -20,10 +20,7 @@ $(document).ready(function(){
 	});
 });
 
-
-$(this).ready(function() {
- 
-    $('#submit').click(function() {
+$('#submit').click(function() {
         var Artikkel = {};
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
         Artikkel.autor=$("#autor").val();
@@ -75,7 +72,7 @@ $(this).ready(function() {
 				}
 
 			});
-		};});});
+		};});
 
 
 //Kuhugi siia funktsioon, mis lisab selle ka pealehele ???
