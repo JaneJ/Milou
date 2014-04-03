@@ -20,13 +20,14 @@ $(document).ready(function(){
 	});
 });
 
+$(document).ready(function(){
 $('#submit').click(function() {
-        var Artikkel = new Object();
-        Artikkel.autor=$("textarea#autor").val();
-        Artikkel.pealkiri=$("textarea#pealkiri").val();
+        var Artikkel = {};
+        Artikkel.autor=$("#autor").val();
+        Artikkel.pealkiri=$("#pealkiri").val();
         Artikkel.pilt=$("#file").val();
-        Artikkel.kirjeldus=$("textarea#lyhikirjeldus").val();
-        Artikkel.uudis=$("textarea#sisu").val();
+        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
+        Artikkel.uudis=$("#sisu").val();
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
         console.log(Artikkel);
        
@@ -36,7 +37,7 @@ $('#submit').click(function() {
  			}else {
 			$.ajax("/artiklid",{
 				type:"POST",
-				//url:"ArtikkelData/lisaArtikkel",
+				url:"/artiklid",
 				dataType:'json',
 				data: JSON.stringify(Artikkel),
 				contentType: "application/json; charset=utf-8",
@@ -73,7 +74,7 @@ $('#submit').click(function() {
 				}
 
 			});
-		};});
+		};});});
 
 
 //Kuhugi siia funktsioon, mis lisab selle ka pealehele ???
