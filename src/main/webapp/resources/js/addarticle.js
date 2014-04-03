@@ -2,8 +2,8 @@ $(document).ready(function(){
 	var text_max=80;
 	$('#formMargid').html(text_max + ' märke alles.' );
 
-	$('#formArtikliPealkiri').keyup(function(){
-		var pealkiri_len=$('#formArtikliPealkiri').val().length;
+	$('#artiklipealkiri').keyup(function(){
+		var pealkiri_len=$('#artiklipealkiri').val().length;
 		var pealkiri_alles=text_max-pealkiri_len;
 		$('#formMargid').html(pealkiri_alles+ ' märke alles.');
 	});
@@ -14,7 +14,7 @@ $(document).ready(function(){
 	$('#formMargidLuhi').html(text_max + ' märke alles.' );
 
 	$('#lyhikirjeldus').keyup(function(){
-		var pealkiri_len=$('#formKirjeldus').val().length;
+		var pealkiri_len=$('#lyhikirjeldus').val().length;
 		var pealkiri_alles=text_max-pealkiri_len;
 		$('#formMargidLuhi').html(pealkiri_alles+ ' märke alles.');
 	});
@@ -48,7 +48,6 @@ $(this).ready(function() {
 					/*
 
 
-
 					*/
 				},
 				error:function(req, text) {
@@ -62,7 +61,7 @@ $(this).ready(function() {
 		}else {
 			$.ajax("/artiklid",{
 				type:"POST",
-				url:"ArtikkelData/lisaArtikkel",
+				//url:"ArtikkelData/lisaArtikkel",
 				dataType:'json',
 				data: JSON.stringify(Artikkel),
 				contentType: "application/json; charset=utf-8",
