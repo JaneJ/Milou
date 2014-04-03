@@ -22,11 +22,11 @@ $(document).ready(function(){
 
 $('#submit').click(function() {
         var Artikkel = {};
-        Artikkel.autor=$("#autor").val();
-        Artikkel.pealkiri=$("#pealkiri").val();
+        Artikkel.autor=$("textarea#autor").val();
+        Artikkel.pealkiri=$("textarea#pealkiri").val();
         Artikkel.pilt=$("#file").val();
-        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
-        Artikkel.uudis=$("#sisu").val();
+        Artikkel.kirjeldus=$("textarea#lyhikirjeldus").val();
+        Artikkel.uudis=$("textarea#sisu").val();
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
          console.log(Artikkel);
        
