@@ -66,20 +66,20 @@
 		<div id="sisu">
 <div id="sisucontainer">
 	<form method="post" action="#" >
-	<div class="teemad" >Teema</div>
+	<div class="teemad" id='teema' >Teema</div>
 	<input type="radio" name="teema" value="it">IT
 	<input type="radio" name="teema" value="kultuur">Kultuur
-	<input type="radio" name="teema" value="sport">Sport
+	<input type="radio" name="teema" value="sport" >Sport
 	<input type="radio" name="teema" value="majandus">Majandus
 	<input type="radio" name="teema" value="koomiks">Koomiks
 	<input type="radio" name="teema" value="Krimi">Krimi
-	<div class="pealkiri">Pealkiri</div>
+	<div class="pealkiri" id="pealkiri">Pealkiri</div>
 	<textarea id ="artiklipealkiri" rows="3" cols="50" maxlength="80"></textarea>
 	<div id="m2rke"></div>
-	<div class="lyhikirjeldus">Lühikirjeldus</div>
+	<div class="lyhikirjeldus" id="lyhikirjeldus">Lühikirjeldus</div>
 	<textarea id ="lyhikirjeldus" rows="5" cols="50" maxlength="300"></textarea>
 	<div id="m2rkelyhi"></div>
-	<div class="artiklisisu">Artikli sisu</div>
+	<div class="artiklisisu" id="sisu">Artikli sisu</div>
 	<textarea id ="artiklisisu" rows="15" cols="100"></textarea>
 	<div class="autor">Autor <input id ="autor" type="text" name="autor"></div>
 	
@@ -87,7 +87,7 @@
 	<label for="file">Lae pilt üles:</label>
 	<input type="file" name="file" id="file"><br>
 	
-	<input type="submit" name="submit" value="Submit">
+	<button id="submit">Submit</button>
 	</form>
 
 

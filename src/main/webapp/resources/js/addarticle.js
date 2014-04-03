@@ -21,14 +21,72 @@ $(document).ready(function(){
 });
 
 
-
-/*
-function lisaartikkel(){
-
-	var teema=document.querySelector('input[name="teema"]:checked').value;
+$(function() {
+	var Artikkel={};
+	Artikkel.Teema=$("[id=teema]").val();
 
 
-	var pealkiri=$('#pealkiri').val();
-	var formKirjeldus=$('#formKirjeldus').val();
-	var sisu=$('#artiklisisu').val();
-};*/
+    $('#submit').click(function() {
+        makeBid(viewingList, bidBuilder);
+    });
+
+    vldemo2.loadAuctionItems(itemList);
+
+});
+
+
+$(this).ready(function() {
+ 
+     //html does not exist 
+    $('#submit').click(function() {
+        var Artikkel = {};
+        Artikkel.teema = $('input:radio[name=teema]:checked').val();
+        Artikkel.autor=$("#autor").val();
+        Artikkel.pealkiri=$("#pealkiri").val();
+        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
+        Artikkel.pilt=$("#file").val();
+        Artikkel.sisu=$("#sisu").val();
+       
+ 		if (Artikkel.teema=="Koomiks") {
+ 			if (!Artikkel.pealkiri & !Artikkel.pilt & !Artikkel.pilt ) {
+ 				alert("Kõik vajalikud väljad pole täidetud!");
+ 			}else {
+			$.ajax("/artiklid",{
+				type:"POST",
+				url:"ArtikkelData/lisaArtikkel",
+				dataType:'json',
+				data: JSON.stringify(Artikkel),
+				contentType: "application/json; charset=utf-8",
+ 
+				success: function(Artikkel){   
+					console.log("gg");
+				},
+				error:function(req, text) {
+					console.log(req);
+					console.log(text);
+				}
+
+			});
+		}else if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu & !Artikkel.pilt) {
+			alert("Kõik vajalikud väljad pole täidetud!")
+		}else {
+			$.ajax("/artiklid",{
+				type:"POST",
+				url:"ArtikkelData/lisaArtikkel",
+				dataType:'json',
+				data: JSON.stringify(Artikkel),
+				contentType: "application/json; charset=utf-8",
+ 
+				success: function(Artikkel){   
+					console.log("success");
+				},
+				error:function(req, text) {
+					console.log(req);
+					console.log(text);
+				}
+
+			});
+		}}});}
+
+
+//Kuhugi siia funktsioon, mis lisab selle ka pealehele ???
