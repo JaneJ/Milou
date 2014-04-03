@@ -53,7 +53,7 @@ $(this).ready(function() {
  			}else {
 			$.ajax("/artiklid",{
 				type:"POST",
-				url:"ArtikkelData/lisaArtikkel",
+				//url:"ArtikkelData/lisaArtikkel",
 				dataType:'json',
 				data: JSON.stringify(Artikkel),
 				contentType: "application/json; charset=utf-8",
