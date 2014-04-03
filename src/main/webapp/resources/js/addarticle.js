@@ -29,7 +29,7 @@ $('#submit').click(function() {
         Artikkel.kirjeldus=$("#lyhikirjeldus").val();
         Artikkel.uudis=$("#sisu").val();
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
-        console.log(Artikkel);
+        console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
        
  		if (Artikkel.teema=="Koomiks") {
  			if (!Artikkel.pealkiri & !Artikkel.pilt & !Artikkel.pilt ) {
