@@ -65,7 +65,7 @@ public class ArtikkelController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		try {
-			System.out.println(req.getParameterMap().toString());
+			System.out.println("Data to DB");
 			
 			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
 			datastore.lisaArtikkel(artikkel); 
