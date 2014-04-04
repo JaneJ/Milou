@@ -9,18 +9,20 @@ import ee.ut.math.vl.datastore.Artikkel.ArtikkelDataProvider;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 @MultipartConfig(location = "/artiklid")
 public class ArtikkelController extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Gson gson;
 	private ArtikkelDataProvider datastore;
 
