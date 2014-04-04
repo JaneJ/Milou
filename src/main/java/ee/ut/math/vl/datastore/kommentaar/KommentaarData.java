@@ -1,4 +1,4 @@
-package ee.ut.math.vl.datastore.Kommentaar;
+package ee.ut.math.vl.datastore.kommentaar;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.Main;
+
 import ee.ut.math.vl.data.Kommentaar;
 
 public class KommentaarData implements KommentaarDataProvider {

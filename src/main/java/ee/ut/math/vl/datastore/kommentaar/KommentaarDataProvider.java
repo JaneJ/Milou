@@ -1,4 +1,4 @@
-package ee.ut.math.vl.datastore.Kommentaar;
+package ee.ut.math.vl.datastore.kommentaar;
 
 import java.sql.SQLException;
 import java.util.List;

@@ -1,4 +1,4 @@
-package ee.ut.math.vl.datastore.Artikkel;
+package ee.ut.math.vl.datastore.artikkel;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -127,6 +128,14 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
 	@Override
 	public List<Artikkel> findTeemaArtiklit() throws SQLException, Exception {
+		//Connection conn;
+		//conn = openConection();
+		
+		//try {}
+		//finally {if (conn!=null) conn.close();} 
+		
+		
+		
 		List<Artikkel> artiklid = new ArrayList<>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt

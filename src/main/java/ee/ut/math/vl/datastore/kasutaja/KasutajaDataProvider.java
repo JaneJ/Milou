@@ -1,4 +1,4 @@
-package ee.ut.math.vl.datastore.Kasutaja;
+package ee.ut.math.vl.datastore.kasutaja;
 
 import java.sql.SQLException;
 import java.util.List;

@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
 import ee.ut.math.vl.data.Artikkel;
-import ee.ut.math.vl.datastore.Artikkel.ArtikkelData;
-import ee.ut.math.vl.datastore.Artikkel.ArtikkelDataProvider;
+import ee.ut.math.vl.datastore.artikkel.ArtikkelData;
+import ee.ut.math.vl.datastore.artikkel.ArtikkelDataProvider;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

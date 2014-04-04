@@ -1,4 +1,4 @@
-package ee.ut.math.vl.datastore.Kasutaja;
+package ee.ut.math.vl.datastore.kasutaja;
 
 
 import java.sql.PreparedStatement;
@@ -7,7 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.example.Main;
+
 import ee.ut.math.vl.data.Kasutaja;
 
 public class KasutajaData implements KasutajaDataProvider {

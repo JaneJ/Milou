@@ -1,4 +1,4 @@
-package ee.ut.math.vl.datastore.Artikkel;
+package ee.ut.math.vl.datastore.artikkel;
 
 import java.sql.SQLException;
 import java.util.List;
