@@ -7,7 +7,7 @@ public class Artikkel {
     public Integer id;
     public String autor;
     public String pealkiri;
-    public Image pilt;
+    public int pilt;
     public String kirjeldus;
     public String uudis;
     public String teema;
@@ -22,7 +22,7 @@ public class Artikkel {
     }
     
     
-    public Artikkel (String autor, String pealkiri,Image pilt,  String uudis,
+    public Artikkel (String autor, String pealkiri,int pilt,  String uudis,
     		String teema, Date lisatud) {        
         this.autor = autor;
         this.pealkiri = pealkiri;
@@ -33,7 +33,7 @@ public class Artikkel {
     }
     
     
-    public Artikkel (String autor, String pealkiri,Image pilt, String kirjeldus, 
+    public Artikkel (String autor, String pealkiri, int pilt, String kirjeldus, 
     		String teema, Integer vaatamisi, Date lisatud) {
         this.autor = autor;
         this.pealkiri = pealkiri;
@@ -44,7 +44,7 @@ public class Artikkel {
         this.lisatud = lisatud;
     }
 
-    public Artikkel (Integer id, String autor, String pealkiri,Image pilt, String kirjeldus, String uudis,
+    public Artikkel (Integer id, String autor, String pealkiri,int pilt, String kirjeldus, String uudis,
     		String teema, Integer vaatamisi, Date lisatud) {
         this.id = id;
         this.autor = autor;
