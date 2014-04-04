@@ -9,15 +9,18 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 	
-	 <servlet>
+	
+  <multipart-form enable="true"/>
+
+	<!--  <servlet>
 		<servlet-name>ArtikkelController</servlet-name>
 		<servlet-class>ee.ut.math.vl.servlets.artikkel.ArtikkelController</servlet-class>
-	</servlet>
+	</servlet> -->
 
-	<servlet-mapping>
+	<!-- <servlet-mapping>
 		<servlet-name>ArtikkelController</servlet-name>
-		<url-pattern>/addarticle</url-pattern>
-	</servlet-mapping>
+		<url-pattern>/artiklid</url-pattern>
+	</servlet-mapping> -->
 	
     <servlet-mapping>
 

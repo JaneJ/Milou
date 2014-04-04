@@ -8,18 +8,21 @@ import ee.ut.math.vl.datastore.artikkel.ArtikkelData;
 import ee.ut.math.vl.datastore.artikkel.ArtikkelDataProvider;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
-@WebServlet(value = "/artiklid")
+@MultipartConfig(location = "/artiklid")
 public class ArtikkelController extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Gson gson;
 	private ArtikkelDataProvider datastore;
 
@@ -64,6 +67,8 @@ public class ArtikkelController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		try {
+			System.out.println("Data to DB");
+			
 			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
 			datastore.lisaArtikkel(artikkel); 
 

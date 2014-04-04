@@ -18,7 +18,7 @@ public class KommentaarData implements KommentaarDataProvider {
 	@Override
 	public List<Kommentaar> findKommentaarByArtikkel(int artikkel)
 			throws SQLException, Exception {
-		List<Kommentaar> kommentaarid = new ArrayList<>();
+		List<Kommentaar> kommentaarid = new ArrayList<Kommentaar>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
 				.executeQuery("SELECT autor, kommentaar, aeg  FROM Kommnetaar where artikkel=artikkel "); // order

@@ -129,6 +129,11 @@ header #pais {
 	padding: 1%;
 
 }
+#pealkiri, #teema, #lyhikirjeldus, #pealkiri, #sisu{
+	font-size: 170%;
+	font-weight: 
+}
+
 
 nav #nav_kast {
 	margin: 0%;

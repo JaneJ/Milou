@@ -20,14 +20,16 @@ $(document).ready(function(){
 	});
 });
 
+$(document).ready(function(){
 $('#submit').click(function() {
-        var Artikkel = {};
-        Artikkel.teema = $('input:radio[name=teema]:checked').val();
+        var Artikkel = new Object();
         Artikkel.autor=$("#autor").val();
         Artikkel.pealkiri=$("#pealkiri").val();
-        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
         Artikkel.pilt=$("#file").val();
-        Artikkel.sisu=$("#sisu").val();
+        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
+        Artikkel.uudis=$("#sisu").val();
+        Artikkel.teema = $('input:radio[name=teema]:checked').val();
+        console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
        
  		if (Artikkel.teema=="Koomiks") {
  			if (!Artikkel.pealkiri & !Artikkel.pilt & !Artikkel.pilt ) {
@@ -35,7 +37,7 @@ $('#submit').click(function() {
  			}else {
 			$.ajax("/artiklid",{
 				type:"POST",
-				//url:"ArtikkelData/lisaArtikkel",
+				
 				dataType:'json',
 				data: JSON.stringify(Artikkel),
 				contentType: "application/json; charset=utf-8",
@@ -53,7 +55,7 @@ $('#submit').click(function() {
 				}
 
 			});}}
-		if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu & !Artikkel.pilt) {
+		if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu ) {
 			alert("Kõik vajalikud väljad pole täidetud!")
 		}else {
 			$.ajax("/artiklid",{
@@ -72,7 +74,7 @@ $('#submit').click(function() {
 				}
 
 			});
-		};});
+		};});});
 
 
 //Kuhugi siia funktsioon, mis lisab selle ka pealehele ???
