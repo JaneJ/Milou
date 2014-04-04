@@ -97,7 +97,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
 	@Override
 	public List<Artikkel> findTenArtiklit() throws SQLException, Exception {
-		List<Artikkel> artiklid = new ArrayList<>();
+		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
 				.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud limit 10");
@@ -120,7 +120,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
 	@Override
 	public List<Artikkel> findTeemaArtiklit() throws SQLException, Exception {
-		List<Artikkel> artiklid = new ArrayList<>();
+		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
 				.executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel limit 10");  //where teema on õige (või panna see eelmise meetodiga kokku??
@@ -143,7 +143,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
 	@Override
 	public List<Artikkel> findNewestArtiklit() throws SQLException, Exception {
-		List<Artikkel> artiklid = new ArrayList<>();
+		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
 				.executeQuery("SELECT pealkiri, lisatud FROM Artikkel ORDER BY lisatud limit 5");
@@ -173,7 +173,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
 	@Override
 	public List<Artikkel> findPopularArtiklit() throws SQLException, Exception {
-		List<Artikkel> artiklid = new ArrayList<>();
+		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt
 				.executeQuery("SELECT id, pealkiri FROM Artikkel limit 5");  //order by vaatamisi (selleks counterit vaja)

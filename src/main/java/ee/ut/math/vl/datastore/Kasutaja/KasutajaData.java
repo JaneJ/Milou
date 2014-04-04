@@ -38,7 +38,7 @@ public class KasutajaData implements KasutajaDataProvider {
 
 	@Override
 	public List<Kasutaja> findAllKasutajad() throws SQLException, Exception {
-		List<Kasutaja> kasutajad = new ArrayList<>();
+		List<Kasutaja> kasutajad = new ArrayList<Kasutaja>();
 		Statement stmt = Main.getCurrentConnection().createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT * FROM Kasutaja");
 

@@ -53,7 +53,7 @@ public class ArtikkelSocketController extends WebSocketServlet implements WebSoc
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        sockets = new CopyOnWriteArrayList<>(); // thread-safe impl
+        sockets = new CopyOnWriteArrayList<ArtikkelSocket>(); // thread-safe impl
         context = config.getServletContext(); // shared between ALL servlets
         publish(this, context); // so that other servlets could find us
     }
