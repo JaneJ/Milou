@@ -35,7 +35,7 @@ public class PealehtController extends HttpServlet {
 			throws ServletException, IOException {
 		resp.setHeader("Content-Type", "application/json");
 
-		String idString = req.getParameter("id");
+		String idString = req.getParameter("teema");
 		if (idString != null) {
 			try {
 				replyArtikkelitega(resp, idString);

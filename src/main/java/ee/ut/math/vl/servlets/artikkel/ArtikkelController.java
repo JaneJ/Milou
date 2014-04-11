@@ -54,6 +54,11 @@ public class ArtikkelController extends HttpServlet {
 	private void replyWithSingleArtikkel(HttpServletResponse resp,
 			String idString) throws SQLException, Exception {
 		int id = Integer.parseInt(idString);
+		
+		//pildi servletist
+		resp.getOutputStream().write(null);
+		
+		
 		Artikkel artikkel = datastore.findArtikkelById(id);
 		try {
 			resp.getWriter().write(gson.toJson(artikkel));
@@ -84,9 +89,14 @@ public class ArtikkelController extends HttpServlet {
 	//        String fileName = req.getPart("mingipilt").getName();
 			
 			
+			
+			//SEE UUS OSA
+			req.getPart("pilt").getInputStream();
+			
 			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
 			datastore.lisaArtikkel(artikkel); 
 
+			
 			// echo the same object back for convenience and debugging
 			// also it now contains the generated id of the bid
 			String artikkelEcho = gson.toJson(artikkel);
