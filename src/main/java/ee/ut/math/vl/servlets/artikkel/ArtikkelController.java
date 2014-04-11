@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 
 @WebServlet(value = "/artiklid")
@@ -37,6 +38,10 @@ public class ArtikkelController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		resp.setHeader("Content-Type", "application/json");
+		Connection con = null ; //peab olema meetod, mis tekitab connectioneid (muide peabki olema väärtus null)
+								//try sees open connection
+								//finally : if con!=null close connection
+		
 
 		String idString = req.getParameter("id");
 		if (idString != null) {
@@ -62,7 +67,8 @@ public class ArtikkelController extends HttpServlet {
 		Artikkel artikkel = datastore.findArtikkelById(id);
 		try {
 			resp.getWriter().write(gson.toJson(artikkel));
-			//resp.getOutputStream().write(b);            - annab baidivoo
+		
+		
 		} catch (IOException e) {
 			
 			e.printStackTrace();
@@ -73,39 +79,27 @@ public class ArtikkelController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		try {
-			System.out.println("Data to DB");
-		
 			
 			
-		// järgnevad näited selle kohta kuidas image fail lahti võtta
+			//Siia ka see conntectioni teema
 			
-		
-			// <input type="text" name="title" />
-	//        String title = req.getParameter("title");
-	       
-	        // @MultipartConfig
-	        // <form ... enctype="mingi data asi">     - form peab ka teadama, et faile saab saata
-	        // <input type="file" name="mingipilt" />
-	//        String fileName = req.getPart("mingipilt").getName();
+			//Pildi osa
+			//pildid peaksid andmebaasis olema unikaalse nimega, kui klient peaks küsima (ehk responce pildinime kaudu)
+			//Part pilt = req.getPart("pilt").getInputStream();
 			
-			
-			
-			//SEE UUS OSA
-			req.getPart("pilt").getInputStream();
 			
 			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
 			datastore.lisaArtikkel(artikkel); 
 
 			
-			// echo the same object back for convenience and debugging
-			// also it now contains the generated id of the bid
+			
 			String artikkelEcho = gson.toJson(artikkel);
 			resp.setHeader("Content-Type", "application/json");
 			resp.getWriter().write(artikkelEcho);
 
-			// actually this is a bad place to send the broadcast.
-			// better: attach sockets as eventlisteners to the datastore
-			// even better: use message queues for servlet-datastore events
+							// actually this is a bad place to send the broadcast.
+							// better: attach sockets as eventlisteners to the datastore
+							// even better: use message queues for servlet-datastore events
 
 			ArtikkelSocketController.find(req.getServletContext()).broadcast(
 					artikkelEcho);

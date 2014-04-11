@@ -17,14 +17,6 @@ import ee.ut.math.vl.data.Artikkel;
 
 public class ArtikkelData implements ArtikkelDataProvider {
 
-	/*
-	 * public static byte[] ImageToByte(File file) throws FileNotFoundException
-	 * { FileInputStream fis = new FileInputStream(file); ByteArrayOutputStream
-	 * bos = new ByteArrayOutputStream(); byte[] buf = new byte[1024]; try { for
-	 * (int readNum; (readNum = fis.read(buf)) != -1;) { bos.write(buf, 0,
-	 * readNum); // System.out.println("read " + readNum + " bytes,"); } } catch
-	 * (IOException ex) { } byte[] bytes = bos.toByteArray(); return bytes; }
-	 */
 
 	public ArtikkelData() {
 	}
@@ -32,11 +24,6 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	@Override
 	public Artikkel findArtikkelById(int id) throws SQLException, Exception {
 
-		// Connection conn;
-		// conn = openConection();
-
-		// try {}
-		// finally {if (conn!=null) conn.close();}
 
 		Artikkel artikkel = new Artikkel();
 		artikkel.id = id;
@@ -48,7 +35,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		artikkel.autor = rs.getString("autor");
 		artikkel.pealkiri = rs.getString("pealkiri");
 		artikkel.lisatud = rs.getDate("lisatud");
-		artikkel.pilt = rs.getInt("pilt");
+		artikkel.pilt = rs.getString("pilt");
 		artikkel.uudis = rs.getString("uudis");
 		artikkel.teema = rs.getString("teema");
 		return artikkel;
@@ -64,12 +51,8 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		stmt.setInt(7, 0);
 		stmt.setString(8, "now");
 
-		// /Kuidas me need konkreetsed väärtused siia sisse saame??
 		// stmt.execute();
 
-		// tekstides tuleb ' asendada '' -ga
-
-		// pilt tuleb baitideks teha
 
 	}
 
@@ -86,7 +69,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 			a.autor = rs.getString("autor");
 			a.pealkiri = rs.getString("pealkiri");
 			a.lisatud = rs.getDate("lisatud");
-			a.pilt = rs.getInt("pilt");
+			a.pilt = rs.getString("pilt");
 			a.kirjeldus = rs.getString("kirjeldus");
 			a.teema = rs.getString("teema");
 
@@ -118,7 +101,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 			a.autor = rs.getString("autor");
 			a.pealkiri = rs.getString("pealkiri");
 			a.lisatud = rs.getDate("lisatud");
-			a.pilt = rs.getInt("pilt");
+			a.pilt = rs.getString("pilt");
 			a.kirjeldus = rs.getString("kirjeldus");
 			a.teema = rs.getString("teema");
 
@@ -151,7 +134,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	public List<Artikkel> findCommentedArtiklit() {
 		// TODO Auto-generated method stub
 
-		// countiga top päring (ei mäleta praegu hästi, jätsin vahele=
+		// countiga top päring (ei mäleta praegu hästi, jätsin vahele
 
 		return null;
 	}

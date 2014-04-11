@@ -10,9 +10,8 @@ import ee.ut.math.vl.data.Pilt;
 
 public class PiltData implements PiltDataProvider{
 	
-	public Pilt findPiltById(int id) throws SQLException, Exception {
+	public Pilt findPiltByNimi(String nimi) throws SQLException, Exception {
 		Pilt pilt = new Pilt();
-		pilt.id = id;
 	Statement stmt = Main.getCurrentConnection().createStatement();
 	ResultSet rs = stmt
 			.executeQuery("SELECT pilt FROM Pilt where Pilt.id=id;");

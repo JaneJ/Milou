@@ -1,5 +1,4 @@
 package ee.ut.math.vl.data;
-import java.awt.Image;
 import java.util.Date;
 
 public class Artikkel {
@@ -7,7 +6,7 @@ public class Artikkel {
     public Integer id;
     public String autor;
     public String pealkiri;
-    public int pilt;
+    public String pilt;         ///no mis #%@$*?& tyypi see peaks olema
     public String kirjeldus;
     public String uudis;
     public String teema;
@@ -22,7 +21,7 @@ public class Artikkel {
     }
     
     
-    public Artikkel (String autor, String pealkiri,int pilt,  String uudis,
+    public Artikkel (String autor, String pealkiri,String pilt,  String uudis,
     		String teema, Date lisatud) {        
         this.autor = autor;
         this.pealkiri = pealkiri;
@@ -33,7 +32,7 @@ public class Artikkel {
     }
     
     
-    public Artikkel (String autor, String pealkiri, int pilt, String kirjeldus, 
+    public Artikkel (String autor, String pealkiri, String pilt, String kirjeldus, 
     		String teema, Integer vaatamisi, Date lisatud) {
         this.autor = autor;
         this.pealkiri = pealkiri;
@@ -44,7 +43,7 @@ public class Artikkel {
         this.lisatud = lisatud;
     }
 
-    public Artikkel (Integer id, String autor, String pealkiri,int pilt, String kirjeldus, String uudis,
+    public Artikkel (Integer id, String autor, String pealkiri,String pilt, String kirjeldus, String uudis,
     		String teema, Integer vaatamisi, Date lisatud) {
         this.id = id;
         this.autor = autor;
