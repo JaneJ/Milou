@@ -4,3 +4,9 @@
 .springBeans
 target
 .metadata
+src/main/java/ee/ut/math/vl/servlets/pealeht/PealehtUudised.java
+src/main/webapp/templates/articleTemplate.html
+src/main/webapp/templates/asideTemplate.html
+src/main/webapp/templates/commentTemplate.html
+.idea/
+milou.iml

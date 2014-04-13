@@ -10,30 +10,6 @@
     </welcome-file-list>
 	
 	
-  <multipart-form enable="true"/>
-
-	<!--  <servlet>
-		<servlet-name>ArtikkelController</servlet-name>
-		<servlet-class>ee.ut.math.vl.servlets.artikkel.ArtikkelController</servlet-class>
-	</servlet> -->
-
-	<!-- <servlet-mapping>
-		<servlet-name>ArtikkelController</servlet-name>
-		<url-pattern>/artiklid</url-pattern>
-	</servlet-mapping> -->
-	
-    <servlet-mapping>
-
-		<http-method>POST</http-method>
-
-	</servlet-mapping>
-
-
-	<servlet-mapping>
-
-		<http-method>GET</http-method>
-
-	</servlet-mapping>
-
+ 
 
 </web-app>

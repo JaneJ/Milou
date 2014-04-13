@@ -38,6 +38,8 @@ public class ArtikkelController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		resp.setHeader("Content-Type", "application/json");
+		resp.setContentType("text/html;charset=UTF-8");    //juurde
+		resp.getWriter().write("Success Data");            //juurde
 		Connection con = null ; //peab olema meetod, mis tekitab connectioneid (muide peabki olema väärtus null)
 								//try sees open connection
 								//finally : if con!=null close connection
@@ -47,10 +49,7 @@ public class ArtikkelController extends HttpServlet {
 		if (idString != null) {
 			try {
 				replyWithSingleArtikkel(resp, idString);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			}  catch (Exception ex) { throw new RuntimeException(ex); }
 
 		}
 		else {resp.sendError(HttpServletResponse.SC_BAD_REQUEST); }
@@ -61,7 +60,7 @@ public class ArtikkelController extends HttpServlet {
 		int id = Integer.parseInt(idString);
 		
 		//pildi servletist
-		resp.getOutputStream().write(null);
+		//resp.getOutputStream().write(null);
 		
 		
 		Artikkel artikkel = datastore.findArtikkelById(id);
@@ -69,10 +68,10 @@ public class ArtikkelController extends HttpServlet {
 			resp.getWriter().write(gson.toJson(artikkel));
 		
 		
-		} catch (IOException e) {
-			
-			e.printStackTrace();
 		}
+
+			catch (Exception ex) { throw new RuntimeException(ex); }
+
 	}
 
 	@Override
