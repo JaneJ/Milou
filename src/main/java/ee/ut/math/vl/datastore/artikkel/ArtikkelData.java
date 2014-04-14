@@ -76,7 +76,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	}
 
 	@Override
-	public List<Artikkel> findTeemaArtiklit() throws SQLException, Exception {
+	public List<Artikkel> findTeemaArtiklit(String teema) throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Connectionid conn = new Connectionid();
 		Statement stmt = conn.getConnection().createStatement();

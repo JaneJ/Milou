@@ -50,7 +50,7 @@ public class ArtikkelController extends HttpServlet {
 			try {
 				replyWithSingleArtikkel(resp, idString);
 			}  catch (Exception ex) { throw new RuntimeException(ex); }
-
+			
 		}
 		else {resp.sendError(HttpServletResponse.SC_BAD_REQUEST); }
 	}
