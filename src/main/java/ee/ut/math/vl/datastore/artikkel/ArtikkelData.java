@@ -29,6 +29,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		stmt.setInt(1, id);
 
 		ResultSet rs = stmt.executeQuery();
+		rs.next();
 
 		artikkel.id = rs.getInt("id");
 		artikkel.autor = rs.getString("autor");
