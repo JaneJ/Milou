@@ -81,7 +81,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		Connectionid conn = new Connectionid();
 		Statement stmt = conn.getConnection().createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel limit 10"); // where
+				.executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = teema limit 10"); // where
 																													// teema
 																													// on
 																													// õige
