@@ -1,9 +1,5 @@
 package ee.ut.math.vl.datastore.artikkel;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,13 +13,11 @@ import ee.ut.math.vl.data.Artikkel;
 
 public class ArtikkelData implements ArtikkelDataProvider {
 
-
 	public ArtikkelData() {
 	}
 
 	@Override
 	public Artikkel findArtikkelById(int id) throws SQLException, Exception {
-
 
 		Artikkel artikkel = new Artikkel();
 		artikkel.id = id;
@@ -51,8 +45,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		stmt.setInt(7, 0);
 		stmt.setString(8, "now");
 
-		// stmt.execute();
-
+		stmt.execute();
 
 	}
 
