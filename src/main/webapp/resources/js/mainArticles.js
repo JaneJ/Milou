@@ -300,6 +300,7 @@ $("#sisu").append(vasak,parem);
                                // tahab andmebaasilt vastuseks vastava id-ga artiklit, json objektina
                                $.ajax('/artiklid', {
                                    type: "GET",
+                                   dataType: "Json",
                                    data: {id:id},
                                    success: showArticle
 
