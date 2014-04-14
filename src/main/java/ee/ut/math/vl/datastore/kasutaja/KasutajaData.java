@@ -8,7 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.Main;
+import com.example.Connectionid;
+
 
 import ee.ut.math.vl.data.Kasutaja;
 
@@ -18,7 +19,8 @@ public class KasutajaData implements KasutajaDataProvider {
 	public Kasutaja findKasutajaById(int id) throws SQLException, Exception {
 		Kasutaja kasutaja = new Kasutaja();
 		kasutaja.id = id;
-		Statement stmt = Main.getCurrentConnection().createStatement();
+		Connectionid conn = new Connectionid();
+		Statement stmt = conn.getConnection().createStatement();
 		ResultSet rs = stmt
 				.executeQuery("SELECT  nimi, token, admin FROM Kassutaja where Kasutaja.id=id;");
 
@@ -31,17 +33,19 @@ public class KasutajaData implements KasutajaDataProvider {
 
 	@Override
 	public void lisaKasutaja(Kasutaja kasutaja) throws SQLException, Exception {
-		PreparedStatement stmt = Main.getCurrentConnection().prepareStatement(
+		Connectionid conn = new Connectionid();
+		PreparedStatement stmt = conn.getConnection().prepareStatement(
 				"INSERT INTO Kasutja (nimi, token, admin) values (?, ?, ?)");
-		// /Kuidas me need konkreetsed väärtused siia sisse saame??
-		// stmt.execute();
+		
+		 stmt.execute();
 
 	}
 
 	@Override
 	public List<Kasutaja> findAllKasutajad() throws SQLException, Exception {
 		List<Kasutaja> kasutajad = new ArrayList<Kasutaja>();
-		Statement stmt = Main.getCurrentConnection().createStatement();
+		Connectionid conn = new Connectionid();
+		Statement stmt = conn.getConnection().createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT * FROM Kasutaja");
 
 		while (rs.next()) {
