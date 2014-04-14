@@ -308,10 +308,10 @@ $("#sisu").append(vasak,parem);
 
                     console.log("-> paring: GET, '/artiklid', id: "+id);
 
-                    //lahendus ilma andmebaasita
+                  /*  //lahendus ilma andmebaasita
                     var data= JSONArticle[2]
                     showArticle(data)
-
+                                         */
                });
 
 });
