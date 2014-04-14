@@ -6,9 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.example.Main;
-
+import com.example.Connectionid;
 import ee.ut.math.vl.data.Kommentaar;
 
 public class KommentaarData implements KommentaarDataProvider {
@@ -18,8 +16,9 @@ public class KommentaarData implements KommentaarDataProvider {
 	@Override
 	public List<Kommentaar> findKommentaarByArtikkel(int artikkel)
 			throws SQLException, Exception {
+		Connectionid conn = new Connectionid();
 		List<Kommentaar> kommentaarid = new ArrayList<Kommentaar>();
-		Statement stmt = Main.getCurrentConnection().createStatement();
+		Statement stmt = conn.getConnection().createStatement();
 		ResultSet rs = stmt
 				.executeQuery("SELECT autor, kommentaar, aeg  FROM Kommnetaar where artikkel=artikkel "); // order
 																											// by
@@ -41,18 +40,18 @@ public class KommentaarData implements KommentaarDataProvider {
 	@Override
 	public void lisaKommentaar(Kommentaar kommentaar) throws SQLException,
 			Exception {
-		PreparedStatement stmt = Main
-				.getCurrentConnection()
+		Connectionid conn = new Connectionid();
+		PreparedStatement stmt = conn
+				.getConnection()
 				.prepareStatement(
 						"INSERT INTO kommentaar (artikkel, autor, kommentaar, aeg) values (?, ?, ?, ?)");
 		
 		stmt.setString(4, "now" );
 		
-		// /Kuidas me need konkreetsed väärtused siia sisse saame??
 		
 		//Hmm see artikli väärtus ka veel... kahte pead oleks vaja
 		
-		// stmt.execute();
+		 stmt.execute();
 	}
 
 }

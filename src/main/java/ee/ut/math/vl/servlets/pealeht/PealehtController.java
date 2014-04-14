@@ -36,22 +36,38 @@ public class PealehtController extends HttpServlet {
 		resp.setHeader("Content-Type", "application/json");
 
 		String idString = req.getParameter("teema");
-		if (idString != null) {
+		if (idString == null) {
 			try {
-				replyArtikkelitega(resp, idString);
+				replyPealehega(resp, idString);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
 		} else {
-			resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+			try {
+				replyTeemaga(resp, idString);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
-	private void replyArtikkelitega(HttpServletResponse resp,
+	private void replyPealehega(HttpServletResponse resp,
 			String idString) throws SQLException, Exception {
 		List<Artikkel> artiklid = datastore.findTenArtiklit();
+		try {
+			resp.getWriter().write(gson.toJson(artiklid));
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+	}
+	
+	private void replyTeemaga(HttpServletResponse resp,
+			String idString) throws SQLException, Exception {
+		List<Artikkel> artiklid = datastore.findTeemaArtiklit(idString);
 		try {
 			resp.getWriter().write(gson.toJson(artiklid));
 		} catch (IOException e) {
