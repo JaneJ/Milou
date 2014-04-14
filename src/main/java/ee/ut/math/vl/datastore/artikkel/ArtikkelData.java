@@ -20,11 +20,15 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	public Artikkel findArtikkelById(int id) throws SQLException, Exception {
 
 		Artikkel artikkel = new Artikkel();
-		artikkel.id = id;
 		Connectionid conn = new Connectionid();
-		Statement stmt = conn.getConnection().createStatement();
-		ResultSet rs = stmt
-				.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema FROM Artikkel where Artikkel.id=id;");
+		PreparedStatement stmt = conn
+				.getConnection()
+				.prepareStatement(
+						"SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema FROM artikkel where artikkel.id=?;");
+
+		stmt.setInt(1, id);
+
+		ResultSet rs = stmt.executeQuery();
 
 		artikkel.id = rs.getInt("id");
 		artikkel.autor = rs.getString("autor");
