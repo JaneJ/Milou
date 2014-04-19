@@ -39,7 +39,7 @@ public class ArtikkelController extends HttpServlet {
 			throws ServletException, IOException {
 		resp.setHeader("Content-Type", "application/json");
 		resp.setContentType("text/html;charset=UTF-8");    //juurde
-		resp.getWriter().write("Success Data");            //juurde
+		//resp.getWriter().write("Success Data");            //juurde
 		Connection con = null ; //peab olema meetod, mis tekitab connectioneid (muide peabki olema väärtus null)
 								//try sees open connection
 								//finally : if con!=null close connection
@@ -61,7 +61,7 @@ public class ArtikkelController extends HttpServlet {
 		
 		//pildi servletist
 		//resp.getOutputStream().write(null);
-		
+
 		
 		Artikkel artikkel = datastore.findArtikkelById(id);
 		try {
@@ -70,7 +70,8 @@ public class ArtikkelController extends HttpServlet {
 		
 		}
 
-			catch (Exception ex) { throw new RuntimeException(ex); }
+			catch (Exception ex) {
+				throw new RuntimeException(ex); }
 
 	}
 

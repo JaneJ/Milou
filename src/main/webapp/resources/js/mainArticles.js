@@ -300,6 +300,7 @@ $("#sisu").append(vasak,parem);
                                // tahab andmebaasilt vastuseks vastava id-ga artiklit, json objektina
                                $.ajax('/artiklid', {
                                    type: "GET",
+                                   dataType: "Json",
                                    data: {id:id},
                                    success: showArticle
 
@@ -308,10 +309,10 @@ $("#sisu").append(vasak,parem);
 
                     console.log("-> paring: GET, '/artiklid', id: "+id);
 
-                    //lahendus ilma andmebaasita
+                  /*  //lahendus ilma andmebaasita
                     var data= JSONArticle[2]
                     showArticle(data)
-
+                                         */
                });
 
 });
