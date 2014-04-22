@@ -6,7 +6,7 @@ public class Artikkel {
     public Integer id;
     public String autor;
     public String pealkiri;
-    public String pilt;         ///no mis #%@$*?& tyypi see peaks olema
+    public String pilt;
     public String kirjeldus;
     public String uudis;
     public String teema;

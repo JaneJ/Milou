@@ -1,13 +1,12 @@
 package com.example;
 
-
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.Vector;
 
+import javax.jms.Connection;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.ServletException;
@@ -23,8 +22,8 @@ public class Connectionid implements ServletContextListener, Runnable {
 	
 	
     private int initialConnectionCount = 1;           
-    private Vector availableConnections = new Vector();   
-    private Vector usedConnections = new Vector(); 
+    private Vector<Connection> availableConnections = new Vector<Connection>();
+    private Vector<Connection> usedConnections = new Vector<Connection>();
     private Thread cleanupThread = null;   
     
     
@@ -42,7 +41,6 @@ public class Connectionid implements ServletContextListener, Runnable {
         cleanupThread.start();   
     }       
     
-
 
 	public void handle(String target, Request baseRequest,
 			HttpServletRequest request, HttpServletResponse response)

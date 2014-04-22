@@ -21,38 +21,49 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
 		Artikkel artikkel = new Artikkel();
 		Connectionid conn = new Connectionid();
-		PreparedStatement stmt = conn
-				.getConnection()
-				.prepareStatement(
-						"SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema FROM artikkel where artikkel.id=?;");
+        try {
 
-		stmt.setInt(1, id);
+            PreparedStatement stmt = conn
+                    .getConnection()
+                    .prepareStatement(
+                            "SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema FROM artikkel where artikkel.id=?;");
 
-		ResultSet rs = stmt.executeQuery();
-		rs.next();
+            stmt.setInt(1, id);
 
-		artikkel.id = rs.getInt("id");
-		artikkel.autor = rs.getString("autor");
-		artikkel.pealkiri = rs.getString("pealkiri");
-		artikkel.lisatud = rs.getDate("lisatud");
-		artikkel.pilt = rs.getString("pilt");
-		artikkel.uudis = rs.getString("uudis");
-		artikkel.teema = rs.getString("teema");
-		return artikkel;
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+
+            artikkel.id = rs.getInt("id");
+            artikkel.autor = rs.getString("autor");
+            artikkel.pealkiri = rs.getString("pealkiri");
+            artikkel.lisatud = rs.getDate("lisatud");
+            artikkel.pilt = rs.getString("pilt");
+            artikkel.uudis = rs.getString("uudis");
+            artikkel.teema = rs.getString("teema");
+        }
+        finally {
+            if (conn != null) conn.close();
+        }
+        return artikkel;
 	}
 
 	@Override
 	public void lisaArtikkel(Artikkel artikkel) throws SQLException, Exception {
 		Connectionid conn = new Connectionid();
-		PreparedStatement stmt = conn
-				.getConnection()
-				.prepareStatement(
-						"INSERT INTO Artikkel (autor, pealkiri, pilt, kirjeldus, uudis, teema, vaatamisi, lisatud) values (?, ?, ?, ?, ?, ?, ?, ?)");
+        try {
+            PreparedStatement stmt = conn
+                    .getConnection()
+                    .prepareStatement(
+                            "INSERT INTO Artikkel (autor, pealkiri, pilt, kirjeldus, uudis, teema, vaatamisi, lisatud) values (?, ?, ?, ?, ?, ?, ?, ?)");
 
-		stmt.setInt(7, 0);
-		stmt.setString(8, "now");
+            stmt.setInt(7, 0);
+            stmt.setString(8, "now");
 
-		stmt.execute();
+            stmt.execute();
+        }
+        finally {
+            if (conn != null) conn.close();
+        }
 
 	}
 
@@ -60,77 +71,85 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	public List<Artikkel> findTenArtiklit() throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Connectionid conn = new Connectionid();
-		Statement stmt = conn.getConnection().createStatement();
-		ResultSet rs = stmt
-				.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud limit 10");
+        try {
+            Statement stmt = conn.getConnection().createStatement();
+            ResultSet rs = stmt
+                    .executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud limit 10");
 
-		while (rs.next()) {
-			Artikkel a = new Artikkel();
-			a.id = rs.getInt("id");
-			a.autor = rs.getString("autor");
-			a.pealkiri = rs.getString("pealkiri");
-			a.lisatud = rs.getDate("lisatud");
-			a.pilt = rs.getString("pilt");
-			a.kirjeldus = rs.getString("kirjeldus");
-			a.teema = rs.getString("teema");
+            while (rs.next()) {
+                Artikkel a = new Artikkel();
+                a.id = rs.getInt("id");
+                a.autor = rs.getString("autor");
+                a.pealkiri = rs.getString("pealkiri");
+                a.lisatud = rs.getDate("lisatud");
+                a.pilt = rs.getString("pilt");
+                a.kirjeldus = rs.getString("kirjeldus");
+                a.teema = rs.getString("teema");
 
-			artiklid.add(a);
-		}
+                artiklid.add(a);
+            }
+        }
+        finally {
+            if (conn != null) conn.close();
 
-		return artiklid;
+        }
+        return artiklid;
 	}
 
 	@Override
 	public List<Artikkel> findTeemaArtiklit(String teema) throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Connectionid conn = new Connectionid();
-		Statement stmt = conn.getConnection().createStatement();
-		ResultSet rs = stmt
-				.executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = teema limit 10"); // where
-																													// teema
-																													// on
-																													// õige
-																													// (või
-																													// panna
-																													// see
-																													// eelmise
-																													// meetodiga
-																													// kokku??
+        try {
+            Statement stmt = conn.getConnection().createStatement();
+            ResultSet rs = stmt
+                    .executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = ? limit 10"); // where
 
-		while (rs.next()) {
-			Artikkel a = new Artikkel();
-			a.id = rs.getInt("id");
-			a.autor = rs.getString("autor");
-			a.pealkiri = rs.getString("pealkiri");
-			a.lisatud = rs.getDate("lisatud");
-			a.pilt = rs.getString("pilt");
-			a.kirjeldus = rs.getString("kirjeldus");
-			a.teema = rs.getString("teema");
+            stmt.setString(1, teema);
 
-			artiklid.add(a);
-		}
+            while (rs.next()) {
+                Artikkel a = new Artikkel();
+                a.id = rs.getInt("id");
+                a.autor = rs.getString("autor");
+                a.pealkiri = rs.getString("pealkiri");
+                a.lisatud = rs.getDate("lisatud");
+                a.pilt = rs.getString("pilt");
+                a.kirjeldus = rs.getString("kirjeldus");
+                a.teema = rs.getString("teema");
 
-		return artiklid;
+                artiklid.add(a);
+            }
+        }
+        finally {
+            if (conn != null) conn.close();
+
+        }
+        return artiklid;
 	}
 
 	@Override
 	public List<Artikkel> findNewestArtiklit() throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Connectionid conn = new Connectionid();
-		Statement stmt = conn.getConnection().createStatement();
-		ResultSet rs = stmt
-				.executeQuery("SELECT pealkiri, lisatud FROM Artikkel ORDER BY lisatud limit 5");
+        try {
+            Statement stmt = conn.getConnection().createStatement();
+            ResultSet rs = stmt
+                    .executeQuery("SELECT pealkiri, lisatud FROM Artikkel ORDER BY lisatud limit 5");
 
-		while (rs.next()) {
-			Artikkel a = new Artikkel();
+            while (rs.next()) {
+                Artikkel a = new Artikkel();
 
-			a.pealkiri = rs.getString("pealkiri");
-			a.lisatud = rs.getDate("lisatud");
+                a.pealkiri = rs.getString("pealkiri");
+                a.lisatud = rs.getDate("lisatud");
 
-			artiklid.add(a);
-		}
+                artiklid.add(a);
+            }
+        }
+        finally {
+            if (conn != null) conn.close();
 
-		return artiklid;
+        }
+        return artiklid;
 	}
 
 	@Override
@@ -146,23 +165,30 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	public List<Artikkel> findPopularArtiklit() throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Connectionid conn = new Connectionid();
-		Statement stmt = conn.getConnection().createStatement();
-		ResultSet rs = stmt
-				.executeQuery("SELECT id, pealkiri FROM Artikkel limit 5"); // order
-																			// by
-																			// vaatamisi
-																			// (selleks
-																			// counterit
-																			// vaja)
+        try {
 
-		while (rs.next()) {
-			Artikkel a = new Artikkel();
-			a.id = rs.getInt("id");
-			a.pealkiri = rs.getString("pealkiri");
-			artiklid.add(a);
-		}
 
-		return artiklid;
+            Statement stmt = conn.getConnection().createStatement();
+            ResultSet rs = stmt
+                    .executeQuery("SELECT id, pealkiri FROM Artikkel limit 5"); // order
+            // by
+            // vaatamisi
+            // (selleks
+            // counterit
+            // vaja)
+
+            while (rs.next()) {
+                Artikkel a = new Artikkel();
+                a.id = rs.getInt("id");
+                a.pealkiri = rs.getString("pealkiri");
+                artiklid.add(a);
+            }
+        }
+        finally {
+            if (conn != null) conn.close();
+
+        }
+        return artiklid;
 	}
 
 }
