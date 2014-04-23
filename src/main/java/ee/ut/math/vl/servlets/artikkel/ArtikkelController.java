@@ -9,17 +9,14 @@ import ee.ut.math.vl.datastore.artikkel.ArtikkelData;
 import ee.ut.math.vl.datastore.artikkel.ArtikkelDataProvider;
 import ee.ut.math.vl.datastore.pilt.PiltData;
 import ee.ut.math.vl.datastore.pilt.PiltDataProvider;
-import sun.misc.IOUtils;
-import sun.misc.IOUtils.*;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
