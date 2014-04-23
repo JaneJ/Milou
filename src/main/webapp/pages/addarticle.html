@@ -44,7 +44,7 @@
 	<section id = "vasakParem">	
 
 
-		<form method="POST" action="/artiklid" enctype="multipart/form-data">
+		<form class="artikkel" method="post" action="/artiklid" enctype="multipart/form-data" ><!--action=/pilt  kas võib olla mitu actionit -->
 			<div class="teemad" id='teema' >Teema</div>
 				<input type="radio" name="teema" value="it">IT
 				<input type="radio" name="teema" value="kultuur">Kultuur
@@ -63,11 +63,12 @@
 			<div class="autor">Autor <input id ="autor" type="text" name="autor"></div>
 	
 	
-			<label for="file">Lae pilt üles:</label>
-				<input type="file" name="file" id="file"><br>
+		<!-- <label for="file">Lae pilt üles:</label> 
+				<input type="file" name="file" id="file"><br>-->
 	
 			<button id="submit">Submit</button>
 		</form>
+		
 	 </section>
 
 	</div>
