@@ -20,7 +20,7 @@ public class Connectionid implements ServletContextListener, Runnable {
 	
 	
 	
-    private int initialConnectionCount = 1;           
+    private int initialConnectionCount = 0;           
     private Vector<Connection> availableConnections = new Vector<Connection>();
     private Vector<Connection> usedConnections = new Vector<Connection>();
     private Thread cleanupThread = null;   
