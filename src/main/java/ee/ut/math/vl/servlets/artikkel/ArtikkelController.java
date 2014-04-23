@@ -4,8 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
 import ee.ut.math.vl.data.Artikkel;
+import ee.ut.math.vl.data.Pilt;
 import ee.ut.math.vl.datastore.artikkel.ArtikkelData;
 import ee.ut.math.vl.datastore.artikkel.ArtikkelDataProvider;
+import ee.ut.math.vl.datastore.pilt.PiltData;
+import ee.ut.math.vl.datastore.pilt.PiltDataProvider;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +17,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -25,21 +31,23 @@ public class ArtikkelController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Gson gson;
-	private ArtikkelDataProvider datastore;
+	private ArtikkelDataProvider articles;
+    private PiltDataProvider pictures;
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		gson = new Gson();
-		datastore = new ArtikkelData();
+        articles = new ArtikkelData();
+        pictures = new PiltData();
+
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		resp.setHeader("Content-Type", "application/json");
-		resp.setContentType("text/html;charset=UTF-8");    //juurde
-		//resp.getWriter().write("Success Data");            //juurde
+
+		resp.setContentType("application/json; charset=UTF-8");
 		Connection con = null ; //peab olema meetod, mis tekitab connectioneid (muide peabki olema väärtus null)
 								//try sees open connection
 								//finally : if con!=null close connection
@@ -59,11 +67,12 @@ public class ArtikkelController extends HttpServlet {
 			String idString) throws SQLException, Exception {
 		int id = Integer.parseInt(idString);
 		
+		
 		//pildi servletist
 		//resp.getOutputStream().write(null);
 
 		
-		Artikkel artikkel = datastore.findArtikkelById(id);
+		Artikkel artikkel = articles.findArtikkelById(id);
 		try {
 			resp.getWriter().write(gson.toJson(artikkel));
 		
@@ -74,6 +83,7 @@ public class ArtikkelController extends HttpServlet {
 				throw new RuntimeException(ex); }
 
 	}
+	
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -85,11 +95,36 @@ public class ArtikkelController extends HttpServlet {
 			
 			//Pildi osa
 			//pildid peaksid andmebaasis olema unikaalse nimega, kui klient peaks küsima (ehk responce pildinime kaudu)
-			//Part pilt = req.getPart("pilt").getInputStream();
-			
-			
-			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
-			datastore.lisaArtikkel(artikkel); 
+			InputStream pildistream = req.getPart("pilt").getInputStream();
+			String nimi = req.getPart("pilt").getName();
+           // String tyyp = req.getPart("pilt").getArtikkel();    ** ma ei tea kuidas selle peaks kätte saama
+
+
+
+
+//*** kas see osa peaks mujal olema
+            byte[] pildibaidid;
+            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+
+            int read;
+            byte[] data = new byte[16384];
+
+            while ((read = pildistream.read(data, 0, data.length)) != -1) {
+                buffer.write(data, 0, read);
+            }
+
+            pildibaidid = buffer.toByteArray();
+
+ ////
+
+
+            Pilt pilt = new Pilt("artikkel", pildibaidid, nimi);
+            pictures.lisaPilt();
+
+
+
+            Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
+			articles.lisaArtikkel(artikkel);
 
 			
 			
@@ -97,9 +132,7 @@ public class ArtikkelController extends HttpServlet {
 			resp.setHeader("Content-Type", "application/json");
 			resp.getWriter().write(artikkelEcho);
 
-							// actually this is a bad place to send the broadcast.
-							// better: attach sockets as eventlisteners to the datastore
-							// even better: use message queues for servlet-datastore events
+							
 
 			ArtikkelSocketController.find(req.getServletContext()).broadcast(
 					artikkelEcho);

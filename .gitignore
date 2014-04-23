@@ -10,3 +10,4 @@ src/main/webapp/templates/asideTemplate.html
 src/main/webapp/templates/commentTemplate.html
 .idea/
 milou.iml
+/target
