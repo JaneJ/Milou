@@ -1,29 +1,18 @@
 package ee.ut.math.vl.servlets.kommentaar;
 
 import com.google.gson.Gson;
-
-import ee.ut.math.vl.data.Artikkel;
 import ee.ut.math.vl.data.Kommentaar;
-import ee.ut.math.vl.datastore.artikkel.ArtikkelData;
-import ee.ut.math.vl.datastore.artikkel.ArtikkelDataProvider;
 import ee.ut.math.vl.datastore.kommentaar.KommentaarData;
 import ee.ut.math.vl.datastore.kommentaar.KommentaarDataProvider;
-import ee.ut.math.vl.servlets.artikkel.ArtikkelSocketController;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
-/**
- * Created by Kristiina on 19.04.14.
- */
 
 
 @WebServlet(value = "/kommentaar")
@@ -93,12 +82,6 @@ public class KommentaarController extends HttpServlet {
             resp.setHeader("Content-Type", "application/json");
             resp.getWriter().write(kommentaarEcho);
 
-            // actually this is a bad place to send the broadcast.
-            // better: attach sockets as eventlisteners to the datastore
-            // even better: use message queues for servlet-datastore events
-
-            ArtikkelSocketController.find(req.getServletContext()).broadcast(
-                    kommentaarEcho);
 
         } catch (Exception ex) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
