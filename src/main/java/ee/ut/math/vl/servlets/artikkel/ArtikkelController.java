@@ -37,9 +37,7 @@ public class ArtikkelController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		resp.setHeader("Content-Type", "application/json");
-		resp.setContentType("text/html;charset=UTF-8");    //juurde
-		//resp.getWriter().write("Success Data");            //juurde
+		resp.setContentType("application/json; charset=UTF-8");
 		Connection con = null ; //peab olema meetod, mis tekitab connectioneid (muide peabki olema väärtus null)
 								//try sees open connection
 								//finally : if con!=null close connection
