@@ -42,7 +42,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             artikkel.teema = rs.getString("teema");
         }
         finally {
-            if (conn != null) conn.close();
+            //if (conn != null) conn.close();
         }
         return artikkel;
 	}
@@ -62,7 +62,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             stmt.execute();
         }
         finally {
-            if (conn != null) conn.close();
+            //if (conn != null) conn.close();
         }
 
 	}
@@ -90,7 +90,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             }
         }
         finally {
-            if (conn != null) conn.close();
+            //if (conn != null) conn.close();
 
         }
         return artiklid;
@@ -105,7 +105,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             ResultSet rs = stmt
                     .executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = ? limit 10"); // where
 
-            stmt.setString(1, teema);
+           // stmt.setString(1, teema);
 
             while (rs.next()) {
                 Artikkel a = new Artikkel();
@@ -121,7 +121,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             }
         }
         finally {
-            if (conn != null) conn.close();
+            //if (conn != null) conn.close();
 
         }
         return artiklid;
@@ -146,7 +146,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             }
         }
         finally {
-            if (conn != null) conn.close();
+          //  if (conn != null) conn.close();
 
         }
         return artiklid;
@@ -185,7 +185,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             }
         }
         finally {
-            if (conn != null) conn.close();
+           // if (conn != null) conn.close();
 
         }
         return artiklid;

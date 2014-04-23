@@ -6,7 +6,6 @@ import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.Vector;
 
-import javax.jms.Connection;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.ServletException;
