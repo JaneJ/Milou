@@ -82,7 +82,7 @@ public class KommentaarController extends HttpServlet {
             throws ServletException, IOException {
         try {
 
-        	
+
 
             Kommentaar kommentaar = gson.fromJson(req.getReader(), Kommentaar.class);
             datastore.lisaKommentaar(kommentaar);
@@ -93,6 +93,9 @@ public class KommentaarController extends HttpServlet {
             resp.setHeader("Content-Type", "application/json");
             resp.getWriter().write(kommentaarEcho);
 
+            // actually this is a bad place to send the broadcast.
+            // better: attach sockets as eventlisteners to the datastore
+            // even better: use message queues for servlet-datastore events
 
             ArtikkelSocketController.find(req.getServletContext()).broadcast(
                     kommentaarEcho);
