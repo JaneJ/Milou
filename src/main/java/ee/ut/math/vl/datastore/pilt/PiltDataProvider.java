@@ -5,5 +5,6 @@ import ee.ut.math.vl.data.Pilt;
 
 public interface PiltDataProvider {
 	public Pilt findPiltByNimi(String nimi) throws SQLException, Exception;
+    public void lisaPilt()throws SQLException, Exception;
 
 }

@@ -23,7 +23,7 @@ public class Connectionid implements ServletContextListener, Runnable {
 	
     private int initialConnectionCount = 1;           
     private Vector<Connection> availableConnections = new Vector<Connection>();
-    private Vector<Connection> usedConnections = new Vector<Connection>();
+    private Vector<java.sql.Connection> usedConnections = new Vector<>();
     private Thread cleanupThread = null;   
     
     
@@ -33,7 +33,7 @@ public class Connectionid implements ServletContextListener, Runnable {
         for(int cnt=0; cnt<initialConnectionCount; cnt++)   
         {   
             // Add a new connection to the available list.   
-            availableConnections.addElement(getConnection());   
+            availableConnections.addElement((Connection) getConnection());
         }   
            
         // Create the cleanup thread   
@@ -52,7 +52,7 @@ public class Connectionid implements ServletContextListener, Runnable {
 	}
 
 
-	public Connection getConnection() throws SQLException, URISyntaxException {
+	public java.sql.Connection getConnection() throws SQLException, URISyntaxException {
 		String databaseUrl = System.getenv("DATABASE_URL");
 		if (databaseUrl != null) {
 			return getHerokuConnection(new URI(databaseUrl));
@@ -61,7 +61,7 @@ public class Connectionid implements ServletContextListener, Runnable {
 		}
 	}
 
-	static Connection getHerokuConnection(final URI dbUri) throws SQLException,
+	static java.sql.Connection getHerokuConnection(final URI dbUri) throws SQLException,
 			URISyntaxException {
 		String username = dbUri.getUserInfo().split(":")[0];
 		String password = dbUri.getUserInfo().split(":")[1];
@@ -71,15 +71,15 @@ public class Connectionid implements ServletContextListener, Runnable {
 		return DriverManager.getConnection(dbUrl, username, password);
 	}
 
-	static Connection getLocalConnection() throws SQLException {
+	static java.sql.Connection getLocalConnection() throws SQLException {
 		return DriverManager.getConnection("jdbc:postgresql://localhost/mydb",
 				"user", "pass");
 	}
 
 	
-	  public synchronized Connection checkout() throws SQLException, URISyntaxException   
+	  public synchronized java.sql.Connection checkout() throws SQLException, URISyntaxException
 	    {   
-	        Connection newConnxn = null;   
+	        java.sql.Connection newConnxn = null;
 	           
 	        if(availableConnections.size() == 0)   
 	        {   
@@ -94,7 +94,7 @@ public class Connectionid implements ServletContextListener, Runnable {
 	        {   
 	            // Connections exist !   
 	            // Get a connection object   
-	            newConnxn = (Connection)availableConnections.lastElement();   
+	            newConnxn = (java.sql.Connection) availableConnections.lastElement();
 	            // Remove it from the available list.   
 	            availableConnections.removeElement(newConnxn);   
 	            // Add it to the used list.   
@@ -134,7 +134,7 @@ public class Connectionid implements ServletContextListener, Runnable {
 		String url = "jdbc:postgresql://ec2-54-204-47-70.compute-1.amazonaws.com:5432/d56qim871vq0h0?user=oxqsnxoujnlrpq&password=QDMv1ULIryRIPYoEQGJBMDwI-R&ssl=true";
 
 
-		Connection connection;
+		java.sql.Connection connection;
 		try {
 			connection = getConnection();
 			
@@ -154,7 +154,6 @@ public class Connectionid implements ServletContextListener, Runnable {
 			e.printStackTrace();
 		}
 		
-		System.out.println("töötab");
 
 	}
 
@@ -168,7 +167,7 @@ public class Connectionid implements ServletContextListener, Runnable {
 	                synchronized(this)   
 	                {   
 	                    while(availableConnections.size() > initialConnectionCount)   
-	                    {    
+	                    {
 	                        Connection c = (Connection)availableConnections.lastElement();   
 	                        availableConnections.removeElement(c);   
    
@@ -178,16 +177,13 @@ public class Connectionid implements ServletContextListener, Runnable {
  
 	                Thread.sleep(60000 * 1);   
 	            }       
-	        }   
-	        catch(SQLException sqle)   
-	        {   
-	            sqle.printStackTrace();   
-	        }   
-	        catch(Exception e)   
+	        } catch(Exception e)
 	        {   
 	            e.printStackTrace();   
 	        }   
 	}
 	}
+
+
 }
 
