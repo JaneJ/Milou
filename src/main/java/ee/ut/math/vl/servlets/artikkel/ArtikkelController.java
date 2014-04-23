@@ -95,10 +95,6 @@ public class ArtikkelController extends HttpServlet {
 			resp.setHeader("Content-Type", "application/json");
 			resp.getWriter().write(artikkelEcho);
 
-							// actually this is a bad place to send the broadcast.
-							// better: attach sockets as eventlisteners to the datastore
-							// even better: use message queues for servlet-datastore events
-
 			ArtikkelSocketController.find(req.getServletContext()).broadcast(
 					artikkelEcho);
 
