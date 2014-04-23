@@ -26,7 +26,6 @@ public class ArtikkelData implements ArtikkelDataProvider {
         try {
 
             PreparedStatement stmt = conn
-
                     .prepareStatement(
                             "SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema FROM artikkel where artikkel.id=?;");
 
@@ -105,11 +104,11 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
         try {
-            Statement stmt = conn.createStatement();
+            PreparedStatement stmt = conn.prepareStatement("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = ? limit 10");
             ResultSet rs = stmt
-                    .executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = ? limit 10"); // where
+                    .executeQuery(); // where
 
-           // stmt.setString(1, teema);
+            stmt.setString(1, teema);
 
             while (rs.next()) {
                 Artikkel a = new Artikkel();
