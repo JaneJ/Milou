@@ -1,5 +1,6 @@
 package ee.ut.math.vl.datastore.artikkel;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,11 +21,12 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	public Artikkel findArtikkelById(int id) throws SQLException, Exception {
 
 		Artikkel artikkel = new Artikkel();
-		Connectionid conn = new Connectionid();
+		Connectionid connid = new Connectionid();
+		Connection conn = connid.getConnection();
         try {
 
             PreparedStatement stmt = conn
-                    .getConnection()
+
                     .prepareStatement(
                             "SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema FROM artikkel where artikkel.id=?;");
 
@@ -42,17 +44,17 @@ public class ArtikkelData implements ArtikkelDataProvider {
             artikkel.teema = rs.getString("teema");
         }
         finally {
-            //if (conn != null) conn.close();
+            if (conn != null) conn.close();
         }
         return artikkel;
 	}
 
 	@Override
 	public void lisaArtikkel(Artikkel artikkel) throws SQLException, Exception {
-		Connectionid conn = new Connectionid();
+		Connectionid connid = new Connectionid();
+		Connection conn = connid.getConnection();
         try {
             PreparedStatement stmt = conn
-                    .getConnection()
                     .prepareStatement(
                             "INSERT INTO Artikkel (autor, pealkiri, pilt, kirjeldus, uudis, teema, vaatamisi, lisatud) values (?, ?, ?, ?, ?, ?, ?, ?)");
 
@@ -62,7 +64,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             stmt.execute();
         }
         finally {
-            //if (conn != null) conn.close();
+            if (conn != null) conn.close();
         }
 
 	}
@@ -70,9 +72,10 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	@Override
 	public List<Artikkel> findTenArtiklit() throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
-		Connectionid conn = new Connectionid();
+		Connectionid connid = new Connectionid();
+		Connection conn = connid.getConnection();
         try {
-            Statement stmt = conn.getConnection().createStatement();
+            Statement stmt = conn.createStatement();
             ResultSet rs = stmt
                     .executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud limit 10");
 
@@ -90,7 +93,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             }
         }
         finally {
-            //if (conn != null) conn.close();
+            if (conn != null) conn.close();
 
         }
         return artiklid;
@@ -99,9 +102,10 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	@Override
 	public List<Artikkel> findTeemaArtiklit(String teema) throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
-		Connectionid conn = new Connectionid();
+		Connectionid connid = new Connectionid();
+		Connection conn = connid.getConnection();
         try {
-            Statement stmt = conn.getConnection().createStatement();
+            Statement stmt = conn.createStatement();
             ResultSet rs = stmt
                     .executeQuery("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = ? limit 10"); // where
 
@@ -121,7 +125,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             }
         }
         finally {
-            //if (conn != null) conn.close();
+            if (conn != null) conn.close();
 
         }
         return artiklid;
@@ -130,9 +134,10 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	@Override
 	public List<Artikkel> findNewestArtiklit() throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
-		Connectionid conn = new Connectionid();
+		Connectionid connid = new Connectionid();
+		Connection conn = connid.getConnection();
         try {
-            Statement stmt = conn.getConnection().createStatement();
+            Statement stmt = conn.createStatement();
             ResultSet rs = stmt
                     .executeQuery("SELECT pealkiri, lisatud FROM Artikkel ORDER BY lisatud limit 5");
 
@@ -146,7 +151,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             }
         }
         finally {
-          //  if (conn != null) conn.close();
+            if (conn != null) conn.close();
 
         }
         return artiklid;
@@ -164,11 +169,12 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	@Override
 	public List<Artikkel> findPopularArtiklit() throws SQLException, Exception {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
-		Connectionid conn = new Connectionid();
+		Connectionid connid = new Connectionid();
+		Connection conn = connid.getConnection();
         try {
 
 
-            Statement stmt = conn.getConnection().createStatement();
+            Statement stmt = conn.createStatement();
             ResultSet rs = stmt
                     .executeQuery("SELECT id, pealkiri FROM Artikkel limit 5"); // order
             // by
@@ -185,7 +191,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             }
         }
         finally {
-           // if (conn != null) conn.close();
+            if (conn != null) conn.close();
 
         }
         return artiklid;
