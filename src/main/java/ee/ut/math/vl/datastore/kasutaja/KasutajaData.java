@@ -23,10 +23,10 @@ public class KasutajaData implements KasutajaDataProvider {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt
-					.executeQuery("SELECT  nimi, token, admin FROM Kassutaja where Kasutaja.id=id;");
+					.executeQuery("SELECT  nimi,username, admin FROM Kasutaja where Kasutaja.id=id;");
 
 			kasutaja.nimi = rs.getString("nimi");
-			kasutaja.token = rs.getString("token");
+			kasutaja.username = rs.getString("username");
 			kasutaja.admin = rs.getBoolean("admin");
 		} finally {
 			 if (conn != null) conn.close();
@@ -41,8 +41,11 @@ public class KasutajaData implements KasutajaDataProvider {
 		Connection conn = connid.getConnection();
 		try {
 			PreparedStatement stmt = conn
-					.prepareStatement("INSERT INTO Kasutja (nimi, token, admin) values (?, ?, ?)");
-
+					.prepareStatement("INSERT INTO Kasutja (id,nimi, username, admin) values (?, ?, ?,?)");
+			stmt.setInt(1,kasutaja.id);
+			stmt.setString(2,kasutaja.nimi);
+			stmt.setString(3,kasutaja.username);
+			stmt.setBoolean(4,kasutaja.admin);
 			stmt.execute();
 		} finally {
 			 if (conn != null) conn.close();
@@ -64,7 +67,7 @@ public class KasutajaData implements KasutajaDataProvider {
 
 				k.id = rs.getInt("id");
 				k.nimi = rs.getString("nimi");
-				k.token = rs.getString("token");
+				k.username = rs.getString("token");
 				k.admin = rs.getBoolean("admin");
 
 				kasutajad.add(k);
