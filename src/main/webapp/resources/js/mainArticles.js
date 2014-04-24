@@ -8,7 +8,7 @@ $(document).ready(function(){
  console.log("mainArticles.js");
 
 
-var JSONArticle=[
+/*var JSONArticle=[
          {
             "pealkiri":"Esimene",
             "id":"2",
@@ -69,7 +69,7 @@ var JSONArticle=[
             }
 
 ]
-
+           */
 var JSONComment=[
          {
             "id":"1",
@@ -149,7 +149,20 @@ $("#sisu").append(vasak,parem);
 
 
 
+   $.ajax('/pealeht', {
+       type: "GET",
+       dataType: "Json",
+       data: {},
+       success: addMain,
+       error: function(req, status) { alert("failed: " + status); }
 
+   });
+
+
+
+         function addMain(JSONArticle){
+           console.log("lisamise tsukkel- addMain");
+           console.log(JSONArticle);
     //uhekaupa ehitame ja lisame artiklid
     for( var i=0; i<JSONArticle.length;i++){
     var json = JSONArticle[i];
@@ -158,7 +171,7 @@ $("#sisu").append(vasak,parem);
 
     console.log("koik artiklid tehtud");
     addAside()
-
+                 };
 
 
     //ehitab artikli eelvaate valmis ette antud json kujul uksiku artikli andmetest
@@ -174,11 +187,14 @@ $("#sisu").append(vasak,parem);
             var footer =$('<footer></footer>');
             var p=$("<p></p>");
             var p2=$("<p></p>");
+           // var p4=$("<p></p>");
             var loeKom=$("<a></a>").text("Loe kommentaare");
             var teeKom=$("<a></a>").text("Kommenteeri");
             var img=json.pilt;
             loeKom.addClass("loeKom");
             teeKom.addClass("teeKom");
+            loeKom.data("id",json.id);
+            teeKom.data("id",json.id);
 
             //anname vaartuse tagidele
             h1.text(json.pealkiri);
@@ -187,6 +203,7 @@ $("#sisu").append(vasak,parem);
             footer.text("Autor: "+json.autor);
             p.text(json.kirjeldus);
             p2.text(json.lisatud);
+
 
             //uhendame osad uksteisega
             header.append(h1);
@@ -227,7 +244,7 @@ $("#sisu").append(vasak,parem);
                function showArticle(json) {   /*argument responseText*/
                     console.log("kuvab Artikli");
 
-                    console.log(json.pealkiri);
+                    console.log(json);
                     buildFullArticle(json);
                };
 
@@ -242,6 +259,7 @@ $("#sisu").append(vasak,parem);
             var p=$("<p></p>");
             var p2=$("<p></p>");
             //var p3=$("<p></p>");
+            var p4=$("<p></p>");
             var loeKom=$("<a></a>").text("Loe kommentaare");
             var teeKom=$("<a></a>").text("Kommenteeri");
             var img=json.pilt;
@@ -256,6 +274,7 @@ $("#sisu").append(vasak,parem);
             p.text(json.uudis);
             p2.text(json.lisatud);
             //p3.text(json.kirjeldus);
+             p4.text("Tagasi");
 
             //uhendame osad uksteisega
             header.append(h1);
@@ -263,13 +282,16 @@ $("#sisu").append(vasak,parem);
             article.append(img);
             //article.append(p3);
             article.append(p);
-            footer.append(p2,loeKom,teeKom);
+            footer.append(p2,loeKom,teeKom, p4);
             article.append(footer);
             article.addClass("article");
             //h1.removeClass("getArticle");
             h1.addClass("getArticle");
             loeKom.addClass("getComments");
+            loeKom.data("id",json.id);
             teeKom.addClass("addComment");
+             teeKom.data("id",json.id);
+            p4.addClass("back");
 
 
                        var vp=$("<section id = 'vasakParem'></section>");
@@ -282,11 +304,14 @@ $("#sisu").append(vasak,parem);
                 }
 
 
-      /* kui klikitakse "tagasi" (artikli) peal
-      tagasi.click( function(){
+       //kui klikitakse "tagasi" (artikli) peal
+      $(document).on("click", ".back",function(){
       console.log("eemaldab sisu");
-       $(this).closest('article').remove();
-      }); */
+      //window.history.back();
+       //history.go(-1);
+       //window.location.reload();
+       //$(this).closest('article').remove();
+      });
 
 
 
@@ -350,11 +375,15 @@ $("#sisu").append(vasak,parem);
 
                //kui vajutame artikli pealkirja peal (aside alal)
                $(document).on("click", ".getArticle",function(){
-              // $(".getArticle").on('click',function(){
+
                    console.log("valiti aside pealkiri");
                     var id = $(this).data("id");
-                    console.log(id);
-              /*                 // tahab andmebaasilt vastuseks vastava id-ga artiklit, json objektina
+                    console.log("ABCDEF"+id);
+
+                    window.history.pushState("", id, "#artikkel"+id);
+
+
+                               // tahab andmebaasilt vastuseks vastava id-ga artiklit, json objektina
                                $.ajax('/artiklid', {
                                    type: "GET",
                                    dataType: "Json",
@@ -362,14 +391,15 @@ $("#sisu").append(vasak,parem);
                                    success: showArticle
 
                                });
-                                         */
+
 
                     console.log("-> paring: GET, '/artiklid', id: "+id);
 
-                    //lahendus ilma andmebaasita
-                    var data= JSONArticle[id]
-                    showArticle(data)
+               /*     //lahendus ilma andmebaasita
+                    var data= JSONArticle[id];
+                    showArticle(data);
 
+                */
                });
 
 
@@ -378,7 +408,7 @@ $("#sisu").append(vasak,parem);
                    console.log("valiti getComments");
                     var id = $(this).data("id");
                     console.log(id);
-              /*                 // tahab andmebaasilt vastuseks vastava id-ga artikli kommentaare, json objektina
+                               // tahab andmebaasilt vastuseks vastava id-ga artikli kommentaare, json objektina
                                $.ajax('/kommentaar', {
                                    type: "GET",
                                    dataType: "Json",
@@ -387,19 +417,20 @@ $("#sisu").append(vasak,parem);
 
 
                                });
-                                         */
+
 
                     console.log("-> paring: GET, '/kommentaar', id: "+id);
 
-                    //lahendus ilma andmebaasita
+               /*     //lahendus ilma andmebaasita
                     var data= JSONComment
-                    showComments(data)
+                    showComments(data)  */
 
                });
 
               function showComments(jsonA) { //  argument responseText
 
                     console.log("kuvab kommentaarid");
+                    window.history.pushState("", "Kommentaarid", 'kommentaarid');
                          removeAllButAside();
 
                         for( var i=0; i<jsonA.length;i++){
@@ -412,6 +443,10 @@ $("#sisu").append(vasak,parem);
                           addAside();
                         }
                         }
+                        var p4=$("<p></p>");
+                        p4.text("Tagasi");
+                        p4.addClass("back");
+                        $("#sisu").append(p4);
 
 
 
@@ -480,19 +515,11 @@ $("#sisu").append(vasak,parem);
             form.append('<pre id="result">');
             form.append('</pre>');
 
-
-
-
-
-
              $("#sisu").append(form);
-
-
-
 
        };
 
-       $.fn.serializeObject = function()
+    /*   $.fn.serializeObject = function()
        {
        console.log("serialize");
            var o = {};
@@ -516,6 +543,26 @@ $("#sisu").append(vasak,parem);
                $('#result').text(JSON.stringify($('form').serializeObject()));
                return false;
            });
-       });
+       });    */
+
+        // Lehe laadimisel oige artikli juurde minemine.
+        if(window.location.hash)
+        {
+            var jupp = window.location.hash.substring(1);
+            if(jupp.substring(0,8) == "artikkel")
+            {
+                var id = parseInt(jupp.substring(8)); // koik parast sona "artikkel"
+                var data= JSONArticle[id];
+                showArticle(data);
+            }
+        }
+
+            document.body.setAttribute("onhashchange", "trellidMuutuvad()");
 
 });
+
+function trellidMuutuvad()
+{
+    if('' === window.location.hash)
+        window.location.reload();
+}
