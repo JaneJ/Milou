@@ -198,8 +198,8 @@ article img {
 	float: left;
 }
 article table img{
-	max-height: none;
-	max-width: 62%;
+	max-height: 40%;
+	max-width: 40%;
 
 
 }
@@ -324,3 +324,24 @@ font-family: Fanwood;
     cursor:help
 }
 
+.comment{
+ 	border: 1px solid grey;
+ 	width: 50%;
+ 	padding: 2%;
+ 	margin-bottom: 3%;
+ 	margin-top: 3%;
+ 	display: block;
+ 	text-align: left;
+ 	height: auto;
+ 	max-width: 70%;
+ 	float:left;
+ 	clear:left;
+ 	//overflow: hidden;
+}
+
+.comment footer {
+	text-align: right;
+	font-size: 10px;
+	//padding: 1%;
+
+}
