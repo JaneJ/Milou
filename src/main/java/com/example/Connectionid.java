@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
+import java.util.Properties;
 import java.util.Vector;
 
 import javax.servlet.ServletContextEvent;
@@ -62,12 +63,20 @@ public class Connectionid implements ServletContextListener, Runnable {
 
 	static Connection getHerokuConnection(final URI dbUri) throws SQLException,
 			URISyntaxException {
-		String username = dbUri.getUserInfo().split(":")[0];
+	/*	String username = dbUri.getUserInfo().split(":")[0];
 		String password = dbUri.getUserInfo().split(":")[1];
 		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':'
-				+ dbUri.getPort() + dbUri.getPath();
+				+ dbUri.getPort() + dbUri.getPath();     */
 
-		return DriverManager.getConnection(dbUrl, username, password);
+		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+		Properties props = new Properties();
+		props.setProperty("user", dbUri.getUserInfo().split(":")[0]);
+		props.setProperty("password", dbUri.getUserInfo().split(":")[1]);
+		props.setProperty("ssl", "true");
+		props.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory");
+		return DriverManager.getConnection(dbUrl, props);
+
+		//return DriverManager.getConnection(dbUrl, username, password);
 	}
 
 	static Connection getLocalConnection() throws SQLException {

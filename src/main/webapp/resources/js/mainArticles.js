@@ -167,6 +167,16 @@ $("#sisu").append(vasak,parem);
     for( var i=0; i<JSONArticle.length;i++){
     var json = JSONArticle[i];
     buildArticle(json)
+
+     /*         //valib artikli asukohaks kordamooda parem ja vasak div
+                if (i%2 ==0)
+                  {
+                   vasak.append(article);
+                  }
+                else
+                  {
+                  parem.append(article);
+                  }    */
     }
 
     console.log("koik artiklid tehtud");
@@ -217,15 +227,7 @@ $("#sisu").append(vasak,parem);
             loeKom.addClass("getComments");
             teeKom.addClass("addComment");
 
-           //valib artikli asukohaks kordamooda parem ja vasak div
-            if (i%2 ==0)
-              {
-               vasak.append(article);
-              }
-            else
-              {
-              parem.append(article);
-              }
+             parem.append(article);
 
             console.log("valmis artikkel ");
       };
