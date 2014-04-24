@@ -18,7 +18,7 @@ $(document).ready(function(){
 		var pealkiri_alles=text_max-pealkiri_len;
 		$('#formMargidLuhi').html(pealkiri_alles+ ' märke alles.');
 	});
-	
+
 
 
 console.log("tere");
@@ -30,9 +30,9 @@ $('#lisaArtikkel').submit(function() {
 
         
         Artikkel.autor=$("#autor").val();
-        Artikkel.pealkiri=$("#pealkiri").val();
-        Artikkel.kirjeldus=$("#lyhikirjeldus").val();
-        Artikkel.uudis=$("#sisu").val();
+        Artikkel.pealkiri=$("#pealkiri").value();
+        Artikkel.kirjeldus=$("#lyhikirjeldus").value();
+        Artikkel.uudis=$("#sisu").value();
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
         //console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
 
