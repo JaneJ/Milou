@@ -58,12 +58,12 @@ public class ArtikkelData implements ArtikkelDataProvider {
                             "INSERT INTO Artikkel (autor, pealkiri,pilt, kirjeldus, uudis, teema, vaatamisi, lisatud) values (?, ?, ?, ?, ?, ?, ?,?)");
             stmt.setString(1, artikkel.autor);
             stmt.setString(2, artikkel.pealkiri);
-            stmt.setString(3, artikkel.kirjeldus);
-            stmt.setString(4, artikkel.uudis);
-            stmt.setString(5, artikkel.teema);
-            stmt.setInt(6, 0);
-            stmt.setString(7, "now");
-            stmt.setString(8,artikkel.pilt);
+            stmt.setString(4, artikkel.kirjeldus);
+            stmt.setString(5, artikkel.uudis);
+            stmt.setString(6, artikkel.teema);
+            stmt.setInt(7, 0);
+            stmt.setString(8, "now");
+            stmt.setString(3,artikkel.pilt);
 
             stmt.execute();
         }
