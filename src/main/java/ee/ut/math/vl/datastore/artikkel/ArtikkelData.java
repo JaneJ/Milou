@@ -1,5 +1,6 @@
 package ee.ut.math.vl.datastore.artikkel;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -159,7 +160,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 	}
 
 	@Override
-	public List<Artikkel> findCommentedArtiklit() {
+	public List<Artikkel> findCommentedArtiklit() throws SQLException, URISyntaxException {
 		List<Artikkel> artiklid = new ArrayList<Artikkel>();
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
@@ -169,7 +170,6 @@ public class ArtikkelData implements ArtikkelDataProvider {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt
                     .executeQuery("SELECT Artikkel.id, Artikkel.pealkiri, FROM Artikkel join Kommentaar on Kommentaar.artikkel = artikkel.id group by Artikkel.id order by count(*) desc limit 5 "); 
-            )
 
             while (rs.next()) {
                 Artikkel a = new Artikkel();
@@ -180,9 +180,8 @@ public class ArtikkelData implements ArtikkelDataProvider {
         }
         finally {
             conn.close();
-
         }
-        return artiklid
+        return artiklid;
 	}
 
 	@Override
@@ -196,7 +195,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt
                     .executeQuery("SELECT id, pealkiri FROM Artikkel order by vaatamisi desc limit 5"); 
-            )
+            
 
             while (rs.next()) {
                 Artikkel a = new Artikkel();
