@@ -18,6 +18,7 @@ $(document).ready(function(){
 		var pealkiri_alles=text_max-pealkiri_len;
 		$('#formMargidLuhi').html(pealkiri_alles+ ' märke alles.');
 	});
+	
 
 
 console.log("tere");
@@ -61,5 +62,5 @@ $('#lisaArtikkel').submit(function() {
 		return false;
 	});
 
-
+});
 
