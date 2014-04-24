@@ -87,6 +87,8 @@ public class ArtikkelController extends HttpServlet {
 			
 			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
 			datastore.lisaArtikkel(artikkel); 
+			resp.getWriter().write("{}");
+			
 
 	/*		
 			
