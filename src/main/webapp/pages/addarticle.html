@@ -44,7 +44,7 @@
 	<section id = "vasakParem">	
 
 
-		<form class="artikkel" method="post" action="/artiklid" enctype="multipart/form-data" ><!--action=/pilt  kas võib olla mitu actionit -->
+		<form class="artikkel" method="post" action="/artiklid" enctype="multipart/form-data" name="artikkel"><!--action=/pilt  kas võib olla mitu actionit -->
 			<div class="teemad" id='teema' >Teema</div>
 				<input type="radio" name="teema" value="it">IT
 				<input type="radio" name="teema" value="kultuur">Kultuur
@@ -68,6 +68,10 @@
 	
 			<button id="submit">Submit</button>
 		</form>
+
+		<h2>JSON</h2>
+		<pre id="result">
+			</pre>
 		
 	 </section>
 

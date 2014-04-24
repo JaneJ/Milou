@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 $('#submit').click(function() {
 	console.log('Data to DB');
-	var data=$("form.artikkel").serializeObject();
+	var data=$("form.artikkel").serializeOArray();
 	console.log(data);
         var Artikkel = {};
         //var Pilt = new Object();
