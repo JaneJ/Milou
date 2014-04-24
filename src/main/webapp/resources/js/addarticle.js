@@ -19,24 +19,22 @@ $(document).ready(function(){
 		$('#formMargidLuhi').html(pealkiri_alles+ ' märke alles.');
 	});
 
+
 console.log("tere");
 
 $('#lisaArtikkel').submit(function() {
 	console.log('Data to DB');
-	/*var data=$("form.artikkel").serializeObject();
-	console.log(data);*/
-        var Artikkel = {};
-        //var Pilt = new Object();
 
-       // Pilt.pilt=$("#file").val();
+        var Artikkel = {};
+
+        
         Artikkel.autor=$("#autor").val();
         Artikkel.pealkiri=$("#pealkiri").val();
         Artikkel.kirjeldus=$("#lyhikirjeldus").val();
         Artikkel.uudis=$("#sisu").val();
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
         //console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
-       
- 		
+
 		if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu ) {
 			alert("Kõik vajalikud väljad pole täidetud!")
 		}else {
@@ -58,10 +56,10 @@ $('#lisaArtikkel').submit(function() {
 				}
 
 			});
+
 		}
 		return false;
 	});
 
-});
 
-//Kuhugi siia funktsioon, mis lisab selle ka pealehele ???
+
