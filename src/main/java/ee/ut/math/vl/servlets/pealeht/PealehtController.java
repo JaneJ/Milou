@@ -53,21 +53,15 @@ public class PealehtController extends HttpServlet {
 	private void replyPealehega(HttpServletResponse resp, String idString)
 			throws SQLException, Exception {
 		List<Artikkel> artiklid = datastore.findTenArtiklit();
-		try {
-			resp.getWriter().write(gson.toJson(artiklid));
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+		resp.getWriter().write(gson.toJson(artiklid));
+
 	}
 
 	private void replyTeemaga(HttpServletResponse resp, String idString)
 			throws SQLException, Exception {
 		List<Artikkel> artiklid = datastore.findTeemaArtiklit(idString);
-		try {
-			resp.getWriter().write(gson.toJson(artiklid));
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+		resp.getWriter().write(gson.toJson(artiklid));
+
 	}
 
 }
