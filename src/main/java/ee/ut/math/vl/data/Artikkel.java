@@ -21,7 +21,7 @@ public class Artikkel {
     }
     
     
-    public Artikkel (String autor, String pealkiri,String pilt,  String uudis,
+    public Artikkel (String autor, String pealkiri,String pilt, String uudis,
     		String teema, Date lisatud) {        
         this.autor = autor;
         this.pealkiri = pealkiri;
