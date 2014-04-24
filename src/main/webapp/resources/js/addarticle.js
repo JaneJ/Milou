@@ -30,9 +30,9 @@ $('#lisaArtikkel').submit(function() {
 
         
         Artikkel.autor=$("#autor").val();
-        Artikkel.pealkiri=$("#pealkiri").value();
-        Artikkel.kirjeldus=$("#lyhikirjeldus").value();
-        Artikkel.uudis=$("#sisu").value();
+        Artikkel.pealkiri=$("#formArtikliPealkiri").val();
+        Artikkel.kirjeldus=$("#lyhikirjeldus2").val();
+        Artikkel.uudis=$("#artiklisisu").value();
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
         //console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
 
