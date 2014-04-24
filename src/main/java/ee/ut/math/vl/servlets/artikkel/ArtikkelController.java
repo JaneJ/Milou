@@ -88,16 +88,7 @@ public class ArtikkelController extends HttpServlet {
 			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
 			datastore.lisaArtikkel(artikkel); 
 			resp.getWriter().write("{}");
-			
 
-	/*		
-			
-			String artikkelEcho = gson.toJson(artikkel);
-			resp.setHeader("Content-Type", "application/json");
-			resp.getWriter().write(artikkelEcho);
-
-			ArtikkelSocketController.find(req.getServletContext()).broadcast(
-					artikkelEcho);*/
 
 		} catch (Exception ex) {
 			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
