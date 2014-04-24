@@ -35,23 +35,19 @@ public class PealehtController extends HttpServlet {
 			throws ServletException, IOException {
 		resp.setContentType("application/json; charset=UTF-8");
 
-		String idString = req.getParameter("teema");
-		if (idString == null) {
+		{
 			try {
+				String idString = req.getParameter("teema");
+				if (idString == null) {
 				replyPealehega(resp, idString);
+			}
+			else {replyTeemaga(resp, idString);}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
-		} else {
-			try {
-				replyTeemaga(resp, idString);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+		} 
 	}
 
 	private void replyPealehega(HttpServletResponse resp,
