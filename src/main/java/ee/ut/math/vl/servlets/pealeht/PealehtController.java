@@ -54,8 +54,7 @@ public class PealehtController extends HttpServlet {
 		}
 	}
 
-	private void replyPealehega(HttpServletResponse resp,
-			String idString) throws SQLException, Exception {
+	private void replyPealehega(HttpServletResponse resp) throws SQLException, Exception {
 		List<Artikkel> artiklid = datastore.findTenArtiklit();
 		try {
 			resp.getWriter().write(gson.toJson(artiklid));
