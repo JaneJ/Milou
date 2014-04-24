@@ -35,22 +35,23 @@ public class PealehtController extends HttpServlet {
 			throws ServletException, IOException {
 		resp.setContentType("application/json; charset=UTF-8");
 
-		{
-			try {
-				String idString = req.getParameter("teema");
-				if (idString == null) {
+		try {
+			String idString = req.getParameter("teema");
+			if (idString == null) {
 				replyPealehega(resp, idString);
 			}
-			else {replyTeemaga(resp, idString);}
-			} catch (Exception e) {
-				throw new RuntimeException(e);
+
+			else {
+				replyTeemaga(resp, idString);
 			}
 
-		} 
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
-	private void replyPealehega(HttpServletResponse resp,
-			String idString) throws SQLException, Exception {
+	private void replyPealehega(HttpServletResponse resp, String idString)
+			throws SQLException, Exception {
 		List<Artikkel> artiklid = datastore.findTenArtiklit();
 		try {
 			resp.getWriter().write(gson.toJson(artiklid));
@@ -58,9 +59,9 @@ public class PealehtController extends HttpServlet {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	private void replyTeemaga(HttpServletResponse resp,
-			String idString) throws SQLException, Exception {
+
+	private void replyTeemaga(HttpServletResponse resp, String idString)
+			throws SQLException, Exception {
 		List<Artikkel> artiklid = datastore.findTeemaArtiklit(idString);
 		try {
 			resp.getWriter().write(gson.toJson(artiklid));
@@ -68,7 +69,5 @@ public class PealehtController extends HttpServlet {
 			throw new RuntimeException(e);
 		}
 	}
-
-
 
 }
