@@ -51,6 +51,8 @@ $('#lisaArtikkel').submit(function() {
  
 				success: function(Artikkel){   
 					console.log("success");
+					alert('Artikkel edukalt üles laetud!');
+					document.location.reload(true);
 				},
 				error:function(req, text) {
 					console.log(req);
