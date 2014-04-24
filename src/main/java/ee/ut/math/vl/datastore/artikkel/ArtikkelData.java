@@ -55,7 +55,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
         try {
             PreparedStatement stmt = conn
                     .prepareStatement(
-                            "INSERT INTO Artikkel (autor, pealkiri, kirjeldus, uudis, teema, vaatamisi, lisatud) values (?, ?, ?, ?, ?, ?, ?, ?)");
+                            "INSERT INTO Artikkel (autor, pealkiri,pilt, kirjeldus, uudis, teema, vaatamisi, lisatud) values (?, ?, ?, ?, ?, ?, ?,?)");
             stmt.setString(1, artikkel.autor);
             stmt.setString(2, artikkel.pealkiri);
             stmt.setString(3, artikkel.kirjeldus);
@@ -63,6 +63,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
             stmt.setString(5, artikkel.teema);
             stmt.setInt(6, 0);
             stmt.setString(7, "now");
+            stmt.setString(8,artikkel.pilt);
 
             stmt.execute();
         }

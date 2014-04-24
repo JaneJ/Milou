@@ -34,6 +34,7 @@ $('#lisaArtikkel').submit(function() {
         Artikkel.kirjeldus=$("#lyhikirjeldus2").val();
         Artikkel.uudis=$("#artiklisisu").val();
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
+        Artikkel.pilt=$("#pilt").val();
         //console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
 
 		if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu ) {
