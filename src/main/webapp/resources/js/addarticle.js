@@ -22,6 +22,7 @@ $(document).ready(function(){
 
 
 $('#submit').click(function(){
+
 	var radios=document.getElementByName('teema');
 	var teema='';
 	for(var i=0;i<radios.length;i++){
@@ -46,14 +47,15 @@ $('#submit').click(function(){
 				dataType:'json',
 				data: JSON.stringify(JSONObject),
 				contentType: "application/json; charset=utf-8",
- 				success: function(Artikkel){   
+ 				success: function(JSONObject){   
 					console.log("success");
 				
 				},
 				error:function(req, text) {
 					console.log(req);
 					console.log(text);
-				}}
+					console.log(JSONObject);
+				}});
 
 });
 
