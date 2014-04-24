@@ -51,9 +51,13 @@ public class KommentaarData implements KommentaarDataProvider {
 		Connection conn = connid.getConnection();
 		try {
 			PreparedStatement stmt = conn
-					.prepareStatement("INSERT INTO kommentaar (artikkel, autor, kommentaar, aeg) values (?, ?, ?, ?)");
+					.prepareStatement("INSERT INTO kommentaar (artikkel, autor, kommentaar, aeg) values (?, ?, ?, NOW())");
 
-			stmt.setString(4, "now");
+			stmt.setInt(1,kommentaar.artikkel);
+			stmt.setString(2,kommentaar.autor);
+			stmt.setString(3,kommentaar.kommentaar);
+			
+		
 
 			// Hmm see artikli väärtus ka veel... kahte pead oleks vaja
 
