@@ -21,9 +21,12 @@ $(document).ready(function(){
 });
 
 
-$('#submit').click(function() {
+/*$('#submit').click(function() {
 	console.log('Data to DB');
-	var data=$("form.artikkel").serializeOArray();
+	var data=$("form.artikkel").serializeObject();
+	var Art={};
+	var a=this.serializeArray();
+	
 	console.log(data);
         var Artikkel = {};
         //var Pilt = new Object();
@@ -37,7 +40,7 @@ $('#submit').click(function() {
         console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
        
  		if (Artikkel.teema=="Koomiks") {
- 			if (!Artikkel.pealkiri /* & !Pilt.pilt*/ ) {
+ 			if (!Artikkel.pealkiri & !Pilt.pilt) {
  				alert("Kõik vajalikud väljad pole täidetud!");
  			}else {
 			$.ajax("/artiklid",{
@@ -76,7 +79,31 @@ $('#submit').click(function() {
 				}
 
 			});
-		};});
+		};});*/
 
 
 //Kuhugi siia funktsioon, mis lisab selle ka pealehele ???
+
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+
+$(function() {
+    $('artikkel').click(function() {
+        $('#result').text(JSON.stringify($('form').serializeObject()));
+        return false;
+    });
+});
