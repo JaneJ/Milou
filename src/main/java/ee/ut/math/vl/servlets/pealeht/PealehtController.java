@@ -43,8 +43,7 @@ public class PealehtController extends HttpServlet {
 			}
 			else {replyTeemaga(resp, idString);}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new RuntimeException(e);
 			}
 
 		} 
@@ -56,8 +55,7 @@ public class PealehtController extends HttpServlet {
 		try {
 			resp.getWriter().write(gson.toJson(artiklid));
 		} catch (IOException e) {
-
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 	
@@ -67,8 +65,7 @@ public class PealehtController extends HttpServlet {
 		try {
 			resp.getWriter().write(gson.toJson(artiklid));
 		} catch (IOException e) {
-
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 
