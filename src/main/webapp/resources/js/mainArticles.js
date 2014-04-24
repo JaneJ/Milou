@@ -168,15 +168,7 @@ $("#sisu").append(vasak,parem);
     var json = JSONArticle[i];
     buildArticle(json)
 
-     /*         //valib artikli asukohaks kordamooda parem ja vasak div
-                if (i%2 ==0)
-                  {
-                   vasak.append(article);
-                  }
-                else
-                  {
-                  parem.append(article);
-                  }    */
+
     }
 
     console.log("koik artiklid tehtud");
@@ -309,7 +301,7 @@ $("#sisu").append(vasak,parem);
        //kui klikitakse "tagasi" (artikli) peal
       $(document).on("click", ".back",function(){
       console.log("eemaldab sisu");
-      //window.history.back();
+      window.history.back();
        //history.go(-1);
        //window.location.reload();
        //$(this).closest('article').remove();
@@ -328,7 +320,8 @@ $("#sisu").append(vasak,parem);
                                                type: "GET",
                                                dataType: "Json",
                                                data: {id:id},
-                                               success: showArticle
+                                               success: showArticle,
+                                                     error: function(req, status) { alert("failed: " + status); }
 
                                            });
                                                      */
@@ -390,7 +383,8 @@ $("#sisu").append(vasak,parem);
                                    type: "GET",
                                    dataType: "Json",
                                    data: {id:id},
-                                   success: showArticle
+                                   success: showArticle,
+                                         error: function(req, status) { alert("failed: " + status); }
 
                                });
 
@@ -415,7 +409,8 @@ $("#sisu").append(vasak,parem);
                                    type: "GET",
                                    dataType: "Json",
                                    data: {id:id},
-                                   success: showComments
+                                   success: showComments,
+                                         error: function(req, status) { alert("failed: " + status); }
 
 
                                });
@@ -460,34 +455,34 @@ $("#sisu").append(vasak,parem);
 
                     //console.log(json.pealkiri);
 
-                                //loome tagid
-                                var div =$('<div></div>');
-                                var footer =$('<footer></footer>');
-                                var autor=$("<p></p>");
-                                var aeg=$("<p></p>");
-                                var id=$("<p></p>");
-                                var kommentaar=$("<p></p>");
-                               // loeKom.addClass("kommentaar");
+                    //loome tagid
+                    var div =$('<div></div>');
+                    var footer =$('<footer></footer>');
+                    var autor=$("<p></p>");
+                    var aeg=$("<p></p>");
+                    var id=$("<p></p>");
+                    var kommentaar=$("<p></p>");
+                   // loeKom.addClass("kommentaar");
 
-                                //anname vaartuse tagidele
+                    //anname vaartuse tagidele
 
-                                id.text("Kommentaari id: "+json.id);
-                                autor.text("Autor: "+json.autor);
-                                aeg.text(json.aeg);
-                                kommentaar.text(json.kommentaar);
+                    id.text("Kommentaari id: "+json.id);
+                    autor.text("Autor: "+json.autor);
+                    aeg.text(json.aeg);
+                    kommentaar.text(json.kommentaar);
 
-                                //uhendame osad uksteisega
-                               // div.append(id);
-                                div.append(kommentaar);
-                                footer.append(autor,aeg);
-                                div.append(footer);
-                                console.log(json.kommentaar);
-                                div.addClass("comment");
-                               div.addClass("vasakParem");
+                    //uhendame osad uksteisega
+                   // div.append(id);
+                    div.append(kommentaar);
+                    footer.append(autor,aeg);
+                    div.append(footer);
+                    console.log(json.kommentaar);
+                    div.addClass("comment");
+                   div.addClass("vasakParem");
 
-                                //TODO
-                                /*kui ajaxi viitest on naha, et artikkel on avatud, siis kleepida lehe otsa kommentaarid, mitte uuele lehele. */
-                                $("#sisu").append(div);
+                    //TODO
+                    /*kui ajaxi viitest on naha, et artikkel on avatud, siis kleepida lehe otsa kommentaarid, mitte uuele lehele. */
+                    $("#sisu").append(div);
 
                };
 

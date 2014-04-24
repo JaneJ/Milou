@@ -24,7 +24,7 @@ public class KommentaarData implements KommentaarDataProvider {
 
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt
-					.executeQuery("SELECT autor, kommentaar, aeg  FROM Kommnetaar where artikkel=artikkel "); // order
+					.executeQuery("SELECT autor, kommentaar, aeg  FROM Kommentaar where artikkel=artikkel "); // order
 																												// by
 																												// vaatamisi
 																												// (selleks
