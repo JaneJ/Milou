@@ -85,18 +85,17 @@ public class ArtikkelController extends HttpServlet {
 			//pildid peaksid andmebaasis olema unikaalse nimega, kui klient peaks küsima (ehk responce pildinime kaudu)
 			//Part pilt = req.getPart("pilt").getInputStream();
 			
-			
 			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
 			datastore.lisaArtikkel(artikkel); 
 
-			
+	/*		
 			
 			String artikkelEcho = gson.toJson(artikkel);
 			resp.setHeader("Content-Type", "application/json");
 			resp.getWriter().write(artikkelEcho);
 
 			ArtikkelSocketController.find(req.getServletContext()).broadcast(
-					artikkelEcho);
+					artikkelEcho);*/
 
 		} catch (Exception ex) {
 			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
