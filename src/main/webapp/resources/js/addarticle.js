@@ -37,7 +37,8 @@ $('#lisaArtikkel').submit(function() {
         Artikkel.pilt=$("#pilt").val();
         //console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
 
-		if (!Artikkel.teema & !Artikkel.autor & ! Artikkel.pealkiri & !Artikkel.kirjeldus & ! Artikkel.sisu ) {
+		if ( $("#autor").val()==""&$("#formArtikliPealkiri").val()==""& $("#lyhikirjeldus2").val()=""&$("#artiklisisu").val()==""& $('input:radio[name=teema]:checked').val()==""
+			$("#pilt").val()=="") {
 			alert("Kõik vajalikud väljad pole täidetud!")
 		}else {
 

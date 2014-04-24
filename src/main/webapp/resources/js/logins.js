@@ -26,16 +26,18 @@ function Login(){
       console.log('Access Token = '+ access_token);
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
+       console.log(response.id);
+       console.log(response.username);
+       var Kasutaja={};
+       Kasutaja.id=response.id;
+       Kasutaja.username=response.username;
+       Kasutaja.admin=false;
+       Kasutaja.nimi=response.name;
+       console.log(Kasutaja);
+
 
   
-       /*if(me.id== | me.id== | me.id==){
-        var str="Tere : "+response.name+"!";
-        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";<br>
-        str +="<a href="pages/addarticle.html">Lisa uudis</a></li>"
-        document.getElementById("profileArea").innerHTML=str;
-
-
-       }*/
+      
        if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
         var str="Tere : "+response.name+"!<br>";
         str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
@@ -72,5 +74,3 @@ function Logout()
   });
   });
     
-
-
