@@ -71,7 +71,11 @@ function Login(){
   });
   $('#logout').click(function()
   {
-
-    FB.logout(function(){document.location.reload();});
+      var str="";
+        str +="<button id='loginfb'>FB Login</button>";
+        document.getElementById("profileArea").innerHTML=str;
+    FB.logout(function(){document.location.reload();})
+    ;
+     
   });
 });    
