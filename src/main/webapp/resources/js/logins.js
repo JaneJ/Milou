@@ -72,6 +72,7 @@ function Logout(){
 $(document).ready(function(){
 
   $('#logout').on( 'click',function(){
+    console.log('Ei.');
   Logout();
   console.log("login.js - 68 logout"); 
 
