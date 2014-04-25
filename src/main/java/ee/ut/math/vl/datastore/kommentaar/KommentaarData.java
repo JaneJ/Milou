@@ -21,10 +21,9 @@ public class KommentaarData implements KommentaarDataProvider {
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
-
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt
-					.executeQuery("SELECT autor, kommentaar, aeg  FROM Kommentaar where artikkel=artikkel "); // order
+					.executeQuery("SELECT autor, kommentaar, aeg  FROM Kommentaar where artikkel=artikkel"); // order
 																												// by
 																												// vaatamisi
 																												// (selleks
