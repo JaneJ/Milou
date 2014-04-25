@@ -13,7 +13,7 @@ $(document).ready(function(){
 			Kommentaar.nimi="";
 		}
 
-		$.ajax("/kommentaarid",{
+		$.ajax("/kommentaar",{
 				type:"POST",
 				//url:"ArtikkelData/lisaArtikkel",
 				dataType:'json',

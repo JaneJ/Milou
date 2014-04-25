@@ -41,11 +41,11 @@ function Login(){
        if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
         var str="Tere : "+response.name+"!<br>";
         str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
-        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
+        str +="<button id='logout'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
       }else{
         var str="Tere : "+response.name+"!";
-        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
+        str +="<button id='logout'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
 
       }
@@ -57,20 +57,38 @@ function Login(){
  },{scope:'email'});
   };
 
-function Logout()
-  {
+  
+function Logout(){
+  FB.logout(function(response))
+    ;
+  var str="";
+  str +="<button id='loginfb'>FB Login</button>";
+  document.getElementById("profileArea").innerHTML=str;
 
-    FB.logout(function(){document.location.reload();});
-  }
+}
+
+
+
+$(document).ready(function(){
+
+  $('#logout').on( 'click',function(){
+  Logout();
+  console.log("login.js - 68 logout"); 
+
+  });
+
+}); 
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
-  $(document).ready(function(){
+$(document).ready(function(){
 
   $('#loginfb').on( 'click',function(){
   Login();
   console.log("login.js - 68 login"); 
 
   });
-  });
-    
+
+});   
+
+
