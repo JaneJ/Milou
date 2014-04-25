@@ -61,6 +61,8 @@ function Login(){
 $(document).ready(function(){
   $('#logout').click(function()
   {
+    console.log('FB logout');
+    document.location.reload(true);
      
     FB.logout(function(){document.location.reload(true);})
     ;
