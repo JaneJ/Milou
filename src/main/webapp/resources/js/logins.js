@@ -41,7 +41,7 @@ function Login(){
        if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
         var str="Tere : "+response.name+"!<br>";
         str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
-        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
+        str +="<button id='logout'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
       }else{
         var str="Tere : "+response.name+"!";
@@ -57,11 +57,11 @@ function Login(){
  },{scope:'email'});
   };
 
-function Logout()
+$('#logout').on( 'click',function()
   {
 
     FB.logout(function(){document.location.reload();});
-  }
+  });
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
