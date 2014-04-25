@@ -57,20 +57,27 @@ function Login(){
  },{scope:'email'});
   };
 
+  
+function Logout(){
+  FB.logout(function(response))
+    ;
+  var str="";
+  str +="<button id='loginfb'>FB Login</button>";
+  document.getElementById("profileArea").innerHTML=str;
+
+}
+
+
 
 $(document).ready(function(){
-  $('#logout').click(function()
-  {
-    console.log('FB logout');
-    document.location.reload(true);
-     
-    FB.logout(function(){document.location.reload(true);})
-    ;
-     var str="";
-        str +="<button id='loginfb'>FB Login</button>";
-        document.getElementById("profileArea").innerHTML=str;
-     
-  });});
+
+  $('#logout').on( 'click',function(){
+  Logout();
+  console.log("login.js - 68 logout"); 
+
+  });
+
+}); 
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
@@ -82,4 +89,6 @@ $(document).ready(function(){
 
   });
 
-});    
+});   
+
+
