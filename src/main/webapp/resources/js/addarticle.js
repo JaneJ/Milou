@@ -37,8 +37,7 @@ $('#lisaArtikkel').submit(function() {
         Artikkel.pilt=$("#pilt").val();
         //console.log(Artikkel.autor+ Artikkel.pealkiri+ Artikkel.kirjeldus);
 
-		if ( $("#autor").val()==""&$("#formArtikliPealkiri").val()==""& $("#lyhikirjeldus2").val()=""&$("#artiklisisu").val()==""& $('input:radio[name=teema]:checked').val()==""
-			$("#pilt").val()=="") {
+		if ( $("#autor").val()==""&$("#formArtikliPealkiri").val()==""& $("#lyhikirjeldus2").val()=""&$("#artiklisisu").val()==""& $('input:radio[name=teema]:checked').val()=="") {
 			alert("Kõik vajalikud väljad pole täidetud!")
 		}else {
 
