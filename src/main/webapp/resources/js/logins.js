@@ -71,11 +71,12 @@ function Login(){
   });
   $('#logout').click(function()
   {
-      var str="";
+     
+    FB.logout(function(){document.location.reload(true);})
+    ;
+     var str="";
         str +="<button id='loginfb'>FB Login</button>";
         document.getElementById("profileArea").innerHTML=str;
-    FB.logout(function(){document.location.reload();})
-    ;
      
   });
 });    
