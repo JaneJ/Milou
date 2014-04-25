@@ -145,7 +145,7 @@ nav a{
 	text-align: center;
 	margin-left: 4%;
     cursor: pointer;
-    cursor: hand;
+ /*cursor: hand;  */
 	
 }
 
@@ -181,7 +181,7 @@ article {
 
 article a, h1 {
 	cursor: pointer;
-	cursor: hand;
+	/*cursor: hand;  */
 
 }
 
@@ -204,10 +204,10 @@ article table img{
 
 }
 
-article footer {
+article footer{
 	text-align: right;
 	font-size: 10px;
-	//padding: 1%;
+	/*padding: 1%;   */
 
 }
 
@@ -263,7 +263,7 @@ article footer {
 	padding: 2%;
 	font-size: 14px;
 	cursor: pointer;
-	cursor: hand;
+	/*cursor: hand;  */
 
 }
 #koomiks{
@@ -336,12 +336,12 @@ font-family: Fanwood;
  	max-width: 70%;
  	float:left;
  	clear:left;
- 	//overflow: hidden;
+ 	/*overflow: hidden;  */
 }
 
-.comment footer {
+.comment footer{
 	text-align: right;
 	font-size: 10px;
-	//padding: 1%;
+	/*padding: 1%; */
 
 }
