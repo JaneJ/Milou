@@ -57,15 +57,15 @@ function Login(){
  },{scope:'email'});
   };
 
-  
+
 function Logout(){
-  FB.logout(function(response))
-    ;
-  var str="";
+  FB.logout(function(response){
+    var str="";
   str +="<button id='loginfb'>FB Login</button>";
   document.getElementById("profileArea").innerHTML=str;
+  
 
-}
+});}
 
 
 
