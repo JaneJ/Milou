@@ -58,17 +58,7 @@ function Login(){
   };
 
 
-
-  
-  
-  // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
-  $(document).ready(function(){
-
-  $('#loginfb').on( 'click',function(){
-  Login();
-  console.log("login.js - 68 login"); 
-
-  });
+$(document).ready(function(){
   $('#logout').click(function()
   {
      
@@ -78,5 +68,16 @@ function Login(){
         str +="<button id='loginfb'>FB Login</button>";
         document.getElementById("profileArea").innerHTML=str;
      
+  });});
+  
+  
+  // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
+$(document).ready(function(){
+
+  $('#loginfb').on( 'click',function(){
+  Login();
+  console.log("login.js - 68 login"); 
+
   });
+
 });    
