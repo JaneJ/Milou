@@ -54,6 +54,7 @@ public class KommentaarController extends HttpServlet {
     private void replyWithKommentaarid(HttpServletResponse resp,
                                          String idString) throws SQLException, Exception {
         int id = Integer.parseInt(idString);
+	 //   resp.getWriter().write("id on "+id);
 
 
         List<Kommentaar> kommentaar = datastore.findKommentaarByArtikkel(id);
