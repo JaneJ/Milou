@@ -57,12 +57,8 @@ function Login(){
  },{scope:'email'});
   };
 
-$(document).ready(function(){
-$('#logout').click(function()
-  {
 
-    FB.logout(function(){document.location.reload();});
-  });});
+
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
@@ -73,5 +69,8 @@ $('#logout').click(function()
   console.log("login.js - 68 login"); 
 
   });
-  });
-    
+  $('#logout').click(function()
+  {
+
+    FB.logout(function(){document.location.reload();});
+  });});    
