@@ -170,7 +170,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt
-                    .executeQuery("SELECT Artikkel.id, Artikkel.pealkiri, FROM Artikkel join Kommentaar on Kommentaar.artikkel = artikkel.id group by Artikkel.id order by count(*) desc limit 5 "); 
+                    .executeQuery("SELECT Artikkel.id, Artikkel.pealkiri FROM Artikkel join Kommentaar on Kommentaar.artikkel = artikkel.id group by Artikkel.id order by count(*) desc limit 5 ");
 
             while (rs.next()) {
                 Artikkel a = new Artikkel();
