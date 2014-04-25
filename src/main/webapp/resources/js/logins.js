@@ -57,11 +57,12 @@ function Login(){
  },{scope:'email'});
   };
 
-$('#logout').on( 'click',function()
+$(document).ready(function(){
+$('#logout').click(function()
   {
 
     FB.logout(function(){document.location.reload();});
-  });
+  });});
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
