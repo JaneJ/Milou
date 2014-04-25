@@ -141,13 +141,14 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt
-					.executeQuery("SELECT pealkiri, lisatud FROM Artikkel ORDER BY lisatud desc limit 5");
+					.executeQuery("SELECT id, pealkiri, lisatud FROM Artikkel ORDER BY lisatud desc limit 5");
 
 			while (rs.next()) {
 				Artikkel a = new Artikkel();
 
 				a.pealkiri = rs.getString("pealkiri");
 				a.lisatud = rs.getDate("lisatud");
+				a.id = rs.getInt("id");
 
 				artiklid.add(a);
 			}

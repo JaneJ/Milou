@@ -249,7 +249,7 @@ $("#sisu").append(vasak,parem);
 
 
 
-           /*   //Enim kommenteeritud
+              //Enim kommenteeritud
                 var aside3H4=$("<h4></h4>").text("Enim kommenteeritud");
 
                  // tahab andmebaasilt vastuseks vastava id-ga artiklit, json objektina
@@ -266,7 +266,7 @@ $("#sisu").append(vasak,parem);
                          function asidefun3(data)
                          {
                             buildAsideElements(data,aside3H4,"#aside3")
-                         }  */
+                         }
            };
 
                   function buildAsideElements(JSON,nr,a) {   /*argument responseText*/

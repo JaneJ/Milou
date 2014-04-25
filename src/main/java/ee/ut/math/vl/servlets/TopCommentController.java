@@ -43,8 +43,7 @@ public class TopCommentController extends HttpServlet {
 		try {
 			replyCommented(resp);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 			
 	}
@@ -54,14 +53,7 @@ public class TopCommentController extends HttpServlet {
 		
 		
 		List<Artikkel> artiklid = datastore.findCommentedArtiklit();
-		try {
-			resp.getWriter().write(gson.toJson(artiklid));
-		
-		
-		}
-
-			catch (Exception ex) {
-				throw new RuntimeException(ex); }
+		resp.getWriter().write(gson.toJson(artiklid));
 
 	}
 }
