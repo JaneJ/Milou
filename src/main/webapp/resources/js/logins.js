@@ -45,7 +45,7 @@ function Login(){
         document.getElementById("profileArea").innerHTML=str;
       }else{
         var str="Tere : "+response.name+"!";
-        str +="<button id='logout' onclick='Logout()'>FB Logout</button>";
+        str +="<button id='logout'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
 
       }
@@ -73,4 +73,5 @@ function Login(){
   {
 
     FB.logout(function(){document.location.reload();});
-  });});    
+  });
+});    
