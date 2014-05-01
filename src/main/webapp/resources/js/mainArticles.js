@@ -3,6 +3,8 @@
 
 $(document).ready(function(){
  console.log("mainArticles.js");
+    console.log("success: win 8.1 uus uhendus on edukalt loodud :)");
+    alert("success");
 
 
 //lisame pealehele div-id
