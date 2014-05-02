@@ -21,14 +21,21 @@ public class KommentaarData implements KommentaarDataProvider {
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt
-					.executeQuery("SELECT autor, kommentaar, aeg  FROM Kommentaar where artikkel=artikkel"); // order
-																												// by
-																												// vaatamisi
-																												// (selleks
-																												// counterit
-																												// vaja)
+
+            //alates siit muutsin, selleks, et saada oiged kommentaare klikkides "loe kommentaare"
+
+            PreparedStatement stmt = null;
+            String str = "SELECT autor, kommentaar, aeg  FROM Kommentaar where artikkel=?";// order
+            // by
+            // vaatamisi
+            // (selleks
+            // counterit
+            // vaja)
+            stmt = conn.prepareStatement(str);
+            stmt.setInt(1, artikkel);
+            ResultSet rs = stmt.executeQuery();
+
+            //siit edasi enam ei muutnud
 
 			while (rs.next()) {
 				Kommentaar k = new Kommentaar();
