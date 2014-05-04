@@ -59,6 +59,7 @@ function Login(){
 
 
 function Logout(){
+console.log('logout');
   FB.logout(function(response){
     var str="";
   str +="<button id='loginfb'>FB Login</button>";
