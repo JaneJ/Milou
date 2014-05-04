@@ -41,7 +41,7 @@ function Login(){
        if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
         var str="Tere : "+response.name+"!<br>";
         str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
-        str +="<button id='logout'>FB Logout</button>";
+        str +='<button id="logout">FB Logout</button>';
         document.getElementById("profileArea").innerHTML=str;
       }else{
         var str="Tere : "+response.name+"!";
