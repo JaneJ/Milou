@@ -55,7 +55,7 @@ function Login(){
      console.log('User cancelled login or did not fully authorize.');
    }
  },{scope:'email'});
-  };
+  }
 
 
 function Logout(){
@@ -67,18 +67,6 @@ function Logout(){
 
 });}
 
-
-
-$(document).ready(function(){
-
-  $('#logout').on( 'click',function(){
-    console.log('Ei.');
-  Logout();
-  console.log("login.js - 68 logout"); 
-
-  });
-
-}); 
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
@@ -86,10 +74,9 @@ $(document).ready(function(){
 
   $('#loginfb').on( 'click',function(){
   Login();
-  console.log("login.js - 68 login"); 
+  console.log("login.js - 68 login"); });
 
-  });
-
-});   
-
-
+  $('#logout').on( 'click',function(){
+      console.log('Ei.');
+    Logout();
+    console.log("login.js - 68 logout");});});
