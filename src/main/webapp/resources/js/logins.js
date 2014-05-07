@@ -6,7 +6,7 @@ $(document).ready (function createCookie(name,value,days) {
 	}
 	else var expires = "";
 	document.cookie = name+"="+value+expires+"; path=/";
-}
+});
 
 function readCookie(name) {
 	var nameEQ = name + "=";
@@ -17,7 +17,7 @@ function readCookie(name) {
 		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
 	}
 	return null;
-});
+}
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -74,6 +74,17 @@ function Login(){
      });
    } else {
      console.log('User cancelled login or did not fully authorize.');
+
+       //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
+
+       var str="Tere : "+response.name+"!<br>";
+       str +="<a id='addNews'>Lisa uudis</a><br>";
+       //muutsin!, tegin buttoniks
+       //str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
+       str +="<button id='logout'>FB Logout</button>";
+       document.getElementById("profileArea").innerHTML=str;
+
+       // muutuste lopp
    }
  },{scope:'email'});
   }
