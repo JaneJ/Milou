@@ -36,7 +36,8 @@ $('#lisaArtikkel').submit(function() {
         Artikkel.teema = $('input:radio[name=teema]:checked').val();
         Artikkel.pilt=$("#pilt").val();
         console.log(Artikkel.autor);
-        console.log((""==$("#autor").val());
+        console.log(""==$("#autor").val());
+        if(Artikkel.autor==""){console.log("Tühi")}
 
 		if ( $("#autor").val()==""&&$("#formArtikliPealkiri").val()==""&&$("#artiklisisu").val()==""&&$('input:radio[name=teema]:checked').val()==""&&$("#lyhikirjeldus2").val()=="") {
 			alert("Kõik vajalikud väljad pole täidetud!");
