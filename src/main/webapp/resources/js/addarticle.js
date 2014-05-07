@@ -39,7 +39,7 @@ $('#lisaArtikkel').submit(function() {
         console.log(""==$("#autor").val());
         if(Artikkel.autor==""){console.log("Tühi")}
 
-		if ( Artikkel.autor==""&&$("#formArtikliPealkiri").val()==""&&Artikkel.pealkiri==""&&$('input:radio[name=teema]:checked').val()==""&&Artikkel.kirjeldus==""&&Artikkel.uudis=="") {
+		if ( Artikkel.autor==""||Artikkel.pealkiri==""||$('input:radio[name=teema]:checked').val()==""||Artikkel.kirjeldus==""||Artikkel.uudis=="") {
 			alert("Kõik vajalikud väljad pole täidetud!");
 		}else {
 
