@@ -1,3 +1,24 @@
+$(document).ready (function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+});
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1385045075103554', // App ID
@@ -26,14 +47,14 @@ function Login(){
       console.log('Access Token = '+ access_token);
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
-       console.log(response.id);
-       console.log(response.username);
        var Kasutaja={};
        Kasutaja.id=response.id;
        Kasutaja.username=response.username;
        Kasutaja.admin=false;
        Kasutaja.nimi=response.name;
        console.log(Kasutaja);
+
+       /*if(response.id in kasutaja andmebaas, siis admin)*/
 
 
   
@@ -53,6 +74,17 @@ function Login(){
      });
    } else {
      console.log('User cancelled login or did not fully authorize.');
+
+       //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
+
+       var str="Tere : "+response.name+"!<br>";
+       str +="<a id='addNews'>Lisa uudis</a><br>";
+       //muutsin!, tegin buttoniks
+       //str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
+       str +="<button id='logout'>FB Logout</button>";
+       document.getElementById("profileArea").innerHTML=str;
+
+       // muutuste lopp
    }
  },{scope:'email'});
   }
@@ -73,11 +105,11 @@ console.log('logout');
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
 
-  $('#loginfb').on( 'click',function(){
+  $('#loginfb').on('click',function(){
   Login();
   console.log("login.js - 68 login"); });
 
-  $('#logout').on( 'click',function(){
+  $('#logout').on('click',function(){
       console.log('Ei.');
     Logout();
     console.log("login.js - 68 logout");});});
