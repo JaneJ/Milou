@@ -146,6 +146,7 @@ $(document).ready(function(){
         //anname vaartuse tagidele
         h1.text(json.pealkiri);
         h1.data("id",json.id);
+        $(h1).attr('id',json.id);
         //   console.log(json.pealkiri);
         footer.text("Autor: "+json.autor);
         p.text(json.uudis);
@@ -283,7 +284,9 @@ $(document).ready(function(){
 
             nr.text(json.pealkiri);
             nr.data("id",json.id);
+            $(nr).attr('id',json.id);
             nr.addClass("getArticle");
+            $(nr).attr('id',json.id)
             nr.addClass(nr);
             $(a).append(nr);
             //   console.log(i);
