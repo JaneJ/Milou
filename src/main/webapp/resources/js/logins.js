@@ -19,8 +19,8 @@ function readCookie(name) {
 	return null;
 }*/
 
-window.fbAsyncInit = function(e) {
-  e.preventDefault();
+window.fbAsyncInit = function() {
+
     FB.init({
       appId      : '1385045075103554', // App ID
       status     : false, // check login status
