@@ -37,7 +37,7 @@ window.fbAsyncInit = function() {
             });
 
         };
-function testAPI(e) {
+function testAPI() {
 
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function (response) {
@@ -149,7 +149,13 @@ console.log('logout');
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
-$(document).ready(function(){
+$(document).ready(function(e){
+  if (!e.preventDefault) {
+    e.preventDefault = function() {
+        e.returnValue = false; //ie
+    }
+}
+  
 
 
   $('#loginfb').on('click',function(){
