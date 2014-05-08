@@ -27,12 +27,32 @@ window.fbAsyncInit = function() {
       xfbml      : true,  // parse XFBML
       oauth      : true 
     });
-     FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    console.log("loged in");
-   }}
+      FB.Event.subscribe('auth.authResponseChange', function (response) {
+                // Here we specify what we do with the response anytime this event occurs. 
+                if (response.status === 'connected') {
+                    
+                    testAPI();
+                } 
+            });
 
-};
+        };
+function testAPI() {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function (response) {
+                console.log('Good to see you, ' + response.name + '.');
+                if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik") {
+                    var str="Tere : "+response.name+"!<br>";
+                    str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
+                    str +='<button id="logout">FB Logout</button>';
+                    document.getElementById("profileArea").innerHTML=str;
+                }else{
+                    var str="Tere : "+response.name+"!";
+                    str +="<button id='logout'>FB Logout</button>";
+                    document.getElementById("profileArea").innerHTML=str;
+
+      }
+            });
+        }
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -47,8 +67,8 @@ function Login(){
     FB.login(function(response) {
    if (response.authResponse) {
       console.log('Welcome!  Fetching your information.... ');
-      var access_token =   FB.getAuthResponse()['accessToken'];
-      console.log('Access Token = '+ access_token);
+     //var access_token =   FB.getAuthResponse()['accessToken'];
+      //console.log('Access Token = '+ access_token);
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
        var Kasutaja={};
