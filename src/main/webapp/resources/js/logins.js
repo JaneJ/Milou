@@ -70,21 +70,6 @@ function Login(){
                     document.getElementById("profileArea").innerHTML=str;
 
 
-                    $(document).ready(function(){
-
-                        $('#loginfb').on('click',function(){
-                            Login();
-                            console.log("login.js - 68 login"); });
-
-                        $('#logout').on('click',function(){
-                                console.log('Ei.');
-                                Logout();
-                                console.log("login.js - 68 logout");
-                            }
-                        );
-
-                    });
-
                 }
 
             });
@@ -109,7 +94,7 @@ function Login(){
 
     },{scope:'email'});
 
-    $(document).ready(function(){
+
 
         $('#loginfb').on('click',function(){
             Login();
@@ -122,7 +107,7 @@ function Login(){
             }
         );
 
-    });
+
 }
 
 
@@ -144,6 +129,7 @@ $(document).ready(function(){
     $('#loginfb').on('click',function(){
         Login();
         console.log("login.js - 68 login");
+        alert("Uus versioon on üleval");
     });
 
     $('#logout').on('click',function(){
