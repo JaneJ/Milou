@@ -6,7 +6,7 @@ import java.util.List;
 import ee.ut.math.vl.data.Kasutaja;
 
 public interface KasutajaDataProvider {
-	 public Kasutaja findKasutajaById(int id) throws SQLException, Exception;
+	 public boolean findKasutajaById(int id) throws SQLException, Exception;
 	 public List<Kasutaja> findAllKasutajad() throws SQLException, Exception;
 	 public void lisaKasutaja(Kasutaja kasutaja) throws SQLException, Exception;
 

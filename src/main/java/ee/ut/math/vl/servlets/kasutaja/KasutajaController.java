@@ -46,7 +46,9 @@ public class ArtikkelController extends HttpServlet {
         String idString = req.getParameter("id");
         if (idString != null) {
             try {
-                replyWithKasutajaBoolean(resp, idString);
+                if(replyWithKasutajaBoolean(resp, idString)==true){
+                    replyWithKasutajaBoolean(resp, idString);
+                }
             }  catch (Exception ex) { throw new RuntimeException(ex); }
 
         }
@@ -62,14 +64,18 @@ public class ArtikkelController extends HttpServlet {
 
 
         Kasutaja kasutaja = datastore.findKasutajaById(id);
-        try {
-            resp.getWriter().write(gson.toJson(kasutaja));
+        //
+        if (kasutaja==true){
+            try {
+                resp.getWriter().write(gson.toJson(kasutaja));
+            }
 
+            catch (Exception ex) {
+                throw new RuntimeException(ex); }
 
+        } else{
+            resp.getWriter().write(gson.toJson(false));
         }
-
-        catch (Exception ex) {
-            throw new RuntimeException(ex); }
 
     }
 
