@@ -18,7 +18,7 @@ function readCookie(name) {
 	}
 	return null;
 }*/
-
+$(document).ready(function(){
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1385045075103554', // App ID
@@ -38,7 +38,7 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-$(document).ready(function(){
+
 
 function Login(){
     FB.login(function(response) {
