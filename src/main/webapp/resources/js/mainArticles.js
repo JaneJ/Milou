@@ -45,7 +45,8 @@ $(document).ready(function(){
 
         //loome tagid
         var article =$('<article></article>');
-        var h1=$("<h1></h1>");
+        //katse
+        var h1=$("<h1></h1>").id=json.id;
         var header =$('<header></header>');
         var footer =$('<footer></footer>');
         var p=$("<p></p>");
@@ -78,6 +79,8 @@ $(document).ready(function(){
         article.append(footer);
         article.addClass("article");
         h1.addClass("getArticle");
+        //katse
+        h1.addId(json.id);
         loeKom.addClass("getComments");
         teeKom.addClass("addComment");
 
