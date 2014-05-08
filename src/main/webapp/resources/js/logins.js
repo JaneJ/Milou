@@ -100,25 +100,29 @@ function Login(){
             str +="<button id='logout'>FB Logout</button>";
             document.getElementById("profileArea").innerHTML=str;
 
-            $(document).ready(function(){
 
-                $('#loginfb').on('click',function(){
-                    Login();
-                    console.log("login.js - 68 login"); });
-
-                $('#logout').on('click',function(){
-                        console.log('Ei.');
-                        Logout();
-                        console.log("login.js - 68 logout");
-                    }
-                );
-
-            });
 
 
             // muutuste lopp
         }
+
+
     },{scope:'email'});
+
+    $(document).ready(function(){
+
+        $('#loginfb').on('click',function(){
+            Login();
+            console.log("login.js - 68 login"); });
+
+        $('#logout').on('click',function(){
+                console.log('Ei.');
+                Logout();
+                console.log("login.js - 68 logout");
+            }
+        );
+
+    });
 }
 
 
