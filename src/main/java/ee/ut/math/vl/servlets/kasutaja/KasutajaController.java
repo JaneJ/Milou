@@ -1,11 +1,14 @@
-package ee.ut.math.vl.servlets.artikkel;
+package ee.ut.math.vl.servlets.kasutaja;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
 import ee.ut.math.vl.data.Artikkel;
+import ee.ut.math.vl.data.Kasutaja;
 import ee.ut.math.vl.datastore.artikkel.ArtikkelData;
 import ee.ut.math.vl.datastore.artikkel.ArtikkelDataProvider;
+import ee.ut.math.vl.datastore.kasutaja.KasutajaData;
+import ee.ut.math.vl.datastore.kasutaja.KasutajaDataProvider;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +21,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @WebServlet(value = "/kasutaja")
-public class ArtikkelController extends HttpServlet {
+public class KasutajaController extends HttpServlet {
 
     /**
      *
@@ -55,7 +58,7 @@ public class ArtikkelController extends HttpServlet {
         else {resp.sendError(HttpServletResponse.SC_BAD_REQUEST); }
     }
 
-    private void replyWithKasutajaBoolean(HttpServletResponse resp,
+    private boolean replyWithKasutajaBoolean(HttpServletResponse resp,
                                          String idString) throws SQLException, Exception {
         int id = Integer.parseInt(idString);
 
@@ -63,7 +66,7 @@ public class ArtikkelController extends HttpServlet {
         //resp.getOutputStream().write(null);
 
 
-        Kasutaja kasutaja = datastore.findKasutajaById(id);
+        boolean kasutaja = datastore.findKasutajaById(id);
         //
         if (kasutaja==true){
             try {
@@ -77,6 +80,7 @@ public class ArtikkelController extends HttpServlet {
             resp.getWriter().write(gson.toJson(false));
         }
 
+            return true;
     }
 
     @Override
