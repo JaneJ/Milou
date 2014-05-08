@@ -1,4 +1,4 @@
-$(document).ready (function createCookie(name,value,days) {
+/*$(document).ready (function createCookie(name,value,days) {
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -17,7 +17,7 @@ function readCookie(name) {
 		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
 	}
 	return null;
-}
+}*/
 
 window.fbAsyncInit = function() {
     FB.init({
