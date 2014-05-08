@@ -69,7 +69,7 @@ function Login(){
 
        			} else {
        				console.log("Ei ole admin");
-       				ar str="Tere : "+response.name+"!";
+       				var str="Tere : "+response.name+"!";
                             str +="<button id='logout'>FB Logout</button>";
                             document.getElementById("profileArea").innerHTML=str;
 
@@ -98,7 +98,7 @@ function Login(){
      console.log('User cancelled login or did not fully authorize.');
 
        //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
-
+/*
        var str="Tere : "+response.name+"!<br>";
        str +="<a id='addNews'>Lisa uudis</a><br>";
        //muutsin!, tegin buttoniks
@@ -106,7 +106,7 @@ function Login(){
        str +="<button id='logout'>FB Logout</button>";
        document.getElementById("profileArea").innerHTML=str;
 
-       // muutuste lopp
+       // muutuste lopp*/
    }
  },{scope:'email'});
   }
