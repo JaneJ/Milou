@@ -80,7 +80,10 @@ $(document).ready(function(){
         article.addClass("article");
         h1.addClass("getArticle");
         //katse
+
         h1.id=json.id;
+        p.id="art";
+        header.id="miski"
         loeKom.addClass("getComments");
         teeKom.addClass("addComment");
 
