@@ -27,6 +27,10 @@ window.fbAsyncInit = function() {
       xfbml      : true,  // parse XFBML
       oauth      : true 
     });
+     FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+    console.log("loged in");
+   }
 
 };
 
@@ -125,6 +129,7 @@ console.log('logout');
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
+
 
   $('#loginfb').on('click',function(){
   Login();
