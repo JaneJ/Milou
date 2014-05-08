@@ -30,9 +30,9 @@ window.fbAsyncInit = function() {
      FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
     console.log("loged in");
-   }
+   }}
 
-};
+}
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
