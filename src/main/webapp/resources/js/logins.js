@@ -38,7 +38,7 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-
+$(document).ready(function(){
 
 function Login(){
     FB.login(function(response) {
@@ -127,7 +127,7 @@ console.log('logout');
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
-$(document).ready(function(){
+
   
   FB.getLoginStatus(function(response) {
 
