@@ -21,11 +21,9 @@ public class KasutajaData implements KasutajaDataProvider {
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt
-					.executeQuery("SELECT admin FROM Kasutaja where Kasutaja.id=?;");
-
-            stmt.setString(1, id);
+            PreparedStatement stmt = conn.prepareStatement("SELECT admin FROM Kasutaja where Kasutaja.id=?;");
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
 			kasutaja.admin = rs.getBoolean("admin");
 		} finally {
 			 if (conn != null) conn.close();

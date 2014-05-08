@@ -428,13 +428,107 @@ $(document).ready(function(){
     function addForm(articleId){
         var form =$('<div></div>');
 
-        form.append('<h2>Kommenteeri:</h2>');
-        form.append('<form action="/kommentaar" method="post">');
-        form.append('<textarea id="kommentaar" wrap="physical" cols="20" name="quote" rows="5">Kommentaar!</textarea><br/>');
-        form.append('Anonüümne: <input id="check" type="checkbox" name="anonymous" value="anonymous"/><br/>');
-        form.append('<p><input type="submit" /></p>');
-        form.append('</form>');
-        console.log("form tehtud");
+        console.log("joudis addArticleForm");
+
+
+
+        // var section =$('<section id="vasakParem"></section>');
+        var sect = document.createElement("section");
+        var f = document.createElement("form");
+        sect.setAttribute('id',"vasakParem");
+
+        f.setAttribute('class',"artikkel");
+        f.setAttribute('id',"lisaArtikkel");
+        f.setAttribute('method',"post");
+        f.setAttribute('action',"/artiklid");
+        //f.setAttribute('action',"/artiklid");
+        f.setAttribute('enctype',"multipart/form-data");
+
+        var teemad = document.createElement("div");
+        teemad.setAttribute('class',"teemad");
+        teemad.setAttribute('id',"teema");
+        teemad.setAttribute('text',"Teemad");
+        // teemad.set
+
+        f.appendChild(teemad);
+
+        var s = document.createElement("input"); //input element, Submit button
+        var valArray = ["IT", "Kultuur","Sport", "Majandus","Koomiks","Krimi"];
+        f.appendChild(document.createTextNode("Teema"));
+        f.appendChild(document.createElement("br"));
+        var tDiv = document.createElement("div");
+        tDiv.setAttribute("class","teemad");
+        tDiv.setAttribute("id","teemad");
+
+        for (var i = 0; i < valArray.length; i++){
+            var a = document.createElement("input");
+            a.setAttribute('type',"radio");
+            a.setAttribute('name',"teema");
+
+
+            a.setAttribute('value',valArray[i]);
+
+
+
+            tDiv.appendChild(a);
+            tDiv.appendChild(document.createTextNode(valArray[i]))
+        }
+        f.appendChild(tDiv);
+        f.appendChild(document.createElement("br"));
+        f.appendChild(document.createTextNode("Pealkiri"));
+        f.appendChild(document.createElement("br"));
+        var a = document.createElement("textarea");
+        a.setAttribute('type',"textarea");
+        f.appendChild(a);
+
+        f.appendChild(document.createElement("br"));
+        f.appendChild(document.createTextNode("Lühikirjeldus"));
+        f.appendChild(document.createElement("br"));
+        var a = document.createElement("textarea");
+        a.setAttribute('type',"textarea");
+        a.rows="5";
+        f.appendChild(a);
+
+        f.appendChild(document.createElement("br"));
+        f.appendChild(document.createTextNode("Artikli sisu"));
+        f.appendChild(document.createElement("br"));
+        var a = document.createElement("textarea");
+        a.setAttribute('type',"textarea");
+        a.rows="5";
+        f.appendChild(a);
+
+        f.appendChild(document.createElement("br"));
+        f.appendChild(document.createTextNode("Pildi url:"));
+        var a = document.createElement("input");
+        a.setAttribute('type',"textarea");
+        f.appendChild(a);
+
+        f.appendChild(document.createElement("br"));
+        f.appendChild(document.createTextNode("Autor"));
+        var a = document.createElement("input");
+        a.setAttribute('type',"textarea");
+        f.appendChild(a);
+
+        f.appendChild(document.createElement("br"));
+        s.setAttribute('type',"submit");
+        s.setAttribute('value',"Submit");
+
+
+        f.appendChild(s);
+        sect.appendChild(f);
+
+
+
+//and some more input elements here
+//and dont forget to add a submit button
+
+        //document.getElementsByTagName('body')[0].appendChild(f);
+        document.getElementById('sisu').appendChild(sect);
+        // $('#sisu').add(sect);
+        console.log("form peaks olemas olema");
+
+
+    /*
         waitForIt();
 
         function waitForIt(){
@@ -446,6 +540,7 @@ $(document).ready(function(){
                 console.log("lisab");
             };
         }
+        */
 
 
     }
@@ -694,38 +789,6 @@ $(document).ready(function(){
         document.getElementById('sisu').appendChild(sect);
         // $('#sisu').add(sect);
         console.log("form peaks olemas olema");
-
-        /*
-         *
-
-         <div class="teemad" id='teema' >Teema</div>
-         <input type="radio" name="teema" value="it">IT
-         <input type="radio" name="teema" value="kultuur">Kultuur
-         <input type="radio" name="teema" value="sport" >Sport
-         <input type="radio" name="teema" value="majandus">Majandus
-         <input type="radio" name="teema" value="koomiks">Koomiks
-         <input type="radio" name="teema" value="Krimi">Krimi
-         <div class="pealkiri" id="pealkiri" >Pealkiri</div>
-         <textarea id ="formArtikliPealkiri" rows="3" cols="50" maxlength="80" name="pealkiri"></textarea>
-         <div id="formMargid"></div>
-         <div class="lyhikirjeldus" id="lyhikirjeldus" >Lühikirjeldus</div>
-         <textarea id ="lyhikirjeldus2" rows="5" cols="50" maxlength="300" name="lyhikirjeldus"></textarea>
-         <div id="formMargidLuhi"></div>
-         <div class="artiklisisu" id="ArtikliSisu" >Artikli sisu</div>
-         <textarea id ="artiklisisu" rows="15" cols="100" name="sisu"></textarea>
-         <div class="pilt"> Pildi URL:<input id="pilt" type="text" name="pilt"></div><br>
-         <div class="autor">Autor <input id ="autor" type="text" name="autor"></div>
-
-
-         <!-- <label for="file">Lae pilt üles:</label>
-         <input type="file" name="file" id="file"><br>-->
-         <input type="submit" />
-         <!--button id="submit">Submit</button-->
-         </form>
-
-         </section>
-         *
-         * */
 
 
     }
