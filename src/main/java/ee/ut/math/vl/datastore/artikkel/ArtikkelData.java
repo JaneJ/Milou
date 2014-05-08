@@ -79,7 +79,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt
-					.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud limit 10");
+					.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud desc limit 10");
 
 			while (rs.next()) {
 				Artikkel a = new Artikkel();
@@ -109,7 +109,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		Connection conn = connid.getConnection();
 		try {
 			PreparedStatement stmt = conn
-					.prepareStatement("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = ? ORDER BY lisatud limit 10");
+					.prepareStatement("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = ? ORDER BY lisatud desc limit 10");
 			ResultSet rs = stmt.executeQuery(); // where
 
 			stmt.setString(1, teema);
