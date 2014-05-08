@@ -43,31 +43,29 @@ function Login(){
     FB.login(function(response) {
         if (response.authResponse) {
             console.log('Welcome!  Fetching your information.... ');
-            var access_token =   FB.getAuthResponse()['accessToken'];
-            console.log('Access Token = '+ access_token);
-            FB.api('/me', function(response) {
+            var access_token = FB.getAuthResponse()['accessToken'];
+            console.log('Access Token = ' + access_token);
+            FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
-                var Kasutaja={};
-                Kasutaja.id=response.id;
-                Kasutaja.username=response.username;
-                Kasutaja.admin=false;
-                Kasutaja.nimi=response.name;
+                var Kasutaja = {};
+                Kasutaja.id = response.id;
+                Kasutaja.username = response.username;
+                Kasutaja.admin = false;
+                Kasutaja.nimi = response.name;
                 console.log(Kasutaja);
 
                 /*if(response.id in kasutaja andmebaas, siis admin)*/
 
 
-
-
-                if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
-                    var str="Tere : "+response.name+"!<br>";
-                    str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
-                    str +='<button id="logout">FB Logout</button>';
-                    document.getElementById("profileArea").innerHTML=str;
-                }else{
-                    var str="Tere : "+response.name+"!";
-                    str +="<button id='logout'>FB Logout</button>";
-                    document.getElementById("profileArea").innerHTML=str;
+                if (response.name === "Jane Jürgenson" || response.name === "Kristiina Pokk" || response.name === "Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
+                    var str = "Tere : " + response.name + "!<br>";
+                    str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
+                    str += '<button id="logout">FB Logout</button>';
+                    document.getElementById("profileArea").innerHTML = str;
+                } else {
+                    var str = "Tere : " + response.name + "!";
+                    str += "<button id='logout'>FB Logout</button>";
+                    document.getElementById("profileArea").innerHTML = str;
 
 
                 }
@@ -78,14 +76,12 @@ function Login(){
 
             //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
 
-            var str="Tere : "+response.name+"!<br>";
-            str +="<a id='addNews'>Lisa uudis</a><br>";
+            var str = "Tere : " + response.name + "!<br>";
+            str += "<a id='addNews'>Lisa uudis</a><br>";
             //muutsin!, tegin buttoniks
             //str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
-            str +="<button id='logout'>FB Logout</button>";
-            document.getElementById("profileArea").innerHTML=str;
-
-
+            str += "<button id='logout'>FB Logout</button>";
+            document.getElementById("profileArea").innerHTML = str;
 
 
             // muutuste lopp
@@ -95,19 +91,12 @@ function Login(){
     },{scope:'email'});
 
 
-
-        $('#loginfb').on('click',function(){
-            Login();
-            console.log("login.js - 68 login"); });
-
-        $('#logout').on('click',function(){
-                console.log('Ei.');
-                Logout();
-                console.log("login.js - 68 logout");
-            }
-        );
-
-
+    $('#profileArea').on('click','#logout',function(){
+            console.log('Ei. Logout');
+            Logout();
+            console.log("login.js - 68 logout");
+        }
+    );
 }
 
 
