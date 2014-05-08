@@ -139,10 +139,11 @@ $(document).ready(function(){
 
     $('#loginfb').on('click',function(){
         Login();
-        console.log("login.js - 68 login"); });
+        console.log("login.js - 68 login");
+    });
 
     $('#logout').on('click',function(){
-            console.log('Ei.');
+            console.log('Ei. Logout');
             Logout();
             console.log("login.js - 68 logout");
         }
