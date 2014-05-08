@@ -53,6 +53,7 @@ function Login(){
        Kasutaja.admin=false;
        Kasutaja.nimi=response.name;
        console.log(Kasutaja);
+      
 
        /*if(response.id in kasutaja andmebaas, siis admin)*/
 
@@ -60,7 +61,7 @@ function Login(){
        		type: "GET",
        		dataType: 'json',
        		success: function(resp) {
-       			if(true) {
+       			if(resp) {
        				console.log("Admin");
        				var str="Tere : "+response.name+"!<br>";
                             str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
