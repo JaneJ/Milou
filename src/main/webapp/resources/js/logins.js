@@ -56,7 +56,7 @@ function Login(){
        console.log(Kasutaja);
       
 
-       /*if(response.id in kasutaja andmebaas, siis admin)*/
+       /*if(response.id in kasutaja andmebaas, siis admin)
 
        $.ajax("/kasutaja", {
        		type: "GET",
@@ -78,11 +78,11 @@ function Login(){
        			}
        		}
        	});
-
+*/
 
 
   
-      /*
+      
        if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik") {
         var str="Tere : "+response.name+"!<br>";
         str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
@@ -93,7 +93,7 @@ function Login(){
         str +="<button id='logout'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
 
-      }*/
+      }
         
      });
    } else {
@@ -128,27 +128,26 @@ console.log('logout');
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
-  /*
+  
   FB.getLoginStatus(function(response) {
 
   if (response.status === 'connected') {
      var uid = response.authResponse.userID;
     var accessToken = response.authResponse.accessToken;
-    var str="Tere : "+response.name+"!";
-                            str +="<button id='logout'>FB Logout</button>";
-                            document.getElementById("profileArea").innerHTML=str;
-   
-  } else if (response.status === 'not_authorized') {
+   if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik") {
+        var str="Tere : "+response.name+"!<br>";
+        str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
+        str +='<button id="logout">FB Logout</button>';
+        document.getElementById("profileArea").innerHTML=str;
+      }else{
+        var str="Tere : "+response.name+"!";
+        str +="<button id='logout'>FB Logout</button>";
+        document.getElementById("profileArea").innerHTML=str;
 
-    // the user is logged in to Facebook, 
-    // but has not authenticated your app
-  } else {
-     $('#loginfb').on('click',function(){
-    Login();});
-    
-    // the user isn't logged in to Facebook.
-  }
- });*/
+      }
+   
+  } 
+ });
 
   $('#loginfb').on('click',function(){
   Login();
