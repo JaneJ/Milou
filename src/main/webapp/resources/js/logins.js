@@ -18,7 +18,7 @@ function readCookie(name) {
 	}
 	return null;
 }*/
-$(document).ready(function(){
+
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1385045075103554', // App ID
@@ -37,7 +37,6 @@ window.fbAsyncInit = function() {
   js.src = "//connect.facebook.net/et_EE/all.js#xfbml=1&appId=1385045075103554";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-
 
 
 function Login(){
@@ -81,8 +80,6 @@ function Login(){
 */
 
 
-  
-      
        if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik") {
         var str="Tere : "+response.name+"!<br>";
         str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
@@ -127,27 +124,7 @@ console.log('logout');
   
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
-
-  
-  FB.getLoginStatus(function(response) {
-
-  if (response.status === 'connected') {
-     var uid = response.authResponse.userID;
-    var accessToken = response.authResponse.accessToken;
-   if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik") {
-        var str="Tere : "+response.name+"!<br>";
-        str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
-        str +='<button id="logout">FB Logout</button>';
-        document.getElementById("profileArea").innerHTML=str;
-      }else{
-        var str="Tere : "+response.name+"!";
-        str +="<button id='logout'>FB Logout</button>";
-        document.getElementById("profileArea").innerHTML=str;
-
-      }
-   
-  } 
- });
+$(document).ready(function(){
 
   $('#loginfb').on('click',function(){
   Login();
