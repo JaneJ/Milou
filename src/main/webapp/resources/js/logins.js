@@ -39,6 +39,7 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 
 
+
 function Login(){
     FB.login(function(response) {
    if (response.authResponse) {
@@ -127,6 +128,27 @@ console.log('logout');
   
   // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
+  /*
+  FB.getLoginStatus(function(response) {
+
+  if (response.status === 'connected') {
+     var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+    var str="Tere : "+response.name+"!";
+                            str +="<button id='logout'>FB Logout</button>";
+                            document.getElementById("profileArea").innerHTML=str;
+   
+  } else if (response.status === 'not_authorized') {
+
+    // the user is logged in to Facebook, 
+    // but has not authenticated your app
+  } else {
+     $('#loginfb').on('click',function(){
+    Login();});
+    
+    // the user isn't logged in to Facebook.
+  }
+ });*/
 
   $('#loginfb').on('click',function(){
   Login();
