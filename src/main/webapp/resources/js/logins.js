@@ -56,10 +56,32 @@ function Login(){
 
        /*if(response.id in kasutaja andmebaas, siis admin)*/
 
+       $.ajax("/kasutaja", {
+       		type: "GET",
+       		dataType: 'json',
+       		success: function(resp) {
+       			if(true) {
+       				console.log("Admin");
+       				var str="Tere : "+response.name+"!<br>";
+                            str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
+                            str +='<button id="logout">FB Logout</button>';
+                            document.getElementById("profileArea").innerHTML=str;
+
+       			} else {
+       				console.log("Ei ole admin");
+       				ar str="Tere : "+response.name+"!";
+                            str +="<button id='logout'>FB Logout</button>";
+                            document.getElementById("profileArea").innerHTML=str;
+
+       			}
+       		}
+       	});
+
+
 
   
-      
-       if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
+      /*
+       if (response.name==="Jane Jürgenson"|| response.name==="Kristiina Pokk"||response.name==="Careelika Liisi Kuik") {
         var str="Tere : "+response.name+"!<br>";
         str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
         str +='<button id="logout">FB Logout</button>';
@@ -69,7 +91,7 @@ function Login(){
         str +="<button id='logout'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML=str;
 
-      }
+      }*/
         
      });
    } else {

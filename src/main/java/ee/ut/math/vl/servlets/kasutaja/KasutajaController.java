@@ -1,12 +1,6 @@
 package ee.ut.math.vl.servlets.kasutaja;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParseException;
-
-import ee.ut.math.vl.data.Artikkel;
-import ee.ut.math.vl.data.Kasutaja;
-import ee.ut.math.vl.datastore.artikkel.ArtikkelData;
-import ee.ut.math.vl.datastore.artikkel.ArtikkelDataProvider;
 import ee.ut.math.vl.datastore.kasutaja.KasutajaData;
 import ee.ut.math.vl.datastore.kasutaja.KasutajaDataProvider;
 

@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="1025" key="dialogWidth"/>
-		<item value="557" key="dialogHeight"/>
+		<item value="556" key="dialogHeight"/>
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">
@@ -13,5 +13,10 @@
 		</list>
 	</section>
 	<section name="ImportExportAction">
+		<item value="org.eclipse.egit.ui.internal.clone.GitCloneWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
+			<item value="com.heroku.eclipse.ui.heroku"/>
+		</list>
 	</section>
 </section>
