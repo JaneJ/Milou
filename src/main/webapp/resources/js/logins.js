@@ -19,16 +19,17 @@ function readCookie(name) {
 	return null;
 }*/
 
-window.fbAsyncInit = function() {
+window.fbAsyncInit = function(e) {
+  e.preventDefault();
     FB.init({
       appId      : '1385045075103554', // App ID
       status     : false, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true,  // parse XFBML
       oauth      : true 
-    });
+    });//if user alredy log id in
       FB.Event.subscribe('auth.authResponseChange', function (response) {
-                // Here we specify what we do with the response anytime this event occurs. 
+                
                 if (response.status === 'connected') {
                     
                     testAPI();
@@ -36,7 +37,8 @@ window.fbAsyncInit = function() {
             });
 
         };
-function testAPI() {
+function testAPI(e) {
+
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
@@ -67,8 +69,7 @@ function Login(){
     FB.login(function(response) {
    if (response.authResponse) {
       console.log('Welcome!  Fetching your information.... ');
-     //var access_token =   FB.getAuthResponse()['accessToken'];
-      //console.log('Access Token = '+ access_token);
+     
       FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
        var Kasutaja={};
@@ -155,7 +156,8 @@ $(document).ready(function(){
   Login();
   console.log("login.js - 68 login"); });
 
-  $('#logout').on('click',function(){
+  $('#logout').click(function(e){
+      e.preventDefault();
       console.log('Ei.');
     Logout();
     console.log("login.js - 68 logout");});});
