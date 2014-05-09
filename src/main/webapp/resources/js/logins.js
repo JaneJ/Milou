@@ -148,7 +148,7 @@ function Logout(){
 
         $('#profileArea').on('click','#login',function(){
                 console.log('Login');
-                Logout();
+                Login();
                 console.log("login.js - login");
             }
         );
@@ -164,7 +164,7 @@ $(document).ready(function(){
         Login();
         console.log("login.js - 68 login");
 
-        alert("Uus versioon 2 on üleval");
+        //alert("Uus versioon 3 on üleval");
 
     });
 
