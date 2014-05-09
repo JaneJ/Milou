@@ -54,7 +54,11 @@ $(document).ready(function(){
         var loeKom=$("<a></a>").text("Loe kommentaare");
         var teeKom=$("<a></a>").text("Kommenteeri");
         // var pilt= <img src="resources/images/pilt1.png" alt="pilt" >
-        // var img=json.pilt;
+       // var pilt= <img src="http://imgur.com/O2bYytC" alt="pilt" >
+
+        //http://imgur.com/O2bYytC
+         var img=json.pilt;
+        console.log(img);
         loeKom.addClass("loeKom");
         teeKom.addClass("teeKom");
         loeKom.data("id",json.id);
@@ -72,7 +76,7 @@ $(document).ready(function(){
         //uhendame osad uksteisega
         header.append(h1);
         article.append(header);
-        //article.append(img);
+        article.append(img);
         article.append(p);
         footer.append(p2,loeKom,teeKom);
         article.append(footer);
