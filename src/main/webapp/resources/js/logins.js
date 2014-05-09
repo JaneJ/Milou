@@ -162,12 +162,11 @@ function Logout(){
 // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
 
-    $('#profileArea').on('click','#login',function(){
+    $('#login').on('click',function(){
         Login();
         console.log("login.js - 68 login");
 
-
-        alert("Uus versioon 5 on üleval");
+        //alert("Uus versioon 5 on üleval");
 
     });
 
