@@ -28,8 +28,44 @@ window.fbAsyncInit = function() {
         oauth      : true
     });
 
-};
+            FB.Event.subscribe('auth.authResponseChange', function (response) {
+                // Here we specify what we do with the response anytime this event occurs. 
+                if (response.status === 'connected') {
+                    
+                    testAPI();
+                } 
+            });
 
+};
+ function testAPI() {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function (response) {
+                console.log('Good to see you, ' + response.name + '.');
+                if (response.name === "Jane Jürgenson" || response.name === "Kristiina Pokk" || response.name === "Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
+                    var str = "Tere : " + response.name + "!<br>";
+                    str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
+                    str += '<button id="logout">FB Logout</button>';
+                    document.getElementById("profileArea").innerHTML = str;
+                } else {
+                    var str = "Tere : " + response.name + "!";
+                    str += "<button id='logout'>FB Logout</button>";
+                    document.getElementById("profileArea").innerHTML = str;
+
+
+                }
+
+            });
+
+
+    $('#profileArea').on('click','#logout',function(){
+            console.log('Ei. Logout');
+            Logout();
+            console.log("login.js - 68 logout");
+        }
+    );
+}
+
+            
 (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -39,12 +75,13 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 
 
+
+
 function Login(){
     FB.login(function(response) {
         if (response.authResponse) {
             console.log('Welcome!  Fetching your information.... ');
-            var access_token = FB.getAuthResponse()['accessToken'];
-            console.log('Access Token = ' + access_token);
+           
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
                 var Kasutaja = {};
@@ -129,7 +166,8 @@ $(document).ready(function(){
         Login();
         console.log("login.js - 68 login");
 
-        alert("Uus versioon 4 on üleval");
+
+        alert("Uus versioon 5 on üleval");
 
     });
 
