@@ -27,7 +27,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		try {
 
 			PreparedStatement stmt = conn
-					.prepareStatement("SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema FROM artikkel where artikkel.id=?;");
+					.prepareStatement("SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema, vaatamisi FROM artikkel where artikkel.id=?;");
 
 			stmt.setInt(1, id);
 
@@ -41,6 +41,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 			artikkel.pilt = rs.getString("pilt");
 			artikkel.uudis = rs.getString("uudis");
 			artikkel.teema = rs.getString("teema");
+            artikkel.vaatamisi = rs.getInt("vaatamisi");
 		} finally {
 			
 				conn.close();
@@ -79,7 +80,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt
-					.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel ORDER BY lisatud desc limit 10");
+					.executeQuery("SELECT id, autor, pealkiri, lisatud, pilt, kirjeldus, teema, vaatamisi FROM Artikkel ORDER BY lisatud desc limit 10");
 
 			while (rs.next()) {
 				Artikkel a = new Artikkel();
@@ -90,6 +91,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 				a.pilt = rs.getString("pilt");
 				a.kirjeldus = rs.getString("kirjeldus");
 				a.teema = rs.getString("teema");
+                a.vaatamisi = rs.getInt("vaatamisi");
 
 				artiklid.add(a);
 			}
@@ -109,7 +111,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		Connection conn = connid.getConnection();
 		try {
 			PreparedStatement stmt = conn
-					.prepareStatement("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema FROM Artikkel  where artikkel.teema = ? ORDER BY lisatud desc limit 10");
+					.prepareStatement("SELECT id,autor, pealkiri, lisatud, pilt, kirjeldus, teema, vaatamisi FROM Artikkel  where artikkel.teema = ? ORDER BY lisatud desc limit 10");
 			ResultSet rs = stmt.executeQuery(); // where
 
 			stmt.setString(1, teema);
@@ -123,6 +125,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 				a.pilt = rs.getString("pilt");
 				a.kirjeldus = rs.getString("kirjeldus");
 				a.teema = rs.getString("teema");
+                a.vaatamisi = rs.getInt("vaatamisi");
 
 				artiklid.add(a);
 			}
@@ -141,7 +144,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt
-					.executeQuery("SELECT id, pealkiri, lisatud FROM Artikkel ORDER BY lisatud desc limit 5");
+					.executeQuery("SELECT id, pealkiri, lisatud, vaatamisi FROM Artikkel ORDER BY lisatud desc limit 5");
 
 			while (rs.next()) {
 				Artikkel a = new Artikkel();
@@ -149,6 +152,8 @@ public class ArtikkelData implements ArtikkelDataProvider {
 				a.pealkiri = rs.getString("pealkiri");
 				a.lisatud = rs.getDate("lisatud");
 				a.id = rs.getInt("id");
+                a.vaatamisi = rs.getInt("vaatamisi");
+
 
 				artiklid.add(a);
 			}
@@ -170,12 +175,13 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt
-                    .executeQuery("SELECT Artikkel.id, Artikkel.pealkiri FROM Artikkel join Kommentaar on Kommentaar.artikkel = artikkel.id group by Artikkel.id order by count(*) desc limit 5 ");
+                    .executeQuery("SELECT Artikkel.id, Artikkel.pealkiri, Artikkel.vaatamisi FROM Artikkel join Kommentaar on Kommentaar.artikkel = artikkel.id group by Artikkel.id order by count(*) desc limit 5 ");
 
             while (rs.next()) {
                 Artikkel a = new Artikkel();
                 a.id = rs.getInt("id");
                 a.pealkiri = rs.getString("pealkiri");
+                a.vaatamisi = rs.getInt("vaatamisi");
                 artiklid.add(a);
             }
         }
@@ -195,13 +201,14 @@ public class ArtikkelData implements ArtikkelDataProvider {
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt
-                    .executeQuery("SELECT id, pealkiri FROM Artikkel order by vaatamisi desc limit 5"); 
+                    .executeQuery("SELECT id, pealkiri, vaatamisi FROM Artikkel order by vaatamisi desc limit 5");
             
 
             while (rs.next()) {
                 Artikkel a = new Artikkel();
                 a.id = rs.getInt("id");
                 a.pealkiri = rs.getString("pealkiri");
+                a.vaatamisi = rs.getInt("vaatamisi");
                 artiklid.add(a);
             }
         }

@@ -110,7 +110,7 @@ function Login(){
             });
         } else {
             console.log('User cancelled login or did not fully authorize.');
-
+            trellidMuutuvad();
           /*  //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
             var str = "Tere : " + response.name + "!<br>";
             str += "<a id='addNews'>Lisa uudis</a><br>";

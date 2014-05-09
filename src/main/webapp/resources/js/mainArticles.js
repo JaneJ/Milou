@@ -57,7 +57,7 @@ $(document).ready(function(){
        // var pilt= <img src="http://imgur.com/O2bYytC" alt="pilt" >
 
         //http://imgur.com/O2bYytC
-       //  var img=json.pilt;
+         var img=json.pilt;
         //console.log(img);
         loeKom.addClass("loeKom");
         teeKom.addClass("teeKom");
@@ -65,7 +65,7 @@ $(document).ready(function(){
         teeKom.data("id",json.id);
 
         //anname vaartuse tagidele
-        h1.text(json.pealkiri);
+        h1.text(json.pealkiri+"("+json.vaatamisi+")");
         h1.data("id",json.id);
         // console.log(json.pealkiri);
         footer.text("Autor: "+json.autor);
@@ -76,7 +76,9 @@ $(document).ready(function(){
         //uhendame osad uksteisega
         header.append(h1);
         article.append(header);
-        //article.append(img);
+        article.append("</br>");
+        article.append(img);
+        article.append("</br>");
         article.append(p);
         footer.append(p2,loeKom,teeKom);
         article.append(footer);
@@ -85,29 +87,15 @@ $(document).ready(function(){
         loeKom.addClass("getComments");
         teeKom.addClass("addComment");
 
-
-        if (i%2 ==0)
-
-        {
-
+        if (i%2 ==0){
             vasak.append(article);
-
-        }
-
-        else
-
-        {
-
+        }else{
             parem.append(article);
-
         }
-
 
         isPaused = false;
         console.log("valmis artikkel ");
     };
-
-
 
 
     function removeAllButAside(){
@@ -139,12 +127,12 @@ $(document).ready(function(){
         var p4=$("<p></p>");
         var loeKom=$("<a></a>").text("Loe kommentaare");
         var teeKom=$("<a></a>").text("Kommenteeri");
-       // var img=json.pilt;
+        var img=json.pilt;
         loeKom.addClass("loeKom");
         teeKom.addClass("teeKom");
 
         //anname vaartuse tagidele
-        h1.text(json.pealkiri);
+        h1.text(json.pealkiri+"("+json.vaatamisi+")");
         h1.data("id",json.id);
         //   console.log(json.pealkiri);
         footer.text("Autor: "+json.autor);
@@ -156,7 +144,7 @@ $(document).ready(function(){
         //uhendame osad uksteisega
         header.append(h1);
         article.append(header);
-      //  article.append(img);
+        article.append(img);
         //article.append(p3);
         article.append(p);
         footer.append(p2,loeKom,teeKom, p4);
@@ -627,8 +615,6 @@ $(document).ready(function(){
 
         //  console.log("Admin tahab artiklit lisada");
         removeAllButAside();
-        /*        #include('templates/footerTemplate.html')           */
-
 
     });
 
@@ -656,9 +642,6 @@ $(document).ready(function(){
         $('#formMargidLuhi').html(pealkiri_alles+ ' märke alles.');
     });
 
-
-
-    console.log("tere");
 
     $('#lisaArtikkel').submit(function() {
         console.log('Data to DB');
@@ -871,6 +854,7 @@ $(document).ready(function(){
 
     function trellidMuutuvad()
     {
+        alert("viimane");
         if('' === window.location.hash)
             window.location.reload();
     }

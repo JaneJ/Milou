@@ -22,13 +22,14 @@ public class Artikkel {
     
     
     public Artikkel (String autor, String pealkiri,String pilt, String uudis,
-    		String teema, Date lisatud) {        
+    		String teema, Date lisatud, Integer vaatamisi) {
         this.autor = autor;
         this.pealkiri = pealkiri;
         this.pilt = pilt;
         this.uudis = uudis;
         this.teema = teema;
         this.lisatud = lisatud;
+        this.vaatamisi=10; //lisasin katsetamiseks
     }
     
     
