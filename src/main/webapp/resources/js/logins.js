@@ -107,6 +107,12 @@ function Logout(){
         str +="<button id='loginfb'>FB Login</button>";
         document.getElementById("profileArea").innerHTML=str;
 
+        $('#profileArea').on('click','#login',function(){
+                console.log('Login');
+                Logout();
+                console.log("login.js - login");
+            }
+        );
 
     });}
 
@@ -118,7 +124,7 @@ $(document).ready(function(){
     $('#loginfb').on('click',function(){
         Login();
         console.log("login.js - 68 login");
-        alert("Uus versioon on üleval");
+        alert("Uus versioon 2 on üleval");
     });
 
     $('#logout').on('click',function(){
