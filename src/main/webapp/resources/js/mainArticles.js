@@ -57,8 +57,8 @@ $(document).ready(function(){
        // var pilt= <img src="http://imgur.com/O2bYytC" alt="pilt" >
 
         //http://imgur.com/O2bYytC
-         var img=json.pilt;
-        console.log(img);
+       //  var img=json.pilt;
+        //console.log(img);
         loeKom.addClass("loeKom");
         teeKom.addClass("teeKom");
         loeKom.data("id",json.id);
@@ -76,7 +76,7 @@ $(document).ready(function(){
         //uhendame osad uksteisega
         header.append(h1);
         article.append(header);
-        article.append(img);
+        //article.append(img);
         article.append(p);
         footer.append(p2,loeKom,teeKom);
         article.append(footer);
@@ -139,7 +139,7 @@ $(document).ready(function(){
         var p4=$("<p></p>");
         var loeKom=$("<a></a>").text("Loe kommentaare");
         var teeKom=$("<a></a>").text("Kommenteeri");
-        var img=json.pilt;
+       // var img=json.pilt;
         loeKom.addClass("loeKom");
         teeKom.addClass("teeKom");
 
@@ -156,7 +156,7 @@ $(document).ready(function(){
         //uhendame osad uksteisega
         header.append(h1);
         article.append(header);
-        article.append(img);
+      //  article.append(img);
         //article.append(p3);
         article.append(p);
         footer.append(p2,loeKom,teeKom, p4);
