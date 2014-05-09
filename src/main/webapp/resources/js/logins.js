@@ -107,29 +107,33 @@ function Logout(){
         str +="<button id='loginfb'>FB Login</button>";
         document.getElementById("profileArea").innerHTML=str;
 
-        $('#profileArea').on('click','#login',function(){
-                console.log('Login');
-                Login();
-                console.log("login.js - login");
-            }
-        );
 
-    });}
+
+    });
+
+    $('#profileArea').on('click','#login',function(){
+            console.log('Login');
+            Login();
+            console.log("login.js - login");
+        }
+    );
+
+}
 
 
 
 // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
 
-    $('#loginfb').on('click',function(){
+    $('#profileArea').on('click','#login',function(){
         Login();
         console.log("login.js - 68 login");
 
-        alert("Uus versioon 3 on üleval");
+        alert("Uus versioon 4 on üleval");
 
     });
 
-    $('#logout').on('click',function(){
+    $('#profileArea').on('click','#logout',function(){
             console.log('Ei. Logout');
             Logout();
             console.log("login.js - 68 logout");
