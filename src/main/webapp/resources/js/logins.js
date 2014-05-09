@@ -96,12 +96,13 @@ function Login(){
 
                 if (response.name === "Jane Jürgenson" || response.name === "Kristiina Pokk" || response.name === "Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
                     var str = "Tere : " + response.name + "!<br>";
-                    str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
+                 //   str += "<a id= 'addNews'>Lisa uudis</a>" + "<br>";
+                     str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
                     str += '<button id="logout">FB Logout</button>';
                     document.getElementById("profileArea").innerHTML = str;
                 } else {
                     var str = "Tere : " + response.name + "!";
-                    str += "<button id='logout'>FB Logout</button>";
+                    str += "<br><button id='logout'>FB Logout</button>";
                     document.getElementById("profileArea").innerHTML = str;
 
 
@@ -114,10 +115,10 @@ function Login(){
             //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
 
             var str = "Tere : " + response.name + "!<br>";
-            str += "<a id='addNews'>Lisa uudis</a><br>";
-            //muutsin!, tegin buttoniks
-            //str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
-            str += "<button id='logout'>FB Logout</button>";
+         //   str += "<a id= 'addNews'>Lisa uudis</a>" + "<br>";
+             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
+
+            str += "<br><button id='logout'>FB Logout</button>";
             document.getElementById("profileArea").innerHTML = str;
 
 
@@ -165,9 +166,6 @@ $(document).ready(function(){
     $('#loginfb').on('click',function(){
         Login();
         console.log("login.js - 68 login");
-
-
-        alert("Uus versioon 5 on üleval");
 
     });
 
