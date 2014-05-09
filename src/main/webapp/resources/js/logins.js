@@ -162,7 +162,7 @@ function Logout(){
 // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
 
-    $('#profileArea').on('click','#login',function(){
+    $('#login').on('click',function(){
         Login();
         console.log("login.js - 68 login");
 
@@ -171,11 +171,10 @@ $(document).ready(function(){
 
     });
 
-    $('#profileArea').on('click','#logout',function(){
+    $('#logout').on('click',function(){
             console.log('Ei. Logout');
             Logout();
             console.log("login.js - 68 logout");
         }
     );
-
 });
