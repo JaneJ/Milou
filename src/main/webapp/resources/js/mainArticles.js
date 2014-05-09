@@ -45,7 +45,6 @@ $(document).ready(function(){
 
         //loome tagid
         var article =$('<article></article>');
-       
         var h1=$("<h1></h1>");
         var header =$('<header></header>');
         var footer =$('<footer></footer>');
@@ -79,9 +78,6 @@ $(document).ready(function(){
         article.append(footer);
         article.addClass("article");
         h1.addClass("getArticle");
-        //katse
-        $(h1).attr('id', json.id);
-        header.id="miski"
         loeKom.addClass("getComments");
         teeKom.addClass("addComment");
 
@@ -146,7 +142,6 @@ $(document).ready(function(){
         //anname vaartuse tagidele
         h1.text(json.pealkiri);
         h1.data("id",json.id);
-        $(h1).attr('id',json.id);
         //   console.log(json.pealkiri);
         footer.text("Autor: "+json.autor);
         p.text(json.uudis);
@@ -284,9 +279,7 @@ $(document).ready(function(){
 
             nr.text(json.pealkiri);
             nr.data("id",json.id);
-            $(nr).attr('id',json.id);
             nr.addClass("getArticle");
-            $(nr).attr('id',json.id)
             nr.addClass(nr);
             $(a).append(nr);
             //   console.log(i);
@@ -432,122 +425,123 @@ $(document).ready(function(){
 
     });
 
-    function addForm(articleId){
+    function addCommentForm(articleId){
         var form =$('<div></div>');
 
-        console.log("joudis addArticleForm");
+        console.log("joudis addCommentForm");
+
+        /*
+
+         // var section =$('<section id="vasakParem"></section>');
+         var sect = document.createElement("section");
+         var f = document.createElement("form");
+         sect.setAttribute('id',"vasakParem");
+
+         f.setAttribute('class',"artikkel");
+         f.setAttribute('id',"lisaArtikkel");
+         f.setAttribute('method',"post");
+         f.setAttribute('action',"/artiklid");
+         //f.setAttribute('action',"/artiklid");
+         f.setAttribute('enctype',"multipart/form-data");
+
+         var teemad = document.createElement("div");
+         teemad.setAttribute('class',"teemad");
+         teemad.setAttribute('id',"teema");
+         teemad.setAttribute('text',"Teemad");
+         // teemad.set
+
+         f.appendChild(teemad);
+
+         var s = document.createElement("input"); //input element, Submit button
+         var valArray = ["IT", "Kultuur","Sport", "Majandus","Koomiks","Krimi"];
+         f.appendChild(document.createTextNode("Teema"));
+         f.appendChild(document.createElement("br"));
+         var tDiv = document.createElement("div");
+         tDiv.setAttribute("class","teemad");
+         tDiv.setAttribute("id","teemad");
+
+         for (var i = 0; i < valArray.length; i++){
+         var a = document.createElement("input");
+         a.setAttribute('type',"radio");
+         a.setAttribute('name',"teema");
+
+
+         a.setAttribute('value',valArray[i]);
 
 
 
-        // var section =$('<section id="vasakParem"></section>');
-        var sect = document.createElement("section");
-        var f = document.createElement("form");
-        sect.setAttribute('id',"vasakParem");
+         tDiv.appendChild(a);
+         tDiv.appendChild(document.createTextNode(valArray[i]))
+         }
+         f.appendChild(tDiv);
+         f.appendChild(document.createElement("br"));
+         f.appendChild(document.createTextNode("Pealkiri"));
+         f.appendChild(document.createElement("br"));
+         var a = document.createElement("textarea");
+         a.setAttribute('type',"textarea");
+         f.appendChild(a);
 
-        f.setAttribute('class',"artikkel");
-        f.setAttribute('id',"lisaArtikkel");
-        f.setAttribute('method',"post");
-        f.setAttribute('action',"/artiklid");
-        //f.setAttribute('action',"/artiklid");
-        f.setAttribute('enctype',"multipart/form-data");
+         f.appendChild(document.createElement("br"));
+         f.appendChild(document.createTextNode("Lühikirjeldus"));
+         f.appendChild(document.createElement("br"));
+         var a = document.createElement("textarea");
+         a.setAttribute('type',"textarea");
+         a.rows="5";
+         f.appendChild(a);
 
-        var teemad = document.createElement("div");
-        teemad.setAttribute('class',"teemad");
-        teemad.setAttribute('id',"teema");
-        teemad.setAttribute('text',"Teemad");
-        // teemad.set
+         f.appendChild(document.createElement("br"));
+         f.appendChild(document.createTextNode("Artikli sisu"));
+         f.appendChild(document.createElement("br"));
+         var a = document.createElement("textarea");
+         a.setAttribute('type',"textarea");
+         a.rows="5";
+         f.appendChild(a);
 
-        f.appendChild(teemad);
+         f.appendChild(document.createElement("br"));
+         f.appendChild(document.createTextNode("Pildi url:"));
+         var a = document.createElement("input");
+         a.setAttribute('type',"textarea");
+         f.appendChild(a);
 
-        var s = document.createElement("input"); //input element, Submit button
-        var valArray = ["IT", "Kultuur","Sport", "Majandus","Koomiks","Krimi"];
-        f.appendChild(document.createTextNode("Teema"));
-        f.appendChild(document.createElement("br"));
-        var tDiv = document.createElement("div");
-        tDiv.setAttribute("class","teemad");
-        tDiv.setAttribute("id","teemad");
+         f.appendChild(document.createElement("br"));
+         f.appendChild(document.createTextNode("Autor"));
+         var a = document.createElement("input");
+         a.setAttribute('type',"textarea");
+         f.appendChild(a);
 
-        for (var i = 0; i < valArray.length; i++){
-            var a = document.createElement("input");
-            a.setAttribute('type',"radio");
-            a.setAttribute('name',"teema");
-
-
-            a.setAttribute('value',valArray[i]);
-
-
-
-            tDiv.appendChild(a);
-            tDiv.appendChild(document.createTextNode(valArray[i]))
-        }
-        f.appendChild(tDiv);
-        f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Pealkiri"));
-        f.appendChild(document.createElement("br"));
-        var a = document.createElement("textarea");
-        a.setAttribute('type',"textarea");
-        f.appendChild(a);
-
-        f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Lühikirjeldus"));
-        f.appendChild(document.createElement("br"));
-        var a = document.createElement("textarea");
-        a.setAttribute('type',"textarea");
-        a.rows="5";
-        f.appendChild(a);
-
-        f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Artikli sisu"));
-        f.appendChild(document.createElement("br"));
-        var a = document.createElement("textarea");
-        a.setAttribute('type',"textarea");
-        a.rows="5";
-        f.appendChild(a);
-
-        f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Pildi url:"));
-        var a = document.createElement("input");
-        a.setAttribute('type',"textarea");
-        f.appendChild(a);
-
-        f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Autor"));
-        var a = document.createElement("input");
-        a.setAttribute('type',"textarea");
-        f.appendChild(a);
-
-        f.appendChild(document.createElement("br"));
-        s.setAttribute('type',"submit");
-        s.setAttribute('value',"Submit");
+         f.appendChild(document.createElement("br"));
+         s.setAttribute('type',"submit");
+         s.setAttribute('value',"Submit");
 
 
-        f.appendChild(s);
-        sect.appendChild(f);
+         f.appendChild(s);
+         sect.appendChild(f);
 
 
 
-//and some more input elements here
-//and dont forget to add a submit button
+         //and some more input elements here
+         //and dont forget to add a submit button
 
-        //document.getElementsByTagName('body')[0].appendChild(f);
-        document.getElementById('sisu').appendChild(sect);
-        // $('#sisu').add(sect);
-        console.log("form peaks olemas olema");
+         //document.getElementsByTagName('body')[0].appendChild(f);
+         document.getElementById('sisu').appendChild(sect);
+         // $('#sisu').add(sect);
+         */
+        console.log("Commentform peaks olemas olema");
 
 
-    /*
-        waitForIt();
+        /*
+         waitForIt();
 
-        function waitForIt(){
-            if (isPaused) {
-                setTimeout(function(){waitForIt()},200);
-                console.log("ootab");
-            } else {
-                $("#sisu").append(form);
-                console.log("lisab");
-            };
-        }
-        */
+         function waitForIt(){
+         if (isPaused) {
+         setTimeout(function(){waitForIt()},200);
+         console.log("ootab");
+         } else {
+         $("#sisu").append(form);
+         console.log("lisab");
+         };
+         }
+         */
 
 
     }
@@ -560,7 +554,7 @@ $(document).ready(function(){
         isPaused = true;
         askArticle(articleId, true);
         console.log("enne");
-        addForm(articleId);
+        addCommentForm(articleId);
         console.log("parast");
 
 
@@ -701,8 +695,6 @@ $(document).ready(function(){
         console.log("joudis addArticleForm");
 
 
-
-        // var section =$('<section id="vasakParem"></section>');
         var sect = document.createElement("section");
         var f = document.createElement("form");
         sect.setAttribute('id',"vasakParem");
@@ -711,14 +703,12 @@ $(document).ready(function(){
         f.setAttribute('id',"lisaArtikkel");
         f.setAttribute('method',"post");
         f.setAttribute('action',"/artiklid");
-        //f.setAttribute('action',"/artiklid");
         f.setAttribute('enctype',"multipart/form-data");
 
         var teemad = document.createElement("div");
         teemad.setAttribute('class',"teemad");
         teemad.setAttribute('id',"teema");
         teemad.setAttribute('text',"Teemad");
-        // teemad.set
 
         f.appendChild(teemad);
 
@@ -734,50 +724,104 @@ $(document).ready(function(){
             var a = document.createElement("input");
             a.setAttribute('type',"radio");
             a.setAttribute('name',"teema");
-
-
             a.setAttribute('value',valArray[i]);
-
-
-
             tDiv.appendChild(a);
             tDiv.appendChild(document.createTextNode(valArray[i]))
         }
         f.appendChild(tDiv);
         f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Pealkiri"));
-        f.appendChild(document.createElement("br"));
+
+
+        //pealkiri
+
+        var pk = document.createElement("div");
+        pk.setAttribute('class',"pealkiri");
+        pk.setAttribute('id',"pealkiri");
+        pk.appendChild(document.createTextNode("Pealkiri"));
+        pk.appendChild(document.createElement("br"));
         var a = document.createElement("textarea");
         a.setAttribute('type',"textarea");
-        f.appendChild(a);
+        a.setAttribute('id',"formArtikliPealkiri");
+        a.rows="3";
+        a.cols="50";
+        a.maxLength="80";
+        a.name="pealkiri";
+        pk.appendChild(a);
+        fDiv=document.createElement("div");
+        fDiv.setAttribute("id","formMargid");
+        pk.appendChild(fDiv);
+        pk.appendChild(document.createElement("br"));
+        f.appendChild(pk);
 
-        f.appendChild(document.createElement("br"));
+
+
+
+
+        //luhikirjeldus
         f.appendChild(document.createTextNode("Lühikirjeldus"));
         f.appendChild(document.createElement("br"));
-        var a = document.createElement("textarea");
-        a.setAttribute('type',"textarea");
-        a.rows="5";
-        f.appendChild(a);
+
+        var lDiv = document.createElement("div");
+        lDiv.setAttribute('class',"lyhikirjeldus");
+        lDiv.setAttribute('id',"lyhikirjeldus");
+        var lk = document.createElement("textarea");
+        lk.setAttribute('id',"lyhikirjeldus2");
+        lk.rows="5";
+        lk.cols="50";
+        lk.maxLength="300";
+        lk.name="lyhikirjeldus";
+        lDiv.appendChild(lk);
+        lkDiv=document.createElement("div");
+        lkDiv.setAttribute("id","formMargidLuhi");
+        lDiv.appendChild(lkDiv);
+        f.appendChild(lDiv);
+
+        //artikli sisu
+
+
 
         f.appendChild(document.createElement("br"));
         f.appendChild(document.createTextNode("Artikli sisu"));
         f.appendChild(document.createElement("br"));
-        var a = document.createElement("textarea");
-        a.setAttribute('type',"textarea");
-        a.rows="5";
-        f.appendChild(a);
 
+        var aDiv = document.createElement("div");
+        aDiv.setAttribute('class',"artiklisisu");
+        aDiv.setAttribute('id',"ArtikliSisu");
+        var as = document.createElement("textarea");
+        as.setAttribute('id',"artiklisisu");
+        as.rows="15";
+        as.cols="100";
+        as.name="sisu";
+        aDiv.appendChild(as);
+        f.appendChild(aDiv);
+
+        //pilt
         f.appendChild(document.createElement("br"));
         f.appendChild(document.createTextNode("Pildi url:"));
-        var a = document.createElement("input");
-        a.setAttribute('type',"textarea");
-        f.appendChild(a);
 
+        var pDiv = document.createElement("div");
+        pDiv.setAttribute('class',"pilt");
+
+        var p = document.createElement("input");
+        p.setAttribute('id',"pilt");
+        p.setAttribute('type',"text");
+        p.name="pilt";
+        pDiv.appendChild(p);
+        f.appendChild(pDiv);
+
+        //autor
         f.appendChild(document.createElement("br"));
         f.appendChild(document.createTextNode("Autor"));
-        var a = document.createElement("input");
-        a.setAttribute('type',"textarea");
-        f.appendChild(a);
+        var auDiv = document.createElement("div");
+        auDiv.setAttribute('class',"autor");
+
+        var au = document.createElement("input");
+        au.setAttribute('id',"autor");
+        au.setAttribute('type',"text");
+        au.name="autor";
+        auDiv.appendChild(au);
+
+        f.appendChild(auDiv);
 
         f.appendChild(document.createElement("br"));
         s.setAttribute('type',"submit");
