@@ -63,7 +63,7 @@ $(document).ready(function(){
         teeKom.addClass("teeKom");
         loeKom.data("id",json.id);
         teeKom.data("id",json.id);
-        $(h1).attr('id',json.);
+        $(h1).attr('id',json.id);
 
         //anname vaartuse tagidele
         h1.text(json.pealkiri);
