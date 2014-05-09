@@ -54,7 +54,11 @@ $(document).ready(function(){
         var loeKom=$("<a></a>").text("Loe kommentaare");
         var teeKom=$("<a></a>").text("Kommenteeri");
         // var pilt= <img src="resources/images/pilt1.png" alt="pilt" >
-        // var img=json.pilt;
+       // var pilt= <img src="http://imgur.com/O2bYytC" alt="pilt" >
+
+        //http://imgur.com/O2bYytC
+       //  var img=json.pilt;
+        //console.log(img);
         loeKom.addClass("loeKom");
         teeKom.addClass("teeKom");
         loeKom.data("id",json.id);
@@ -136,7 +140,7 @@ $(document).ready(function(){
         var p4=$("<p></p>");
         var loeKom=$("<a></a>").text("Loe kommentaare");
         var teeKom=$("<a></a>").text("Kommenteeri");
-        var img=json.pilt;
+       // var img=json.pilt;
         loeKom.addClass("loeKom");
         teeKom.addClass("teeKom");
 
@@ -154,7 +158,7 @@ $(document).ready(function(){
         //uhendame osad uksteisega
         header.append(h1);
         article.append(header);
-        article.append(img);
+      //  article.append(img);
         //article.append(p3);
         article.append(p);
         footer.append(p2,loeKom,teeKom, p4);
@@ -551,7 +555,14 @@ $(document).ready(function(){
     var isPaused = false;
     console.log("paused vale");
     function addComment(articleId) { //  argument responseText
-        //alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
+      /*  //kui on logitud kasutaja, lubab lisada, vastasel juhul teavitab
+        if(document.getElementById(usr)==="careelika.kuik"){
+            alert("Careelika");
+
+        }else{
+            alert(document.getElementById(usr));
+        }*/
+        alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
         console.log("lisab kommentaari");
         removeAllButAside();
         isPaused = true;
