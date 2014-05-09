@@ -148,7 +148,7 @@ function Logout(){
 
     });
 
-    $('#profileArea').on('click','#login',function(){
+    $('#profileArea').on('click','#loginfb',function(){
             console.log('Login');
             Login();
             console.log("login.js - login");
@@ -162,7 +162,7 @@ function Logout(){
 // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
 
-    $('#login').on('click',function(){
+    $('#loginfb').on('click',function(){
         Login();
         console.log("login.js - 68 login");
 
