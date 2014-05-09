@@ -552,7 +552,14 @@ $(document).ready(function(){
     var isPaused = false;
     console.log("paused vale");
     function addComment(articleId) { //  argument responseText
-        //alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
+      /*  //kui on logitud kasutaja, lubab lisada, vastasel juhul teavitab
+        if(document.getElementById(usr)==="careelika.kuik"){
+            alert("Careelika");
+
+        }else{
+            alert(document.getElementById(usr));
+        }*/
+        alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
         console.log("lisab kommentaari");
         removeAllButAside();
         isPaused = true;
