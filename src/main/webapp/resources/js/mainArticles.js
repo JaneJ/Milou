@@ -63,6 +63,7 @@ $(document).ready(function(){
         teeKom.addClass("teeKom");
         loeKom.data("id",json.id);
         teeKom.data("id",json.id);
+        $(h1).attr('id',json.id);
 
         //anname vaartuse tagidele
         h1.text(json.pealkiri+"("+json.vaatamisi+")");
@@ -132,7 +133,12 @@ $(document).ready(function(){
         teeKom.addClass("teeKom");
 
         //anname vaartuse tagidele
+
         h1.text(json.pealkiri+"("+json.vaatamisi+")");
+
+        h1.text(json.pealkiri);
+        $(h1).attr('id',json.id);
+
         h1.data("id",json.id);
         //   console.log(json.pealkiri);
         footer.text("Autor: "+json.autor);
@@ -273,6 +279,7 @@ $(document).ready(function(){
             nr.data("id",json.id);
             nr.addClass("getArticle");
             nr.addClass(nr);
+            $(nr).attr('id',json.id);
             $(a).append(nr);
             //   console.log(i);
         }
