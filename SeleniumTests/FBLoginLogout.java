@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class FBLogin {
+public class FBLoginLogout {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -23,18 +23,20 @@ public class FBLogin {
   }
 
   @Test
-  public void testFBLogin() throws Exception {
+  public void testFBLoginLogout() throws Exception {
     driver.get(baseUrl + "/");
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | id=loginfb | ]]
+    driver.findElement(By.id("loginfb")).click();
     // ERROR: Caught exception [ERROR: Unsupported command [selectPopUp |  | ]]
-    driver.findElement(By.name("email")).clear();
-    driver.findElement(By.name("email")).sendKeys("open_lyzmknd_user@tfbnw.net");
+    driver.findElement(By.id("email")).clear();
+    driver.findElement(By.id("email")).sendKeys("open_lyzmknd_user@tfbnw.net");
     driver.findElement(By.id("pass")).clear();
     driver.findElement(By.id("pass")).sendKeys("kaks");
     // ERROR: Caught exception [ERROR: Unsupported command [clickAt | id=u_0_1 | ]]
     driver.close();
     // ERROR: Caught exception [ERROR: Unsupported command [selectWindow |  | ]]
     driver.get(baseUrl + "/");
+    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow |  | ]]
+    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | id=logout | ]]
   }
 
   @After
