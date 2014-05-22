@@ -1,6 +1,8 @@
 package ee.ut.math.vl.servlets.kasutaja;
 
 import com.google.gson.Gson;
+
+import ee.ut.math.vl.data.Kasutaja;
 import ee.ut.math.vl.datastore.kasutaja.KasutajaData;
 import ee.ut.math.vl.datastore.kasutaja.KasutajaDataProvider;
 
@@ -35,7 +37,7 @@ public class KasutajaController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         resp.setContentType("application/json; charset=UTF-8");
-        Connection con = null ; 
+       
 
 
         String idString = req.getParameter("id");
@@ -58,7 +60,7 @@ public class KasutajaController extends HttpServlet {
         int id = Integer.parseInt(idString);
 
 
-        boolean kasutaja = datastore.findKasutajaById(id);
+        Kasutaja kasutaja = datastore.findKasutajaById(id);
         resp.getWriter().write(gson.toJson(kasutaja));
             
     
