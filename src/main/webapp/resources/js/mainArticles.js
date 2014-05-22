@@ -111,7 +111,9 @@ $(document).ready(function(){
 
     function buildFullArticle(json){
         console.log("buildFullArticle");
-
+        var dict = $(document).data('form-enabled');
+        console.log("dictionary: "+dict[id]);
+        dict[id] = false;
         var article =$('<article></article>');
         var h1=$("<h1></h1>");
         var header =$('<header></header>');
@@ -396,8 +398,10 @@ $(document).ready(function(){
 
     //TODO formi ehitus ja lisamine
     function addCommentForm(articleId,el){
-        var loggedName = $(document).data('loggedName');
-        if(loggedName==="Anonymous"){
+       // var loggedName = $(document).data('loggedName');
+
+        console.log("name on "+ name);
+     /*   if(name==="Anonymous"){
 
         alert("Enda nime alt kommenteerimiseks logige palun sisse!");
             console.log($(document).data('loggedName'));
@@ -405,7 +409,7 @@ $(document).ready(function(){
         }else{
           console.log($(document).data('loggedName'));
         }
-
+*/
         var cl = "comForm"+articleId.toString();
 
         dict[articleId] = true;
@@ -438,7 +442,7 @@ $(document).ready(function(){
 
         //autor
         f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Autor: "+loggedName));
+        f.appendChild(document.createTextNode("Autor: "+name));
 
         //kommentaari sisu
         f.appendChild(document.createElement("br"));

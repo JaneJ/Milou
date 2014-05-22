@@ -18,6 +18,7 @@ function readCookie(name) {
     }
     return null;
 }*/
+var name= "Anonymous1";
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -56,6 +57,8 @@ window.fbAsyncInit = function() {
                 }
                 $(document).data('loggedName', response.name);
                 console.log("loggedname 58  "+$(document).data('loggedName'));
+                name = response.name;
+                console.log(name);
             });
 
 
@@ -64,7 +67,9 @@ window.fbAsyncInit = function() {
             Logout();
             console.log("login.js - 68 logout");
         }
+
     );
+
 }
 
             
@@ -115,6 +120,8 @@ function Login(){
             trellidMuutuvad();
             $(document).data('loggedName', "Anonymous");
             console.log("nimi: "+$(document).data('loggedName'));
+            name = response.name;
+            console.log(name);
           //  dict["loggedIn"] = 0;
            // dict["loggedName"] ="anonymous";
           /*  //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
@@ -176,6 +183,8 @@ $(document).ready(function(){
         console.log("login.js - 68 login");
         $(document).data('loggedName', response.name);
         console.log("loggedname 176  "+$(document).data('loggedName'));
+        name = response.name;
+        console.log(name);
 
 
 
