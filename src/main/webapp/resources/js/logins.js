@@ -54,7 +54,7 @@ function Login(){
                 console.log('Good to see you, ' + response.name + '.');
               
 
-                kasAdmin(response.id);
+                kasAdmin(response.id, respones.name);
                 $(document).data('loggedName', response.name);
                 console.log("loggedname "+$(document).data('loggedName'));
             });
@@ -98,26 +98,26 @@ function Logout(){
     );
 
 }
-function LoginInfo(json){
+function LoginInfo(json, nimi){
 
     if (json){
-        var str = "Tere : " + response.name + "!<br>";
+        var str = "Tere : " + nimi + "!<br>";
         str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
         str += '<button id="logout">FB Logout</button>';
         document.getElementById("profileArea").innerHTML = str;
     } else {
-        var str = "Tere : " + response.name + "!";
+        var str = "Tere : " + nimi + "!";
         str += "<button id='logout'>FB Logout</button>";
         document.getElementById("profileArea").innerHTML = str;
                 }
 }
 
-function kasAdmin(id){
+function kasAdmin(id, nimi){
     $.ajax('/kasutaja',{
         type: "GET",
         dataType: "Json",
         data: {id:id},
-        success:LoginInfo,
+        success:LoginInfo(data,nimi),
         error: function(req, status) { alert("failed: " + status); }
     });
 }
