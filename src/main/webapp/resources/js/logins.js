@@ -127,12 +127,16 @@ function Identify(id,name){
                     data: {id:id},
                     success:function(data){
                         console.log(data);
+
                         if (data.admin){
                             var str = "Tere : " + name + "!<br>";
                             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
                             str += '<button id="logout">FB Logout</button>';
                             document.getElementById("profileArea").innerHTML = str;
                         } else {
+                            if(window.location.href=="http://milou.herokuapp.com/pages/addarticle.html"){
+                                window.location="http://milou.herokuapp.com"
+                            }
                             var str = "Tere : " + name + "!";
                             str += "<button id='logout'>FB Logout</button>";
                             document.getElementById("profileArea").innerHTML = str;
