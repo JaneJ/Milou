@@ -100,7 +100,7 @@ function Logout(){
 }
 function LoginInfo(json){
 
-    if (json.admin){
+    if (json){
         var str = "Tere : " + response.name + "!<br>";
         str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
         str += '<button id="logout">FB Logout</button>';
@@ -117,7 +117,7 @@ function kasAdmin(id){
         type: "GET",
         dataType: "Json",
         data: {id:id},
-        success:Logininfo(),
+        success:LoginInfo,
         error: function(req, status) { alert("failed: " + status); }
     });
 }
