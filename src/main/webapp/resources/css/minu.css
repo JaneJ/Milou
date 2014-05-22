@@ -116,19 +116,11 @@ header #pais {
 
 #menuud {
 	float: left;
-	width: 70%;
+	width: 100%;
 	padding: 1%;
 }
 
-#otsingud{
-	position: relative;
-	float: right;
-	width: 25%;
-	margin-top: 0%;
 
-	padding: 1%;
-
-}
 
 nav #nav_kast {
 	margin: 0%;
@@ -150,22 +142,7 @@ nav a{
 }
 
 
-#search-designe{
-	display: inline;
-	margin-top: 0%;
-	padding: 4%;
-	height: auto;
-	text-align: center;
-	margin-right: 5%;
-	background-color: #FFFFFF;
-	border-bottom: 1px solid black;
-	/*border-top:1px solid black;*/
-	border-left: none;
-	border-right: none;
-	font: italic bold 18px Fanwood;
 
-
-}
 
 
 
