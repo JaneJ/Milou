@@ -31,10 +31,10 @@ public class KasutajaData implements KasutajaDataProvider {
 			kasutaja.admin = rs.getBoolean("admin");
             
             if(!rs.next()) {
-            	kasutaja.admin=false;
+            	kasutaja.admin=true;
             }
             else{
-            	kasutaja.admin=true;
+            	kasutaja.admin=false;
             }
 	
 		} finally {
