@@ -60,7 +60,7 @@ public class KasutajaController extends HttpServlet {
         int id = Integer.parseInt(idString);
 
 
-        Kasutaja kasutaja = datastore.findKasutajaById(id);
+        boolean kasutaja = datastore.findKasutajaById(id);
         resp.getWriter().write(gson.toJson(kasutaja));
             
     
