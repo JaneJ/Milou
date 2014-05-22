@@ -105,3 +105,21 @@ Contains: C:\Users\Jane\Documents\Milou overlaps the workspace location: C:\User
 !MESSAGE OK
 !SUBENTRY 2 org.eclipse.core.resources 4 77 2014-05-08 13:54:15.924
 !MESSAGE C:\Users\Jane\Documents\Milou overlaps the workspace location: C:\Users\Jane\Documents\Milou
+!SESSION 2014-05-22 13:06:56.606 -----------------------------------------------
+eclipse.buildId=M20120914-1800
+java.version=1.7.0_13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2014-05-22 13:07:23.674
+!MESSAGE Unable to find Action Set: org.jboss.tools.common.model.ui.actionSet
+
+!ENTRY org.eclipse.ui 4 4 2014-05-22 13:07:23.707
+!MESSAGE Unable to find Action Set: org.nodeclipse.pluginslist.core.actionSet
+
+!ENTRY org.eclipse.ui 4 4 2014-05-22 13:07:23.711
+!MESSAGE Unable to find Action Set: org.hibernate.eclipse.launch.actionset
+
+!ENTRY org.eclipse.ui 2 2 2014-05-22 13:08:15.006
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
