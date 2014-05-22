@@ -24,7 +24,7 @@ a {
 }
 
 p{
-	font-size: 60%;
+	font-size: 68%;
 }
 
 
@@ -89,6 +89,7 @@ header #pais {
 	color: white;
 	font:bold;
 	font-family: Sans-serif;
+	font-size: 75%;
 	text-align:center;
 
 }
@@ -102,6 +103,7 @@ header #pais {
 	color: white;
 	font:bold;
 	font-family: Sans-serif;
+	font-size: 75%;
 	text-align:center;
 }
 
@@ -137,9 +139,9 @@ nav #nav_kast {
 nav a{
 	display: inline;
 	padding-right: 1%;
-	font: bold 70% Fanwood;
+	font: bold 88% Fanwood;
 	text-align: center;
-	margin-left: 4%;
+	margin-left: 15%;
     cursor: pointer;
  /*cursor: hand;  */
 	
@@ -188,8 +190,6 @@ article table img{
 article footer{
 	text-align: right;
 	font-size: 40%;
-	/*padding: 1%;   */
-
 }
 
 
