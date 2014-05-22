@@ -31,8 +31,10 @@ window.fbAsyncInit = function() {
                     document.getElementById("profileArea").innerHTML = str;
 
 
-                }
 
+                }
+                $(document).data('loggedName', response.name);
+                console.log("loggedname 58  "+$(document).data('loggedName'));
             });
 
 
@@ -87,13 +89,13 @@ function Login(){
 
                 }
                 $(document).data('loggedName', response.name);
-                console.log($(document).data('loggedName'));
+                console.log("loggedname "+$(document).data('loggedName'));
             });
         } else {
             console.log('User cancelled login or did not fully authorize.');
             trellidMuutuvad();
             $(document).data('loggedName', "Anonymous");
-            console.log($(document).data('loggedName'));
+            console.log("nimi: "+$(document).data('loggedName'));
           //  dict["loggedIn"] = 0;
            // dict["loggedName"] ="anonymous";
           /*  //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
@@ -160,6 +162,8 @@ $(document).ready(function(){
     $('#loginfb').on('click',function(){
         Login();
         console.log("login.js - 68 login");
+        $(document).data('loggedName', response.name);
+        console.log("loggedname 176  "+$(document).data('loggedName'));
 
 
 

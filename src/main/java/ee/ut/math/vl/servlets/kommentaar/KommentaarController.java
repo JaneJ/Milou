@@ -78,11 +78,11 @@ public class KommentaarController extends HttpServlet {
             datastore.lisaKommentaar(kommentaar);
 
 
-
+/*
             String kommentaarEcho = gson.toJson(kommentaar);
             resp.setHeader("Content-Type", "application/json");
             resp.getWriter().write(kommentaarEcho);
-
+*/
 
         } catch (Exception ex) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());

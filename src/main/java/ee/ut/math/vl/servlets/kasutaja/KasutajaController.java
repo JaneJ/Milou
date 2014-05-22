@@ -35,9 +35,7 @@ public class KasutajaController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         resp.setContentType("application/json; charset=UTF-8");
-        Connection con = null ; //peab olema meetod, mis tekitab connectioneid (muide peabki olema väärtus null)
-        //try sees open connection
-        //finally : if con!=null close connection
+        Connection con = null ; 
 
 
         String idString = req.getParameter("id");
@@ -56,12 +54,8 @@ public class KasutajaController extends HttpServlet {
                                          String idString) throws SQLException, Exception {
         int id = Integer.parseInt(idString);
 
-        //pildi servletist
-        //resp.getOutputStream().write(null);
-
 
         boolean kasutaja = datastore.findKasutajaById(id);
-        //
         if (kasutaja==true){
             try {
                 resp.getWriter().write(gson.toJson(kasutaja));
