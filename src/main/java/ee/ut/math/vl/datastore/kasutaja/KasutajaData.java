@@ -15,26 +15,29 @@ import ee.ut.math.vl.data.Kasutaja;
 public class KasutajaData implements KasutajaDataProvider {
 
 	@Override
-	public Kasutaja findKasutajaById(int id) throws SQLException, Exception {
+	public Kasutaja findKasutajaById(long id) throws SQLException, Exception {
 		Kasutaja kasutaja = new Kasutaja();
 		kasutaja.id = id;
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
             PreparedStatement stmt = conn.prepareStatement("SELECT id,nimi,username,admin FROM Kasutaja where Kasutaja.id=?;");
-            stmt.setInt(1, id);
+            stmt.setLong(1, id);
+            
             ResultSet rs = stmt.executeQuery();
-            rs.next();
-            kasutaja.id = rs.getInt("id");
-			kasutaja.nimi = rs.getString("nimi");
-			kasutaja.username = rs.getString("username");
-			kasutaja.admin = rs.getBoolean("admin");
+            
             
             if(!rs.next()) {
             	kasutaja.admin=false;
+            	kasutaja.id = 0;
+    			kasutaja.nimi =null;
+    			kasutaja.username = null;
             }
             else{
             	kasutaja.admin=true;
+            	kasutaja.id = rs.getInt("id");
+    			kasutaja.nimi = rs.getString("nimi");
+    			kasutaja.username = rs.getString("username");
             }
 	
 		} finally {
@@ -51,7 +54,7 @@ public class KasutajaData implements KasutajaDataProvider {
 		try {
 			PreparedStatement stmt = conn
 					.prepareStatement("INSERT INTO Kasutja (id,nimi, username, admin) values (?, ?, ?,?)");
-			stmt.setInt(1,kasutaja.id);
+			stmt.setLong(1,kasutaja.id);
 			stmt.setString(2,kasutaja.nimi);
 			stmt.setString(3,kasutaja.username);
 			stmt.setBoolean(4,kasutaja.admin);
@@ -74,7 +77,7 @@ public class KasutajaData implements KasutajaDataProvider {
 			while (rs.next()) {
 				Kasutaja k = new Kasutaja();
 
-				k.id = rs.getInt("id");
+				k.id = rs.getLong("id");
 				k.nimi = rs.getString("nimi");
 				k.username = rs.getString("username");
 				k.admin = rs.getBoolean("admin");

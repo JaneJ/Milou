@@ -3,7 +3,7 @@ package ee.ut.math.vl.data;
 
 public class Kasutaja {
 	
-	public int id;
+	public long id;
     public String nimi;
     public String username;
     public boolean admin;
