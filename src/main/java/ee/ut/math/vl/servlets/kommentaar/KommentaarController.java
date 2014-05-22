@@ -76,6 +76,7 @@ public class KommentaarController extends HttpServlet {
 
             Kommentaar kommentaar = gson.fromJson(req.getReader(), Kommentaar.class);
             datastore.lisaKommentaar(kommentaar);
+            resp.getWriter().write("{}");
 
 
 /*
