@@ -24,7 +24,7 @@ a {
 }
 
 p{
-	font-size: 60%;
+	font-size: 68%;
 }
 
 
@@ -89,6 +89,7 @@ header #pais {
 	color: white;
 	font:bold;
 	font-family: Sans-serif;
+	font-size: 80%;
 	text-align:center;
 
 }
@@ -102,6 +103,7 @@ header #pais {
 	color: white;
 	font:bold;
 	font-family: Sans-serif;
+	font-size: 80%;
 	text-align:center;
 }
 
