@@ -15,14 +15,14 @@ import ee.ut.math.vl.data.Kasutaja;
 public class KasutajaData implements KasutajaDataProvider {
 
 	@Override
-	public Kasutaja findKasutajaById(int id) throws SQLException, Exception {
+	public Kasutaja findKasutajaById(long id) throws SQLException, Exception {
 		Kasutaja kasutaja = new Kasutaja();
 		kasutaja.id = id;
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
             PreparedStatement stmt = conn.prepareStatement("SELECT id,nimi,username,admin FROM Kasutaja where Kasutaja.id=?;");
-            stmt.setInt(1, id);
+            stmt.setLong(1, id);
             
             ResultSet rs = stmt.executeQuery();
            
@@ -55,7 +55,7 @@ public class KasutajaData implements KasutajaDataProvider {
 		try {
 			PreparedStatement stmt = conn
 					.prepareStatement("INSERT INTO Kasutja (id,nimi, username, admin) values (?, ?, ?,?)");
-			stmt.setInt(1,kasutaja.id);
+			stmt.setLong(1,kasutaja.id);
 			stmt.setString(2,kasutaja.nimi);
 			stmt.setString(3,kasutaja.username);
 			stmt.setBoolean(4,kasutaja.admin);
