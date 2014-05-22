@@ -24,7 +24,7 @@ a {
 }
 
 p{
-	font-size: 75%;
+	font-size: 85%;
 }
 
 
@@ -141,7 +141,7 @@ nav a{
 	padding-right: 1%;
 	font: bold 90% Fanwood;
 	text-align: center;
-	margin-left: 10%;
+	margin-left: 8%;
     cursor: pointer;
  /*cursor: hand;  */
 	
@@ -189,7 +189,7 @@ article table img{
 
 article footer{
 	text-align: right;
-	font-size: 40%;
+	font-size: 70%;
 }
 
 
