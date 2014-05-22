@@ -114,7 +114,7 @@ function LoginInfo(json){
 
 function kasAdmin(id){
     $.ajax('/kasutaja',{
-        type: "GET"
+        type: "GET",
         dataType: "Json",
         data: {id:id},
         success:Logininfo(),
