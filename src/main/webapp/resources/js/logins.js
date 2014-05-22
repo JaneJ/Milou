@@ -117,7 +117,7 @@ function kasAdmin(id){
         type: "GET",
         dataType: "Json",
         data: {id:id},
-        success:LoginInfo(),
+        success:LoginInfo,
         error: function(req, status) { alert("failed: " + status); }
     });
 }
