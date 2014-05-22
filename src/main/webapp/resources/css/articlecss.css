@@ -1,42 +1,27 @@
-/*@import url(http://fonts.googleapis.com/css?family=Parisienne&subset=latin,latin-ext);
-@import url(http://fonts.googleapis.com/css?family=Fanwood+Text:400,400italic);
-*/
-
-
-*{	
-	margin: 0%;
+*{	margin: 0%;
 	padding: 0%;
 	background-color: ivory;
 }
 
-
-h1{ 
-	font: bold italic 100% Fanwood;
+h1{ font: bold italic 100% Fanwood;
 }
 
-h2{ 
-	font: bold italic 100% Fanwood;
+h2{	font: bold italic 100% Fanwood;
 }
 
-a {	
-	text-decoration:none;
+a {	text-decoration:none;
 	color:black;
 }
-
-
 
 header, section, footer, aside, nav, article, hgroup {
 	display: block;
 }
 
-body{
-	width: 100%;
+body{width: 100%;
 	text-align:center;
 }
 
-
 .kogu{
-	/*border: 1px solid black;*/
 	width:78%;
 	margin-left: 11%;
 	margin-right: 11%;
@@ -44,8 +29,6 @@ body{
 	margin-bottom: 1%;
 	text-align: left;
 }
-
-
 
 header #pais {
 	width: 100%;
@@ -58,11 +41,7 @@ header #pais {
 	padding: 0%;	
 }
 
-
-/*header button {
-	float: right;
-	margin-top: 1%;
-	margin-right: 10%;
+.logi{	
 	border: 1px solid rgba(0,0,0,0.2);
 	border-radius: 10px;
 	background: rgba(0,0,0,0.8);
@@ -70,50 +49,16 @@ header #pais {
 	color: white;
 	font:bold;
 	font-family: Sans-serif;
-	text-align:center;
-	height: 5%;
-	width: 7%;	
-}*/
-
-
-
-#loginfb{
-	border: 1px solid rgba(0,0,0,0.2);
-	border-radius: 10px;
-	background: rgba(0,0,0,0.8);
-	box-shadow: inset 0px 2px 10px rgba(225, 225, 225, 0.5);
-	color: white;
-	font:bold;
-	font-family: Sans-serif;
-	text-align:center;
 	font-size: 75%;
-
-}
-
-
-#logout{
-	border: 1px solid rgba(0,0,0,0.2);
-	border-radius: 10px;
-	background: rgba(0,0,0,0.8);
-	box-shadow: inset 0px 2px 10px rgba(225, 225, 225, 0.5);
-	color: white;
-	font:bold;
-	font-family: Sans-serif;
 	text-align:center;
-	font-size: 75%;
 }
-
 
 #profileArea{
 	height: 8%;
-	/*width: 200px;*/
 	font-family: "Times New Roman", Times, serif;
-
 }
 
-#menuu {
-	width: 100%;
-	
+#menuu {width: 100%;
 }
 
 #menuud {
@@ -122,16 +67,12 @@ header #pais {
 	padding: 1%;
 }
 
-
 #pealkiri, #teema, #lyhikirjeldus, #pealkiri, #sisu{
 	font-size: 100%;
 	padding: 2%;
 	margin-top: 1%;
 	margin-bottom: 1%;
-
 }
-
-
 
 nav #nav_kast {
 	margin: 0%;
@@ -140,7 +81,6 @@ nav #nav_kast {
 	border-bottom: 2px solid black;
 }
 
-
 nav a{
 	display: inline;
 	padding-right: 1%;
@@ -148,23 +88,14 @@ nav a{
 	text-align: center;
 	margin-left: 8%;
     cursor: pointer;
- /*cursor: hand;  */
-	
 }
-
-
-
 
 #vasakParem, .vasakParem{
 	float: left;
 	width: 60%;
 	margin: 0% 4%;
 	padding: 1%;
-
 }
-
-
-
 
 #the_footer {
 clear: both;
@@ -177,40 +108,28 @@ line-height: 10%;
 border-top: 1px solid;
 }
 
-
-#footer-left {
+.jalus{
 padding: 0%;
-float: left;
 height: auto;
-width: 45%;
-text-align: left;
 position: relative;
 font-family: Fanwood;
 font-size: 70%;
+
+}
+#footer-left {
+float: left;
+width: 45%;
+text-align: left;
 }
 
-
 #page_up {
-	margin: 0%;
-	padding: 0%;
 	float: left;
 	height: auto;
 	text-align: center;
-	position: relative;
-	font-family: Fanwood;
-	font-weight: bold;
-	font-size: 70%;
 }
 
-
 #footer-right{
-margin: 0%;
-padding: 0%;
 float: right;
-height: auto;
 width: 45%;
 text-align: right;
-position: relative;
-font-family: Fanwood;
-font-size: 70%;
 }
