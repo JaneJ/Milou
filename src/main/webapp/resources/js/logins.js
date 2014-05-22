@@ -25,6 +25,7 @@ function testAPI() {
                     dataType: "Json",
                     data: {id:response.id},
                     success:function(data){
+                        console.log(data);
                         if (data.admin){
                             var str = "Tere : " + response.name + "!<br>";
                             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
@@ -36,7 +37,8 @@ function testAPI() {
                             document.getElementById("profileArea").innerHTML = str;
                         }
                     },
-                     error: function(req, status){ 
+                     error: function(req, status, data){ 
+                        console.log(data);
                         alert("failed: " + status); 
                     }
                 });
@@ -76,6 +78,7 @@ function Login(){
                     dataType: "Json",
                     data: {id:response.id},
                     success:function(data){
+                        console.log(data);
                         if (data.admin){
                             var str = "Tere : " + response.name + "!<br>";
                             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
@@ -87,7 +90,10 @@ function Login(){
                             document.getElementById("profileArea").innerHTML = str;
                         }
                     },
-                    error: function(req, status) { alert("failed: " + status); }
+                    error: function(req, status, data) { 
+                        console.log(data);
+
+                        alert("failed: " + status); }
                 });});
 
             

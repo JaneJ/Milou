@@ -45,7 +45,7 @@ public class KasutajaController extends HttpServlet {
         try {
 
 			if (idString != null) {
-				replyWithKasutajaBoolean(resp, idString);
+				replyWithKasutaja(resp, idString);
 			
 		} 
 			}catch (Exception e) {
@@ -55,7 +55,7 @@ public class KasutajaController extends HttpServlet {
         
        
 
-    private void  replyWithKasutajaBoolean(HttpServletResponse resp,
+    private void  replyWithKasutaja(HttpServletResponse resp,
                                          String idString) throws SQLException, Exception {
         int id = Integer.parseInt(idString);
 
