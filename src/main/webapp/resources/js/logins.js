@@ -81,7 +81,6 @@ function Login(){
     FB.login(function(response) {
         if (response.authResponse) {
             console.log('Welcome!  Fetching your information.... ');
-           
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
                 var Kasutaja = {};
@@ -106,11 +105,16 @@ function Login(){
 
 
                 }
-
+                $(document).data('loggedName', response.name);
+                console.log($(document).data('loggedName'));
             });
         } else {
             console.log('User cancelled login or did not fully authorize.');
             trellidMuutuvad();
+            $(document).data('loggedName', "Anonymous");
+            console.log($(document).data('loggedName'));
+          //  dict["loggedIn"] = 0;
+           // dict["loggedName"] ="anonymous";
           /*  //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
             var str = "Tere : " + response.name + "!<br>";
             str += "<a id='addNews'>Lisa uudis</a><br>";
@@ -168,6 +172,7 @@ $(document).ready(function(){
     $('#loginfb').on('click',function(){
         Login();
         console.log("login.js - 68 login");
+
 
 
     });
