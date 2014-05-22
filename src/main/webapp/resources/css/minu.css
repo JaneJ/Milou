@@ -15,12 +15,16 @@ h1{
 }
 
 h2{ 
-	font: bold italic 70% Fanwood;
+	font: bold italic 75% Fanwood;
 }
 
 a {	
 	text-decoration:none;
 	color:black;
+}
+
+p{
+	font-size: 60%;
 }
 
 
