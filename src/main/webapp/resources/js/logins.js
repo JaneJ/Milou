@@ -20,28 +20,7 @@ function testAPI() {
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
-                 $.ajax('/kasutaja',{
-                    type: "GET",
-                    dataType: "Json",
-                    data: {id:response.id},
-                    success:function(data){
-                        console.log(data);
-                        if (data.admin){
-                            var str = "Tere : " + response.name + "!<br>";
-                            str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
-                            str += '<button id="logout">FB Logout</button>';
-                            document.getElementById("profileArea").innerHTML = str;
-                        } else {
-                            var str = "Tere : " + response.name + "!";
-                            str += "<button id='logout'>FB Logout</button>";
-                            document.getElementById("profileArea").innerHTML = str;
-                        }
-                    },
-                     error: function(req, status, data){ 
-                        console.log(data);
-                        alert("failed: " + status); 
-                    }
-                });
+                 Identify(response.id, response.name)
              });
              
                 
@@ -73,28 +52,8 @@ function Login(){
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
-                $.ajax('/kasutaja',{
-                    type: "GET",
-                    dataType: "Json",
-                    data: {id:response.id},
-                    success:function(data){
-                        console.log(data);
-                        if (data.admin){
-                            var str = "Tere : " + response.name + "!<br>";
-                            str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
-                            str += '<button id="logout">FB Logout</button>';
-                            document.getElementById("profileArea").innerHTML = str;
-                        } else {
-                            var str = "Tere : " + response.name + "!";
-                            str += "<button id='logout'>FB Logout</button>";
-                            document.getElementById("profileArea").innerHTML = str;
-                        }
-                    },
-                    error: function(req, status, data) { 
-                        console.log(data);
-
-                        alert("failed: " + status); }
-                });});
+                Identify(response.id, response.name)
+                });
 
             
         } else {
@@ -144,7 +103,7 @@ $(document).ready(function(){
     $('#loginfb').on('click',function(){
         Login();
         console.log("login.js - 68 login");
-        $(document).data('loggedName', response.name);
+        $(document).data('loggedName');
         console.log("loggedname 176  "+$(document).data('loggedName'));
 
 
@@ -158,3 +117,29 @@ $(document).ready(function(){
         }
     );
 });
+function Identify(id,name){
+     $.ajax('/kasutaja',{
+                    type: "GET",
+                    dataType: "Json",
+                    data: {id:id},
+                    success:function(data){
+                        console.log(data);
+                        if (data.admin){
+                            var str = "Tere : " + name + "!<br>";
+                            str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
+                            str += '<button id="logout">FB Logout</button>';
+                            document.getElementById("profileArea").innerHTML = str;
+                        } else {
+                            var str = "Tere : " + name + "!";
+                            str += "<button id='logout'>FB Logout</button>";
+                            document.getElementById("profileArea").innerHTML = str;
+                        }
+                    },
+                    error: function(req, status, data) { 
+                        console.log(data);
+
+                        alert("failed: " + status); }
+                });
+
+
+}
