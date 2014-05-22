@@ -11,11 +11,11 @@
 
 
 h1{ 
-	font: bold italic 20px Fanwood;
+	font: bold italic 90% Fanwood;
 }
 
 h2{ 
-	font: bold italic 14px Fanwood;
+	font: bold italic 85% Fanwood;
 }
 
 a {	
@@ -86,6 +86,7 @@ header #pais {
 	font:bold;
 	font-family: Sans-serif;
 	text-align:center;
+	font-size: 75%;
 
 }
 
@@ -99,6 +100,7 @@ header #pais {
 	font:bold;
 	font-family: Sans-serif;
 	text-align:center;
+	font-size: 75%;
 }
 
 
@@ -130,9 +132,10 @@ header #pais {
 
 }
 #pealkiri, #teema, #lyhikirjeldus, #pealkiri, #sisu{
-	font-size: 170%;
+	font-size: 100%;
 	font-weight: 
 }
+
 
 
 nav #nav_kast {
@@ -146,29 +149,15 @@ nav #nav_kast {
 nav a{
 	display: inline;
 	padding-right: 1%;
-	font: bold 23px Fanwood;
+	font: bold 90% Fanwood;
 	text-align: center;
-	margin-left: 4%;
+	margin-left: 8%;
+    cursor: pointer;
+ /*cursor: hand;  */
 	
 }
 
 
-#search-designe{
-	display: inline;
-	margin-top: 0%;
-	padding: 4%;
-	height: auto;
-	text-align: center;
-	margin-right: 5%;
-	background-color: #FFFFFF;
-	border-bottom: 1px solid black;
-	/*border-top:1px solid black;*/
-	border-left: none;
-	border-right: none;
-	font: italic bold 18px Fanwood;
-
-
-}
 
 
 #vasakParem, .vasakParem{
@@ -202,6 +191,7 @@ width: 45%;
 text-align: left;
 position: relative;
 font-family: Fanwood;
+font-size: 70%;
 }
 
 
@@ -214,6 +204,7 @@ font-family: Fanwood;
 	position: relative;
 	font-family: Fanwood;
 	font-weight: bold;
+	font-size: 70%;
 }
 
 
@@ -226,6 +217,7 @@ width: 45%;
 text-align: right;
 position: relative;
 font-family: Fanwood;
+font-size: 70%;
 }
 
 
