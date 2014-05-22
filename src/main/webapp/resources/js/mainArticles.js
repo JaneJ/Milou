@@ -111,6 +111,12 @@ $(document).ready(function(){
 
     function buildFullArticle(json){
         console.log("buildFullArticle");
+        var dict = $(document).data('form-enabled');
+        console.log( "enne build "+dict[json.id]);
+        dict[json.id] = false;
+        console.log( "parast build "+dict[json.id]);
+
+
 
         var article =$('<article></article>');
         var h1=$("<h1></h1>");
@@ -373,7 +379,6 @@ $(document).ready(function(){
 
 
     $(document).on("click", ".teeKom",function() {
-        console.log("onclick parents"+ $(".teeKom").parents().find(".teekom"));
         var id = $(this).data("id");
         var el = $(this);
 
@@ -382,22 +387,25 @@ $(document).ready(function(){
         if(dict[id] === true){
             var str= ".comForm"+id.toString();
 
-          // $(str).toggle();
+           $(str).toggle();
             console.log("true: "+$(str));
 
            // $("[id^=str]").toggle();
 
         }else{
             addCommentForm(id,el);
+            console.log("commentFormi lisama -> : "+$(str));
         }
-        console.log("onclick : "+$(str));
+
 
     });
 
     //TODO formi ehitus ja lisamine
     function addCommentForm(articleId,el){
-        var loggedName = $(document).data('loggedName');
-        if(loggedName==="Anonymous"){
+       // var loggedName = $(document).data('loggedName');
+        console.log("addcom----");
+        console.log("name on "+ name);
+     /*   if(name==="Anonymous"){
 
         alert("Enda nime alt kommenteerimiseks logige palun sisse!");
             console.log($(document).data('loggedName'));
@@ -405,7 +413,7 @@ $(document).ready(function(){
         }else{
           console.log($(document).data('loggedName'));
         }
-
+*/
         var cl = "comForm"+articleId.toString();
 
         dict[articleId] = true;
@@ -438,7 +446,7 @@ $(document).ready(function(){
 
         //autor
         f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Autor: "+loggedName));
+        f.appendChild(document.createTextNode("Autor: "+name));
 
         //kommentaari sisu
         f.appendChild(document.createElement("br"));
@@ -466,7 +474,7 @@ $(document).ready(function(){
         f.appendChild(s);
         sect.appendChild(f);
 
-        document.getElementById('sisu').appendChild(sect);
+        $('#sisu').append(sect);
 
 
 ////lopp
@@ -481,7 +489,7 @@ $(document).ready(function(){
 
     }
 
-    function addComment(articleId) {
+   /* function addComment(articleId) {
 
         alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
         console.log("lisab kommentaari");
@@ -489,7 +497,7 @@ $(document).ready(function(){
         addCommentForm(articleId);
 
     };
-
+*/
 
     // Lehe laadimisel oige artikli juurde minemine.
     if(window.location.hash)
