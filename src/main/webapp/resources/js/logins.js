@@ -20,19 +20,7 @@ window.fbAsyncInit = function() {
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
-                if (response.name === "Jane Jürgenson" || response.name === "Kristiina Pokk" || response.name === "Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
-                    var str = "Tere : " + response.name + "!<br>";
-                    str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
-                    str += '<button id="logout">FB Logout</button>';
-                    document.getElementById("profileArea").innerHTML = str;
-                } else {
-                    var str = "Tere : " + response.name + "!";
-                    str += "<button id='logout'>FB Logout</button>";
-                    document.getElementById("profileArea").innerHTML = str;
-
-
-
-                }
+                kasAdmin(response.id);
                 $(document).data('loggedName', response.name);
                 console.log("loggedname 58  "+$(document).data('loggedName'));
             });
@@ -64,30 +52,9 @@ function Login(){
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
-                var Kasutaja = {};
-                Kasutaja.id = response.id;
-                Kasutaja.username = response.username;
-                Kasutaja.admin = false;
-                Kasutaja.nimi = response.name;
-                console.log(Kasutaja);
+              
 
-                ()
-
-                /*if(response.id in kasutaja andmebaas, siis admin)*/
-
-
-                if (response.name === "Jane Jürgenson" || response.name === "Kristiina Pokk" || response.name === "Careelika Liisi Kuik")/*Algne, hiljem access tokenite abil kuidagi*/ {
-                    var str = "Tere : " + response.name + "!<br>";
-                    str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
-                    str += '<button id="logout">FB Logout</button>';
-                    document.getElementById("profileArea").innerHTML = str;
-                } else {
-                    var str = "Tere : " + response.name + "!";
-                    str += "<button id='logout'>FB Logout</button>";
-                    document.getElementById("profileArea").innerHTML = str;
-
-
-                }
+                kasAdmin(response.id);
                 $(document).data('loggedName', response.name);
                 console.log("loggedname "+$(document).data('loggedName'));
             });
@@ -96,22 +63,7 @@ function Login(){
             trellidMuutuvad();
             $(document).data('loggedName', "Anonymous");
             console.log("nimi: "+$(document).data('loggedName'));
-          //  dict["loggedIn"] = 0;
-           // dict["loggedName"] ="anonymous";
-          /*  //localhostis addArticle katsetamiseks read 59-68 dubleeritud 43-47 juurest, hiljem uuesti ara kustutada, et koik oigesti toimiks
-            var str = "Tere : " + response.name + "!<br>";
-            str += "<a id='addNews'>Lisa uudis</a><br>";
-            //muutsin!, tegin buttoniks
-            //str +="<a href='pages/addarticle.html'>Lisa uudis</a>"+"<br>";
-
-            str += "<button id='logout'>FB Logout</button>";
-
-          //  var usr= response.name;
-            //alert(usr);
-            document.getElementById("profileArea").innerHTML = str;
-
-
-            // muutuste lopp*/
+          
         }
 
 
@@ -146,13 +98,29 @@ function Logout(){
     );
 
 }
-/*function kasAdmin(){
+function LoginInfo(json){
+
+    if (json.admin){
+        var str = "Tere : " + response.name + "!<br>";
+        str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
+        str += '<button id="logout">FB Logout</button>';
+        document.getElementById("profileArea").innerHTML = str;
+    } else {
+        var str = "Tere : " + response.name + "!";
+        str += "<button id='logout'>FB Logout</button>";
+        document.getElementById("profileArea").innerHTML = str;
+                }
+}
+
+function kasAdmin(id){
     $.ajax('/kasutaja',{
-        type: "GET",
-        dataType: "",
-        success
+        type: "GET"
+        dataType: "Json",
+        data: {id:id},
+        success:Logininfo(),
+        error: function(req, status) { alert("failed: " + status); }
     });
-}*/
+}
 
 
 
