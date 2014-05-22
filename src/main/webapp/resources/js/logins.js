@@ -16,14 +16,33 @@ window.fbAsyncInit = function() {
             });
 
 };
- function testAPI() {
+function testAPI() {
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
-                kasAdmin(response.id);
-                $(document).data('loggedName', response.name);
-                console.log("loggedname 58  "+$(document).data('loggedName'));
-            });
+                 $.ajax('/kasutaja',{
+                    type: "GET",
+                    dataType: "Json",
+                    data: {id:response.id},
+                    success:function(data){
+                        if (data){
+                            var str = "Tere : " + response.name + "!<br>";
+                            str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
+                            str += '<button id="logout">FB Logout</button>';
+                            document.getElementById("profileArea").innerHTML = str;
+                        } else {
+                            var str = "Tere : " + response.name + "!";
+                            str += "<button id='logout'>FB Logout</button>";
+                            document.getElementById("profileArea").innerHTML = str;
+                        }
+                    },
+                     error: function(req, status){ 
+                        alert("failed: " + status); 
+                    }
+                });
+             });
+             
+                
 
 
     $('#profileArea').on('click','#logout',function(){
@@ -52,12 +71,26 @@ function Login(){
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
-              
+                $.ajax('/kasutaja',{
+                    type: "GET",
+                    dataType: "Json",
+                    data: {id:response.id},
+                    success:function(data){
+                        if (data){
+                            var str = "Tere : " + response.name + "!<br>";
+                            str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
+                            str += '<button id="logout">FB Logout</button>';
+                            document.getElementById("profileArea").innerHTML = str;
+                        } else {
+                            var str = "Tere : " + response.name + "!";
+                            str += "<button id='logout'>FB Logout</button>";
+                            document.getElementById("profileArea").innerHTML = str;
+                        }
+                    },
+                    error: function(req, status) { alert("failed: " + status); }
+                });});
 
-                kasAdmin(response.id);
-                $(document).data('loggedName', response.name);
-                console.log("loggedname "+$(document).data('loggedName'));
-            });
+            
         } else {
             console.log('User cancelled login or did not fully authorize.');
             trellidMuutuvad();
@@ -98,31 +131,6 @@ function Logout(){
     );
 
 }
-function LoginInfo(json){
-
-    if (json){
-        var str = "Tere : " + response.name + "!<br>";
-        str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
-        str += '<button id="logout">FB Logout</button>';
-        document.getElementById("profileArea").innerHTML = str;
-    } else {
-        var str = "Tere : " + response.name + "!";
-        str += "<button id='logout'>FB Logout</button>";
-        document.getElementById("profileArea").innerHTML = str;
-                }
-}
-
-function kasAdmin(id){
-    $.ajax('/kasutaja',{
-        type: "GET",
-        dataType: "Json",
-        data: {id:id},
-        success:LoginInfo,
-        error: function(req, status) { alert("failed: " + status); }
-    });
-}
-
-
 
 // 1 kui klikitakse login peal, read 65-72, asendab onclick="Login()" html-is
 $(document).ready(function(){
