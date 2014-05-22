@@ -18,6 +18,7 @@ public class KasutajaData implements KasutajaDataProvider {
 	public boolean findKasutajaById(int id) throws SQLException, Exception {
 		Kasutaja kasutaja = new Kasutaja();
 		kasutaja.id = id;
+		kasutaja.admin=false;
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
@@ -27,12 +28,10 @@ public class KasutajaData implements KasutajaDataProvider {
             rs.next();
             kasutaja.admin=rs.getBoolean("adimin");
             
-            if(kasutaja.admin) {
+            if(kasutaja.admin==true) {
             	kasutaja.admin=true;
             }
-            else{
-            	kasutaja.admin=false;
-            }
+         
 	
 		} finally {
 			 if (conn != null) conn.close();
