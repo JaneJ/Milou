@@ -21,9 +21,14 @@ public class KasutajaData implements KasutajaDataProvider {
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
-            PreparedStatement stmt = conn.prepareStatement("SELECT admin FROM Kasutaja where Kasutaja.id=?;");
+            PreparedStatement stmt = conn.prepareStatement("SELECT id,nimi,username,admin FROM Kasutaja where Kasutaja.id=?;");
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
+            rs.next();
+            kasutaja.id = rs.getInt("id");
+			kasutaja.nimi = rs.getString("nimi");
+			kasutaja.username = rs.getString("username");
+			kasutaja.admin = rs.getBoolean("admin");
             
             if(!rs.next()) {
             	kasutaja.admin=false;
@@ -71,7 +76,7 @@ public class KasutajaData implements KasutajaDataProvider {
 
 				k.id = rs.getInt("id");
 				k.nimi = rs.getString("nimi");
-				k.username = rs.getString("token");
+				k.username = rs.getString("username");
 				k.admin = rs.getBoolean("admin");
 
 				kasutajad.add(k);
