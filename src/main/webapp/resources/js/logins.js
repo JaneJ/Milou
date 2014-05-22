@@ -1,24 +1,3 @@
-/*$(document).ready (function createCookie(name,value,days) {
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime()+(days*24*60*60*1000));
-        var expires = "; expires="+date.toGMTString();
-    }
-    else var expires = "";
-    document.cookie = name+"="+value+expires+"; path=/";
-});
-
-function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}*/
-
 window.fbAsyncInit = function() {
     FB.init({
         appId      : '1385045075103554', // App ID
@@ -89,6 +68,8 @@ function Login(){
                 Kasutaja.admin = false;
                 Kasutaja.nimi = response.name;
                 console.log(Kasutaja);
+
+                ()
 
                 /*if(response.id in kasutaja andmebaas, siis admin)*/
 
@@ -163,6 +144,13 @@ function Logout(){
     );
 
 }
+/*function kasAdmin(){
+    $.ajax('/kasutaja',{
+        type: "GET",
+        dataType: "",
+        success
+    });
+}*/
 
 
 
