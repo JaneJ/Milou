@@ -1,4 +1,7 @@
 window.fbAsyncInit = function() {
+
+
+    $(document).data('loggedName', "Anonymous2");
     FB.init({
         appId      : '1385045075103554', // App ID
         status     : false, // check login status

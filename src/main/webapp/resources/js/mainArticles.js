@@ -308,7 +308,7 @@ $(document).ready(function(){
             dataType: "Json",
             data: {id:id},
             success: showComments,
-            error: function(req, status) { alert("failed: " + status); }
+            error: function(req, status) { alert("failed 311 : " + status); }
 
         });
 
@@ -403,7 +403,6 @@ $(document).ready(function(){
     //TODO formi ehitus ja lisamine
     function addCommentForm(articleId,el){
        // var loggedName = $(document).data('loggedName');
-        console.log("addcom----");
         console.log("name on "+ name);
      /*   if(name==="Anonymous"){
 
@@ -435,42 +434,34 @@ $(document).ready(function(){
         f.setAttribute('method',"post");
         f.setAttribute('action',"/kommentaar");
         f.setAttribute('enctype',"multipart/form-data");
-
-
-        var s = document.createElement("input"); //input element, Submit button
-
         f.appendChild(document.createElement("br"));
 
         f.appendChild(document.createElement("br"));
-
 
         //autor
         f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Autor: "+name));
+        f.appendChild(document.createTextNode("Autor: "+$(document).data('loggedName')));
 
         //kommentaari sisu
         f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Kommentaari sisu:"));
+        f.appendChild(document.createTextNode("Kommentaar:"));
         f.appendChild(document.createElement("br"));
 
         var aDiv = document.createElement("div");
-        aDiv.setAttribute('class',"komsisu");
-        aDiv.setAttribute('id',"komSisu");
+        aDiv.setAttribute('class',".kommentaar");
+        //aDiv.setAttribute('id',"komSisu");
         var as = document.createElement("textarea");
-        as.setAttribute('id',"komsisu");
+        as.setAttribute('id',articleId);
         as.rows="10";
-        as.cols="10";
+        as.cols="20";
         as.name="sisu";
         aDiv.appendChild(as);
         f.appendChild(aDiv);
 
-
-
         f.appendChild(document.createElement("br"));
+        var s = document.createElement("input"); //input element, Submit button
         s.setAttribute('type',"submit");
         s.setAttribute('value',"Submit");
-
-
         f.appendChild(s);
         sect.appendChild(f);
 
@@ -478,13 +469,10 @@ $(document).ready(function(){
 
 
 ////lopp
-      //  console.log("parent: "+$(this).closest(articleId.toString()+"k"));
-        //$(el).parent()[0].append(sect);
 
         el.closest('article').append(sect);
 
         console.log("Commentform peaks olemas olema");
-
 
 
     }
@@ -514,7 +502,7 @@ $(document).ready(function(){
     document.body.setAttribute("onhashchange", "trellidMuutuvad()");
 
     //kommentaari lisamine
-    $("[class^='.comForm']").submit(function(){
+ /*   $("[class^='.comForm']").submit(function(){
         console.log('Comment to DB');
         var Kommentaar={};
         Kommentaar.kommentaar=$('#komSisu').val();
@@ -547,7 +535,7 @@ $(document).ready(function(){
         });
 
     });
-
+*/
     $(document).on("click", ".lisaArtikkel",function(){
 
         //  console.log("Admin tahab artiklit lisada");
