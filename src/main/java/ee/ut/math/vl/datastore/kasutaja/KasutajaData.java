@@ -29,7 +29,7 @@ public class KasutajaData implements KasutajaDataProvider {
             
             if(!rs.next()) {
             	kasutaja.admin=false;
-            	kasutaja.id = 0;
+            	kasutaja.id = id;
     			kasutaja.nimi =null;
     			kasutaja.username = null;
             }

@@ -45,7 +45,7 @@ public class KommentaarData implements KommentaarDataProvider {
 				kommentaarid.add(k);
 			}
 		} finally {
-			 if (conn != null) conn.close();
+			  conn.close();
 		}
 		return kommentaarid;
 	}
@@ -69,7 +69,7 @@ public class KommentaarData implements KommentaarDataProvider {
 
 			stmt.execute();
 		} finally {
-			 if (conn != null) conn.close();
+			 conn.close();
 		}
 	}
 
