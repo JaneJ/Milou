@@ -4,23 +4,27 @@
 
 
 *{	
-	margin: 0px;
-	padding: 0px;
+	margin: 0%;
+	padding: 0%;
 	background-color: ivory;
 }
 
 
 h1{ 
-	font: bold italic 20px Fanwood;
+	font: bold italic 90% Fanwood;
 }
 
 h2{ 
-	font: bold italic 14px Fanwood;
+	font: bold italic 75% Fanwood;
 }
 
 a {	
 	text-decoration:none;
 	color:black;
+}
+
+p{
+	font-size: 60%;
 }
 
 
@@ -49,7 +53,7 @@ body{
 
 header #pais {
 	width: 100%;
-	border-bottom: 5px solid black;
+	border-bottom: 1px solid black;
 }
 
 #milou{
@@ -103,7 +107,7 @@ header #pais {
 
 
 #profileArea{
-	height: 100px;
+	height: 8%;
 	/*width: 200px;*/
 	font-family: "Times New Roman", Times, serif;
 
@@ -133,7 +137,7 @@ nav #nav_kast {
 nav a{
 	display: inline;
 	padding-right: 1%;
-	font: bold 23px Fanwood;
+	font: bold 70% Fanwood;
 	text-align: center;
 	margin-left: 4%;
     cursor: pointer;
@@ -183,7 +187,7 @@ article table img{
 
 article footer{
 	text-align: right;
-	font-size: 10px;
+	font-size: 40%;
 	/*padding: 1%;   */
 
 }
@@ -228,8 +232,8 @@ article footer{
 #side h4 , .side h4{
 	text-align: left;
 	font-family:Fanwood;
-	font-size: 18px; 
-	padding: 1%;
+	font-size: 60%; 
+	padding: 2%;
 	border-bottom: 1px dotted black;
 }
 
@@ -238,7 +242,7 @@ article footer{
 	text-align: left;
 	font-family:Fanwood;
 	padding: 2%;
-	font-size: 14px;
+	font-size: 60%;
 	cursor: pointer;
 	/*cursor: hand;  */
 
@@ -258,13 +262,13 @@ width: auto;
 margin-bottom: 2%;
 padding: 1% 0 2% 0;
 display: block;
-line-height: 16px;
-border-top: 2px solid;
+line-height: 10%;
+border-top: 1px solid;
 }
 
 
 #footer-left {
-padding: 0px;
+padding: 0%;
 float: left;
 height: auto;
 width: 45%;
@@ -318,7 +322,7 @@ font-family: Fanwood;
 
 .comment footer{
 	text-align: right;
-	font-size: 10px;
+	font-size: 40%;
 	/*padding: 1%; */
 
 }
