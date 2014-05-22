@@ -123,3 +123,21 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.ui 2 2 2014-05-22 13:08:15.006
 !MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-05-23 00:00:31.378 -----------------------------------------------
+eclipse.buildId=M20120914-1800
+java.version=1.7.0_13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2014-05-23 00:01:05.287
+!MESSAGE Unable to find Action Set: org.jboss.tools.common.model.ui.actionSet
+
+!ENTRY org.eclipse.ui 4 4 2014-05-23 00:01:05.368
+!MESSAGE Unable to find Action Set: org.nodeclipse.pluginslist.core.actionSet
+
+!ENTRY org.eclipse.ui 4 4 2014-05-23 00:01:05.371
+!MESSAGE Unable to find Action Set: org.hibernate.eclipse.launch.actionset
+
+!ENTRY org.eclipse.ui 2 2 2014-05-23 00:01:28.811
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)

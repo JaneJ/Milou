@@ -57,10 +57,10 @@ public class KasutajaController extends HttpServlet {
 
     private void  replyWithKasutaja(HttpServletResponse resp,
                                          String idString) throws SQLException, Exception {
-        int id = Integer.parseInt(idString);
+        long id = Long.parseLong(idString);
 
 
-        boolean kasutaja = datastore.findKasutajaById(id);
+        Kasutaja kasutaja = datastore.findKasutajaById(id);
         resp.getWriter().write(gson.toJson(kasutaja));
             
     

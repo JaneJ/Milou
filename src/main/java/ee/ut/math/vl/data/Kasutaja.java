@@ -3,7 +3,7 @@ package ee.ut.math.vl.data;
 
 public class Kasutaja {
 	
-	public int id;
+	public long id;
     public String nimi;
     public String username;
     public boolean admin;
@@ -12,7 +12,7 @@ public class Kasutaja {
     public Kasutaja() {
     }
 
-    public Kasutaja(int id, String nimi, String username, boolean admin) {
+    public Kasutaja(long id, String nimi, String username, boolean admin) {
     	this.id = id;
     	this.nimi = nimi;
     	this.username = username;
