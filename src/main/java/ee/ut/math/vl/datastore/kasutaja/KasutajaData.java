@@ -24,6 +24,7 @@ public class KasutajaData implements KasutajaDataProvider {
             PreparedStatement stmt = conn.prepareStatement("SELECT id,nimi,username,admin FROM Kasutaja where Kasutaja.id=?;");
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
+            System.out.println(stmt.toString());
             rs.next();
             kasutaja.id = rs.getInt("id");
 			kasutaja.nimi = rs.getString("nimi");
