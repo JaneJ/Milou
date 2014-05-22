@@ -12,7 +12,7 @@ public class Kasutaja {
     public Kasutaja() {
     }
 
-    public Kasutaja(int id, String nimi, String username, boolean admin) {
+    public Kasutaja(long id, String nimi, String username, boolean admin) {
     	this.id = id;
     	this.nimi = nimi;
     	this.username = username;
