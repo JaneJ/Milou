@@ -4,8 +4,8 @@
 
 
 *{	
-	margin: 0px;
-	padding: 0px;
+	margin: 0%;
+	padding: 0%;
 	background-color: ivory;
 }
 
@@ -126,6 +126,8 @@ header #pais {
 #pealkiri, #teema, #lyhikirjeldus, #pealkiri, #sisu{
 	font-size: 100%;
 	padding: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
 
 }
 
