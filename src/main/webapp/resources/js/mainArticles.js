@@ -72,6 +72,7 @@ $(document).ready(function(){
         // console.log(json.pealkiri);
         footer.text("Autor: "+json.autor);
         p.text(json.kirjeldus);
+        p.addClass(json.id.toString()+"k");
         p2.text(json.lisatud);
 
 
@@ -371,16 +372,18 @@ $(document).ready(function(){
     //kui vajutame "kommenteeri"
 
 
-    $(document).on("click", ".addComment",function() {
-//        console.log("onclick .addComment");
+    $(document).on("click", ".teeKom",function() {
+        console.log("onclick parents"+ $(".teeKom").parents().find(".teekom"));
         var id = $(this).data("id");
         var el = $(this);
+
         var dict = $(document).data('form-enabled');
 
         if(dict[id] === true){
             var str= ".comForm"+id.toString();
-           $(str).toggle();
-            console.log("treue: "+$(str));
+
+          // $(str).toggle();
+            console.log("true: "+$(str));
 
            // $("[id^=str]").toggle();
 
@@ -467,8 +470,10 @@ $(document).ready(function(){
 
 
 ////lopp
+      //  console.log("parent: "+$(this).closest(articleId.toString()+"k"));
+        //$(el).parent()[0].append(sect);
 
-        el.append(sect);
+        el.closest('article').append(sect);
 
         console.log("Commentform peaks olemas olema");
 
