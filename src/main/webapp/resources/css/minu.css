@@ -4,23 +4,27 @@
 
 
 *{	
-	margin: 0px;
-	padding: 0px;
+	margin: 0%;
+	padding: 0%;
 	background-color: ivory;
 }
 
 
 h1{ 
-	font: bold italic 20px Fanwood;
+	font: bold italic 90% Fanwood;
 }
 
 h2{ 
-	font: bold italic 14px Fanwood;
+	font: bold italic 85% Fanwood;
 }
 
 a {	
 	text-decoration:none;
 	color:black;
+}
+
+p{
+	font-size: 85%;
 }
 
 
@@ -49,7 +53,7 @@ body{
 
 header #pais {
 	width: 100%;
-	border-bottom: 5px solid black;
+	border-bottom: 1px solid black;
 }
 
 #milou{
@@ -85,6 +89,7 @@ header #pais {
 	color: white;
 	font:bold;
 	font-family: Sans-serif;
+	font-size: 75%;
 	text-align:center;
 
 }
@@ -98,12 +103,13 @@ header #pais {
 	color: white;
 	font:bold;
 	font-family: Sans-serif;
+	font-size: 75%;
 	text-align:center;
 }
 
 
 #profileArea{
-	height: 100px;
+	height: 8%;
 	/*width: 200px;*/
 	font-family: "Times New Roman", Times, serif;
 
@@ -116,19 +122,11 @@ header #pais {
 
 #menuud {
 	float: left;
-	width: 70%;
+	width: 100%;
 	padding: 1%;
 }
 
-#otsingud{
-	position: relative;
-	float: right;
-	width: 25%;
-	margin-top: 0%;
 
-	padding: 1%;
-
-}
 
 nav #nav_kast {
 	margin: 0%;
@@ -141,31 +139,16 @@ nav #nav_kast {
 nav a{
 	display: inline;
 	padding-right: 1%;
-	font: bold 23px Fanwood;
+	font: bold 90% Fanwood;
 	text-align: center;
-	margin-left: 4%;
+	margin-left: 8%;
     cursor: pointer;
  /*cursor: hand;  */
 	
 }
 
 
-#search-designe{
-	display: inline;
-	margin-top: 0%;
-	padding: 4%;
-	height: auto;
-	text-align: center;
-	margin-right: 5%;
-	background-color: #FFFFFF;
-	border-bottom: 1px solid black;
-	/*border-top:1px solid black;*/
-	border-left: none;
-	border-right: none;
-	font: italic bold 18px Fanwood;
 
-
-}
 
 
 
@@ -206,9 +189,7 @@ article table img{
 
 article footer{
 	text-align: right;
-	font-size: 10px;
-	/*padding: 1%;   */
-
+	font-size: 70%;
 }
 
 
@@ -251,8 +232,8 @@ article footer{
 #side h4 , .side h4{
 	text-align: left;
 	font-family:Fanwood;
-	font-size: 18px; 
-	padding: 1%;
+	font-size: 60%; 
+	padding: 2%;
 	border-bottom: 1px dotted black;
 }
 
@@ -261,7 +242,7 @@ article footer{
 	text-align: left;
 	font-family:Fanwood;
 	padding: 2%;
-	font-size: 14px;
+	font-size: 70%;
 	cursor: pointer;
 	/*cursor: hand;  */
 
@@ -281,19 +262,20 @@ width: auto;
 margin-bottom: 2%;
 padding: 1% 0 2% 0;
 display: block;
-line-height: 16px;
-border-top: 2px solid;
+line-height: 10%;
+border-top: 1px solid;
 }
 
 
 #footer-left {
-padding: 0px;
+padding: 0%;
 float: left;
 height: auto;
 width: 45%;
 text-align: left;
 position: relative;
 font-family: Fanwood;
+font-size: 70%;
 }
 
 
@@ -306,6 +288,7 @@ font-family: Fanwood;
 	position: relative;
 	font-family: Fanwood;
 	font-weight: bold;
+	font-size: 70%;
 }
 
 
@@ -318,6 +301,7 @@ width: 45%;
 text-align: right;
 position: relative;
 font-family: Fanwood;
+font-size: 70%;
 }
 
 #KKK {
@@ -341,7 +325,7 @@ font-family: Fanwood;
 
 .comment footer{
 	text-align: right;
-	font-size: 10px;
+	font-size: 40%;
 	/*padding: 1%; */
 
 }

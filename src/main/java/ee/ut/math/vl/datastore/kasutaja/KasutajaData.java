@@ -18,13 +18,21 @@ public class KasutajaData implements KasutajaDataProvider {
 	public boolean findKasutajaById(int id) throws SQLException, Exception {
 		Kasutaja kasutaja = new Kasutaja();
 		kasutaja.id = id;
+		kasutaja.admin=false;
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
             PreparedStatement stmt = conn.prepareStatement("SELECT admin FROM Kasutaja where Kasutaja.id=?;");
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-			kasutaja.admin = rs.getBoolean("admin");
+            rs.next();
+            kasutaja.admin=rs.getBoolean("adimin");
+            
+            if(kasutaja.admin==true) {
+            	kasutaja.admin=true;
+            }
+         
+	
 		} finally {
 			 if (conn != null) conn.close();
 		}
