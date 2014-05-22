@@ -35,7 +35,7 @@ public class KasutajaData implements KasutajaDataProvider {
             }
             else{
             	kasutaja.admin=true;
-            	kasutaja.id = rs.getInt("id");
+            	kasutaja.id = rs.getLong("id");
     			kasutaja.nimi = rs.getString("nimi");
     			kasutaja.username = rs.getString("username");
             }
