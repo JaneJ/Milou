@@ -15,7 +15,7 @@ h1{
 }
 
 h2{ 
-	font: bold italic 75% Fanwood;
+	font: bold italic 85% Fanwood;
 }
 
 a {	
@@ -24,7 +24,7 @@ a {
 }
 
 p{
-	font-size: 68%;
+	font-size: 75%;
 }
 
 
@@ -139,9 +139,9 @@ nav #nav_kast {
 nav a{
 	display: inline;
 	padding-right: 1%;
-	font: bold 88% Fanwood;
+	font: bold 90% Fanwood;
 	text-align: center;
-	margin-left: 15%;
+	margin-left: 10%;
     cursor: pointer;
  /*cursor: hand;  */
 	
