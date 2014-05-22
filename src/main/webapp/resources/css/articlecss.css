@@ -11,11 +11,11 @@
 
 
 h1{ 
-	font: bold italic 90% Fanwood;
+	font: bold italic 100% Fanwood;
 }
 
 h2{ 
-	font: bold italic 85% Fanwood;
+	font: bold italic 100% Fanwood;
 }
 
 a {	
@@ -105,7 +105,7 @@ header #pais {
 
 
 #profileArea{
-	height: 100px;
+	height: 8%;
 	/*width: 200px;*/
 	font-family: "Times New Roman", Times, serif;
 
@@ -118,22 +118,15 @@ header #pais {
 
 #menuud {
 	float: left;
-	width: 70%;
+	width: 100%;
 	padding: 1%;
 }
 
-#otsingud{
-	position: relative;
-	float: right;
-	width: 25%;
-	margin-top: 0%;
 
-	padding: 1%;
-
-}
 #pealkiri, #teema, #lyhikirjeldus, #pealkiri, #sisu{
 	font-size: 100%;
-	font-weight: 
+	padding: 2%;
+
 }
 
 
@@ -178,13 +171,13 @@ width: auto;
 margin-bottom: 2%;
 padding: 1% 0 2% 0;
 display: block;
-line-height: 16px;
-border-top: 2px solid;
+line-height: 10%;
+border-top: 1px solid;
 }
 
 
 #footer-left {
-padding: 0px;
+padding: 0%;
 float: left;
 height: auto;
 width: 45%;
@@ -219,6 +212,3 @@ position: relative;
 font-family: Fanwood;
 font-size: 70%;
 }
-
-
-
