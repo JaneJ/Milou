@@ -30,6 +30,9 @@ public class KasutajaData implements KasutajaDataProvider {
             
             if(!rs.next()) {
             	kasutaja.admin=false;
+            	kasutaja.id = (Integer) null;
+    			kasutaja.nimi =null;
+    			kasutaja.username = null;
             }
             else{
             	kasutaja.admin=true;
