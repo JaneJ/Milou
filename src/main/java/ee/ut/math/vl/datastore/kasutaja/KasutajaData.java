@@ -24,8 +24,8 @@ public class KasutajaData implements KasutajaDataProvider {
             PreparedStatement stmt = conn.prepareStatement("SELECT admin FROM Kasutaja where Kasutaja.id=?;");
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-         
-            if(!rs.first()) {
+            
+            if(!rs.next()) {
             	kasutaja.admin=false;
             }
             else{
