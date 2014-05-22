@@ -779,8 +779,11 @@ $(document).ready(function(){
     //pealehe tab
     $(document).on("click", "[class^='category']",function(){
         var name= $(this).attr('name');
+
         //removeAllButAside();
         //addArticleForm();
+        $('#vasak').contents().remove();
+        $('#parem').contents().remove();
         $.ajax('/pealeht', {
             type: "GET",
             dataType: "Json",
