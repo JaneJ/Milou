@@ -25,12 +25,11 @@ public class KasutajaData implements KasutajaDataProvider {
             stmt.setLong(1, id);
             
             ResultSet rs = stmt.executeQuery();
-           
             
             
             if(!rs.next()) {
             	kasutaja.admin=false;
-            	kasutaja.id = (Integer) null;
+            	kasutaja.id = 0;
     			kasutaja.nimi =null;
     			kasutaja.username = null;
             }
@@ -78,7 +77,7 @@ public class KasutajaData implements KasutajaDataProvider {
 			while (rs.next()) {
 				Kasutaja k = new Kasutaja();
 
-				k.id = rs.getInt("id");
+				k.id = rs.getLong("id");
 				k.nimi = rs.getString("nimi");
 				k.username = rs.getString("username");
 				k.admin = rs.getBoolean("admin");
