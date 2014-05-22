@@ -15,17 +15,17 @@ import ee.ut.math.vl.data.Kasutaja;
 public class KasutajaData implements KasutajaDataProvider {
 
 	@Override
-	public boolean  findKasutajaById(int id) throws SQLException, Exception {
+	public Kasutaja findKasutajaById(int id) throws SQLException, Exception {
 		Kasutaja kasutaja = new Kasutaja();
 		kasutaja.id = id;
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
-            PreparedStatement stmt = conn.prepareStatement("SELECT admin FROM Kasutaja where Kasutaja.id=?;");
+            PreparedStatement stmt = conn.prepareStatement("SELECT id,nimi,username,admin FROM Kasutaja where Kasutaja.id=?;");
             stmt.setInt(1, id);
             
             ResultSet rs = stmt.executeQuery();
-            System.out.println(rs.equals(null));
+           
             
             
             if(!rs.next()) {
@@ -33,13 +33,16 @@ public class KasutajaData implements KasutajaDataProvider {
             }
             else{
             	kasutaja.admin=true;
+            	kasutaja.id = rs.getInt("id");
+    			kasutaja.nimi = rs.getString("nimi");
+    			kasutaja.username = rs.getString("username");
             }
 	
 		} finally {
 			 if (conn != null) conn.close();
 		}
 
-		return kasutaja.admin;
+		return kasutaja;
 	}
 
 	@Override

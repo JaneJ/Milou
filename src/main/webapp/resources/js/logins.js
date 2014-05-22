@@ -26,7 +26,7 @@ function testAPI() {
                     data: {id:response.id},
                     success:function(data){
                         console.log(data);
-                        if (data){
+                        if (data.admin){
                             var str = "Tere : " + response.name + "!<br>";
                             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
                             str += '<button id="logout">FB Logout</button>';
@@ -79,7 +79,7 @@ function Login(){
                     data: {id:response.id},
                     success:function(data){
                         console.log(data);
-                        if (data){
+                        if (data.admin){
                             var str = "Tere : " + response.name + "!<br>";
                             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
                             str += '<button id="logout">FB Logout</button>';
