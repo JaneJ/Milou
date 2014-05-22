@@ -24,14 +24,21 @@ $(document).ready(function(){
 
 
     var i=0;
-    function addMain(JSONArticle){
+    var isTopic=false;
+    function addMain(JSONArticle) {
 
         //uhekaupa ehitame ja lisame artiklid
-        for( i=0; i<JSONArticle.length;i++){
+        for (i = 0; i < JSONArticle.length; i++) {
             var json = JSONArticle[i];
             buildArticle(json);
         }
+        if (isTopic===false) {
+            console.log("Pole teema");
+
         addAside()
+    }else{
+        console.log("On teema");
+    }
     };
 
 
@@ -780,6 +787,7 @@ $(document).ready(function(){
     //pealehe tab
     $(document).on("click", "[class^='category']",function(){
         var name= $(this).attr('name');
+        isTopic=true;
 
         //removeAllButAside();
         //addArticleForm();
