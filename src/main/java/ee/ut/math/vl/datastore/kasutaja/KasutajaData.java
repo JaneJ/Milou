@@ -28,7 +28,7 @@ public class KasutajaData implements KasutajaDataProvider {
             System.out.println(rs.equals(null));
             
             
-            if(rs.equals(null)) {
+            if(!rs.next()) {
             	kasutaja.admin=false;
             }
             else{
