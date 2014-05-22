@@ -15,7 +15,7 @@ import ee.ut.math.vl.data.Kasutaja;
 public class KasutajaData implements KasutajaDataProvider {
 
 	@Override
-	public boolean findKasutajaById(int id) throws SQLException, Exception {
+	public Kasutaja findKasutajaById(int id) throws SQLException, Exception {
 		Kasutaja kasutaja = new Kasutaja();
 		kasutaja.id = id;
 		Connectionid connid = new Connectionid();
@@ -25,7 +25,7 @@ public class KasutajaData implements KasutajaDataProvider {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             
-            if(rs==null) {
+            if(!rs.next()) {
             	kasutaja.admin=false;
             }
             else{
@@ -36,7 +36,7 @@ public class KasutajaData implements KasutajaDataProvider {
 			 if (conn != null) conn.close();
 		}
 
-		return kasutaja.admin;
+		return kasutaja;
 	}
 
 	@Override

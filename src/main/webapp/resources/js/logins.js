@@ -25,7 +25,7 @@ function testAPI() {
                     dataType: "Json",
                     data: {id:response.id},
                     success:function(data){
-                        if (data){
+                        if (data.admin){
                             var str = "Tere : " + response.name + "!<br>";
                             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
                             str += '<button id="logout">FB Logout</button>';
@@ -76,7 +76,7 @@ function Login(){
                     dataType: "Json",
                     data: {id:response.id},
                     success:function(data){
-                        if (data){
+                        if (data.admin){
                             var str = "Tere : " + response.name + "!<br>";
                             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
                             str += '<button id="logout">FB Logout</button>';
