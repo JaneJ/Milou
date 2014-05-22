@@ -21,15 +21,15 @@ public class KasutajaData implements KasutajaDataProvider {
 		Connectionid connid = new Connectionid();
 		Connection conn = connid.getConnection();
 		try {
-            PreparedStatement stmt = conn.prepareStatement("SELECT id FROM Kasutaja where Kasutaja.id=?;");
+            PreparedStatement stmt = conn.prepareStatement("SELECT admin FROM Kasutaja where Kasutaja.id=?;");
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-            int val = ((Number) rs.getObject(1)).intValue();
-            if(val>0){
-            	kasutaja.admin=true;
-            }
-            if (val<0){
+            
+            if(!rs.next()) {
             	kasutaja.admin=false;
+            }
+            else{
+            	kasutaja.admin=rs.getBoolean("admin");
             }
 	
 		} finally {
