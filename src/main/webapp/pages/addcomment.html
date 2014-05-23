@@ -1,0 +1,37 @@
+
+<!DOCTYPE HTML>
+<html>
+
+#include('templates/headTemplate.html')
+
+<body>
+<div class="kogu">
+
+    #include('templates/headerTemplate.html')
+    #include('templates/menuTemplate.html')
+    <div id="sisu">
+
+        <section id = "vasakParem">
+
+
+            <form id="lisaKommentaar" class="kommentaar" method="post" action="/kommentaar" enctype="multipart/form-data" >
+
+                <div class="komAutor">Autor: <input id ="komAutor" type="text" name="komAutor"></div>
+                <div class="komSisu" id="komSisu" >Kommentaari sisu</div>
+                <textarea id ="komSisu2" rows="15" cols="100" name="sisu"></textarea>
+                <div id="formMargidLuhi"></div>
+
+                <input type="submit" />
+
+            </form>
+
+        </section>
+
+    </div>
+    #include('templates/footerTemplate.html')
+
+</div>
+
+</body>
+</html>
+
