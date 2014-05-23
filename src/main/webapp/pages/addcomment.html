@@ -1,14 +1,43 @@
 
 <!DOCTYPE HTML>
-<html>
 
-#include('templates/headTemplate.html')
+<html>
+<head>
+    <title>Milou</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/resources/js/addcomment.js" ></script>
+    <script type="text/javascript" src="/resources/js/logins.js" ></script>
+    <link href="/resources/css/minu.css" rel="stylesheet" type="text/css">
+</head>
 
 <body>
 <div class="kogu">
 
-    #include('templates/headerTemplate.html')
-    #include('templates/menuTemplate.html')
+    <header id ="pais">
+        <a href="/index.html"  title="Milou"><img src="/resources/images/milou.png" id="milou" alt="logo"></a>
+        <div id="profileArea">
+            <button class="logi" id="loginfb">FB Login</button>
+        </div>
+
+    </header>
+    <!--id kogus lopp-->
+
+    <div id = "menuu">
+        <section id="menuud">
+            <nav><!--id="menu"-->
+                <div id = "nav_kast">
+                    <a href="category_it.html">IT</a>
+                    <a href="category_culture.html">Kultuur</a>
+                    <a href="category_sport.html">Sport</a>
+                    <a href="category_economy.html">Majandus</a>
+                    <a href="category_comics.html">Koomiks</a>
+                    <a href="category_crime.html">Krimi</a>
+                </div>
+            </nav><!--kogu nav  lopp-->
+        </section>
+
+    </div>
     <div id="sisu">
 
         <section id = "vasakParem">
@@ -28,10 +57,22 @@
         </section>
 
     </div>
-    #include('templates/footerTemplate.html')
+    <footer id="the_footer">
+        <div class="jalus" id="footer-left">
+            © 2014 Milou</div><!--footer-left l&#245;pp-->
+        <div class="jalus" id="page_up">
+            <a href="index.html#milou">Tagasi üles</a> </div>
+        <div class="jalus" id="footer-right">
+            <a href="faq.html">KKK</a>
+            <a href="contact.html">Kontakt</a>
+
+
+        </div><!--footer-right lõpp-->
+    </footer>
 
 </div>
 
 </body>
 </html>
+
 
