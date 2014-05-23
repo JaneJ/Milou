@@ -27,7 +27,7 @@ console.log("teine js fail");
 
             Kommentaar.autor=$("#autor").val();
             console.log("formi jaoks id "+idforform);
-            Kommentaar.artikkel=idforform.toString().val();
+            Kommentaar.artikkel=idforform.val();
             Kommentaar.kommentaar=$("#komSisu2").val();
 
             console.log(Kommentaar.autor);
