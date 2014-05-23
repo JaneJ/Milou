@@ -74,7 +74,13 @@ public class KommentaarController extends HttpServlet {
 
 
 
-            Kommentaar kommentaar = gson.fromJson(req.getReader(), Kommentaar.class);
+           // Kommentaar kommentaar = gson.fromJson(req.getReader(), Kommentaar.class);
+
+            Kommentaar kommentaar = new Kommentaar();
+            kommentaar.kommentaar =req.getParameter("komSisu");
+            kommentaar.autor =req.getParameter("komAutor");
+            kommentaar.artikkel =Integer.parseInt(req.getParameter("articleId"));
+
             datastore.lisaKommentaar(kommentaar);
             resp.getWriter().write("{}");
 
@@ -86,7 +92,7 @@ public class KommentaarController extends HttpServlet {
 */
 
         } catch (Exception ex) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
+        throw  new RuntimeException(ex);
         }
     }
 

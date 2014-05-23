@@ -455,29 +455,37 @@ $(document).ready(function(){
         console.log("hakkab com formi ehitama");
 
 
-        var sect = document.createElement("section");
-        var f = document.createElement("form");
-        // sect.setAttribute('id',"vasakParem");
+       // var sect = document.createElement("section");
+        var f = $('<form class=cl addCom />');
 
-        f.setAttribute('class',cl);
-        //f.setAttribute('class',"addCom");
-        f.setAttribute('method',"post");
-        f.setAttribute('action',"/kommentaar");
-        f.setAttribute('enctype',"multipart/form-data");
-        f.appendChild(document.createElement("br"));
+        $(f).attr('method',"post");
+        $(f).attr('action',"/kommentaar");
+       // $(f).attr('enctype',"multipart/form-data");
+     //  $(f).appendChild(document.createElement("br"));
 
-        f.appendChild(document.createElement("br"));
+       // $(f).appendChild(document.createElement("br"));
 
         //autor
-        f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Autor: "+$(document).data('loggedName')));
+       // $(f).appendChild(document.createElement("br"));
+      //  $(f).appendChild(document.createTextNode("Autor: "+$(document).data('loggedName')));
+        var autor = $('<input name="komAutor" />');
+        autor.val($(document).data('loggedName'));
+        $(f).append(autor);
+
+        //artikli id
+        var artikliId = $('<input class="hidden" name="articleId" />');
+        artikliId.val(articleId);
+        $(f).append(artikliId);
 
         //kommentaari sisu
-        f.appendChild(document.createElement("br"));
-        f.appendChild(document.createTextNode("Kommentaar:"));
-        f.appendChild(document.createElement("br"));
+       // $(f).appendChild(document.createElement("br"));
+      //  $(f).appendChild(document.createTextNode("Kommentaar:"));
+        var komSisu = $('<input name="komSisu" />');
+        $(f).append(komSisu);
+        //$(f).appendChild(document.createElement("br"));
 
-        var aDiv = document.createElement("div");
+
+      /*  var aDiv = document.createElement("div");
         aDiv.setAttribute('class',".kommentaar");
         //aDiv.setAttribute('id',"komSisu");
         var as = document.createElement("textarea");
@@ -486,28 +494,27 @@ $(document).ready(function(){
         as.cols="20";
         as.name="sisu";
         aDiv.appendChild(as);
-        f.appendChild(aDiv);
+        f.appendChild(aDiv);*/
 
-        f.appendChild(document.createElement("br"));
-        var s = document.createElement("input"); //input element, Submit button
-        s.setAttribute('type',"submit");
-        s.setAttribute('value',"Submit");
-        f.appendChild(s);
-        sect.appendChild(f);
+        //$(f).appendChild(document.createElement("br"));
+        var s = $('<input type="submit" value="Sumbit"/>'); //input element, Submit button
 
-        $('#sisu').append(sect);
+        $(f).append(s);
+       // sect.appendChild(f);
+
+        $('#sisu').append(f);
 
 
 ////lopp
 
-        el.closest('article').append(sect);
+        el.closest('article').append(f);
 
         console.log("Commentform peaks olemas olema");
 
 
     }
 
-    /* function addComment(articleId) {
+    /* function ment(articleId) {
 
      alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
      console.log("lisab kommentaari");
