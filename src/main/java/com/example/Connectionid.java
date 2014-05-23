@@ -17,30 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Request;
 
 @WebListener
-public class Connectionid implements ServletContextListener, Runnable {
-	
-	
-	
-    private int initialConnectionCount = 0;           
-    private Vector<Connection> availableConnections = new Vector<Connection>();
-    private Vector<Connection> usedConnections = new Vector<Connection>();
-    private Thread cleanupThread = null;   
-    
-    
-    public Connectionid() throws SQLException, URISyntaxException   
-    {    
-    	String url = "jdbc:postgresql://ec2-54-204-47-70.compute-1.amazonaws.com:5432/d56qim871vq0h0?user=oxqsnxoujnlrpq&password=QDMv1ULIryRIPYoEQGJBMDwI-R&ssl=true"; 
-        for(int cnt=0; cnt<initialConnectionCount; cnt++)   
-        {   
-            // Add a new connection to the available list.   
-            availableConnections.addElement(getConnection());   
-        }   
-           
-        // Create the cleanup thread   
-        cleanupThread = new Thread(this);   
-        cleanupThread.start();   
-    }       
-    
+public class Connectionid implements ServletContextListener {
+
 
 	public void handle(String target, Request baseRequest,
 			HttpServletRequest request, HttpServletResponse response)
@@ -63,10 +41,6 @@ public class Connectionid implements ServletContextListener, Runnable {
 
 	static Connection getHerokuConnection(final URI dbUri) throws SQLException,
 			URISyntaxException {
-	/*	String username = dbUri.getUserInfo().split(":")[0];
-		String password = dbUri.getUserInfo().split(":")[1];
-		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':'
-				+ dbUri.getPort() + dbUri.getPath();     */
 
 		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 		Properties props = new Properties();
@@ -84,52 +58,8 @@ public class Connectionid implements ServletContextListener, Runnable {
 				"user", "pass");
 	}
 
-	
-	  public synchronized Connection checkout() throws SQLException, URISyntaxException   
-	    {   
-	        Connection newConnxn = null;   
-	           
-	        if(availableConnections.size() == 0)   
-	        {   
-	            // Im out of connections. Create one more.   
-	             newConnxn = getConnection();   
-	            // Add this connection to the "Used" list.   
-	             usedConnections.addElement(newConnxn);   
-	            // We dont have to do anything else since this is   
-	            // a new connection.   
-	        }   
-	        else   
-	        {   
-	            // Connections exist !   
-	            // Get a connection object   
-	            newConnxn = (Connection)availableConnections.lastElement();   
-	            // Remove it from the available list.   
-	            availableConnections.removeElement(newConnxn);   
-	            // Add it to the used list.   
-	            usedConnections.addElement(newConnxn);               
-	        }           
-	           
-	        // Either way, we should have a connection object now.   
-	        return newConnxn;   
-	    }   
-	       
-	  
-	    public synchronized void checkin(Connection c)   
-	    {   
-	        if(c != null)   
-	        {   
-	            // Remove from used list.   
-	            usedConnections.removeElement(c);   
-	            // Add to the available list   
-	            availableConnections.addElement(c);           
-	        }   
-	    }               
-	       
-	    public int availableCount()   
-	    {   
-	        return availableConnections.size();   
-	    }   
-	
+
+
 	
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
@@ -166,36 +96,6 @@ public class Connectionid implements ServletContextListener, Runnable {
 
 	}
 
-	@Override
-	public void run() {
-		{   
-	        try   
-	        {   
-	            while(true)   
-	            {   
-	                synchronized(this)   
-	                {   
-	                    while(availableConnections.size() > initialConnectionCount)   
-	                    {    
-	                        Connection c = (Connection)availableConnections.lastElement();   
-	                        availableConnections.removeElement(c);   
-   
-	                        c.close();   
-	                    }   
-	                }   
- 
-	                Thread.sleep(60000 * 1);   
-	            }       
-	        }   
-	        catch(SQLException sqle)   
-	        {   
-	            sqle.printStackTrace();   
-	        }   
-	        catch(Exception e)   
-	        {   
-	            e.printStackTrace();   
-	        }   
-	}
-	}
+
 }
 
