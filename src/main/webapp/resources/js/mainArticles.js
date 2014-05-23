@@ -810,8 +810,9 @@ $(document).ready(function(){
     //pealehe tab
     $(document).on("click", "[class^='category']",function(){
         console.log("menu");
-        var name= $(this).attr('name');
+        var name= $(this).attr('id');
         isTopic=true;
+        console.log("teema on "+name);
 
 
         //addArticleForm();
