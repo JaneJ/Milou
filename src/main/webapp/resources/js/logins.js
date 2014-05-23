@@ -45,7 +45,7 @@ function Login() {
 function Logout() {
     FB.logout(function (response) {
         var str = "";
-        str += "<button id='loginfb'>FB Login</button>";
+        str += "<button class='logi' id='loginfb'>FB Login</button>";
         document.getElementById("profileArea").innerHTML = str;
     });
     $('#profileArea').on('click', '#loginfb', function () {
@@ -67,7 +67,7 @@ function Identify(id, name) {
         if (data.admin) {
             var str = "Tere : " + name + "!<br>";
             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";
-            str += '<button id="logout">FB Logout</button>';
+            str += '<button class="logi" id="logout">FB Logout</button>';
             document.getElementById("profileArea").innerHTML = str;
         } else {
             if (window.location.href == "http://milou.herokuapp.com/pages/addarticle.html") {
