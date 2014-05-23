@@ -9,7 +9,6 @@ $(document).ready(function(){
     var parem = $("<div id='parem'></div>");
     $("#sisu").append(vasak,parem);
     var onSisu=true;
-    var idforform=0;
     var dict  = {};
     $(document).data('form-enabled', dict);
     var dict = $(document).data('form-enabled');
@@ -409,10 +408,8 @@ $(document).ready(function(){
 
 
     $(document).on("click", ".teeKom",function() {
-
         var id = $(this).data("id");
         var el = $(this);
-        idforform=id;
 
         var dict = $(document).data('form-enabled');
 
