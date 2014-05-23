@@ -446,40 +446,4 @@ $(document).ready(function(){
             error: function(req, status) { alert("failed: " + "teema oli "+name +" status: "+status); }
         });
     });
-
-    -    //kommentaari lisamine
-        -    /*   $("[class^='.comForm']").submit(function(){
-     -     console.log('Comment to DB');
-     -     var Kommentaar={};
-     -     Kommentaar.kommentaar=$('#komSisu').val();
-     -     Kommentaar.artikkel=$(this).data("id");
-     -
-     -
-     -     if(document.getElementById('anonuumne').checked){
-     -     Kommentaar.nimi="Anonüümne";
-     -     }else{
-     -     Kommentaar.nimi="";
-     -     }
-     -
-     -     $.ajax("/kommentaarid",{
-     -     type:"POST",
-     -     //url:"ArtikkelData/lisaArtikkel",
-     -     dataType:'json',
-     -     data: JSON.stringify(Kommentaar),
-     -     contentType: "application/json; charset=utf-8",
-     -
-     -     success: function(Kommentaar){
-     -     console.log("success");
-     -     alert('Kommentaar edukalt lisatud. ');
-     -     //document.location.reload(true);
-     -     },
-     -     error:function(req, text) {
-     -     console.log(req);
-     -     console.log(text);
-     -     }
-     -
-     -     });
-     -
-     -     });
-     -     */
 });
