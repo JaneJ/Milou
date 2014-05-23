@@ -8,7 +8,6 @@ $(document).ready(function(){
     var vasak = $("<div id='vasak'></div>");
     var parem = $("<div id='parem'></div>");
     $("#sisu").append(vasak,parem);
-    var onSisu=true;
     var dict  = {};
     $(document).data('form-enabled', dict);
     var dict = $(document).data('form-enabled');
@@ -19,43 +18,27 @@ $(document).ready(function(){
         dataType: "Json",
         data: {},
         success: addMain,
-        error: function(req, status) { alert("failed 21: " + status); }
+        error: function(req, status) { alert("failed: " + status); }
 
     });
 
-    function addMainByDefault() {
-        $.ajax('/pealeht', {
-            type: "GET",
-            dataType: "Json",
-            data: {},
-            success: addMain,
-            error: function(req, status) { alert("failed 32: " + status); }
-
-        });
-
-    }
 
     var i=0;
     var isTopic=false;
     function addMain(JSONArticle) {
+
         //uhekaupa ehitame ja lisame artiklid
         for (i = 0; i < JSONArticle.length; i++) {
             var json = JSONArticle[i];
             buildArticle(json);
         }
-
         if (isTopic===false) {
+            console.log("Pole teema");
 
-
-        }else{
-            console.log("On teema");
-            if(JSONArticle.length===0){
-
-                alert("Selle teema kohta hetkel uudiseid pole.");
-                addMainByDefault();
-            }
-            addAside()
-        }
+        addAside()
+    }else{
+        console.log("On teema");
+    }
     };
 
 
@@ -73,14 +56,14 @@ $(document).ready(function(){
         var p=$("<p></p>");
         var p2=$("<p></p>");
         var loeKom=$("<a></a>").text("Loe kommentaare");
-        // addCommentForm(json.id);
+       // addCommentForm(json.id);
         var teeKom=$("<a></a>").text("Kommenteeri");
         // var pilt= <img src="resources/images/pilt1.png" alt="pilt" >
-        // var pilt= <img src="http://imgur.com/O2bYytC" alt="pilt" >
+       // var pilt= <img src="http://imgur.com/O2bYytC" alt="pilt" >
         article.data("id",json.id);
         console.log("data= "+json.id);
 
-        var img=json.pilt;
+         var img=json.pilt;
         //console.log(img);
         loeKom.addClass("loeKom");
         teeKom.addClass("teeKom");
@@ -120,14 +103,13 @@ $(document).ready(function(){
             parem.append(article);
         }
 
-        //isPaused = false;
+        isPaused = false;
         console.log("valmis artikkel ");
     };
 
 
     function removeAllButAside(){
         $('#sisu').contents().remove();
-        onSisu=false;
     };
 
 
@@ -343,26 +325,22 @@ $(document).ready(function(){
     function showComments(jsonA) { //  argument responseText
 
         //  console.log("kuvab kommentaarid");
+        window.history.pushState("", "Kommentaarid", 'kommentaarid');
+        removeAllButAside();
 
+        for( var i=0; i<jsonA.length;i++){
+            var json = jsonA[i];
 
-        if(jsonA.length===0){
-
-            alert("Selle uudise kohta hetkel kommentaare pole.");
-
-
-        }else {
-            window.history.pushState("", "Kommentaarid", 'kommentaarid');
-            removeAllButAside();
-
-            for( var i=0; i<jsonA.length;i++){
-                var json = jsonA[i];
-
-                console.log("kommentaarid "+json.kommentaar);
-                buildComment(json);
-            }
-            addAside();
+            console.log(json.kommentaar);
+            buildComment(json);
 
         }
+        addAside();
+        var p4=$("<p></p>");
+        p4.text("Tagasi");
+        p4.addClass("back");
+        $("#sisu").append(p4);
+
 
 
     };
@@ -416,10 +394,10 @@ $(document).ready(function(){
         if(dict[id] === true){
             var str= ".comForm"+id.toString();
 
-            $(str).toggle();
+           $(str).toggle();
             console.log("true: "+$(str));
 
-            // $("[id^=str]").toggle();
+           // $("[id^=str]").toggle();
 
         }else{
             addCommentForm(id,el);
@@ -431,17 +409,17 @@ $(document).ready(function(){
 
     //TODO formi ehitus ja lisamine
     function addCommentForm(articleId,el){
-        // var loggedName = $(document).data('loggedName');
+       // var loggedName = $(document).data('loggedName');
         console.log("name on "+ name);
-        /*   if(name==="Anonymous"){
+     /*   if(name==="Anonymous"){
 
-         alert("Enda nime alt kommenteerimiseks logige palun sisse!");
-         console.log($(document).data('loggedName'));
+        alert("Enda nime alt kommenteerimiseks logige palun sisse!");
+            console.log($(document).data('loggedName'));
 
-         }else{
-         console.log($(document).data('loggedName'));
-         }
-         */
+        }else{
+          console.log($(document).data('loggedName'));
+        }
+*/
         var cl = "comForm"+articleId.toString();
 
         dict[articleId] = true;
@@ -456,7 +434,7 @@ $(document).ready(function(){
 
         var sect = document.createElement("section");
         var f = document.createElement("form");
-        // sect.setAttribute('id',"vasakParem");
+       // sect.setAttribute('id',"vasakParem");
 
         f.setAttribute('class',cl);
         //f.setAttribute('class',"addCom");
@@ -506,15 +484,15 @@ $(document).ready(function(){
 
     }
 
-    /* function addComment(articleId) {
+   /* function addComment(articleId) {
 
-     alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
-     console.log("lisab kommentaari");
+        alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
+        console.log("lisab kommentaari");
 
-     addCommentForm(articleId);
+        addCommentForm(articleId);
 
-     };
-     */
+    };
+*/
 
     // Lehe laadimisel oige artikli juurde minemine.
     if(window.location.hash)
@@ -531,40 +509,40 @@ $(document).ready(function(){
     document.body.setAttribute("onhashchange", "trellidMuutuvad()");
 
     //kommentaari lisamine
-    /*   $("[class^='.comForm']").submit(function(){
-     console.log('Comment to DB');
-     var Kommentaar={};
-     Kommentaar.kommentaar=$('#komSisu').val();
-     Kommentaar.artikkel=$(this).data("id");
+ /*   $("[class^='.comForm']").submit(function(){
+        console.log('Comment to DB');
+        var Kommentaar={};
+        Kommentaar.kommentaar=$('#komSisu').val();
+        Kommentaar.artikkel=$(this).data("id");
 
 
-     if(document.getElementById('anonuumne').checked){
-     Kommentaar.nimi="Anonüümne";
-     }else{
-     Kommentaar.nimi="";
-     }
+        if(document.getElementById('anonuumne').checked){
+            Kommentaar.nimi="Anonüümne";
+        }else{
+            Kommentaar.nimi="";
+        }
 
-     $.ajax("/kommentaarid",{
-     type:"POST",
-     //url:"ArtikkelData/lisaArtikkel",
-     dataType:'json',
-     data: JSON.stringify(Kommentaar),
-     contentType: "application/json; charset=utf-8",
+        $.ajax("/kommentaarid",{
+            type:"POST",
+            //url:"ArtikkelData/lisaArtikkel",
+            dataType:'json',
+            data: JSON.stringify(Kommentaar),
+            contentType: "application/json; charset=utf-8",
 
-     success: function(Kommentaar){
-     console.log("success");
-     alert('Kommentaar edukalt lisatud. ');
-     //document.location.reload(true);
-     },
-     error:function(req, text) {
-     console.log(req);
-     console.log(text);
-     }
+            success: function(Kommentaar){
+                console.log("success");
+                alert('Kommentaar edukalt lisatud. ');
+                //document.location.reload(true);
+            },
+            error:function(req, text) {
+                console.log(req);
+                console.log(text);
+            }
 
-     });
+        });
 
-     });
-     */
+    });
+*/
     $(document).on("click", ".lisaArtikkel",function(){
 
         //  console.log("Admin tahab artiklit lisada");
@@ -808,24 +786,13 @@ $(document).ready(function(){
 
     //pealehe tab
     $(document).on("click", "[class^='category']",function(){
-        console.log("menu");
         var name= $(this).attr('name');
         isTopic=true;
 
-
+        //removeAllButAside();
         //addArticleForm();
-        if (onSisu ===false){
-            console.log("onSisu=false");
-            removeAllButAside();
-            addAside()
-            $("#sisu").append(vasak,parem);
-            onSisu=true;
-        }else{
-            console.log("onSisu=true");
-            $('#vasak').contents().remove();
-            $('#parem').contents().remove();
-        }
-
+        $('#vasak').contents().remove();
+        $('#parem').contents().remove();
         $.ajax('/pealeht', {
             type: "GET",
             dataType: "Json",
