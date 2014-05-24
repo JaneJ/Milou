@@ -36,7 +36,7 @@ function Login() {
             });
         } else {
             trellidMuutuvad();
-            $(document).data('loggedName', "Anonymous");
+            $(document).data('loggedName', "Anonüümne kommentaator");
             console.log(" fb 39 name = Anonymous");
         }
     }, {scope: 'email'});
@@ -45,6 +45,8 @@ function Login() {
     });
 }
 function Logout() {
+    $(document).data('loggedName', "Anonüümne kommentaator");
+    console.log("name on anonüümne");
     FB.logout(function (response) {
         var str = "";
         str += "<button class='logi' id='loginfb'>FB Login</button>";
