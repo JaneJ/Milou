@@ -241,11 +241,13 @@ article footer {
     visibility: hidden;
 }
 
+article footer a {
+    font: bold 86% Fanwood
+}
+
 .autorKuvamiseks {
     font: bold 90% Fanwood
 }
 
-article footer a {
-    font: bold 85% Fanwood
-}
+
 
