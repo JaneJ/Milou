@@ -76,24 +76,48 @@ public class ArtikkelController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		try {
-			
-			
-			//Siia ka see conntectioni teema
-			
-			//Pildi osa
-			//pildid peaksid andmebaasis olema unikaalse nimega, kui klient peaks küsima (ehk responce pildinime kaudu)
-			//Part pilt = req.getPart("pilt").getInputStream();
-			
-			Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
-			datastore.lisaArtikkel(artikkel); 
-			resp.getWriter().write("{}");
 
 
-		} catch (Exception ex) {
-			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
-		}
-	}
+        String idString = req.getParameter("id");
+        if (idString != null) {
+            try {
+                updateArticleView(resp, idString);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+
+        } else {
 
 
+            try {
+                Artikkel artikkel = gson.fromJson(req.getReader(), Artikkel.class);
+                datastore.lisaArtikkel(artikkel);
+                resp.getWriter().write("{}");
+
+
+            } catch (Exception ex) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
+            }
+
+        }
+    }
+
+
+
+
+    private boolean updateArticleView(HttpServletResponse resp,
+                                         String idString) throws SQLException, Exception {
+        int id = Integer.parseInt(idString);
+
+        try {
+            datastore.updateArticleViews(id);
+            resp.getWriter().write("{}");
+        }
+
+        catch (Exception ex) {
+           // throw new RuntimeException(ex);
+        }
+
+        return true;
+    }
 }

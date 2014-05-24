@@ -26,10 +26,11 @@ public class ArtikkelData implements ArtikkelDataProvider {
 		Connection conn = connid.getConnection();
 		try {
 
-			PreparedStatement stmt = conn
-					.prepareStatement("SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema, vaatamisi FROM artikkel where artikkel.id=?;");
 
+            PreparedStatement stmt = conn
+                    .prepareStatement("SELECT id, autor, pealkiri, lisatud, pilt, uudis, teema, vaatamisi FROM artikkel where artikkel.id=?;");
 			stmt.setInt(1, id);
+
 
 			ResultSet rs = stmt.executeQuery();
 			rs.next();
@@ -43,7 +44,7 @@ public class ArtikkelData implements ArtikkelDataProvider {
 			artikkel.teema = rs.getString("teema");
             artikkel.vaatamisi = rs.getInt("vaatamisi");
 		} finally {
-			
+
 				conn.close();
 		}
 		return artikkel;
@@ -219,4 +220,26 @@ public class ArtikkelData implements ArtikkelDataProvider {
         }
         return artiklid;
 	}
+
+
+    public boolean updateArticleViews(int id) throws SQLException, Exception {
+
+        Connectionid connid = new Connectionid();
+        Connection conn = connid.getConnection();
+        try {
+
+
+            PreparedStatement stmt = conn
+                    .prepareStatement("UPDATE artikkel SET vaatamisi=vaatamisi+1 where artikkel.id=?;");
+            stmt.setInt(1, id);
+            stmt.executeQuery();
+
+
+        } finally {
+
+            conn.close();
+        }
+
+            return true;
+    }
 }
