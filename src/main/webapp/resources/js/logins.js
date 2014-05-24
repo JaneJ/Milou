@@ -1,5 +1,6 @@
 window.fbAsyncInit = function () {
-    $(document).data('loggedName', "Anonymous2");
+    $(document).data('loggedName', "Anonüümne kommentaator");
+    console.log(" fb 3 name = Anonüümne kommentaator");
     FB.init({appId: '1385045075103554', status: false, cookie: true, xfbml: true, oauth: true});
     FB.Event.subscribe('auth.authResponseChange', function (response) {
         if (response.status === 'connected') {
@@ -36,6 +37,7 @@ function Login() {
         } else {
             trellidMuutuvad();
             $(document).data('loggedName', "Anonymous");
+            console.log(" fb 39 name = Anonymous");
         }
     }, {scope: 'email'});
     $('#profileArea').on('click', '#logout', function () {
@@ -55,7 +57,7 @@ function Logout() {
 $(document).ready(function () {
     $('#loginfb').on('click', function () {
         Login();
-        $(document).data('loggedName');
+
     });
     $('#logout').on('click', function () {
         Logout();
@@ -64,6 +66,8 @@ $(document).ready(function () {
 function Identify(id, name) {
     $.ajax('/kasutaja', {type: "GET", dataType: "Json", data: {id: id}, success: function (data) {
         console.log(data);
+        $(document).data('loggedName', name);
+        console.log(" fb 70 name ="+name);
         if (data.admin) {
             var str = "Tere : " + name + "!<br>";
             str += "<a href='pages/addarticle.html'>Lisa uudis</a>" + "<br>";

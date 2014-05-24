@@ -386,6 +386,7 @@ $(document).ready(function(){
         id.text("Kommentaari id: "+json.id);
         autor.text("Autor: "+json.autor);
         aeg.text(json.aeg);
+
         kommentaar.text(json.kommentaar);
 
         //uhendame osad uksteisega
@@ -432,8 +433,8 @@ $(document).ready(function(){
 
     //TODO formi ehitus ja lisamine
     function addCommentForm(articleId,el){
-        // var loggedName = $(document).data('loggedName');
-        console.log("name on "+ name);
+         var loggedName = $(document).data('loggedName');
+        console.log("name on "+ loggedName);
         /*   if(name==="Anonymous"){
 
          alert("Enda nime alt kommenteerimiseks logige palun sisse!");
@@ -462,27 +463,37 @@ $(document).ready(function(){
         $(f).attr('action',"/kommentaar");
        // $(f).attr('enctype',"multipart/form-data");
      //  $(f).appendChild(document.createElement("br"));
-
-       // $(f).appendChild(document.createElement("br"));
+        $(f).append("</ br>");
 
         //autor
        // $(f).appendChild(document.createElement("br"));
       //  $(f).appendChild(document.createTextNode("Autor: "+$(document).data('loggedName')));
-        var autor = $('<input name="komAutor" />');
-        autor.val($(document).data('loggedName'));
+        var autor = $('<input class = "hidden" name="komAutor" />');
+        var aut = $(document).data('loggedName');
+        autor.val(aut);
+        console.log($(document).data('loggedName'));
         $(f).append(autor);
+        var autorKuvamiseks =$("<span class = autorKuvamiseks />");
+        autorKuvamiseks.text("Autor: "+aut.toString());
+        $(f).append(autorKuvamiseks);
+        $(f).append("</ br>");
 
         //artikli id
         var artikliId = $('<input class="hidden" name="articleId" />');
         artikliId.val(articleId);
         $(f).append(artikliId);
+        $(f).append("</ br>");
 
         //kommentaari sisu
        // $(f).appendChild(document.createElement("br"));
       //  $(f).appendChild(document.createTextNode("Kommentaar:"));
-        var komSisu = $('<input name="komSisu" />');
+        var komSisu = $('<input name="komSisu" class="inputfield"/>');
+        komSisu.height(60);
+        komSisu.width(80);
+
         $(f).append(komSisu);
         //$(f).appendChild(document.createElement("br"));
+        $(f).append("</ br>");
 
 
       /*  var aDiv = document.createElement("div");
@@ -497,7 +508,7 @@ $(document).ready(function(){
         f.appendChild(aDiv);*/
 
         //$(f).appendChild(document.createElement("br"));
-        var s = $('<input type="submit" value="Sumbit"/>'); //input element, Submit button
+        var s = $('<input type="submit" value="Postita"/>'); //input element, Submit button
 
         $(f).append(s);
        // sect.appendChild(f);
