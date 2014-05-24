@@ -25,7 +25,7 @@ public class KommentaarData implements KommentaarDataProvider {
             //alates siit muutsin, selleks, et saada oiged kommentaare klikkides "loe kommentaare"
 
             PreparedStatement stmt = null;
-            String str = "SELECT autor, kommentaar, aeg  FROM Kommentaar where artikkel=?";// order
+            String str = "SELECT id, autor, kommentaar, aeg  FROM Kommentaar where artikkel=?";// order
             // by
             // vaatamisi
             // (selleks
@@ -39,9 +39,11 @@ public class KommentaarData implements KommentaarDataProvider {
 
 			while (rs.next()) {
 				Kommentaar k = new Kommentaar();
+                k.id = rs.getInt("id");
 				k.autor = rs.getString("autor");
 				k.kommentaar = rs.getString("kommentaar");
 				k.aeg = rs.getDate("aeg");
+                k.artikkel = artikkel;
 				kommentaarid.add(k);
 			}
 		} finally {

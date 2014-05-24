@@ -96,6 +96,7 @@ $(document).ready(function(){
         footer.text("Autor: "+json.autor);
         p.text(json.kirjeldus);
         p.addClass(json.id.toString()+"k");
+        article.addClass(json.id.toString()+"k");
         p2.text(json.lisatud);
 
 
@@ -169,6 +170,7 @@ $(document).ready(function(){
         p2.text(json.lisatud);
         //p3.text(json.kirjeldus);
         p4.text("Tagasi");
+        article.addClass(json.id.toString()+"k");
 
         //uhendame osad uksteisega
         header.append(h1);
@@ -350,8 +352,8 @@ $(document).ready(function(){
 
 
         }else {
-            window.history.pushState("", "Kommentaarid", 'kommentaarid');
-            removeAllButAside();
+           // window.history.pushState("", "Kommentaarid", 'kommentaarid');
+         //   removeAllButAside();
 
             for( var i=0; i<jsonA.length;i++){
                 var json = jsonA[i];
@@ -359,7 +361,7 @@ $(document).ready(function(){
                 console.log("kommentaarid "+json.kommentaar);
                 buildComment(json);
             }
-            addAside();
+         //   addAside();
 
         }
 
@@ -370,7 +372,7 @@ $(document).ready(function(){
     function buildComment(json) {   /*argument responseText*/
         //  console.log("loob kommentaari");
 
-        //console.log(json.pealkiri);
+        console.log(json.artikkel);
 
         //loome tagid
         var div =$('<div></div>');
@@ -395,12 +397,19 @@ $(document).ready(function(){
         footer.append(autor,aeg);
         div.append(footer);
         //   console.log(json.kommentaar);
-        div.addClass("comment");
-        div.addClass("vasakParem");
+        //div.addClass("comment");
+        //div.addClass("vasakParem");
 
         //TODO
         /*kui ajaxi viitest on naha, et artikkel on avatud, siis kleepida lehe otsa kommentaarid, mitte uuele lehele. */
-        $("#sisu").append(div);
+
+        var nimi=$("<p class='kom'>Kommentaarid: </p>");
+        nimi.text("Kommentaari id: "+ json.id);
+
+        var x = "."+json.artikkel.toString()+"k";
+        console.log(x);
+        $(x).closest('article').append(nimi);
+        $(x).closest('article').append(div);
 
     };
 

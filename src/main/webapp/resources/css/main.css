@@ -217,19 +217,8 @@ article footer {
     cursor: help
 }
 
-.comment {
-    border: 1px solid grey;
-    width: 50%;
-    padding: 2%;
-    margin-bottom: 3%;
-    margin-top: 3%;
-    display: block;
-    text-align: left;
-    height: auto;
-    max-width: 70%;
-    float: left;
-    clear: left
-    font-size: 120%
+.kom {
+    font: bold 86% Fanwood
 }
 
 .comment footer {
