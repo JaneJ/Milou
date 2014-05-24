@@ -471,10 +471,12 @@ $(document).ready(function(){
         var autor = $('<input class = "hidden" name="komAutor" />');
         var aut = $(document).data('loggedName');
         autor.val(aut);
+        autor.addClass("updateAuthor");
         console.log($(document).data('loggedName'));
         $(f).append(autor);
-        var autorKuvamiseks =$("<span class = autorKuvamiseks />");
+        var autorKuvamiseks =$("<span class = 'autorKuvamiseks'/>");
         autorKuvamiseks.text("Autor: "+aut.toString());
+        autorKuvamiseks.addClass("updateAuthor");
         $(f).append(autorKuvamiseks);
         $(f).append("</ br>");
 
@@ -525,15 +527,13 @@ $(document).ready(function(){
 
     }
 
-    /* function ment(articleId) {
+    $(document).on("click", ".cl",function(){
+        var a = $(document).data('loggedName');
+        $(".updateAuthor").val(a);
+        $(".updateAuthor").text("Autor: "+$(".updateAuthor").val());
+        console.log("Kommentaatori nimi: "+$(".updateAuthor").val());
 
-     alert("Kommenteerimiseks tuleb sisse logida! "+articleId);
-     console.log("lisab kommentaari");
-
-     addCommentForm(articleId);
-
-     };
-     */
+    });
 
     // Lehe laadimisel oige artikli juurde minemine.
     if(window.location.hash)
@@ -549,41 +549,6 @@ $(document).ready(function(){
 
     document.body.setAttribute("onhashchange", "trellidMuutuvad()");
 
-    //kommentaari lisamine
-    /*   $("[class^='.comForm']").submit(function(){
-     console.log('Comment to DB');
-     var Kommentaar={};
-     Kommentaar.kommentaar=$('#komSisu').val();
-     Kommentaar.artikkel=$(this).data("id");
-
-
-     if(document.getElementById('anonuumne').checked){
-     Kommentaar.nimi="Anonüümne";
-     }else{
-     Kommentaar.nimi="";
-     }
-
-     $.ajax("/kommentaarid",{
-     type:"POST",
-     //url:"ArtikkelData/lisaArtikkel",
-     dataType:'json',
-     data: JSON.stringify(Kommentaar),
-     contentType: "application/json; charset=utf-8",
-
-     success: function(Kommentaar){
-     console.log("success");
-     alert('Kommentaar edukalt lisatud. ');
-     //document.location.reload(true);
-     },
-     error:function(req, text) {
-     console.log(req);
-     console.log(text);
-     }
-
-     });
-
-     });
-     */
     $(document).on("click", ".lisaArtikkel",function(){
 
         //  console.log("Admin tahab artiklit lisada");

@@ -1,6 +1,6 @@
 window.fbAsyncInit = function () {
-    $(document).data('loggedName', "Anonüümne kommentaator");
-    console.log(" fb 3 name = Anonüümne kommentaator");
+    $(document).data('loggedName', "Anonüümne");
+    console.log(" fb 3 name = Anonüümne");
     FB.init({appId: '1385045075103554', status: false, cookie: true, xfbml: true, oauth: true});
     FB.Event.subscribe('auth.authResponseChange', function (response) {
         if (response.status === 'connected') {
@@ -36,8 +36,8 @@ function Login() {
             });
         } else {
             trellidMuutuvad();
-            $(document).data('loggedName', "Anonüümne kommentaator");
-            console.log(" fb 39 name = Anonymous");
+            $(document).data('loggedName', "Anonüümne");
+            console.log(" fb 39 name = Anonüümne");
         }
     }, {scope: 'email'});
     $('#profileArea').on('click', '#logout', function () {
@@ -45,7 +45,7 @@ function Login() {
     });
 }
 function Logout() {
-    $(document).data('loggedName', "Anonüümne kommentaator");
+    $(document).data('loggedName', "Anonüümne");
     console.log("name on anonüümne");
     FB.logout(function (response) {
         var str = "";
