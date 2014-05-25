@@ -253,25 +253,7 @@ $(document).ready(function(){
 
     };
 
-
-    function updateArticleview(id){
-
-        $.ajax("/artiklid",
-            {type: "POST",
-                dataType: 'Integer',
-                data: {id:id},
-                success: function () {
-            console.log("success");
-            alert('update edukas');
-           // document.location.reload(true);
-        }, error: function (req, text) {
-            console.log(req);
-            console.log(text);
-        }});
-    }
-
-    function askArticle(id){
-        updateArticleview(id)
+    function askArticle(id, bool){
 
         window.history.pushState("", id, "#artikkel"+id);
 

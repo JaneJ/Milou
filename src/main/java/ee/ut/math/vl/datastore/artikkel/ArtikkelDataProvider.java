@@ -16,8 +16,6 @@ public interface ArtikkelDataProvider {
 	 public List<Artikkel> findCommentedArtiklit() throws SQLException, URISyntaxException;
 	 public List<Artikkel> findPopularArtiklit() throws SQLException, Exception;
 	 public void lisaArtikkel(Artikkel artikkel) throws SQLException, Exception;
-     public boolean updateArticleViews(int id) throws SQLException, Exception;
-
 	
 	 
 
