@@ -5,11 +5,11 @@
 }
 
 h1 {
-    font: italic bold 140% Fanwood
+    font: italic bold 100% Fanwood
 }
 
 h2 {
-    font: italic bold 120% Fanwood
+    font: italic bold 100% Fanwood
 }
 
 a {
@@ -83,7 +83,7 @@ nav #nav_kast {
 nav a {
     display: inline;
     padding-right: 1%;
-    font: bold 150% Fanwood;
+    font: bold 90% Fanwood;
     text-align: center;
     margin-left: 8%;
     cursor: pointer
@@ -122,7 +122,7 @@ article table img {
 
 article footer {
     text-align: right;
-    font-size: 90%
+    font-size: 70%
 }
 
 #vasak, .vasak {
@@ -160,14 +160,14 @@ article footer {
     text-align: left;
     padding: 2%;
     border-bottom: 1px dotted #000;
-    font: bold 120% Fanwood
+    font: bold 60% Fanwood
 }
 
 #side h2, .side h2 {
     text-align: left;
     padding: 2%;
     cursor: pointer;
-    font: 90% Fanwood
+    font: 70% Fanwood
 }
 
 #koomiks {
@@ -217,25 +217,27 @@ article footer {
 }
 
 .kom {
-    font: bold 86% Fanwood
+    font: bold 76% Fanwood
+}
+
+article footer a {
+    font: bold 76% Fanwood
+}
+
+.autorKuvamiseks {
+    font: bold 80% Fanwood
 }
 
 .comment footer {
     text-align: right;
-    font-size: 100%
+    font-size: 80%
 }
 
 .hidden {
     visibility: hidden;
 }
 
-article footer a {
-    font: bold 86% Fanwood
-}
 
-.autorKuvamiseks {
-    font: bold 90% Fanwood
-}
 
 
 
